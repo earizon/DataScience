@@ -1,0 +1,156 @@
+● ONNX.ai: [[{persistence,standards,mlops,01_PM.TODO]]
+  http://onnx.ai/
+  ONNX is an open format built to represent machine learning models.
+  ONNX defines a common set of operators - the building blocks of
+  machine learning and deep learning models - and a common file format
+  to enable AI developers to use models with a variety of frameworks,
+  tools, runtimes, and compilers.
+[[}]]
+
+● HDF data format: [[{HDF,big_data,standards,persistence,01_PM.TODO]]
+@[https://en.wikipedia.org/wiki/Hierarchical_Data_Format]
+
+Hierarchical Data Format (HDF) is a set of file formats (HDF4, HDF5)
+designed to store and organize large amounts of data. Originally
+developed at the National Center for Supercomputing Applications, it
+is supported by The HDF Group.
+
+- HDF Libraries:
+  HDF5 - used to store and manipulate data
+  PyTables: Used for managing HDF5 datasets
+[[}]]
+
+● ServingMachineLearningModels.pdf (Oreilly)
+@[./OreillyServingMachineLearningModels.pdf]
+
+● DVC: ML Data Version Control: [[{data.gathering,persistence,mlops,standards,01_PM.TODO]]
+@[https://dvc.org/]
+Open-source Version Control System for Machine Learning Projects
+
+ML project version control
+  Version control machine learning models, data sets and intermediate
+  files. DVC connects them with code, and uses Amazon S3, Microsoft
+  Azure Blob Storage, Google Drive, Google Cloud Storage, Aliyun OSS,
+  SSH/SFTP, HDFS, HTTP, network-attached storage, or disc to store file
+  contents.
+
+  Full code and data provenance help track the complete evolution of
+  every ML model. This guarantees reproducibility and makes it easy to
+  switch back and forth between experiments.
+  Learn more
+
+
+ML experiment management
+  Harness the full power of Git branches to try different ideas instead
+  of sloppy file suffixes and comments in code. Use automatic
+  metric-tracking to navigate instead of paper and pencil.
+
+  DVC was designed to keep branching as simple and fast as in Git —
+  no matter the data file size. Along with first-class citizen metrics
+  and ML pipelines, it means that a project has cleaner structure. It's
+  easy to compare ideas and pick the best. Iterations become faster
+  with intermediate artifact caching.
+
+Deployment & Collaboration
+  Instead of ad-hoc scripts, use push/pull commands to move consistent
+  bundles of ML models, data, and code into production, remote
+  machines, or a colleague's computer.
+
+  DVC introduces lightweight pipelines as a first-class citizen
+  mechanism in Git. They are language-agnostic and connect multiple
+  steps into a DAG. These pipelines are used to remove friction from
+  getting code into production.
+[[}]]
+
+[[{data.open_data,data.geospatial,resource,01_PM.TODO]]
+● world.geo.json:
+GitHub - johan/world.geo.json: Annotated geo-json geometry files for the world
+@[https://github.com/johan/world.geo.json]
+[[}]]
+
+
+
+● Kedro: [[{mlops,01_PM.TODO]]
+https://kedro.readthedocs.io/en/latest/01_introduction/01_introduction.html
+- OOSS development workflow framework implements soft.engineering best-practice
+  for data pipelines with an eye towards productionising machine learning models.
+  in local/personal environments, up to enterprise-level collaborative projects
+  needing put-in-production optimization.
+[[}]]
+
+
+
+● MLflow: Simplifying ML Lifecycle:  [[{mlops,01_PM.TODO]]
+@[https://www.infoq.com/presentations/mlflow-databricks/]
+
+· MLflow provides APIs for tracking experiment runs between multiple
+  users within a reproducible environment and for managing the
+  deployment of models to production. MLflow is designed to be an open,
+  modular platform.
+[[}]]
+
+● ML: Intel continues AI push with acquisition of MLOps vendor Cnvrg - AI Business
+  https://aibusiness.com/document.asp?doc_id=765229
+
+
+● MLOps for Enterprise AI: @ma
+  https://www.infoq.com/articles/optimizing-mlops-enterprise-ai/
+
+● OOSS Terraform module for Google k8s: [[{k8s,mlops,cloud,mlops.IaC_terraform,01_PM.TODO]]
+https://www.infoq.com/news/2020/03/spotify-terraform-kubeflow/
+
+Spotify has open-sourced their Terraform module for running machine-learning
+pipeline software Kubeflow on Google K8s Engine (GKE). By switching
+their in-house ML platform to Kubeflow, Spotify engineers have achieved faster
+time to production and are producing 7x more experiments than on the previous
+platform.
+
+In a recent blog post, Spotify's Product Manager Josh Baer and ML Engineer
+Samuel Ngahane described Spotify's "Paved Road" for machine learning: "an
+opinionated set of products and configurations to deploy an end-to-end machine
+learning solution using our recommended infrastructure." By adopting these
+standards, Spotify's machine learning engineers no longer need to build or
+maintain infrastructure and instead can focus on their ML experiments. Since
+launching the platform in mid-2019, about 100 internal users have adopted it
+and run up to 18,000 experiments.
+[[}]]
+
+[[{standards,mlops,01_PM.TODO]]
+● Cookiecutter: logical+standardized+flexible project structure</span>
+
+@[http://drivendata.github.io/cookiecutter-data-science/]
+  A logical, reasonably standardized, but flexible project structure
+  for doing and sharing data science work.
+  Why use this project structure?
+
+      We're not talking about bikeshedding the indentation aesthetics
+  r pedantic formatting standards — ultimately, data science code
+  quality is about correctness and reproducibility.
+
+  When we think about data analysis, we often think just about the
+  resulting reports, insights, or visualizations. While these end
+  products are generally the main event, it's easy to focus on making
+  the products look nice and ignore the quality of the code that
+  generates them. Because these end products are created
+  programmatically, code quality is still important! And we're not
+  talking about bikeshedding the indentation aesthetics or pedantic
+  formatting standards — ultimately, data science code quality is
+  about correctness and reproducibility.
+
+  It's no secret that good analyses are often the result of very
+  scattershot and serendipitous explorations. Tentative experiments and
+  rapidly testing approaches that might not work out are all part of
+  the process for getting to the good stuff, and there is no magic
+  bullet to turn data exploration into a simple, linear progression.
+
+  That being said, once started it is not a process that lends itself
+  to thinking carefully about the structure of your code or project
+  layout, so it's best to start with a clean, logical structure and
+  stick to it throughout. We think it's a pretty big win all around to
+  use a fairly standardized setup like this one.
+[[}]]
+
+● ML Pipeline @ Stitch Fix:
+@[https://www.infoq.com/presentations/data-ml-pipelines-stitchfix]
+
+

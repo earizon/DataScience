@@ -1,0 +1,224 @@
+Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
+====================
+(by Nabih Ibrahim Bawazir)
+● List of Time Series Methods:  [[{taxonomy]]
+ 1. Autoregression (AR)
+ 2. Moving Average (MA)
+ 3. Autoregressive Moving Average (ARMA)
+ 4. Autoregressive Integrated Moving Average (ARIMA)
+ 4. Seasonal Autoregressive Integrated Moving-Average (SARIMA)
+ 4. Seasonal Autoregressive Integrated Moving-Average with Exogenous Regressors (SARIMAX)
+ 7. Vector Autoregression (VAR)
+ 8. Vector Autoregression Moving-Average (VARMA)
+ 9. Vector Autoregression Moving-Average with Exogenous Regressors (VARMAX)
+10. Simple Exponentil Smoothing (SES)
+11. Holt Winter's Exponential Smoothing (HWES)
+12. Prophet
+13. Naive Method
+14. LSTM (Long Short Term Memory)
+15. STAR (Space Time Autoregressive)
+16. GSTAR (Generalized Space Time Autoegressive)
+17. LSTAR (Logistic Smooth Transition Autoregressive)
+18. Transfer Function
+19. Intervention Method
+20. Recurrent Neural Network
+21. Fuzzy Neural Network.
+[[}]]
+
+[[{time_series.101.timecop,use_case.fraud_detection,01_PM.low_code]]
+● timecop TS Anomaly Detector (by BBVA): #[timecop_summary]
+- Time series based anomaly detector.
+- RESTful webservice engine.
+- evaluates uni/multi-variate timeseries.
+- timecop considerates time series as having 3 stages:
+  - current state (of the time series) as the last five points.
+  - past state as all the previous points before the current state.
+  - future state as the forecast of the next steps (custom number).
+- Objective: get insight on the behavior of the time series.
+    'timecop' engine compares several time series forecasting algorithms.
+    and select the best one according to the MAE(mean absolute error)
+    metric.
+- engine algorithm set:
+  - VAR (Vercot Autoregression)
+  - Holt-Winters 
+  - ARIMA (Autoregressive Integrated Moving Average)
+  - Recurrent Neural Networks using LSTM cells.
+
+- Engine ouput:
+  - The best of evaluated algorithm regarding the MAE metric.
+  - Past anomalies. past state points considerated as anomalous.
+  - Current anomalies, returning a flag telling whether there are
+    anomalies in the last 5 points or not and the current anomalous
+    points if there were.
+  - Future time series forecast of the next points.
+
+  - Main Features
+    - Future: Forecast n steps
+    - Past  : Sensibility custom anomaly detection
+    - Now   : Sensibility custom anomaly detection
+
+  - Secondary Features
+    - Delta / Full timesteps upload
+    - Train / Use best known model in production envirotnment
+    - Python API for easy integration in notebooks / python apps
+    - Backend Database
+
+  - ADVANCED FEATURES:
+    - Trend
+    - ChangePoints
+    - Confidence interval
+
+• 'timecop' Getting Started:
+  → Feed engine with (JSON) uni/multi-variate TS data points through 
+    its webservice (POST).
+    → service will return you a (JSON) result of the analysis.
+                             ┌ engine1 ┐
+                  ┌─ Uni    ─┼ engine2 ├ Best  ─┐
+                  │  variabe └ ...     ┘        │  HTTP
+   POST           │                             │  Response
+  {JSON} → Web   ─┤                             ├─ {JSON}
+           Service│                             │
+                  │          ┌ engine1 ┐        │
+                  └─ Multi  ─┼ engine2 ├ Best  ─┘
+                     Variate └ ...     ┘
+
+  - SUPPORTED ALGORITHMS
+    Univariate                 Multivariate
+    ==========                 ============
+    LSTM networks              Long Short Term Memory networks
+    Facebook prophet           vector autoregression
+    vector autoregression      Vector error correction model
+    Gluon-ts                   SArimaX
+    Holtwinters
+    ARIMA
+    N-beats
+    Temporal Convolutional Network
+    TBATS
+
+  - Metrics
+    - Mean Absolute Error
+    - Mean Squeared Error
+    - Root Mean Squeared Error
+    - Symmetric mean absolute percentage error
+    - Mean Absolute Percentage Error
+
+• 'timecop' Ussage:
+  STEP 1) Launch server. eg, using Docker:   [[devops.docker]]
+  $ docker pull trakuo/timecop:devel
+  $ docker run --name timecoprunning \
+      -p 3000:80 trakuo/timecop:devel
+
+  http://localhost:3000/static/index.html   ← Rest interface
+
+• STEP 2.alt1) Use the server GUI, uploading the Input CSV.
+• STEP 2.alt2) Prepare/send data to server, using python API.
+  STEP 2.alt2.presetup)
+  $ pip python client package
+
+  import timecopts as tc                      UNIVARIATE Python API
+  TS=[1,2,3,4,5,6,7,8,9,2,3,4,5,...]          =====================
+  URL = 'URL_timecop_server'
+  output_json = tc.timecop_univariate(
+    URL,
+    name='test01',
+    TS,                       <-············ input data
+    train=True,               <-············ True: find best algo.
+                              <-············ False: use last best model
+                                                    for named TS
+    restart=True)             <-············ True : delete all historical TS data.
+                                                    use only new (POST) data.
+
+    import timecopts as tc                   MULTIVARIATE Python API
+                                             =======================
+                                             analyze+predict 1 TS respect to 
+                                             1+ reference TS
+    TS_main=[1,2,3,4,5,6,...]  <············ Target TS to analyze/predict
+    TS_timeseries= []          <············ Reference TS 
+    TS_timeseries                            Feed (from memory/disk/,...)
+       .append({'data': [1,2,3,4,...]})
+    URL = 'http://timecop_server/'
+    output_json = tc.timecop_multivariate(
+      URL,
+      name='test_timeseries',
+      TS_main,                 <············ Target TS to analyze/predict
+      TS_timeseries,           <············ reference TSs
+      train=True,              <············ True : find best algo for TS
+                                             False: use last best model for named TS
+      restart=True)            <············ True : delete all historical TS data.
+                               <············        use only new (POST) data.
+
+• STEP 2.alt3) Use the exposed REST API:
+  $ curl -i \                                UNIVARIATE REST API
+    -H "Content-Type: application/json" \    ===================
+    -X POST -d \
+    '{ "data":[ 22125, 25817, 28779, ...] } '
+    http://127.0.0.1:5000/univariate
+
+  $ curl -i \                                MULTIVARIATE REST API
+    -H "Content-Type: application/json" \    =====================
+    -X POST -d \
+    '{
+     "timeseries":[
+     {
+       "data":
+         [0.950007158, 1.0, 1.0, ...] 
+     },
+     {
+        "data": [0.5, 1.0, ...]
+     }],
+     "main": [0.8571429252624512, 0.571, ...]
+    }'
+    http://127.0.0.1:5000/multivariate
+
+    EXAMPLE RESPONSE:
+    {
+      "engine": "Holtwinters",       <···· Winner Engine
+      "future": {                    <···· Forecast
+                 "126": 15136.0,
+                 "127": 16733.0,
+                 "128": 20016.0,
+                 ...
+                },
+      "mae": 5994.289473684211,      <··· Metric 01
+      "mse": 50689736.39473684,      <··· Metric 02
+      "rmse": 7119.672492097992,     <··· Metric 03
+      "past": [ {                    <··· Detected anomalies in past events
+                    "anomaly_score": 0.0,
+                    "expected value": 20016.0,
+                    "mae": 5994.289473684211,
+                    "mse": 50689736.39473684,
+                    "real_value": 33151.0,
+                    "rmse": 7119.672492097992,
+                    "step": 90.0 },
+                 {
+                    "anomaly_score": 1.0,
+                    "expected value": 23739.0,
+                    "mae": 5994.289473684211,
+                    "mse": 50689736.39473684,
+                    "real_value": 40226.0,
+                    "rmse": 7119.672492097992,
+                    "step": 95.0 },
+                 {
+                    "anomaly_score": 0.3460620525059665,
+                    "expected value": 20008.0,
+                    "mae": 5994.289473684211,
+                    "mse": 50689736.39473684,
+                    "real_value": 34303.0,
+                    "rmse": 7119.672492097992, "step": 102.0
+                 } ],
+       "present_alerts": [],         <···· Present status
+       "present_status": "FALSE"
+    }
+[[time_series.101.timecop}]]
+
+[[}]]
+
+
+
+● Prophet Timeseries Forecasting: [[{time_series,python,rlang,01_PM.TODO]]
+- forecasts time series data.
+- Implemented in R or Python
+- fully automatic, accurate, fast and tunable.
+
+[[}]]
+

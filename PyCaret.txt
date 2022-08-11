@@ -1,0 +1,115 @@
+● PyCaret: [[{pycaret,low_code,python,101]]
+@[https://pycaret.org/]
+low-code Machine Learning Framework
+- Increased Productivity
+  PyCaret being a low-code library makes you more productive. With
+  less time spent coding, you and your team can now focus on business
+  problems.
+- Easy to Use
+    PyCaret is simple and easy to use machine learning library that
+  will help you to perform end-to-end ML experiments with less lines of
+  code.
+- Business Ready
+    PyCaret is a business ready solution. It allows you to do
+  prototyping quickly and efficiently from your choice of notebook
+  environment.
+
+● Ml: automl has a project’s life cycle, 
+which includes data cleaning, feature selection/engineering, model 
+selection, parameter optimization, and finally, model validation. 
+#AutoML came to automate the entire process from data cleaning to 
+parameter optimization. There are multiple solutions.
+In #Python:#PyCaret: https://lnkd.in/dZFfERb#alteryx: 
+https://lnkd.in/dEk8vKv#autogluon
+https://lnkd.in/d3QVtnb#h2o 
+https://lnkd.in/dFC6JSt#auto-sklearn
+https://lnkd.in/dNz_-h7#mlbox
+https://lnkd.in/dkEA9-K#tpot
+https://lnkd.in/dMxY84b#autokeras 
+https://lnkd.in/dAwH2jc 
+In #CloudComputing:#Amazon #AWS SageMaker: 
+https://lnkd.in/d8wkaGU#Google AutoML 
+https://lnkd.in/dbCEXY8#Microsoft AutoML
+https://lnkd.in/dSCcCNjMore 
+at: https://lnkd.in/dFe3V7W
+More at:
+https://lnkd.in/dAXtUtRImage
+https://lnkd.in/dicwDCF
+
+● (ML Very low code) Pycaret + Gradio tutorial   [[{01_PM.low_code]]
+https://towardsdatascience.com/supercharge-your-machine-learning-experiments-with-pycaret-and-gradio-5932c61f80d9 
+  PyCaret is an alternate low-code library that can be used to replace 
+  hundreds of lines of code with few lines only. This makes the experiment cycle exponentially fast and efficient.PyCaret is simple and easy to use. All the operations performed in PyCaret are 
+  sequentially stored in a Pipeline that is fully automated for 
+  deployment. Whether it’s imputing missing values, one-hot-encoding, 
+  transforming categorical data, feature engineering, or even 
+  hyperparameter tuning, PyCaret automates all of it.To learn more 
+  about PyCaret, check out their GitHub. GradioGradio is an open-source 
+  Python library for creating customizable UI components around your 
+  machine learning models. Gradio makes it easy for you to “play 
+  around” with your model in your browser by dragging and dropping in 
+  your own images, pasting your own text, recording your own voice, 
+  etc., and seeing what the model outputs.Gradio is useful for:Creating 
+  quick demos around your trained ML pipelinesGetting live feedback on 
+  model performanceDebugging your model interactively during 
+  developmentTo learn more about Gradio, check out their GitHub.
+[[}]]
+
+● Anomaly detection with PyCaret
+  https://towardsdatascience.com/build-your-first-anomaly-detector-in-power-bi-using-pycaret-2b41b363244e
+
+● ML: ApaflowAPAflow (Advanced and Predictive Analytics Flow) is a 
+free desktop application for Windows for data science and machine 
+learning built on top of PyCaret and H2O. APAflow is built for data 
+analysis, data preparation, feature engineering, model development, 
+and deployment.Learn more about APAflow:
+https://lnkd.in/eVU_nvA
+
+● ML: PyCaret timeseries modulePyCaret Time Series Module
+   What you see below is the output from the compare_models of our new 
+  (in-making) time series module. PyCaret Time Series Module will be an 
+  easy-to-use forecasting tool built on top of sktime, fbprophet, 
+  statsmodels, and few others. This module will have both the existing 
+  functional API as well as a new OOP API that supports object-oriented 
+  programing. Time Series module has a rich model zoo containing 
+  classical statistical models such as ARIMA, SARIMA, ETS, TBATS, etc. 
+  as well as all the models from the regression module. Regressors are 
+  used with a technique called Reduction Method which converts 
+  univariate time series into tabular data.This module comes with 50+ 
+  pre-built pipelines with target transformations. The inference will 
+  be through the predict_model function. A bunch of plotting and 
+  analysis functionality, auto logging via MLFlow, and deployment 
+  capabilities.Hyperparameter tuning is auto with the tune_model 
+  function just like the other modules in PyCaret. This module is a 
+  result of tireless efforts and hard work by Nikhil Gupta Miguel Trejo 
+  Marrufo and Antoni Baum as always!#datascience #machinelearning 
+  #opensource #python #programing #pycaret #timeseries #analytics 
+  #artificialintelligencve #ai #datascientist
+
+● ML: How to use PyCaret  - the library for easy ML
+  https://towardsdatascience.com/how-to-use-pycaret-the-library-for-lazy-data-scientists-91343f960bd2 
+
+● ML ayesian-hyperparameter-optimization-with-tune-sklearn-in-pycaret
+  https://medium.com/distributed-computing-with-ray/bayesian-hyperparameter-optimization-with-tune-sklearn-in-pycaret-a33b1592662f
+
+● ML, 101: Complete guide to PyCaret
+  https://insaid.medium.com/a-complete-guide-to-pycaret-c07b1e51f698
+
+● ML Machine Learning in KNIME with PyCaret | by Moez Ali | Low Code for Advanced Data Science | Medium
+  https://medium.com/low-code-for-advanced-data-science/machine-learning-in-knime-with-pycaret-420346e133e2
+
+● https://medium.com/analytics-vidhya/pycaret-101-for-beginners-27d9aefd34c5
+
+● A step-by-step tutorial on unsupervised anomaly detection for time series data using PyCaret
+  https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427
+
+● Topic Modeling in Power BI using PyCaret | by Moez Ali | Towards Data Science
+https://towardsdatascience.com/topic-modeling-in-power-bi-using-pycaret-54422b4e36d6
+
+● https://www.youtube.com/watch?v=Rgr_3iXORmo
+  Anomaly Detection with Power BI and PyCaret
+
+● low_code, pycaret ML Pipeline:
+  https://www.datasource.ai/uploads/624e8836466a40923b64b901b5050c0f.html
+
+

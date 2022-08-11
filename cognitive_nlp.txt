@@ -1,0 +1,211 @@
+● NLP 101: [[{cognitive.nlp,101,01_PM.TODO]]
+· We will cover everything from the history and applications of NLP, to
+  the technical implementation of various NLP pipelines and algorithms
+  including state of the art models such as BERT, LSTMs and seq2seq.
+  For the hands-on section, we will implement 4 use cases: Sentiment
+  Analysis, Word embedding, automatic translation from English to
+  Spanish using seq2seq model and Q&A system using BERT model.
+[[}]]
+
+
+
+● NLP: [[{cognitive.nlp]]
+● Universal Transformer:
+@[https://arxiv.org/pdf/1807.03819.pdf] "White-paper"
+
+@[https://ai.googleblog.com/2018/08/moving-beyond-translation-with.html]
+Last year we released the Transformer, a new machine learning model that
+showed remarkable success over existing algorithms for machine translation
+and other language understanding tasks. Before the Transformer, most neural
+network based approaches to machine translation relied on recurrent neural
+networks (RNNs) which operate sequentially (e.g. translating words in a
+sentence one-after-the-other) using recurrence (i.e. the output of each step
+feeds into the next). While RNNs are very powerful at modeling sequences,
+their sequential nature means that they are quite slow to train, as longer
+sentences need more processing steps, and their recurrent structure also
+makes them notoriously difficult to train properly.
+
+In contrast to RNN-based approaches, the Transformer used no recurrence,
+instead processing all words or symbols in the sequence in parallel while
+making use of a self-attention mechanism to incorporate context from words
+farther away. By processing all words in parallel and letting each word
+attend to other words in the sentence over multiple processing steps, the
+Transformer was much faster to train than recurrent models. Remarkably, it
+also yielded much better translation results than RNNs. However, on smaller
+and more structured language understanding tasks, or even simple algorithmic
+tasks such as copying a string (e.g. to transform an input of “abc” to “abcabc
+”), the Transformer does not perform very well. In contrast, models that
+perform well on these tasks, like the Neural GPU and Neural Turing Machine,
+fail on large-scale language understanding tasks like translation.
+[[}]]
+
+
+● Blender ChatBot:
+  Blender, Facebook State-of-the-Art Human-like Chatbot, Now Open Source
+@[https://www.infoq.com/news/2020/04/facebook-blender-chatbot/]
+
+Blender is an open-domain chatbot developed at Facebook AI Research
+(FAIR), Facebook’s AI and machine learning division. According to
+FAIR, it is the first chatbot that has learned to blend several
+conversation skills, including the ability to show empathy and
+discuss nearly any topics, beating Google's chatbot in tests with
+human evaluators.
+
+    Some of the best current systems have made progress by training
+high-capacity neural models with millions or billions of parameters
+using huge text corpora sourced from the web. Our new recipe
+incorporates not just large-scale neural models, with up to 9.4
+billion parameters — or 3.6x more than the largest existing system
+— but also equally important techniques for blending skills and
+detailed generation.
+
+
+https://parl.ai/projects/blender/
+Building open-domain chatbots is a challenging area for machine
+learning research. While prior work has shown that scaling neural
+models in the number of parameters and the size of the data they are
+trained on gives improved results, we show that other ingredients are
+important for a high-performing chatbot. Good conversation requires a
+number of skills that an expert conversationalist blends in a
+seamless way: providing engaging talking points and listening to
+their partners, both asking and answering questions, and displaying
+knowledge, empathy and personality appropriately, depending on the
+situation. We show that large scale models can learn these skills
+when given appropriate training data and choice of generation
+strategy. We build variants of these recipes with 90M, 2.7B and 9.4B
+parameter neural models, and make our models and code publicly
+available under the collective name Blender. Human evaluations show
+our best models are superior to existing approaches in multi-turn
+dialogue in terms of engagingness and humanness measurements. We then
+discuss the limitations of this work by analyzing failure cases of
+our models.
+
+● Stanza (Standford NLP Group):
+https://www.infoq.com/news/2020/03/stanza-nlp-toolkit/
+The Stanford NLP Group recently released Stanza, a new python natural
+language processing toolkit. Stanza features both a language-agnostic
+fully neural pipeline for text analysis (supporting 66 human
+languages), and a python interface to Stanford's CoreNLP java
+software.
+
+Stanza version 1.0.0 is the next version of the library previously
+known as "stanfordnlp". Researchers and engineers building text
+analysis pipelines can use Stanza's tools for tasks such as
+tokenization, multi-word token expansion, lemmatization,
+part-of-speech and morphological feature tagging, dependency parsing,
+and named-entity recognition (NER). Compared to existing popular NLP
+toolkits which aid in similar tasks, Stanza aims to support more
+human languages, increase accuracy in text analysis tasks, and remove
+the need for any preprocessing by providing a unified framework for
+processing raw human language text. The table below comparing
+features with other NLP toolkits can be found in Stanza's associated
+research paper.
+</pre>
+
+● Google-ML-Kit cognitive,mobile,android,iOS
+https://www.infoq.com/news/2019/04/Google-ML-Kit
+
+In a recent Android blog post, Google announced the release of two
+new Natural Language Processing (NLP) APIs for ML Kit, a mobile SDK
+that brings Google Machine Learning capabilities to iOS and Android
+devices, including Language Identification and Smart Reply. In both
+cases, Google is providing domain-independent APIs that help
+developers analyze and generate text, speak and other types of
+Natural Language text. Both of these APIs are available in the latest
+version of the ML Kit SDK on iOS (9.0 and higher) and Android (4.1
+and higher).
+
+The Language Identification API supports 110 different languages and
+allows developers to build applications that identify the language of
+the text passed into the API. Christiaan Prins, a product manager at
+Google, describes the following use case for the Language Identification API.
+
+● AWS SaaS Textract [[{cloud,text_processing,01_PM.low_code]]
+  https://press.aboutamazon.com/news-releases/news-release-details/aws-announces-general-availability-amazon-textract
+- fully managed service that uses machine learning to automatically
+  extract text and data, including from tables and forms, in virtually
+  any document without the need for manual review, custom code, or
+  machine learning experience.
+
+● Google ALBERT NLP Model:
+@[https://www.infoq.com/news/2020/01/google-albert-ai-nlp/]
+· deep-learning natural language processing (NLP) model, which uses 89%
+  fewer parameters than the state-of-the-art BERT model, with little
+  loss of accuracy. The model can also be scaled-up to achieve new
+  state-of-the-art performance on NLP benchmarks.
+
+● Snps NLU: [[{natural_language,01_PM.TODO]]
+https://github.com/snipsco/snips-nlu
+Snips NLU is a Natural Language Understanding python library that
+allows to parse sentences written in natural language, and extract
+structured information.
+It’s the library that powers the NLU engine used in the Snips
+Console that you can use to create awesome and private-by-design
+voice assistants.
+[[}]]
+
+
+● RoBERTa NLP [[{natural_language,01_PM.TODO]]
+https://www.infoq.com/news/2019/09/facebook-roberta-nlp/
+[[}]]
+
+● Researchers Open-Source Model Explanation Toolkit AllenNLP Interpret [[{cognitive.nlp,01_PM.TODO]]
+https://www.infoq.com/news/2019/10/nlp-model-explanation/ [[}]]
+
+● ExBERT Tool: Exploring NLP Models Learned Representations: [[{cognitive.nlp,01_PM.TODO]]
+@[https://www.infoq.com/news/2020/04/exbert-explainable-nlp/]
+[[}]]
+
+● Tool for Universal Communication [[{cognitive.*,01_PM.TODO]]
+@[https://www.gtd.es/es/blog/ingenieros-leoneses-crean-una-herramienta-informatica-para-la-comunicacion-universal]
+- Se trata de un programa con una sintaxis universal que permite la
+  comunicación inmediata entre personas de distintos idiomas
+[[}]]
+
+[[{cognitive.human_translation,01_PM.TODO]]
+● DeepL: "Google Traductor ++?"
+@[https://wwwhatsnew.com/2020/03/23/deepl-la-alternativa-a-google-traductor-ya-traduce-japones-y-chino/]
+[[}]]
+
+● Protege: [[{cognitive.nlp,data.ontology,01_PM.TODO]]
+@[https://protege.stanford.edu/products.php]
+
+- Protégé is a free, open-source platform that provides a growing
+  user community with a suite of tools to construct domain models and
+  knowledge-based applications with ontologies.
+[[}]]
+
+● Pattern-Exploiting Training: Exceeds GPT-3 Perf. 99.9% Fewer Params:
+[[{cognitive.nlp,nlp.101,comparative,GPT-3,01_PM.TODO]]
+@[https://www.infoq.com/news/2020/10/training-exceeds-gpt3/]
+· Using PET, the team trained a Transformer NLP model with 223M
+  parameters that out-performed the 175B-parameter GPT-3 by over 3
+  percentage points on the SuperGLUE benchmark.
+[[}]]
+
+● The Pile, 825 GB NLP Data set:
+[[{data.open_data,01_PM.TODO]]
+@[https://pile.eleuther.ai/]
+@[https://arxiv.org/abs/2101.00027]
+Leo Gao, Stella Biderman, Sid Black, Laurence Golding, Travis Hoppe,
+Charles Foster, Jason Phang, Horace He, Anish Thite, Noa Nabeshima,
+Shawn Presser, Connor Leahy
+
+· Recent work has demonstrated that increased training dataset
+  diversity improves general cross-domain knowledge and downstream
+  generalization capability for large-scale language models. With this
+  in mind, we present the Pile:
+  · 825 GiB English text corpus targeted at training large-scale language models.
+  · constructed from 22 diverse high-quality subsets
+    -- both existing and newly constructed -- many of which derive from
+    academic or professional sources.
+· Our evaluation of the untuned performance of GPT-2 and GPT-3 on
+  the Pile shows that these models struggle on many of its components,
+  such as academic writing. Conversely, models trained on the Pile
+  improve significantly over both Raw CC and CC-100 on all components
+  of the Pile, while improving performance on downstream evaluations.
+  Through an in-depth exploratory analysis, we document potentially
+  concerning aspects of the data for prospective users. We make
+  publicly available the code used in its construction.
+· The format of the Pile is jsonlines data compressed using zstandard.
+[[}]]

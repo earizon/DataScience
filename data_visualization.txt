@@ -1,0 +1,67 @@
+[[{data.visualization,01_PM.TODO]]
+<pre zoom labels="data.visualization,TODO">
+● Seaborn: Stat Graphs:
+  Michael Waskom’s package providing very high-level
+  wrappers for complex plots (ggplot2-like aesthetic)
+  over matplotlib
+@[https://seaborn.pydata.org/]
+- a high-level interface for drawing attractive and informative
+  statistical graphics on top of matplotlib.
+
+@[https://www.datacamp.com/community/tutorials/seaborn-python-tutorial]
+</pre>
+
+● Bokeh ( Python to interactive JS charts):
+- (Continuum Analytics)
+- "potential game-changer for web-based visualization".
+- Bokeh generates static JavaScript and JSON for you
+  from Python code, so  your users are magically able
+  to interact with your plots on a webpage without you
+  having to write a single line of native JS code.
+
+● Plotly Charts:
+@[https://plot.ly/]
+@[https://towardsdatascience.com/animated-information-graphics-4531de620ce7]
+
+● Graph Visualization: [[{ graph_networks ]]
+  - Gephi
+  - Cytoscape
+  - D3.js
+  - Linkurious.
+- The graph visualization tools usually offer ways of representing
+  graph structure and properties, interactive ways to manipulate those
+  and reporting mechanisms to extract and visualize value from the
+  information contained in them.
+[[}]]
+
+● JS Pivot Tables:
+@[https://pivottable.js.org/examples/]
+@[https://github.com/search?q=pivot+table]
+@[https://www.flexmonster.com/demos/pivot-table-js/]
+
+
+● See also:
+  - Web Technologies for Data visualization:
+@[http://www.oficina24x7.com/WebTechnologies/map.html?topics=data.visualization&showSearchMenu=false]
+
+
+● Orange GUI!!  
+@[https://orange.biolab.si/]
+- Open source machine learning and data visualization for novice and expert.
+- Interactive data analysis workflows with a large toolbox.
+  Perform simple data analysis with clever data visualization. Explore
+  statistical distributions, box plots and scatter plots, or dive deeper with
+  decision trees, hierarchical clustering, heatmaps, MDS and linear projections.
+  Even your multidimensional data can become sensible in 2D, especially with
+  clever attribute ranking and selections.
+
+
+
+
+
+
+
+
+[[}]]
+
+

@@ -1,0 +1,24 @@
+[[{data.open_data,data.geospatial,resource,01_PM.TODO]]
+● world.geo.json:
+GitHub - johan/world.geo.json: Annotated geo-json geometry files for the world
+@[https://github.com/johan/world.geo.json]
+[[}]]
+
+● GeoJSON/GeoPanda: [[{data.geospatial,pandas,low_code,01_PM.TODO]]
+Getting Started on Geospatial Analysis with Python, GeoJSON and GeoPandas - Twilio
+@[https://www.twilio.com/blog/2017/08/geospatial-analysis-python-geojson-geopandas.html]
+
+· GeoJSON is a format for representing geographic objects. It’s
+  different from regular JSON because it supports geometry types, such
+  as: Point, LineString, Polygon, MultiPoint, MultiLineString,
+  MultiPolygon, and GeometryCollection.
+· Using GeoJSON, making visualizations becomes suddenly easier, as
+  you’ll see in a later section. This is primarily because GeoJSON
+  allows us to store collections of geometric data types in one central
+  structure.
+· GeoPandas is a Python module used to make working with geospatial
+  data in python easier by extending the datatypes used by the Python
+  module pandas to allow spatial operations on geometric types.
+[[}]]
+
+

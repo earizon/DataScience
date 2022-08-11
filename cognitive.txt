@@ -1,0 +1,41 @@
+Cognitive Processing
+
+● NLP: [[{cognitive.nlp]]
+● Universal Transformer:
+@[https://arxiv.org/pdf/1807.03819.pdf] "White-paper"
+
+@[https://ai.googleblog.com/2018/08/moving-beyond-translation-with.html]
+Last year we released the Transformer, a new machine learning model that
+showed remarkable success over existing algorithms for machine translation
+and other language understanding tasks. Before the Transformer, most neural
+network based approaches to machine translation relied on recurrent neural
+networks (RNNs) which operate sequentially (e.g. translating words in a
+sentence one-after-the-other) using recurrence (i.e. the output of each step
+feeds into the next). While RNNs are very powerful at modeling sequences,
+their sequential nature means that they are quite slow to train, as longer
+sentences need more processing steps, and their recurrent structure also
+makes them notoriously difficult to train properly.
+
+In contrast to RNN-based approaches, the Transformer used no recurrence,
+instead processing all words or symbols in the sequence in parallel while
+making use of a self-attention mechanism to incorporate context from words
+farther away. By processing all words in parallel and letting each word
+attend to other words in the sentence over multiple processing steps, the
+Transformer was much faster to train than recurrent models. Remarkably, it
+also yielded much better translation results than RNNs. However, on smaller
+and more structured language understanding tasks, or even simple algorithmic
+tasks such as copying a string (e.g. to transform an input of “abc” to “abcabc
+”), the Transformer does not perform very well. In contrast, models that
+perform well on these tasks, like the Neural GPU and Neural Turing Machine,
+fail on large-scale language understanding tasks like translation.
+[[}]]
+
+
+● DeepDetect: 
+- cross-collaboration project.
+- Used by organizations like Airbus and Microsoft.
+- OOSS deep learning server based on Caffe, TensorFlow and XGBoost.
+- easy-to-use API for image classification, object detection, and
+  text and numerical data analysis.
+
+
