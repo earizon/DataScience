@@ -36,7 +36,7 @@
   2010 Spark paper                                   (Zahaira et al.)
   2010 The Revolution in Astronomy Education:        (Borne et al.)
        Data Science for the Masses
-  2010 A Taxonomy of Data Science (Mason & Wiggins)                   [[taxonomy]]
+  2010 A Taxonomy of Data Science (Mason & Wiggins)                   [[02_DOC_HAS.taxonomy]]
   2011 Data Science: What's in a nmae?              (Smith)
   2011 Data Lakes                                   (Dixon)
   2011 The Art of Data Science                      (Graham)
@@ -355,7 +355,7 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
   ndarray01.dtype        # Get data type
   ndarray02 = ndarray01
        .astype(np.int32) # type conversion
-                           Raises TypeError on error [[qa.error_control]]
+                           Raises TypeError on error [[{qa.error_control}]]
 
 •                        SLICING/INDEXING:
                          =================
@@ -408,7 +408,6 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
   (arrA > 0).sum          # Count numbers of bigger-than-zero values
   arrA.any()              # True if any member is True / non-zero
   arrA.all()              # True if all members are True/non-zero
-
 
 ● NUMPY UNIVERSAL OPERATIONS: new array applying 'opt' to each element
   @[https://docs.scipy.org/doc/numpy/reference/ufuncs.html]
@@ -587,7 +586,7 @@ REF: @[https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutoria
          np.array-'like' objects (pandas, np.matrix) must be converted first:
          Ex:
          a = pandas.DataFrame(np.random.rand(4,5), columns = list('abcde'))
-         b = np.matrix([[1,2],[3,4]])
+         b = np.matrix([ [1,2],[3,4] ])
          a_asarray = a.values      #   ←  Correct input to matplotlib
          b_asarray = np.asarray(b) #   ←  Correct input to matplotlib
 [[}]]
@@ -1626,7 +1625,7 @@ pueden descargarse e iniciarse de forma rápida
 - I am open to more ideas
 [[}]]
 
-● https://www.infoq.com/news/2021/05/pyodide-python-webassembly/  [[{0_PM.UX]]
+● https://www.infoq.com/news/2021/05/pyodide-python-webassembly/  [[{01_PM.UX]]
   Mozilla announced that Pyodide, a project aiming at providing a full
   Python data science stack running entirely in the browser, has become
   an independent community-driven project. Pyodide leverages the

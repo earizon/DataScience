@@ -1489,4 +1489,23 @@ ML: Ver "A new brain-inspired intelligent system can drive a car using only 19 c
 @[https://youtu.be/wAa358pNDkQ]
 [[}]]
 
+● NetWorkX:  analytics and rendering   [data.visualization][data.analytics][ui]
+https://networkx.org/documentation/stable/index.html
+- Python package for the creation, manipulation, and 
+  study of the structure, dynamics, and functions of complex networks.
+  - Gallery:
+  @[https://networkx.org/documentation/stable/auto_examples/index.html]
+
+ ºGraphViz Graph Visualizationº
+@[http://www.graphviz.org]
+http://www.graphviz.org/gallery/
+
+
+● Query Distributed Graph DB: db_engine.graph_db
+@[https://www.infoq.com/presentations/graph-query-distributed-execution/]
+
+● RocksDB has flexible tradeoffs between:
+  - Write-Amplification-Factor (WAF)
+  - Read-Amplification-Factor  (RAF)
+  - Space-Amplification-Factor (SAF)
 

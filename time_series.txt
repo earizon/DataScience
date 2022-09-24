@@ -1,7 +1,7 @@
 Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
 ====================
 (by Nabih Ibrahim Bawazir)
-● List of Time Series Methods:  [[{taxonomy]]
+● List of Time Series Methods:  [[{02_DOC_HAS.taxonomy]]
  1. Autoregression (AR)
  2. Moving Average (MA)
  3. Autoregressive Moving Average (ARMA)
