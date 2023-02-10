@@ -202,7 +202,7 @@ million entities mapped into a 200-dimensional vector space. Facebook hopes that
 their work "encourages practitioners to release and experiment with even larger data sets."
 [[}]]
 
-● TorchServe: [[{mlops,standards,model.sharing,persistence,cognitive,low_code,text_processing,k8s,]]
+● TorchServe: [[{mlops,standards,model.sharing,persistence,low_code,text_processing,k8s,QA.UX,]]
 @[https://aws.amazon.com/es/about-aws/whats-new/2020/04/introducing-torchserve/]
 
 - Colaboración de AWS y Facebook como parte de  PyTorch.

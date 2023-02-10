@@ -4,10 +4,8 @@
 ● Numpy cheatsheet:
 https://cdn-images-1.medium.com/max/1000/1*qvSMwAWOd4cfett-57FUHA.jpeg
 
-● Super cheat-sheet ML pdf: 
+● Super cheat-sheet ML pdf:
 @[./BecomingHumanCheatSheets.pdf]
-
-● nlp: ontology101.pdf @[./ontology101.pdf]
 
 ● CITRIS (Center for Information Technology Research in the Interest of [[{101,data.mining,01_PM.TODO]]
   Society) está subiendo a su canal de Youtube los vídeos de las
@@ -156,7 +154,7 @@ For web scraping:
 
 
 ● Excellent Graphical Summary to Data Science
-https://www.linkedin.com/feed/update/urn:li:activity:6614480425756782592/ 
+https://www.linkedin.com/feed/update/urn:li:activity:6614480425756782592/
 
 ● NumPy@StackOverflow:
 @[https://stackoverflow.com/questions/tagged/numpy?tab=Votes]
@@ -167,30 +165,30 @@ https://www.linkedin.com/feed/update/urn:li:activity:6614480425756782592/
   - @[https://www.reddit.com/r/MachineLearning/]
   - @[https://www.datasciencecentral.com/]
     Industry's online resource for data practitioners.
-    From Statistics to Analytics to Machine Learning to AI, 
-  
+    From Statistics to Analytics to Machine Learning to AI,
+
   - @[https://towardsdatascience.com/]
-  
+
   - @[https://course.elementsofai.com/]
 
   - https://opendata.stackexchange.com/tags     Open Data Taxonomy
   - https://datascience.stackexchange.com/tags  Data Science Taxonomy
-  
+
   - @[http://arxiv.aiindex.org/]
-    ArXiv Monitor is a full paper search engine tool with the goal to automatically 
-    and continuously track technical metrics from papers published on arXiv. AI 
-    Progress monitor is intended to provides a high-level overview of AI progress 
+    ArXiv Monitor is a full paper search engine tool with the goal to automatically
+    and continuously track technical metrics from papers published on arXiv. AI
+    Progress monitor is intended to provides a high-level overview of AI progress
     across task, dataset, category, technical metrics and other relevant categories.
-  
+
   - @[https://ai.googleblog.com/]
     Latest news from Google AI.
-  
+
   - @[https://ai.google/tools/#developers]
   - Classification:
-    - @[https://www.w3.org/wiki/Lists_of_ontologies] 
+    - @[https://www.w3.org/wiki/Lists_of_ontologies]
     - Ontology (Aristoteles):
       @[http://classics.mit.edu/Aristotle/categories.1.1.html]
-  
+
     - Main classification of search types in Google according to Google Trends:
       - arts and entretainement  - hobbies+and+leasure   - Reference
       - autos vehicles           - home+and+garden       - Science
@@ -202,19 +200,19 @@ https://www.linkedin.com/feed/update/urn:li:activity:6614480425756782592/
       - food+and+drink           - people+and+society
       - games                    - pets+and+animals
       - health                   - Real State
-  
+
   - @[https://docs.python.org/3.6/library/statistics.html]
     Basic statistics module included in Python 3.4+.
     NumPy/SciPy is prefered for advanced use-cases.
     Includes functions for:
-    - averages⅋"middles": 
+    - averages⅋"middles":
       Arithmetic|Harmonic mean, (Low|High)Median , Mode/most-common-value
     - Measures of spread:
       (population|)standard deviation, (population|) variance
-  
+
   - Fundations Video Tutorials by Brandon Rohrer
     @[https://www.youtube.com/user/BrandonRohrer]
-  
+
 ● BIBLIOGRAPHY:
   - Probability:
     Statistics, third edition, by Freedman, Pisani, and Purves,
@@ -251,11 +249,11 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
 
 ● Feature Importance Is All You Need | Kaggle
   https://www.kaggle.com/louise2001/rapids-feature-importance-is-all-you-need
-   RAPIDS is a suite of packages developed out of NVIDIA, that intends 
-  to execute end-to-end data science and analytics pipelines entirely 
-  on GPUs. The goal of this notebook is to perform univariate 
-  regressions of each target on every feature, namely 872 x 206 = 
-  179632 logistic models to estimate separately. The good news ? This 
+   RAPIDS is a suite of packages developed out of NVIDIA, that intends
+  to execute end-to-end data science and analytics pipelines entirely
+  on GPUs. The goal of this notebook is to perform univariate
+  regressions of each target on every feature, namely 872 x 206 =
+  179632 logistic models to estimate separately. The good news ? This
   is possible within minutes with RAPIDS !
 
 
@@ -273,22 +271,22 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
 ● octosql: query tool that allows you to join, analyse and transform data  [[01_PM.low_code]]
            from multiple sources
   https://github.com/cube2222/octosql
- ... streaming sources and file formats using SQL.Problems OctoSQL 
-  SolvesYou need to join / analyze data from multiple datasources.Think 
-  of enriching an Excel file by joining it with a PostgreSQL 
-  database.You need stream aggregates over time, with live output 
-  updates.Think of a live-updated leaderboard with cat images based on 
-  a "like" event stream.You need aggregate streams per time window, 
-  with live output updates.Think of a unique user count per hour, per 
+ ... streaming sources and file formats using SQL.Problems OctoSQL
+  SolvesYou need to join / analyze data from multiple datasources.Think
+  of enriching an Excel file by joining it with a PostgreSQL
+  database.You need stream aggregates over time, with live output
+  updates.Think of a live-updated leaderboard with cat images based on
+  a "like" event stream.You need aggregate streams per time window,
+  with live output updates.Think of a unique user count per hour, per
   country live summary.
   https://github.com/cube2222/octosql/releases/tag/v0.3.0
-● Hardware Acceleration for Big Data Analytics: 
-  How Enterprises Can Achieve Better Performance? 
+● Hardware Acceleration for Big Data Analytics:
+  How Enterprises Can Achieve Better Performance?
  https://medium.com/ntt-disruption/hardware-acceleration-for-big-data-analytics-how-enterprises-can-achieve-better-performance-d473ca721f28
 
 ● Databrick Mlflow
   https://www.infoq.com/news/2020/07/mlflow-linux-foundation/
-● voila-dashboards/voila: Voilà turns Jupyter notebooks into 
+● voila-dashboards/voila: Voilà turns Jupyter notebooks into
   standalone web applications https://github.com/voila-dashboards/voila 
 
 ● Tensorflow on edge, or – Building a "smart" security camera with a Raspberry Pi   [IoT]
@@ -297,7 +295,7 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
   Object Detection in RPi:
   https://github.com/EdjeElectronics/TensorFlow-Object-Detection-on-the-Raspberry-Pi
   A tutorial showing how to set up TensorFlow's Object Detection API on the Raspberry Pi
- 
+
 ● What's new spark 3
   https://www.infoq.com/news/2020/07/spark-ai-summit-performance-gpu/
 
@@ -305,9 +303,9 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
   https://www.influxdata.com/
 
 ● https://blog.scottlogic.com/2020/01/03/webassembly-sudoku-solver.html
-  Real time sudoku solver from webcam image using WebAssembly, OpenCV 
+  Real time sudoku solver from webcam image using WebAssembly, OpenCV
   and TensorFlow.js.
-  OpenCV is used to clean data before being injected to Tensorflow 
+  OpenCV is used to clean data before being injected to Tensorflow
   for number recognition and localization into 2D.
   Finally Rust/WebAssemble solves the puzzle.
 
@@ -324,7 +322,7 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
   pattern classification, regression and segmentation problems in
   high-energy physics, cosmology and climate science.
 
- 
+
 ● Better Language Models and Their Implications</span>
 @[https://openai.com/blog/better-language-models/]
   We’ve trained a large-scale unsupervised language model which
@@ -332,7 +330,7 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
   performance on many language modeling benchmarks, and performs
   rudimentary reading comprehension, machine translation, question
   answering, and summarization—all without task-specific training.
- 
+
 ● https://m.europapress.es/ciencia/laboratorio/noticia-algoritmos-son-capaces-descubrir-conocimiento-cientifico-oculto-20190704110622.html
 ● https://www.infoq.com/news/2019/07/google-dlc-beta-release/ [[{cloud,devops}]]
   Google Releases Deep Learning Containers into Beta
@@ -348,20 +346,11 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
   https://www.nytimes.com/interactive/2019/04/16/opinion/facial-recognition-new-york-city.html
   Related [ES]:
   http://www.redusers.com/noticias/investigadores-belgas-descubren-metodo-enganar-camaras-ia/
- 
-● https://www.infoq.com/news/2019/08/Baidu-OpenSources-ERNIE/ [[{natural_language,02_doc_has.comparative]]
-  Baidu Open-Sources ERNIE 2.0, Beats BERT in Natural Language Processing Tasks
-  In a recent blog post, Baidu, the Chinese search engine and
-  e-commerce giant, announced their latest open-source, natural
-  language understanding framework called ERNIE 2.0. They also shared
-  recent test results, including achieving state-of-the art (SOTA)
-  results and outperforming existing frameworks, including Google’s
-  BERT and XLNet in 16 NLP tasks in both Chinese and English. [[}]]
 
 ● https://ml-cheatsheet.readthedocs.io
 
 ● Detailed evaluations of different secuencials algorithms  can be found on:
-  Comparative Study of Techniques for Large-Scale Feature Selection, 
+  Comparative Study of Techniques for Large-Scale Feature Selection,
   F.Ferri, P. Pudil, M. Hatef and J. Kittler, pages 403-413, 1994
 
 ● A Study of Cross-Validation and Bootstrap for Accuracy Estimation and
@@ -375,13 +364,13 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
 ● Analysis of Variance of Cross-Validation Estimators of the
   Generalization Error, M.Markatou, H.Tian, S.Biswas, and G.M.
   Hripcsak, Journal of Machine Learning Research, 6: 1127-1168, 2005
-  
+
 ● Improvements on Cross-validation: The .632+ Bootstrap Method, B.
   Efron and R. Tibshirani, Journal of the American Statistical
   Association, 92 (438): 548-560, 1997
 
 ● Model evaluation and hyper-params
-  Error Estimation When Using Cross-validation for Model Selection, 
+  Error Estimation When Using Cross-validation for Model Selection,
   BMC Bioinformatics, S. Varna and R. Simon, 7(1):91, 2006
 
 ● https://www.infoq.com/news/2019/11/alexa-genetic-deep-learning/
@@ -401,12 +390,12 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
   visualization of large amounts of data: today, more than 1 exabyte
   (1,000,000,000 gigabyte) are stored in ROOT files. The Higgs was
   found with ROOT!
-  
+
   ROOT comes with an incredible C++ interpreter, ideal for fast
   prototyping. Don’t like C++? ROOT integrates super-smoothly with
   Python thanks to its unique dynamic and powerful Python ⇄ C++
   binding. Or what about using ROOT in a Jupyter notebook?
-  
+
   https://blog.llvm.org/posts/2020-12-21-interactive-cpp-for-data-science/
 
 ● Spark "bullet points":
@@ -428,13 +417,6 @@ https://techdecoded.intel.io/resources/the-role-and-potential-of-cpus-in-deep-le
   a TensorFlow-based implementation on GPU.
 [[}]]
 
-● Google Open-Sources Token-Free Language Model ByT5
-  https://www.infoq.com/news/2021/07/google-byt5-nlp/
-  Google Research has open-sourced ByT5, a natural language processing
-  (NLP) AI model that operates on raw bytes instead of abstract tokens.
-  Compared to baseline models, ByT5 is more accurate on several
-  benchmark tasks and is more robust to misspellings and noise.
-
 ● Towards Data Science: Marcleo Rovai:
   https://towardsdatascience.com/@rovai
 
@@ -443,79 +425,79 @@ https://techdecoded.intel.io/resources/the-role-and-potential-of-cpus-in-deep-le
 
 ● MIT Researchers Open-Source Approximate Matrix Multiplication Algorithm MADDNESS [[{scalability]]
   https://www.infoq.com/news/2021/10/mit-matrix-multiplication/ 
-  Matrix multiplication is a fundamental operation in machine 
-  learning, and is one of the most time-consuming, due to the extensive 
-  use of multiply-add instructions. Because GPU and TPU chips can 
-  execute many multiply-adds in parallel, they perform matrix 
-  multiplication faster than CPUs, making them attractive for ML 
-  applications; however, they may be too expensive or even unavailable 
-  for researchers with a limited budget, or in resource-constrained 
-  applications like IoT. Thus, many researchers have investigated AMM 
-  algorithms, which trade off accuracy of matrix multiplication for 
+  Matrix multiplication is a fundamental operation in machine
+  learning, and is one of the most time-consuming, due to the extensive
+  use of multiply-add instructions. Because GPU and TPU chips can
+  execute many multiply-adds in parallel, they perform matrix
+  multiplication faster than CPUs, making them attractive for ML
+  applications; however, they may be too expensive or even unavailable
+  for researchers with a limited budget, or in resource-constrained
+  applications like IoT. Thus, many researchers have investigated AMM
+  algorithms, which trade off accuracy of matrix multiplication for
   speed.
-  
-    The team described MADDNESS and a set of experiments in a paper 
-  presented at the recent International Conference on Machine Learning 
-  (ICML). Unlike many other AMM algorithms, MADDNESS uses no 
-  multiply-add operations. Instead, MADDNESS uses a set of efficient 
-  learned hash functions that achieve coding rates of 100GB/second 
-  using only one CPU thread. The hash functions map input data to an 
-  index into a lookup table that contains pre-computed dot-products. 
-  Although the algorithm does introduce some output error, the authors 
-  show the algorithm has a theoretical upper-bound on the error, which 
-  can be traded-off against speed. In a set of experiments comparing 
-  the performance of MADDNESS against other algorithms in an image 
-  classifier, the researchers found that MADDNESS has a better 
-  speed-accuracy tradeoff, and achieves "virtually the same accuracy as 
+
+    The team described MADDNESS and a set of experiments in a paper
+  presented at the recent International Conference on Machine Learning
+  (ICML). Unlike many other AMM algorithms, MADDNESS uses no
+  multiply-add operations. Instead, MADDNESS uses a set of efficient
+  learned hash functions that achieve coding rates of 100GB/second
+  using only one CPU thread. The hash functions map input data to an
+  index into a lookup table that contains pre-computed dot-products.
+  Although the algorithm does introduce some output error, the authors
+  show the algorithm has a theoretical upper-bound on the error, which
+  can be traded-off against speed. In a set of experiments comparing
+  the performance of MADDNESS against other algorithms in an image
+  classifier, the researchers found that MADDNESS has a better
+  speed-accuracy tradeoff, and achieves "virtually the same accuracy as
   exact multiplication" while being 10x faster.
 [[}]]
 
-● https://blog.ephorie.de/why-r-for-data-science-and-not-python 
+● https://blog.ephorie.de/why-r-for-data-science-and-not-python
 
 ● R vs python, by Keith McNulty
 Expert Mathematician, Applied Statistician, Psychometrician, Data Scientist
-   If you are new to programming and If your priority is deeply 
-  understanding statistical relationships, you may wish to start with 
-  #rstats. If your priority is running predictions of a phenomenon with 
-  a minimum amount of code you may wish to start with #python 
-  especially if you are already familiar with object-oriented 
-  principles. But if you are committed, over time eventually you’ll 
-  learn both because they are both very interesting and capable 
+   If you are new to programming and If your priority is deeply
+  understanding statistical relationships, you may wish to start with
+  #rstats. If your priority is running predictions of a phenomenon with
+  a minimum amount of code you may wish to start with #python
+  especially if you are already familiar with object-oriented
+  principles. But if you are committed, over time eventually you’ll
+  learn both because they are both very interesting and capable
   languages. #datascience #analytics #peopleanalytics #data Comment
-  
+
 Comments:
  William Ferreira
 ... R is a purpose designed environment for statistical modelling, inference and many other related things.
- R also happens to be a programming language, and Turing-complete, but not a general purpose one, 
+ R also happens to be a programming language, and Turing-complete, but not a general purpose one,
 having been designed to work within the R framework; a bit like VBA being associated with Excel and other
-MS applications. 
+MS applications.
 
 Holger K. von Jouanne-Diedrich
 I am a professor ... I don't agree. When you want to learn data science with Python you basically
 have to learn two languages, with R only one because it was designed for that matter.
-More here in my blog post: https://blog.ephorie.de/why-r-for-data-science-and-not-python 
+More here in my blog post: https://blog.ephorie.de/why-r-for-data-science-and-not-python
 
- Sergey Mastitsky Data Science Lead at Aviva 
-Especially with technologies like Docker, which allow Data Scientists to develop their applications in 
+ Sergey Mastitsky Data Science Lead at Aviva
+Especially with technologies like Docker, which allow Data Scientists to develop their applications in
 pretty much any language they are comfortable with, and then pass on to engineers, who will know what
 to do next.
 
 Valeriy M.
 Machine Learning | Data science | Systematic Trading | Forecasting Innovation | Industry 4.0 | Advanced Analytics | Time-series
-  IF “UNDERSTAND THE PHENOMENON” MEANS FITTING PARAMETRIC MODEL THEN YES. 
+  IF “UNDERSTAND THE PHENOMENON” MEANS FITTING PARAMETRIC MODEL THEN YES.
   IT IS CALLED STATISTICS, R IS CERTAINLY BETTER FOR STATISTICS BECAUSE IT WAS DEVELOPED BY STATISTICIANS FOR STATISTICIANS..
   BUT FUNDAMENTALLY IT IS NOT ABOUT WHICH LANGUAGE TO USE. IT IS ABOUT MAKING QUALITY PREDICTIONS.
-  MACHINE LEARNING MOVED PAST PARAMETRIC MODELS AND IS USING DATA DRIVEN PREDICTIONS BECAUSE 
+  MACHINE LEARNING MOVED PAST PARAMETRIC MODELS AND IS USING DATA DRIVEN PREDICTIONS BECAUSE
   THE MAIN GOAL OF ANY MODEL IS NOT TO FIT A CONTRIVED PARAMETRIC MODEL TO THE DATASET,
   BUT TO PREDICT WELL OUT OF SAMPLE TO GENERATE VALUE.
-  
+
    ALL PARAMETRIC MODELLING DOES IS GIVING FALSE SENSE OF "MASTERING THE DATA" BY FITTING GAUSSIAN AND
   OTHER CLASSICAL DISTRIBUTIONS TO DATA THAT, UNLESS BEING SYNTHETIC, NEVER FOLLOWS SUCH DISTRIBUTIONS.
-   AND THE RESULT IS MODEL MISMATCH RESULTING IN INCORRECT AND BIASED PREDICTIONS. 
-    SO WOULD ONE REALLY PREFER TO "UNDERSTAND" THE DATA (AS IN FITTING PARAMETRIC MODEL) 
+   AND THE RESULT IS MODEL MISMATCH RESULTING IN INCORRECT AND BIASED PREDICTIONS.
+    SO WOULD ONE REALLY PREFER TO "UNDERSTAND" THE DATA (AS IN FITTING PARAMETRIC MODEL)
   OR HAVE MUCH BETTER PREDICTIONS THAT GENERATE BUSINESS VALUE?
-  DEPENDS ON PERSPECTIVE, “UNDERSTAND” WORKS WELL IN SCHOOL STATISTICS 1.01 CLASSES AND ACADEMIA, 
-  BUT IS NOT VERY USEFUL TO GENERATE BUSINESS VALUE VIA BETTER PREDICTIONS. 
+  DEPENDS ON PERSPECTIVE, “UNDERSTAND” WORKS WELL IN SCHOOL STATISTICS 1.01 CLASSES AND ACADEMIA,
+  BUT IS NOT VERY USEFUL TO GENERATE BUSINESS VALUE VIA BETTER PREDICTIONS.
 
  Rami KrispinData Science Manager at Apple
 I find this statement fundamentally wrong, I am doing both descriptive and predictive solely with R
@@ -526,7 +508,7 @@ for focusing on one out the two.
 Adrian Olszewski
 Principal Biostatistician at 2KMM CRO, Clinical Research with R
  My field is a good example. The community didn't care and overslept one of the most prestigious
-and beneficial industries the Clinical Research (drug evaluation and approval), 
+and beneficial industries the Clinical Research (drug evaluation and approval),
 )LETTING SAS AND R TO CONSTITUTE TWO DE FACTO INDUSTRY STANDARDS (SAS - the absolute majority, R - supportive yet,
  as it still lacks a few key features).
  Actually, a similar thing happens to R. SAS has all the stuff required by the industry,
@@ -534,42 +516,42 @@ so people choose it rather than bringing the stuff to R. Luckily, as R was prese
 they started contributing a lot recently, yet a lot is still to be done.
 
 Jason Cherry
-...As time has gone on the divergence of analytical capabilities between the two languages has decreased. 
+...As time has gone on the divergence of analytical capabilities between the two languages has decreased.
 I will say that ggplot is still way better than anything comparable dataviz-wise in Python,
 but those cases are rarer and rarer.
 For me, I chose Python because of the libraries that exist for it are more general-purpose.
  I can not only build a fully-functioning analytical solution in Python, but I can wrap it in
-a REST API and spin that up more easily as a containerized solution that plays nice with other 
+a REST API and spin that up more easily as a containerized solution that plays nice with other
 functionality it may need to interact with.
  R has some functionality here too, but it's lagging behind enough that I really do prefer Python
 in a setting where I'm working on something that could have a pipeline to production, and/or
 I'm working with software engineers at some point of the project.
 
-Alberto Almuiña 
-There are also some time series methods that are not implemented in Python, such as the 
+Alberto Almuiña
+There are also some time series methods that are not implemented in Python, such as the
 multiple seasonal decomposition from the forecast package and others.
 
-Adrian Olszewski: 
+Adrian Olszewski:
 it's about numerous key tools I use every day at work... I maintain a list
 (it's outdated, have to add new stuff soon):
-https://www.quora.com/What-domain-specific-statistical-capabilities-exist-in-R-but-do-not-in-Python/answer/Adrian-Olszewski-1?ch=10&share=a32559e2&srid=MByz 2 
+https://www.quora.com/What-domain-specific-statistical-capabilities-exist-in-R-but-do-not-in-Python/answer/Adrian-Olszewski-1?ch=10&share=a32559e2&srid=MByz 2
 
 Keith McNulty Expert Mathematician, Applied Statistician, Psychometrician, Data Scientist
 In Python last time I looked you can NOT do proportional odds regression for the purposes
 of inference in stats-models although they do have a version for predictive classification.
  And mixed GLMs don’t exist. Also major limitations on tests of significant coefficient
-difference like the wald test. Also no packages for effect sizes. 
-  R is still working towards a mature consistent framework for predictive analytics. 
+difference like the wald test. Also no packages for effect sizes.
+  R is still working towards a mature consistent framework for predictive analytics.
 The tidymodels ecosystem is making progress but it is not at the Python level yet.
 
 ● ML: Taxonomy https://juliastats.org/
 
-● ML: La nueva y sorprendente IA de Facebook es capaz de transcribir de voz a texto sin haber sido entrenada 
+● ML: La nueva y sorprendente IA de Facebook es capaz de transcribir de voz a texto sin haber sido entrenada
   con transcripciones
   https://www.xataka.com/robotica-e-ia/nueva-sorprendente-ia-facebook-capaz-transcribir-voz-a-texto-haber-sido-entrenada-transcripciones 
 
-  Para ello, el sistema se vale de una GAN (red generativa 
-  antagónica) que, de acuerdo a Facebook, compite de tú a tú con los 
+  Para ello, el sistema se vale de una GAN (red generativa
+  antagónica) que, de acuerdo a Facebook, compite de tú a tú con los
   mejores sistemas supervisados de hace unos años.
 
 ______________________________
@@ -582,20 +564,17 @@ ______________________________
 
 ● Microsoft Releases AI Training Library ZeRO-3 Offload
   https://www.infoq.com/news/2021/04/microsoft-zero3-offload/ 
-  Microsoft recently open-sourced ZeRO-3 Offload, an extension of their 
-  DeepSpeed AI training library that improves memory efficiency while 
-  training very large deep-learning models. ZeRO-3 Offload allows users 
-  to train models with up to 40 billion parameters on a single GPU and 
+  Microsoft recently open-sourced ZeRO-3 Offload, an extension of their
+  DeepSpeed AI training library that improves memory efficiency while
+  training very large deep-learning models. ZeRO-3 Offload allows users
+  to train models with up to 40 billion parameters on a single GPU and
   over 2 trillion parameters on 512 GPUs.
-
-● Ml, nlp: Google Open-Sources Trillion-Parameter AI Language Model Switch Transformer
-  https://www.infoq.com/news/2021/02/google-trillion-parameter-ai/
 
 ● ML: amrrs/30-seconds-of-r-code: Collection of small base-R expressions (r snippets)
   https://github.com/amrrs/30-seconds-of-r-code
 
-● Text2Code: A Jupyter extension to convert English text to python code 
-  https://www.marktechpost.com/2020/09/13/text2code-a-jupyter-extension-to-convert-english-text-to-python-code/ 
+● Text2Code: A Jupyter extension to convert English text to python code
+  https://www.marktechpost.com/2020/09/13/text2code-a-jupyter-extension-to-convert-english-text-to-python-code/
 
 ● DebugEverything
  https://blog.debugeverything.com/virtual-environments-with-python-virtualenv/
@@ -618,9 +597,9 @@ ______________________________
   library contributors - Javier Albert and Irene Teinemaa, and to Noa
   Barbiro and Dima Goldenberg for sharing!
   𝐋𝐢𝐜𝐞𝐧𝐬𝐞: Apache 2 Documentation:
-  https://lnkd.in/gPYUm3DZ Source Code: 
+  https://lnkd.in/gPYUm3DZ Source Code:
   https://lnkd.in/ghGTMYZV
-  Examples: 
+  Examples:
   https://lnkd.in/gdsQDyxB
   https://booking.ai/#machinelearning #causalinference #experimentation #ml #datascience #datascientist #h2o #pyspark
 
@@ -632,9 +611,6 @@ ______________________________
 ● Anomaly detection: ML: Screenshot (29 sept. 2021 21:52:23)
   file:///tmp/mozilla_earizon0/Screenshot_20210929-215223.png
 
-● https://github.com/will-thompson-k/tldr-transformers
-  The "tl;dr" on a few notable papers on Transformers and modern NLP.
-....
 ● Una inteligencia artificial refuta cinco conjeturas matemáticas sin ayuda humana
   https://www.lavanguardia.com/tecnologia/actualidad/20210525/7477912/inteligencia-artificial-refuta-conjeturas-matematicas-ayuda-humana.html
 
@@ -644,7 +620,7 @@ ______________________________
   dataset types: Tables, networks, spatial (fileds/continuos, geometry/position)
 
 
-● Hasta AWS se pasa al low-code: 
+● Hasta AWS se pasa al low-code:
   Workflow Studio es su primera herramienta de desarrollo de bajo código
 https://www.xataka.com/pro/aws-se-pasa-al-low-code-workflow-studio-su-primera-herramienta-desarrollo-codigo
 
@@ -687,37 +663,6 @@ https://www.xataka.com/pro/aws-se-pasa-al-low-code-workflow-studio-su-primera-he
 
 ● https://media-exp1.licdn.com/dms/image/C5622AQHl_03AIXIH2A/feedshare-shrink_480/0/1658555003262?e=1661990400&v=beta&t=IHb6CXAmfVpviXA7NCKgMf7gQXo0s0OaAHXV_CybOqg
 
-● ML Meta Open-Sources 175 Billion Parameter AI Language Model OPT
-https://www.infoq.com/news/2022/06/meta-opt-175b/ 
-The model was trained on a dataset containing 180B tokens and
-exhibits performance comparable with GPT-3, while only requiring
-1/7th GPT-3's training carbon footprint.The release was announced in
-a blog post written by Meta researchers Susan Zhang, Mona Diab, and
-Luke Zettlemoyer. To help promote open and reproducible research in
-AI, Meta has released not only the code and trained model weights,
-but also a full operational logbook documenting challenges
-encountered during the training process. The model is released under
-a non-commercial license and is intended for use by researchers
-"affiliated with organizations in government, civil society, and
-academia" as well as industry researchers. 
-The Transformer deep-learning architecture has become the de-facto
-standard for language models, and researchers have achieved
-impressive results by increasing the size of both the models and the
-training datasets. Much of the research has focused on
-auto-regressive decoder-only models, such as GPT-3 and PaLM, which
-can perform as well as the average human on many natural language
-processing (NLP) benchmarks. Although some research organizations,
-such as EleutherAI, have made their trained model weights available,
-most commercial models are either completely inaccessible to the
-public, or else gated by an API. This lack of access makes it
-difficult for researchers to gain insight into the cause of known
-model performance problem areas, such as toxicity and bias.
-
-The OPT code and logbook are available on GitHub.
-
-● OpenAI Introduces InstructGPT Language Model to Follow Human Instructions
-https://www.infoq.com/news/2022/02/openai-instructgpt/ 
-
 ● PyTorch 1.10 Release Includes CUDA Graphs APIs, Compiler Improvements,
   and Android NNAPI Support
   https://www.infoq.com/news/2021/11/pytorch-release-cuda-android/
@@ -731,17 +676,17 @@ https://www.infoq.com/news/2022/02/openai-instructgpt/ 
   inference written in C++.[1] The Stan language is used to specify a
   (Bayesian) statistical model with an imperative program calculating
   the log probability density function.[1]
-  
+
   Named in honour of Stanislaw Ulam, pioneer of the Monte Carlo method.
-  
+
   Stan was created by a development team consisting of 34 members
   that includes Andrew Gelman, Bob Carpenter, Matt Hoffman, and Daniel
   Lee.
-  
+
   Interfaces
-  
+
   Stan can be accessed through several interfaces:
-  
+
       CmdStan    - command-line executable for the shell
       RStan      - integration with the R software environment, maintained
                    by Andrew Gelman and colleagues
@@ -750,16 +695,16 @@ https://www.infoq.com/news/2022/02/openai-instructgpt/ 
                    environment
       Stan.jl    - integration with the Julia programming language
       StataStan  - integration with Stata
-  
+
   @[https://mc-stan.org/]
-  
+
   Stan is a state-of-the-art platform for statistical modeling and
   high-performance statistical computation.
   - Use cases:
     - statistical modeling
     - data analysis
     - prediction in social, biological, physical sciences, engineering, and business.
-  
+
   Users specify log density functions in Stan's probabilistic programming language and get:
   - full Bayesian statistical inference with MCMC sampling (NUTS, HMC)
   - approximate Bayesian inference with variational inference (ADVI)
@@ -783,7 +728,7 @@ https://www.infoq.com/news/2022/02/openai-instructgpt/ 
   me da que la distribución del término independiente de mi regresión lineal
   va a ser normal. Entonces, Pyro responde: si es normal, la mejor media
   y desviación estándar que encuentro son tal y cual.
-  
+
   La segunda observación que me permito hacer es que la forma que adquiere la
   implementación de modelos en Pyro está muy alejada de la forma en que los
   plantearía un estadístico. Uno lee código en Stan o Jags y entiende lo
@@ -831,49 +776,6 @@ rule aggregate_and_plot:
         "envs/matplotlib.yaml"
     script:
         "scripts/plot.py"
-
-● NLTK: @[https://www.nltk.org/]  [[{cognitive.nlp]]
-Toolkit for building Python programs to work with human language data.
-- easy-to-use interfaces to over 50 corpora and lexical resources
-  (WordNet,...)
-- suite of text processing libraries for :
-  - classification
-  - tokenization
-  - stemming
-  - tagging
-  - parsing
-  - semantic reasoning
-- wrappers for industrial-strength NLP libraries
-- active discussion forum.
-    import nltk
-    sentence = """At eight o'clock on Thursday morning Arthur didn't feel very good."""
-    tokens = nltk.word_tokenize(sentence)     # ← ['At', 'eight', "o'clock", 'on', 'Thursday', 'morning',
-                                              #    'Arthur', 'did', "n't", 'feel', 'very', 'good', '.']
-    tagged = nltk.pos_tag(tokens)
-    tagged[0:6]                               # ← [('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'), ('on', 'IN'),
-                                                   ('Thursday', 'NNP'), ('morning', 'NN')]
-[[}]]
-
-● NLP Java Tools: [[{cognitive.nlp]]
-- OpenNLP  : text tokenization, part-of-speech tagging, chunking, etc. (tutorial)
-- Stanford : probabilistic natural language parsers, both highly optimized PCFG*
-  Parser     and lexicalized dependency parsers, and a lexicalized PCFG parser
-- TPT      : Standford (T)opic (M)odelling (T)oolbox: CVB0 algorithm, etc.
-- ScalaNLP : Natural Language Processing and machine learning.
-- Snowball : stemmer, (C and Java)
-- MALLET   : statistical natural language processing, document classification,
-             clustering, topic modeling, information extraction, and other machine
-            learning applications to text.
-- JGibbLDA : LDA in Java
-- Lucene   : (Apache) stop-words removal and stemming
-
-See also:
-JAVA RNN How-to
-- @[https://www.programcreek.com/2017/07/recurrent-neural-network-example-ai-programmer-1/]
-- @[https://www.programcreek.com/2017/07/build-an-ai-programmer-using-recurrent-neural-network-2/]
-- @[https://www.programcreek.com/2017/07/build-an-ai-programmer-using-recurrent-neural-network-3/]
-- @[https://www.programcreek.com/2017/02/different-types-of-recurrent-neural-network-structures/]
-[[}]]
 
 ● Dask.org: [[devops,scalability]]
    Dask's schedulers scale to thousand-node clusters and its
@@ -934,7 +836,7 @@ Acceptance as a top-level project in Apache::
   learning and predictive analytics platform that allows you to build machine
   learning models on big data and provides easy productionalization of those
   models in an enterprise environment.
-  
+
   H2O’s core code is written in Java. Inside H2O, a Distributed Key/Value store
   is used to access and reference data, models, objects, etc., across all nodes
   and machines. The algorithms are implemented on top of H2O’s distributed
@@ -947,26 +849,6 @@ Acceptance as a top-level project in Apache::
   See also:
   Understanding Titanic Dataset with H2O’s AutoML, DALEX, and lares library
   https://datascienceplus.com/understanding-titanic-dataset-with-h2os-automl-dalex-and-lares-library/
-
-● Transformer:
-Researchers at Google have developed a new deep-learning model called
-BigBird that allows Transformer neural networks to process sequences
-up to 8x longer than previously possible. Networks based on this
-model achieved new state-of-the-art performance levels on
-natural-language processing (NLP) and genomics tasks.
-
-@[https://www.infoq.com/news/2020/09/google-bigbird-nlp/]
-The Transformer has become the neural-network architecture of choice
-for sequence learning, especially in the NLP domain. It has several
-advantages over recurrent neural-network (RNN) architectures; in
-particular, the self-attention mechanism that allows the network to
-"remember" previous items in the sequence can be executed in parallel
-on the entire sequence, which speeds up training and inference.
-However, since self-attention can link (or "attend") each item in the
-sequence to every other item, the computational and memory complexity
-of self-attention is O(n^2), where n is the maximum sequence length
-that can be processed. This puts a practical limit on sequence
-length, around 512 items, that can be handled by current hardware.
 
 ● AMD ROCm:
 @[https://rocm.github.io/]
@@ -1052,22 +934,22 @@ https://www.infoq.com/news/2019/04/Google-Document-Understanding
 ● Insights into text data:
   OReilly Text Analysis for Business Analytics with Python
   Extracting Insight from Text Data, Walter Paczkowski, Ph.D., June 12, 2019
-""" Unlike well-structured and organized numbers-oriented data of the 
-  pre-Internet era, text data are highly unstructured and chaotic. Some 
-  examples include: survey verbatim responses, call center logs, field 
-  representatives notes, customer emails, of online chats, warranty 
-  claims, dealer technician lines, and report orders.  Yet, they are 
-  data, a structure can be imposed, and they must be analyzed to 
-  extract useful information and insight for decision making in areas 
-  such as new product development, customer services, and message 
+""" Unlike well-structured and organized numbers-oriented data of the
+  pre-Internet era, text data are highly unstructured and chaotic. Some
+  examples include: survey verbatim responses, call center logs, field
+  representatives notes, customer emails, of online chats, warranty
+  claims, dealer technician lines, and report orders.  Yet, they are
+  data, a structure can be imposed, and they must be analyzed to
+  extract useful information and insight for decision making in areas
+  such as new product development, customer services, and message
   development.
-  
-  ... This course will show you how to work with text data to extract 
-  meaningful insight such as sentiments (positive and negative) about 
-  products and the company itself, opinions, suggestions and 
-  complaints, customer misunderstandings and confusions, and 
+
+  ... This course will show you how to work with text data to extract
+  meaningful insight such as sentiments (positive and negative) about
+  products and the company itself, opinions, suggestions and
+  complaints, customer misunderstandings and confusions, and
   competitive and positions.
-  
+
   By the end of this live, hands-on, online course, you’ll understand:
   - the unstructured nature of text data, including the concepts of a document and a corpus
   - the issues involved in preparing text data for analysis, including data
@@ -1077,7 +959,7 @@ https://www.infoq.com/news/2019/04/Google-Document-Understanding
   - the very important Singular Value Decomposition (SVD) of a document-term matrix (DTM)
   - how to extract meaning from a DTM: keywords, phrases, and topics
   - which Python packages are used for text analysis, and when to use each
-  
+
   And you’ll be able to:
   - impose structure on text data
   - use text analysis tools to extract keywords, phrases, and topics from text data
@@ -1121,7 +1003,7 @@ Alpine Data Labs developing distributed machine learning algorithms
 for predictive analytics on Hadoop.
 [[}]]
 
-● Approximate Nearest Neighbour: 
+● Approximate Nearest Neighbour:
 https://www.infoq.com/news/2019/05/bing-nns-algorithm-open-sourced/
 
 Microsoft's latest contribution to open source, Space Partition Tree
@@ -1195,9 +1077,6 @@ with additional training data, PPLM uses a separate attribute model that can eva
 LM's output for sentiment or topic; this model is used to control the text produced by the
 LM. A strength parameter can tune how much the attribute model adjusts the LM output.
 According to Uber's researchers,
-
-● NLP with Hadoop:
-  http://www.datacommunitydc.org/blog/2013/05/nlp-and-big-data-using-nltk-and-hadoop-talk-overview
 
 ● Cerebras largest computer chips  [[hardware.year.2019]]
 https://www.bbc.com/news/technology-49395577
@@ -1456,7 +1335,7 @@ https://www.xataka.com/medicina-y-salud/deepmind-acaba-dar-salto-gigante-para-re
 [[}]]
 
 ● Adversarial Machine Learning Introduction[[{ml.unsupervised,01_PM.TODO]]
-Adversarial Machine Learning: una introducción. 
+Adversarial Machine Learning: una introducción.
 ¿Motivo de preocupación? BBVA Next Technologies
 @[https://www.bbvanexttechnologies.com/adversarial-machine-learning/]
 [[}]]
@@ -1491,7 +1370,7 @@ ML: Ver "A new brain-inspired intelligent system can drive a car using only 19 c
 
 ● NetWorkX:  analytics and rendering   [data.visualization][data.analytics][ui]
 https://networkx.org/documentation/stable/index.html
-- Python package for the creation, manipulation, and 
+- Python package for the creation, manipulation, and
   study of the structure, dynamics, and functions of complex networks.
   - Gallery:
   @[https://networkx.org/documentation/stable/auto_examples/index.html]
@@ -1509,3 +1388,5 @@ http://www.graphviz.org/gallery/
   - Read-Amplification-Factor  (RAF)
   - Space-Amplification-Factor (SAF)
 
+● https://github.com/dr5hn/countries-states-cities-database
+World countries, states, regions, provinces, cities, towns in JSON, SQL, XML, YAML, and CSV. All Countries, States, Cities with ISO2, ISO3, Country Code, Phone Code, Capital, Native Language, Timezones, Latitude, Longitude, Region, Subregion, Flag Emoji, and Currency. #countries #states #cities

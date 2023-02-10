@@ -1,3 +1,15 @@
+●  Apropos:
+- Visit next Web site for a great experience:
+  https://earizon.github.io/txt_world_domination/viewer.html?payload=../DataScience/notes.txt
+
+- If you want to contribute to great gistory of this
+  document you can take the next flight to:
+@[https://www.github.com/earizon/DataScience]
+  Your commits and pull-request will be immortalized
+  in the Pantheon of the Unicode Gods.
+────────────────────────────────────────────────────────────────────────────────
+
+
 ● Data Science TimeLine: (by @faviovaz, @hiezelvazquez) [[{]]
   1943 Neural Nets                                    (McCulloch&Pitt)
   1948 A Mathematical Theory of Communication         (Shannon)
@@ -83,8 +95,7 @@ REF: @[https://www.cybertec-postgresql.com/en/data-science/]
   └────────────────────────────────────────────────────────────────────────┘
 
 ● DATA SCIENCE NOMENCLATURE: [[{01_PM.WiP]]
-SEGMENTATION: Part of the pre-processing where objects of interest are "extracted"
-              from background.
+- SEGMENTATION: pre-processing where objects of interest are "extracted" from background.
 
 FEATURE EXTRACTION: Process that takes-in a pattern and produces feature values.
     Number of features is virtually always chosen to be fewer than the total
@@ -105,22 +116,6 @@ SUBSET AND SUPERSET PROBLEM: Formally part of mereology, the study of part/whole
 RISK: Total spected cost of making a wrong classification/Decision
       (total spected cost = wrong-classification cost x probability of event)
 
-NLP vs NLU vs NL: [[{cognitive.nlp]]
-- NLP (Natural Language Processing)
-  broad term describing technics to "ingest what is said", break it down,
-  comprehend its meaning, determine appropriate action, and respond back
-  in a language the user will understand.
-- NLU (Natural Language Understanding)
-  much narrower part of NLP dealing with how to best handle unstructured inputs
-  and convert them into a structured form that a machine can understand
-  and act upon: handling mispronunciations, contractions, colloquialisms,...
-- NLG (Natural Language Generation).
-  "what happens when computers write language"
-  NLG processes turn structured data into text.
-
-  E.g.: A Chatbot is a full -middleware- application making use of NLP/NLU/NLG
-        as well as other resources like front-ends, backend databases, ...)
-[[}]]
 [[}]]
 
 ● MACHINE LEARNING SUMMARY: [[{ml.101,01_PM.WiP]]
@@ -212,8 +207,8 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
  └─ PREDICTION PHASE ─────────────────────────────────────────────────────────────────┘ [[}]]
 
 ● ML COMPARATIVE MATRIX  [[{ml.101]] (FORCIBELY INCOMPLETE BUT STILL PERTINENT)
-             ┌─·········· SUPERVISED: An external "teacher" provides a category label or cost 
-             · 
+             ┌─·········· SUPERVISED: An external "teacher" provides a category label or cost
+             ·
              · ┌─········ UNSUPERVISED: the system forms clusters or "natural groupings"
              · · ┌─······ PREDICTION TYPE: Category
              · · · ┌····· PREDICTION TYPE: Continuos
@@ -309,7 +304,7 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
 •                       NP.NDARRAY INITIALIZATION
   import numpy as np    =========================
   a=np.array([1,2,3])   # ← create  array. a.shape: (3, ), m.dtype: dtype('int64')
-  m=np.array([[1,2,3],  # ← create matrix. b.shape: (2,3) 
+  m=np.array([[1,2,3],  # ← create matrix. b.shape: (2,3)
               [3,4,6])
   np.zeros([10])        # ← create zero-initialized 1-dimensional ndarray
   np.ones ([10,10])     # ← create  one-initialized 2-dimensional ndarray
@@ -321,7 +316,7 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
   np.unique(a)          # ← Creates new array with NO repeated elements
 
 • Value-Range Creation (np.arange...):
-  np.arange(1, 10)    # ← Creates one-dimensional ndarray range 
+  np.arange(1, 10)    # ← Creates one-dimensional ndarray range
                           (similar to 'range' in standard Python )
   np.arange(-1,2,0.2) # ← creates 1d-array [-1, -0.8, ..., 1.8,   ]
                           using the algorithm similar to Python 'range':
@@ -337,7 +332,7 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
                           evenly distributed float random values
                           in range [0, 1)
   np.random.randint     # two-dimensional 3x4 ndarray
-     (2,8,size=(3,4))     with evenly distributed integer random 
+     (2,8,size=(3,4))     with evenly distributed integer random
                           values in range [2, 8)
   np.random.normal      # two-dimensional 3x3 ndarray with
      (3,1,size=(3,3)) )   element normally distributed random
@@ -379,7 +374,7 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
                             of A (same index) to the power of 2.
 
   C = np                  # C == multiplication of A-transposed x A
-  .matmul(ndA.T, ndA)     
+  .matmul(ndA.T, ndA)
   REF: @[https://docs.scipy.org/doc/numpy/reference/generated/numpy.matmul.html]
 
   np.where(A>0,True,False)# New (same shape)array with values True|False
@@ -387,13 +382,13 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
     .argmax()
   arrA = np.array([
            [1,2,3],
-           [9,8,7] 
+           [9,8,7]
          ])
   arrA.sort()             # For each row in ndarray, sort elements
                             (In place sort, replacing origina arrA)
                             array([
                               [1,2,3],
-                              [7,8,9] 
+                              [7,8,9]
                             ])
   B = np.sort(arrA)       # sort rows in new instance
   np.in1d(arrA, [1,3])    # Test if arrA values belong to [1,2,3]
@@ -448,7 +443,7 @@ NLP vs NLU vs NL: [[{cognitive.nlp]]
   np.where(cond, A, 0) # → array([1, 2, 0, 0])
 
 ● NUMPY NDARRAY SET OPERATIONS:
-  np.unique(arrA)   # Returns 1d-array of SORTED-and-UNIQUE values 
+  np.unique(arrA)   # Returns 1d-array of SORTED-and-UNIQUE values
                       array([1,2,3,7,8,9])
   np.in1d(A,B)     Check if elements in A are in B
   np.union1d(A,B)  Create union set of A, B
@@ -894,7 +889,7 @@ df3.NAME                                             # ←  Peek column by name
 df3['2009']                                          # ←  Peek column by key
 
 <hr/>
-<span xsmall>Conditional Filter</span>
+● Conditional Filter
                                                           Conditional Filte  .
 df3[df3["2010"] > 100000]                            # ←  Only rows with 2010 > 100000
                                                           NAME    2009    2010    2011
@@ -1124,19 +1119,19 @@ there are also helper modules like os, re, tqdm, or Path from pathlib.
 
 ● PyTables: [[{numpy.pytables,low_code,scalability,01_PM.WiP]]
 - Fill the gap left by NumPy/.. to manage large amounts of  hierarchical
-  datasets, providing a pythonic/numpy wrapper to (a subset of) the HDF5 
+  datasets, providing a pythonic/numpy wrapper to (a subset of) the HDF5
   library API.
 PyTables = powerful data mining/management features of HDF5
            with up to 2**62 rows per-table.
          + Python object orientation/introspection
          + NumPy
-         + Numexpr's high-performance manipulation of 
+         + Numexpr's high-performance manipulation of
            large-sets-of-objects organized in a grid-like structures.
          + On-flight data-compression (part of HDF5 actually)
 
 MAIN FEATURES:
-- Multidimensional+nested table cells: 
-  A table's column :=  values-with-any-number-of-dimensions (vs just SQL scalars) 
+- Multidimensional+nested table cells:
+  A table's column :=  values-with-any-number-of-dimensions (vs just SQL scalars)
                      | columns-made-of-other-columns (of different types)
 
 - Indexing support for columns
@@ -1144,13 +1139,13 @@ MAIN FEATURES:
 - Lazy-built-In-memory object tree replicating the underlying HDF5 file data structure.
 
 - Data compression: (Zlib, LZO, bzip2, Blosc).
-- High performance I/O: 
-- No 2GB file-size limit. 
-- Architecture-independent: 
+- High performance I/O:
+- No 2GB file-size limit.
+- Architecture-independent:
 
 - PyTable Object Tree:
-  - The different nodes in the object tree are instances of PyTables classes. 
-  - the most important types of classes are: 
+  - The different nodes in the object tree are instances of PyTables classes.
+  - the most important types of classes are:
     - Node  class: All nodes in a PyTables tree are instances of the Node class.
                    Parent class for groups ("directories") and leafs ("files"),
                    always accessed by name.
@@ -1160,7 +1155,7 @@ MAIN FEATURES:
     - Leaf  class: Node descendant, are containers for actual data (can NOT contain
                    further groups or leaves). Children class types include:
                    "Sort of UNIX file".
-                   - Table          class: COLLECTION OF FIXED SCHEMA RECORDS (STORED AS HDF5 COMPOUND DATA TYPES) 
+                   - Table          class: COLLECTION OF FIXED SCHEMA RECORDS (STORED AS HDF5 COMPOUND DATA TYPES)
                                            ("==" HDF5 compound-type-datasets)
                    - Array          class: all of their components are homogeneous.
                                            ("==" HDF5 homogeneous datasets)
@@ -1177,12 +1172,12 @@ MAIN FEATURES:
                      Standard     metadata: number-of-rows, shape, flavor, ...
                      User-defined metadata: (complementing meaning of actual table data)
 
-    In PyTables "full path" (‘/subgroup2/table3’) or 
+    In PyTables "full path" (‘/subgroup2/table3’) or
     "natural name schema" (file.root.subgroup2.table3) can be used.
 
  NOTE: data a file is only loaded into the in-memory object tree on-demand.
 
- The object tree standard / custom metadata allows to retrieve information about 
+ The object tree standard / custom metadata allows to retrieve information about
  objects on disk such as: table names, titles, column names, data types in columns,
  numbers of rows, ... arrays, arrays's shapes, typecodes, etc...)
 
@@ -1202,7 +1197,7 @@ MAIN FEATURES:
  │ group2 = fileh.create_group(root, "group2") │
  │ array1 = fileh.create_array(root,           # create array in root
  │      "array1", ["string", "array"], "String │ array")
- │ table1 = fileh.create_table(group1,         # Create table in group1 
+ │ table1 = fileh.create_table(group1,         # Create table in group1
  │          "table1", Particle)                │
  │ array2 = fileh.create_array("/group1",      # Create array in group1
  │          "array2", [1,2,3,4])               │
@@ -1219,7 +1214,7 @@ MAIN FEATURES:
  │       row.append()                          # 2) inject values inrow
  │     table.flush()                           # "Flush" table buffers
  │                                             │
- │ fileh.close()                               # Free/close file (flushing any 
+ │ fileh.close()                               # Free/close file (flushing any
  │                                             # remaining buffers!)
  └─────────────────────────────────────────────┘
 [[}]]
@@ -1340,26 +1335,21 @@ MLflow: An Open Platform to Simplify the Machine Learning Lifecycle
 [[}]]
 
 
-● Joblib (NumPy Serialization): [[{numpy.performance,data.persistence,01_PM.TODO]]
+● Joblib (NumPy Serialization): [[{numpy.performance.joblib,data.persistence,01_PM.TODO]]
 @[https://pypi.org/project/joblib/]
 - Alternative to Pickle to serialize NumPy matrices, ...
 
 - transparent disk-caching of functions and lazy re-evaluation (memoize pattern)
 - easy simple parallel computing
+[[numpy.performance.joblib}]]
 
-<pre zoom labels="cognitive.NLP,rlang,01_PM.TODO">
-<span title>7 Excellent R NLP Tools</span>
-@[https://www.linuxlinks.com/excellent-r-natural-language-processing-tools/]
-</pre>
-
-<pre zoom labels="TODO">
-<span title>Boltmann learning algorithm</span>
+[[{01_PM.TODO]]
+● Boltmann learning algorithm
 ... We discuss simulate annealing, the Boltmann learning algorithm and other ...
-</pre>
+[[}]]
 
-<pre zoom labels="numpy,101,01_PM.TODO">
-
-<span title>Numpy Random Sampling</span>
+[[{numpy,101,01_PM.TODO]]
+● Numpy Random Sampling
 @[https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html]
 
 - Random Sampling:
@@ -1367,15 +1357,15 @@ MLflow: An Open Platform to Simplify the Machine Learning Lifecycle
   - Permutations:
   - Distributions
   - Random Generator.
-</pre>
+[[}]]
 
-<pre zoom labels="TODO">
-<span title>Probabilistic Algorithms for View Counting</span>
+[[{01_PM.TODO]]
+● Probabilistic Algorithms for View Counting
 @[https://www.infoq.com/presentations/algorithms-counting-reddit]
-</pre>
+[[}]]
 
-<pre zoom labels="TODO">
-<span title>Huawei ModelArst</span>
+[[{01_PM.TODO]]
+● Huawei ModelArst
 @[https://www.eleconomista.es/empresas-finanzas/noticias/9449298/10/18/COMUNICADO-Huawei-lanza-una-plataforma-de-desarrollo-de-IA-con-ciclo-de-vida-completo-mas-rapida.html]
 ModelArts es una plataforma de desarrollo de IA
 más rápida e inclusiva que cualquier otra plataforma de desarrollo
@@ -1434,15 +1424,13 @@ chip Ascend 310, que puede procesar 100 fotogramas por segundo y
 detectar caras en milisegundos. Además, los livianos contenedores
 integrados minimizan el uso de recursos y de ancho de banda de red, y
 pueden descargarse e iniciarse de forma rápida
+[[}]]
 
-</pre>
-
-<pre zoom labels="TODO">
-<span title>AWS SageMaker,</span>
+[[{01_PM.TODO]]
+● AWS SageMaker,
  a fully managed platform for training and deploying machine learning models at scale.
 - preconfigured environments for PyTorch 1.0 including automatic model tooling.
-</pre>
-
+[[}]]
 
 ● Open Cog: [[{ml_type.general,01_PM.TODO]]
 @[https://opencog.org/]
@@ -1458,27 +1446,25 @@ pueden descargarse e iniciarse de forma rápida
 [[}]]
 
 
-● Cognitive Risk Management: [[{cognitive.risk_management,cognitive.nlp,finances,01_PM.TODO]]
+● Cognitive Risk Management: [[{use_case.risk_management,finances,01_PM.TODO]]
 @[https://towardsdatascience.com/cognitive-risk-management-7c7bcfe84219]
 [[}]]
 
-● gallery-of-interesting-Jupyter-Notebooks: [[{]]
-[[101,scipy,finance,cognitive.nlp,pandas,cognitive.*,]]
-[[data.mining,data.visualization,01_PM.TODO]]
+● gallery-of-interesting-Jupyter-Notebooks: [[{101,scipy,01_PM.TODO]]
 @[https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks#scientific-computing-and-data-analysis-with-the-scipy-stack]
 • Collection of Jupyter Notebooks for SciPy Stack:
-  - General topics in scientific computing
+  - General topics in scientific computing     [[101]]
   - Social data
-  - Psychology and Neuroscience
+  - Psychology and Neuroscience                [[cognitive]]
   - Machine Learning, Statistics and Probability
-  - Physics, Chemistry and Biology
-  - Economics and Finance
-  - Earth science and geo-spatial data
-  - Data visualization and plotting
-  - Mathematics
+  - Physics, Chemistry and Biology             [[use_case.physics,use_case.chemistry,use_case.biology]]
+  - Economics and Finance                      [[use_case.finance]]
+  - Earth science and geo-spatial data         [[use_case.Earth_science]]
+  - Data visualization and plotting            [[data.visualization]]
+  - Mathematics                                [[use_case.mathematics]]
   - Signal, Sound and Image Processing
-  - Natural Language Processing
-  - Pandas for data analysis
+  - Natural Language Processing                [[cognitive.nlp]]
+  - Pandas for data analysis                   [[pandas]]
 [[}]]
 
 
@@ -1487,7 +1473,7 @@ pueden descargarse e iniciarse de forma rápida
     @[https://datasetsearch.research.google.com/]
   - @[https://ai.google/tools/#datasets]
   - @[https://archive.ics.uci.edu/ml/datasets/]
-  - @[https://www.infoq.com/news/2019/10/google-nlp-dataset/]
+  - @[https://www.infoq.com/news/2019/10/google-nlp-dataset/]   [[cognitive.nlp]]
   - @[http://www.image-net.org/] ImageNet: hundreds of thousands of images and complex models
   - Adversarial Image DataSet:
     https://www.infoq.com/news/2019/08/adversarial-image-dataset/

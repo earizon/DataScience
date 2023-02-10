@@ -1,4 +1,4 @@
-[[{data.open_data,data.geospatial,resource,01_PM.TODO]]
+[[{use_case.Earth_science,data.open_data,data.geospatial,resource,01_PM.TODO]]
 ● world.geo.json:
 GitHub - johan/world.geo.json: Annotated geo-json geometry files for the world
 @[https://github.com/johan/world.geo.json]

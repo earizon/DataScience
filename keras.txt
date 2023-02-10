@@ -1,10 +1,13 @@
-Keras
+Keras [[{keras]]
 - External Links:
 @[https://keras.io/]
 @[https://github.com/keras-team/keras/tree/master/examples]
 @[https://keras.io/getting-started/faq/#how-can-i-use-stateful-rnns]
 
-● Keras standard flow:
+
+
+● Keras 101
+  standard flow:
  define network → compile → train
 
 ● Sequential model: (linear stack of layers)
@@ -25,10 +28,11 @@ model = Sequential(                 #  STEP 1 Define layers
     Activation('softmax'),
  ]
 )
-</pre>
+[[}]]
 
-<pre zoom labels="keras,TODO">
-<span xsmall>Compile (multi-class, binary, mean-sq.err,custom)</span>
+[[{]]keras,TODO">
+● 
+● Compile (multi-class, binary, mean-sq.err,custom)
 +----------------------------------------------------------------------------------------------------+
 |                                COMPILES ARGUMENTS                                                  |
 +----------------------------------------------------------------------------------------------------+
@@ -49,9 +53,8 @@ model.compile(                    | model.compile(               | REGRE.PROBLEM
                                                                                          |   optimizer='rmsprop',
                                                                                          |   loss='binary_crossentropy',
                                                                                          |   metrics=['accuracy', mean_pred])
-
-<hr/>
-<span xsmall>TRAINING</span>
+────────────────────────────────────────────────────────────────────────────────
+● TRAINING
 Ex.
 import numpy as np              # ← INPUT DATA/LABELS ARE NUMPY ARRAYS.
 input_data = np.random.random(  # ← Dummy data (input_layer.input_dim=100)
@@ -75,14 +78,13 @@ model.fit(                     | model.fit(            # ← train the model, (t
  batch_size=32                 |   batch_size=32       #   batches of 32 samples
 )                              | )
 
-</pre>
+[[}]]
 
-<pre zoom labels="keras,nn,gui,TODO">
-<span xsmall>Keras GraphViz</span>
+● Keras GraphViz [[{keras,nn,gui,TODO]]
+  http://www.graphviz.org/Gallery/directed/neural-network.html
+[[}]]
 
-http://www.graphviz.org/Gallery/directed/neural-network.html
-
-● Keras Examples:
+● Keras Examples: [[{]]
 • multilayer perceptron (mlp) for multi-class softmax c12n:
 import keras
 from keras.models import Sequential
@@ -734,3 +736,4 @@ encoded_video_question = question_encoder(video_question_input)
 merged = keras.layers.concatenate([encoded_video, encoded_video_question])
 output = Dense(1000, activation='softmax')(merged)
 video_qa_model = Model(inputs=[video_input, video_question_input], outputs=output)
+[[keras}]]

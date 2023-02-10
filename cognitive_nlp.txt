@@ -7,6 +7,24 @@
   Spanish using seq2seq model and Q&A system using BERT model.
 [[}]]
 
+NLP vs NLU vs NL: [[{cognitive.nlp]]
+- NLP (Natural Language Processing)
+  broad term describing technics to "ingest what is said", break it down,
+  comprehend its meaning, determine appropriate action, and respond back
+  in a language the user will understand.
+- NLU (Natural Language Understanding)
+  much narrower part of NLP dealing with how to best handle unstructured inputs
+  and convert them into a structured form that a machine can understand
+  and act upon: handling mispronunciations, contractions, colloquialisms,...
+- NLG (Natural Language Generation).
+  "what happens when computers write language"
+  NLG processes turn structured data into text.
+
+  E.g.: A Chatbot is a full -middleware- application making use of NLP/NLU/NLG
+        as well as other resources like front-ends, backend databases, ...)
+[[}]]
+
+
 
 
 ● NLP: [[{cognitive.nlp]]
@@ -209,3 +227,135 @@ Shawn Presser, Connor Leahy
   publicly available the code used in its construction.
 · The format of the Pile is jsonlines data compressed using zstandard.
 [[}]]
+
+[[{cognitive.NLP,rlang,01_PM.TODO]]
+● 7 Excellent R NLP Tools
+@[https://www.linuxlinks.com/excellent-r-natural-language-processing-tools/]
+[[}]]
+
+
+● nlp: ontology101.pdf @[./ontology101.pdf]
+
+● https://www.infoq.com/news/2019/08/Baidu-OpenSources-ERNIE/ [[{natural_language,02_doc_has.comparative]]
+  Baidu Open-Sources ERNIE 2.0, Beats BERT in Natural Language Processing Tasks
+  In a recent blog post, Baidu, the Chinese search engine and
+  e-commerce giant, announced their latest open-source, natural
+  language understanding framework called ERNIE 2.0. They also shared
+  recent test results, including achieving state-of-the art (SOTA)
+  results and outperforming existing frameworks, including Google’s
+  BERT and XLNet in 16 NLP tasks in both Chinese and English. [[}]]
+
+● Google Open-Sources Token-Free Language Model ByT5
+  https://www.infoq.com/news/2021/07/google-byt5-nlp/
+  Google Research has open-sourced ByT5, a natural language processing
+  (NLP) AI model that operates on raw bytes instead of abstract tokens.
+  Compared to baseline models, ByT5 is more accurate on several
+  benchmark tasks and is more robust to misspellings and noise.
+
+● Ml, nlp: Google Open-Sources Trillion-Parameter AI Language Model Switch Transformer
+  https://www.infoq.com/news/2021/02/google-trillion-parameter-ai/
+
+● https://github.com/will-thompson-k/tldr-transformers
+  The "tl;dr" on a few notable papers on Transformers and modern NLP.
+....
+
+● ML Meta Open-Sources 175 Billion Parameter AI Language Model OPT
+https://www.infoq.com/news/2022/06/meta-opt-175b/ 
+The model was trained on a dataset containing 180B tokens and
+exhibits performance comparable with GPT-3, while only requiring
+1/7th GPT-3's training carbon footprint.The release was announced in
+a blog post written by Meta researchers Susan Zhang, Mona Diab, and
+Luke Zettlemoyer. To help promote open and reproducible research in
+AI, Meta has released not only the code and trained model weights,
+but also a full operational logbook documenting challenges
+encountered during the training process. The model is released under
+a non-commercial license and is intended for use by researchers
+"affiliated with organizations in government, civil society, and
+academia" as well as industry researchers. 
+The Transformer deep-learning architecture has become the de-facto
+standard for language models, and researchers have achieved
+impressive results by increasing the size of both the models and the
+training datasets. Much of the research has focused on
+auto-regressive decoder-only models, such as GPT-3 and PaLM, which
+can perform as well as the average human on many natural language
+processing (NLP) benchmarks. Although some research organizations,
+
+● NLTK: @[https://www.nltk.org/]  [[{cognitive.nlp]]
+Toolkit for building Python programs to work with human language data.
+- easy-to-use interfaces to over 50 corpora and lexical resources
+  (WordNet,...)
+- suite of text processing libraries for :
+  - classification
+  - tokenization
+  - stemming
+  - tagging
+  - parsing
+  - semantic reasoning
+- wrappers for industrial-strength NLP libraries
+- active discussion forum.
+    import nltk
+    sentence = """At eight o'clock on Thursday morning Arthur didn't feel very good."""
+    tokens = nltk.word_tokenize(sentence)     # ← ['At', 'eight', "o'clock", 'on', 'Thursday', 'morning',
+                                              #    'Arthur', 'did', "n't", 'feel', 'very', 'good', '.']
+    tagged = nltk.pos_tag(tokens)
+    tagged[0:6]                               # ← [('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'), ('on', 'IN'),
+                                                   ('Thursday', 'NNP'), ('morning', 'NN')]
+[[}]]
+
+● NLP Java Tools: [[{cognitive.nlp]]
+- OpenNLP  : text tokenization, part-of-speech tagging, chunking, etc. (tutorial)
+- Stanford : probabilistic natural language parsers, both highly optimized PCFG*
+  Parser     and lexicalized dependency parsers, and a lexicalized PCFG parser
+- TPT      : Standford (T)opic (M)odelling (T)oolbox: CVB0 algorithm, etc.
+- ScalaNLP : Natural Language Processing and machine learning.
+- Snowball : stemmer, (C and Java)
+- MALLET   : statistical natural language processing, document classification,
+             clustering, topic modeling, information extraction, and other machine
+            learning applications to text.
+- JGibbLDA : LDA in Java
+- Lucene   : (Apache) stop-words removal and stemming
+
+See also:
+JAVA RNN How-to
+- @[https://www.programcreek.com/2017/07/recurrent-neural-network-example-ai-programmer-1/]
+- @[https://www.programcreek.com/2017/07/build-an-ai-programmer-using-recurrent-neural-network-2/]
+- @[https://www.programcreek.com/2017/07/build-an-ai-programmer-using-recurrent-neural-network-3/]
+- @[https://www.programcreek.com/2017/02/different-types-of-recurrent-neural-network-structures/]
+[[}]]
+
+
+such as EleutherAI, have made their trained model weights available,
+most commercial models are either completely inaccessible to the
+public, or else gated by an API. This lack of access makes it
+difficult for researchers to gain insight into the cause of known
+model performance problem areas, such as toxicity and bias.
+
+The OPT code and logbook are available on GitHub.
+
+● OpenAI Introduces InstructGPT Language Model to Follow Human Instructions
+https://www.infoq.com/news/2022/02/openai-instructgpt/ 
+
+● Transformer:
+Researchers at Google have developed a new deep-learning model called
+BigBird that allows Transformer neural networks to process sequences
+up to 8x longer than previously possible. Networks based on this
+model achieved new state-of-the-art performance levels on
+natural-language processing (NLP) and genomics tasks.
+
+@[https://www.infoq.com/news/2020/09/google-bigbird-nlp/]
+The Transformer has become the neural-network architecture of choice
+for sequence learning, especially in the NLP domain. It has several
+advantages over recurrent neural-network (RNN) architectures; in
+particular, the self-attention mechanism that allows the network to
+"remember" previous items in the sequence can be executed in parallel
+on the entire sequence, which speeds up training and inference.
+However, since self-attention can link (or "attend") each item in the
+sequence to every other item, the computational and memory complexity
+of self-attention is O(n^2), where n is the maximum sequence length
+that can be processed. This puts a practical limit on sequence
+length, around 512 items, that can be handled by current hardware.
+
+● NLP with Hadoop:
+  http://www.datacommunitydc.org/blog/2013/05/nlp-and-big-data-using-nltk-and-hadoop-talk-overview
+
+

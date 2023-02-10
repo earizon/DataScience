@@ -1,6 +1,6 @@
 [[{data.visualization,01_PM.TODO]]
-<pre zoom labels="data.visualization,TODO">
-● Seaborn: Stat Graphs:
+
+● Seaborn: Stat Graphs: [[{]]
   Michael Waskom’s package providing very high-level
   wrappers for complex plots (ggplot2-like aesthetic)
   over matplotlib
@@ -9,7 +9,7 @@
   statistical graphics on top of matplotlib.
 
 @[https://www.datacamp.com/community/tutorials/seaborn-python-tutorial]
-</pre>
+[[}]]
 
 ● Bokeh ( Python to interactive JS charts):
 - (Continuum Analytics)
