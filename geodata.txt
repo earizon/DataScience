@@ -1,10 +1,10 @@
 [[{use_case.Earth_science,data.open_data,data.geospatial,resource,01_PM.TODO]]
-● world.geo.json:
+# world.geo.json:
 GitHub - johan/world.geo.json: Annotated geo-json geometry files for the world
 @[https://github.com/johan/world.geo.json]
 [[}]]
 
-● GeoJSON/GeoPanda: [[{data.geospatial,pandas,low_code,01_PM.TODO]]
+# GeoJSON/GeoPanda: [[{data.geospatial,pandas,low_code,01_PM.TODO]]
 Getting Started on Geospatial Analysis with Python, GeoJSON and GeoPandas - Twilio
 @[https://www.twilio.com/blog/2017/08/geospatial-analysis-python-geojson-geopandas.html]
 

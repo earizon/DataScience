@@ -1,11 +1,11 @@
-● All_Of_Statistics.pdf:
+# All_Of_Statistics.pdf:
 @[./All_Of_Statistics.pdf]
 
-● PROBABILITY NOMENCLATURE: [[{]]
+# PROBABILITY NOMENCLATURE: [[{]]
 (Summary of Statisticals terms that also apply to Machine learning)
 AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted means, ...
 
- BAYESIAN DECISION THEORY: 
+ BAYESIAN DECISION THEORY:
 - Ideal case in which the probability structure underlying the categories is known perfectly.
   While not very realistic, it permits us to determine the optimal (Bayes) classifier
   against which we can compare all other classifiers.
@@ -58,8 +58,8 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
     heights of fathers and sons (an "individual" is a father-son pair), the pressure
     and temperature of a fixed volume of gas (an "individual" is the volume of gas
     under a certain set of experimental conditions), etc.
-    Scatterplots, the correlation coefficient, and regression make sense for  
-    bivariate data but not univariate data. 
+    Scatterplots, the correlation coefficient, and regression make sense for
+    bivariate data but not univariate data.
 
  Breakdown Point  (of an estimator): smallest fraction of observations one must
     corrupt to make the estimator take any value one wants.
@@ -73,8 +73,8 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
  Correlation coefficient :
     measure between −1 and +1 describing of how nearly a scatterplot falls
     on a straight line.
-    To compute the correlation coefficient of a list of pairs of measurements 
-    (X,Y), first transform X and Y individually into standard units. 
+    To compute the correlation coefficient of a list of pairs of measurements
+    (X,Y), first transform X and Y individually into standard units.
 
  Density, Density Scale :
  - The vertical axis of a histogram has units of percent per unit of the horizontal axis.
@@ -125,11 +125,11 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
 
  Kalman Filte   @[https://en.wikipedia.org/wiki/Kalman_filter]
    - also known as linear quadratic estimation (LQE)
-   - algorithm that uses a series of measurements observed over time, 
+   - algorithm that uses a series of measurements observed over time,
      containing statistical noise and other inaccuracies, and produces
      estimates of unknown variables that tend to be more accurate than
      those based on a single measurement alone, by estimating a joint
-     probability distribution over the variables for each timeframe. 
+     probability distribution over the variables for each timeframe.
    - Kalman filter has numerous applications in technology:
      - guidance, navigation, and control of vehicles, particularly aircraft,
        spacecraft and dynamically positioned ships
@@ -164,7 +164,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
  Median : of a list "Middle value", smallest number such that at least half the
     numbers in the list are no greater than it.
 
- Nonlinear Association 
+ Nonlinear Association
     The relationship between two variables is nonlinear if a change in one is associated
     with a change in the other that is depends on the value of the first; that is, if
     the change in the second is not simply proportional to the change in the first , independent of
@@ -176,7 +176,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
 
  Quantile .
     The Qth quantile of a list
-    (0 ˂ Q ≤ 1) is the smallest number such that
+    (0 < Q ≤ 1) is the smallest number such that
     the fraction Q or more of the elements of the list are
     less than or equal to it. I.e.,
     if the list contains n numbers, the qth quantile, is the smallest number
@@ -194,15 +194,15 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
  Quartiles (of a list of numbers): @[https://en.wikipedia.org/wiki/Quartile]
     - First cited by  Jeff Brubacker in 1879.                                                IQR
     - lower quartile(LQ): a number such that at least 1/4 of the numbers in             ├───────────┤
-                          the list are no larger than it, and at least 3/4 of           Q1          Q3 
+                          the list are no larger than it, and at least 3/4 of           Q1          Q3
                           the numbers in the list are no smaller than it.               ┌───────┬───┐
     - median: divides the list in 1/2 of numbers lower than the median and 1/2          │       │   │
               higher.                                                              ├────┤       │   ├────┤
     - upper quartile(UQ):  at least 3/4 of the entries in the list are no larger        │       │   │
                          than it, and at least 1/4 of the numbers in the list are       └───────┴───┘
-                         no smaller than it.                                                    ^Median 
+                         no smaller than it.                                                    ^Median
 
- Regression, Linear Regression 
+ Regression, Linear Regression
     Linear regression fits a line to a scatterplot in such a way
     as to minimize the sum of the squares of the residuals. The
     resulting regression line, together with the standard deviations of the
@@ -252,7 +252,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
  variable and its expected value.
  It is analogous to the SD of a list.
 
- Standard Units: 
+ Standard Units:
  A variable (a set of data) is said to be in standard units if its
  mean is zero and its standard deviation is one. You transform
  a set of data into standard units by subtracting the mean from each
@@ -283,7 +283,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
 
 
 
-● StatsModels.org:
+# StatsModels.org:
 @[http://www.statsmodels.org/stable/index.html]
  - statsmodels: Python module providing classes and functions
    for the estimation of many different statistical models, as well as
@@ -297,13 +297,13 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
    In [1]: import numpy as np
    In [2]: import statsmodels.api as sm
    In [3]: import statsmodels.formula.api as smf
-   
+
    # Load data
    In [4]: dat = sm.datasets.get_rdataset("Guerry", "HistData").data
-   
+
    # Fit regression model (using the natural log of one of the regressors)
    In [5]: results = smf.ols('Lottery ~ Literacy + np.log(Pop1831)', data=dat).fit()
-   
+
    # Inspect the results
    In [6]: print(results.summary())
                                OLS Regression Results

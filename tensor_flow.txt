@@ -4,7 +4,7 @@ TensorFlow:
 @[https://datascience.stackexchange.com/questions/tagged/tensorflow?sort=votes&pageSize=15]
 
 
-● Accelerated TensorFlow Lite integrated with Android:  [[{android,tensorflow,hardware,devops,TODO]]
+# Accelerated TensorFlow Lite integrated with Android:  [[{android,tensorflow,hardware,devops,TODO]]
 @[https://www.infoq.com/news/2021/07/android-on-device-ml/]
 · dubbed Android ML Platform.
 · It will become available on all Android devices supporting
@@ -13,7 +13,7 @@ TensorFlow:
   developers can take the availability of its API for granted.
 [[}]]
 
-● Equation Learner:
+# Equation Learner:
 @[https://github.com/BlockScience/EQL_Tensorflow]
 
 

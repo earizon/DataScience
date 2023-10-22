@@ -1,16 +1,11 @@
-●  Apropos:
-- Visit next Web site for a great experience:
-  https://earizon.github.io/txt_world_domination/viewer.html?payload=../DataScience/notes.txt
-
-- If you want to contribute to great gistory of this
-  document you can take the next flight to:
+## Apropos:
+  Content is versioned in git.  commits, issues and pull-requests welcome!
 @[https://www.github.com/earizon/DataScience]
-  Your commits and pull-request will be immortalized
-  in the Pantheon of the Unicode Gods.
-────────────────────────────────────────────────────────────────────────────────
 
+# Data Science TimeLine: [[{101.timeline]]
 
-● Data Science TimeLine: (by @faviovaz, @hiezelvazquez) [[{]]
+## General TimeLine [[{]]
+  (by @faviovaz, @hiezelvazquez)
   1943 Neural Nets                                    (McCulloch&Pitt)
   1948 A Mathematical Theory of Communication         (Shannon)
   1950 Computing Machiner and Intelligence            (Turing)
@@ -63,7 +58,41 @@
        languages in the world.
 [[}]]
 
-● OPTIMIZATION PROBLEMS VS DATA SCIENCE VS MACHINE LEARNING VS AI:
+# Learning with humor  [[{PM.low_code]]
+  (by Moez Ali)
+- After listening to few statisticians who believe that
+  low-code/no-code tools are spoiling data scientists and taking away
+  critical thinking from society, I am now heavily influenced by them
+  and propose the following changes in future release of PyCaret:
+
+- You will no longer be able to train logistic regression by
+  create_model('lr'), instead you have to pass the sigmoid function,
+  loss, and optimizer separately.
+
+- You won’t be able to train ensemble models with PyCaret, we
+  encourage you to draw trees by hand and then combine them on piece of
+  paper with your own hand-written booster.
+
+- You can’t preprocess the data unless you know all the
+  transformation functions by heart. If you fail to prove, we will take
+  all the bitcoins from your wallet.
+
+- Every time you download pycaret we will send you a fourier
+  transformation challenge to solve.
+
+- I also propose to replace API with Statisticians. Instead of having
+  an end-point on cloud, I suggest we keep statisticians on-duty for
+  24/7 and every time inference is required, statistician will
+  transform the data and generate boundary with their mind power only.
+
+- I am open to more ideas
+[[}]]
+
+
+[[101.timeline}]]
+
+
+# OPTIMIZATION PROBLEMS VS DATA SCIENCE VS MACHINE LEARNING VS AI: [[{]]
 REF: @[https://www.cybertec-postgresql.com/en/data-science/]
   ┌ NON-POLYNOMIAL SOLVABLE PROBLEMS ──────────────────────────────────────┐
   │ ┌ OPTIMIZATION PROBLEMS ──────────────────────────────────────────────┐│
@@ -93,8 +122,9 @@ REF: @[https://www.cybertec-postgresql.com/en/data-science/]
   │ │ └─────────────────────────────────────────────────────────────────┘ ││
   │ └─────────────────────────────────────────────────────────────────────┘│
   └────────────────────────────────────────────────────────────────────────┘
+[[}]]
 
-● DATA SCIENCE NOMENCLATURE: [[{01_PM.WiP]]
+# DATA SCIENCE NOMENCLATURE: [[{PM.WiP]]
 - SEGMENTATION: pre-processing where objects of interest are "extracted" from background.
 
 FEATURE EXTRACTION: Process that takes-in a pattern and produces feature values.
@@ -115,10 +145,9 @@ SUBSET AND SUPERSET PROBLEM: Formally part of mereology, the study of part/whole
 
 RISK: Total spected cost of making a wrong classification/Decision
       (total spected cost = wrong-classification cost x probability of event)
-
 [[}]]
 
-● MACHINE LEARNING SUMMARY: [[{ml.101,01_PM.WiP]]
+# MACHINE LEARNING SUMMARY: [[{101,PM.WiP]]
 
   ▶ MATHEMATICAL FOUNDATIONS
    - Linear Algebra
@@ -157,7 +186,7 @@ RISK: Total spected cost of making a wrong classification/Decision
     the error on a set of training data.
 
 
-● ML LEARNING PHASE PIPELINE: [[{101]]
+# ML LEARNING PHASE PIPELINE: [[{101]]
  ┌─ LEARNING PHASE ───────────────────────────────────────────────────────────────────┐
  │ └ PRE-SETUP.                                                                       │
  │   - Sensing          ····> Feature-Extractor                                       │
@@ -206,7 +235,7 @@ RISK: Total spected cost of making a wrong classification/Decision
  │             └──────────┘                                                           │
  └─ PREDICTION PHASE ─────────────────────────────────────────────────────────────────┘ [[}]]
 
-● ML COMPARATIVE MATRIX  [[{ml.101]] (FORCIBELY INCOMPLETE BUT STILL PERTINENT)
+# ML COMPARATIVE MATRIX  [[{101]] (FORCIBELY INCOMPLETE BUT STILL PERTINENT)
              ┌─·········· SUPERVISED: An external "teacher" provides a category label or cost
              ·
              · ┌─········ UNSUPERVISED: the system forms clusters or "natural groupings"
@@ -283,12 +312,12 @@ RISK: Total spected cost of making a wrong classification/Decision
  └──────────┴─┴─┴─┴─┴─────────────────────┴──────────────────────────────────┴─────────────────────────────┘ [[}]]
 [[}]]
 
-
-● NumPY SUMMARY [[{numpy.101]]
+# NumPY SUMMARY [[{numpy.101]]
 @[https://docs.scipy.org/doc/numpy/reference/]
 @[https://csc.ucdavis.edu/~chaos/courses/nlp/Software/NumPyBook.pdf]
 
-• ┌─ np.ndarray Object ──────────────────────────────┐
+## np.ndarray Object
+  ┌─ np.ndarray Object ──────────────────────────────┐
   │N-Dimensional Array: OPTIMIZED WAY OF STORING     │
   │(and manipulating) numerical data of given type   │
   ├─ ndarray properties ─────────────────────────────┤
@@ -301,8 +330,8 @@ RISK: Total spected cost of making a wrong classification/Decision
   └──────────────────────────────────────────────────┘
   - See also dir(np.ndarray) -
 
-•                       NP.NDARRAY INITIALIZATION
-  import numpy as np    =========================
+## NP.NDARRAY INITIALIZATION
+  import numpy as np
   a=np.array([1,2,3])   # ← create  array. a.shape: (3, ), m.dtype: dtype('int64')
   m=np.array([[1,2,3],  # ← create matrix. b.shape: (2,3)
               [3,4,6])
@@ -315,7 +344,7 @@ RISK: Total spected cost of making a wrong classification/Decision
   np.vstack((a,b))      # ← Creates new array by stacking vertically
   np.unique(a)          # ← Creates new array with NO repeated elements
 
-• Value-Range Creation (np.arange...):
+## Value-Range Creation (np.arange...):
   np.arange(1, 10)    # ← Creates one-dimensional ndarray range
                           (similar to 'range' in standard Python )
   np.arange(-1,2,0.2) # ← creates 1d-array [-1, -0.8, ..., 1.8,   ]
@@ -325,8 +354,7 @@ RISK: Total spected cost of making a wrong classification/Decision
   np.linspace(1,10,5) # ← Create 1darray [ 1., 3.25, 5.5, 7.75, 10. ]
                           (start, end, number-of-elements)
 
-•                       NUMPY RANDOM SAMPLE CREATION
-                        ============================
+## NUMPY RANDOM SAMPLE CREATION
   np.random.rand()      # Single (non-ndarray) value
   np.random.rand(3,4)   # two-dimensional 3x4 ndarray with
                           evenly distributed float random values
@@ -338,22 +366,20 @@ RISK: Total spected cost of making a wrong classification/Decision
      (3,1,size=(3,3)) )   element normally distributed random
                           values with mean:3, std.deviation:1
 
-•                        RESHAPING NDARRAY
-                         =================
+## RESHAPING NDARRAY
+
   np.reshape(aDim3x2, 6) # ← alt1: shape 3x2 →  returns view of 1Dim, size 6
   aDim3x2.reshape(6)     # ← alt2: shape 3x2 →  returns view of 1Dim, size 6
   aDimNxM.ravel()        # ← shape NxM → returns view of 1 Dimension
   aDimNxM.ravel()        # ← shape NxM → returns copy of 1 Dimension
 
-•                        TYPE CONVERSION:
-                         ================
+## TYPE CONVERSION
   ndarray01.dtype        # Get data type
   ndarray02 = ndarray01
        .astype(np.int32) # type conversion
                            Raises TypeError on error [[{qa.error_control}]]
 
-•                        SLICING/INDEXING:
-                         =================
+## SLICING/INDEXING
 @[https://docs.scipy.org/doc/numpy/user/basics.indexing.html]
   - Slice "==" View of the original array. (vs Copy of data)
 
@@ -363,8 +389,7 @@ RISK: Total spected cost of making a wrong classification/Decision
 
   [[TODO]] Boolean Indexing, ...
 
-•                        COMMON OPERATIONS
-                         =================
+## COMMON OPERATIONS
   ndarray01.transpose()   # transpose (alt.1)
   ndarray01.T             # transpose (alt.2)
   ndarray01.swapaxes(0,1) # transpose (alt.3)
@@ -394,8 +419,7 @@ RISK: Total spected cost of making a wrong classification/Decision
   np.in1d(arrA, [1,3])    # Test if arrA values belong to [1,2,3]
                             array([ True, True, True, False, False, False])
 
-•                         BASIC STATITISTICS
-                          ==================
+## BASIC STATITISTICS
   ndarray01.cumsum()      # Cumulative Sum of array elements
   arrA.mean()             # Mean
   arrA.mean(axis=1)       # Replace axis 1 by its mean
@@ -404,7 +428,8 @@ RISK: Total spected cost of making a wrong classification/Decision
   arrA.any()              # True if any member is True / non-zero
   arrA.all()              # True if all members are True/non-zero
 
-● NUMPY UNIVERSAL OPERATIONS: new array applying 'opt' to each element
+## Universal ops:  array i ··> array op(i) [[{]]
+  new array applying 'opt' to each element
   @[https://docs.scipy.org/doc/numpy/reference/ufuncs.html]
   Universal operations apply to each element of the array
   and returns new array with same shape:
@@ -421,8 +446,9 @@ RISK: Total spected cost of making a wrong classification/Decision
                         np.arccosh  np.multiply
                         np.arctanh  np.divide
                                     np.remainder
+[[}]]
 
-● NUMPY NDARRAY AGGREGATION OPERATIONS: input array → output number
+# NDarray aggregation ops: array ··> number [[{]]
   np.mean
   np.var  (variance)
   np.std
@@ -433,24 +459,24 @@ RISK: Total spected cost of making a wrong classification/Decision
   np.argmin  Index associated to minimum element
   np.argmax  Index associated to maximum element
   np.cumsum
-  np.cumprod
+  np.cumprod [[}]]
 
-● NUMPY NDARRAY CONDITIONAL OPERATIONS
+# NDarray conditional ops [[{]]
   A=np.array([1,2,3,4])
   B=np.array([5,6,7,8])
   cond = np.array([True, True, False, False])
   np.where(cond, A, B) # → array([1, 2, 7, 8])
-  np.where(cond, A, 0) # → array([1, 2, 0, 0])
+  np.where(cond, A, 0) # → array([1, 2, 0, 0]) [[}]]
 
-● NUMPY NDARRAY SET OPERATIONS:
+# NUMPY NDARRAY SET OPERATIONS: [[{]]
   np.unique(arrA)   # Returns 1d-array of SORTED-and-UNIQUE values
                       array([1,2,3,7,8,9])
   np.in1d(A,B)     Check if elements in A are in B
   np.union1d(A,B)  Create union set of A, B
   np.intersect1d
-  np.diff1d
+  np.diff1d [[}]]
 
-● NUMPY READ/WRITE FILES:  [[{numpy.I/O]]
+# NUMPY READ/WRITE FILES:  [[{numpy.I/O]]
   ndA=np.random.randint(20,30,size=(10,10))   # <- Create array
   ...
   np    .save ("data1.npy",ndA)               # <- Save   to disk
@@ -480,9 +506,33 @@ array(
 A[ 'Param1' ]  # ← Now we can access by name
 [[}]]
 
+## Joblib (NumPy Serialization): [[{numpy.performance.joblib,scalability,data.persistence,PM.TODO]]
+@[https://pypi.org/project/joblib/]
+- Alternative to Pickle to serialize NumPy matrices, ...
+
+- transparent disk-caching of functions and lazy re-evaluation (memoize pattern)
+- easy simple parallel computing
+[[numpy.performance.joblib}]]
+
+## Random Sampling [[{numpy,101,PM.TODO]]
+@[https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html]
+
+- Random Sampling:
+  - Simple random data
+  - Permutations:
+  - Distributions
+  - Random Generator.
 [[}]]
 
-● MATPLOTLIB Charts: [[{data.visualization,matplotlib,numpy]]
+## What's new:
+### NumPy 1.20
+* https://www.infoq.com/news/2021/03/numpy-120-typed-SIMD/
+* Runtime SIMD Support and Type Annotations
+
+
+[[numpy.101}]]
+
+# MATPLOTLIB Charts: [[{data.visualization,matplotlib,numpy]]
  EXTERNAL LINKS
  User's Guide   : @[https://matplotlib.org/users/index.html]
  Git Source Code: @[https://github.com/matplotlib/matplotlib]
@@ -501,7 +551,7 @@ A[ 'Param1' ]  # ← Now we can access by name
 
 REF: @[https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py]
 
-• (MATLPLOT and others) Graph Ussage Decision Tree:   [[{01_PM.decission_tree]]
+## Graph Ussage Decision Tree:   [[{PM.decission_tree]]
   - What do you want to show?
     └ Comparasion
     · - Among items
@@ -542,7 +592,7 @@ REF: @[https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutoria
 
 
 
-• MATPLOTLIB ARCHITECTURE: [[{]]
+## ARCHITECTURE: [[{]]
 -Everything in matplotlib is organized in a hierarchy:
  o) state-machine environment (matplotlib.pyplot module):
  ^  simple element drawing functions like lines, images, text, current axes ,...
@@ -586,7 +636,7 @@ REF: @[https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutoria
          b_asarray = np.asarray(b) #   ←  Correct input to matplotlib
 [[}]]
 
-• MATPLOTLIB VS PYPLOT:
+## MATPLOTLIB VS PYPLOT: [[{]]
 - Matplotlib: whole package
 - pyplot    : module of Matplotlib (matplotlib.pyplot) with simplified API:
               - state-based MATLAB-like (vs Object Oriented based)
@@ -665,11 +715,12 @@ REF: @[https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutoria
                        |D(iamond)
                        |d(iamond)
                        ||
+[[}]]
 
 i[./matplotlib_example1.svg|min-width:2rem; max-width:30em]
 i[./matplotlib_example1_zoom.svg|min-width:2rem; max-width:25em]
 
-- TODO:
+## TODO:
 @[https://realpython.com/python-matplotlib-guide/]
   - Why Can Matplotlib Be Confusing?
   - Pylab: What Is It, and Should I Use It?
@@ -684,10 +735,10 @@ i[./matplotlib_example1_zoom.svg|min-width:2rem; max-width:25em]
   - Appendix A: Configuration and Styling
   - Appendix B: Interactive Mode
 
-• MATPLOTLIB HISTOGRAMS
-i[./matplotlib_example_histogram.svg|min-width:2rem; max-width:30em]
+## HISTOGRAMS [[{]]
+i[./matplotlib_example_histogram.svg|min-width:2rem; max-width:30em] [[}]]
 
-• MATPLOTLIB: BAR CHARTS:
+## BAR CHARTS: [[{]]
 @[https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html]
   matplotlib.pyplot.bar(x, height, width=0.8, bottom=None, *, align='center', data=None, **kwargs)
   axis_x = range(5)
@@ -703,8 +754,9 @@ i[./matplotlib_example_histogram.svg|min-width:2rem; max-width:30em]
   plt.legend((p1[0], p2[0]), ('A', 'B'))
   plt.show()
 i[./matplotlib_example_stacked_bars.svg|min-width:2rem; max-width:30em]
+[[}]]
 
-• MATPLOTLIB: SCATTER PLOT:
+## SCATTER PLOT  [[{]]
 @[https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html]
   Useful to compare bivariate distributions.
   bivariateREF = np.random.normal(0.5, 0.1, 30)
@@ -714,8 +766,9 @@ i[./matplotlib_example_stacked_bars.svg|min-width:2rem; max-width:30em]
   p1=plt.scatter(bivariateREF, bivariateVS, marker="x")
   plt.show()
   i[./matplotlib_example_scatter.svg|min-width:2rem; max-width:30em]
+[[}]]
 
-• MATPLOTLIB, CONTOUR PLOT:
+## CONTOUR PLOT: [[{]]
 @[https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html]
   delta = 0.025
   x = np.arange(-3.0, 3.0, delta)
@@ -727,8 +780,9 @@ i[./matplotlib_example_stacked_bars.svg|min-width:2rem; max-width:30em]
   # plt.contourf(label_l) # optional . Fill with color.
   plt.show()
   i[./matplotlib_example_contour.svg|min-width:2rem; max-width:30em]
+[[}]]
 
-• MATPLOTLIB, BOXPLOT (Quartiles):
+## BOXPLOT (Quartiles): [[{]]
 @[https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html]
 @[https://matplotlib.org/examples/pylab_examples/boxplot_demo.html]
 
@@ -736,8 +790,9 @@ v_l = np.random.randn(100)
 plt.boxplot(v_l)
 plt.show()
 i[./matplotlib_example_boxplot.svg|min-width:2rem; max-width:30em]
+[[}]]
 
-• MATPLOTLIB, TUNE PERFORMANCE: [[scalability]]
+## TUNING PERFORMANCE [[{scalability]]
   (In case of "many-data points", otherwise no tunning is needed
 
   import matplotlib.style as mplstyle
@@ -749,11 +804,11 @@ i[./matplotlib_example_boxplot.svg|min-width:2rem; max-width:30em]
      'ggplot',          #
      'fast'])           #
 
-• MATPLOTLIB TROUBLESHOOTING:
+## MATPLOTLIB TROUBLESHOOTING:
   matplotlib.set_loglevel(*args, **kwargs)
 [[}]]
 
-● PANDAS SUMMARY[[{pandas]]
+# PANDAS SUMMARY[[{pandas]]
 - High level interface to NumPy, """sort-of Excel over Python"""
   REF:
   -@[https://pandas.pydata.org/]
@@ -761,7 +816,7 @@ i[./matplotlib_example_boxplot.svg|min-width:2rem; max-width:30em]
      Most voted on StackOverflow
   -@[https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/index.html]
      Comparison with R , SQL, SAS, Stata
-• PANDAS SERIES: (Series == "tagged column", Series list == "DataFrame")
+## PANDAS SERIES: (Series == "tagged column", Series list == "DataFrame")
  Create New Serie
 import pandas as pd
 s1 = pd.Series(       s2 = pd.Series(              s3 = pd.Series(
@@ -827,7 +882,8 @@ B    2301.0
 C    3201.0
 dtype: int64
 
-• PANDAS DataFrame: "spreadsheet" table with indexes rows and columns.
+## PANDAS DataFrame "spreadsheet" table
+   with indexes rows and columns.
 - Each column is a Serie and the ordered collection of columns forms the DataFrame
 - Each column has a type.
 - All columns share the same index.
@@ -888,8 +944,8 @@ df3. iloc [:-2,[0,    3]]                            #
 df3.NAME                                             # ←  Peek column by name
 df3['2009']                                          # ←  Peek column by key
 
-<hr/>
-● Conditional Filter
+
+## Conditional Filter
                                                           Conditional Filte  .
 df3[df3["2010"] > 100000]                            # ←  Only rows with 2010 > 100000
                                                           NAME    2009    2010    2011
@@ -900,7 +956,7 @@ df3[df3["2010"] > 100000][df3["2011"] > 250000]      # ←  Only rows with 2010 
                                                           NAME    2009    2010    2011
                                                           III  City3  209000  300000  301001
 
-• PANDAS:  File ←→ DataFrame (Import/Export)  [[{pandas.I/O]]
+## File ←→ DataFrame (Import/Export)  [[{pandas.I/O]]
   File → read → DataFrame
   $ cat animals.csv
   specie,body_weight,brain-weight
@@ -1081,7 +1137,7 @@ df3[df3["2010"] > 100000][df3["2011"] > 250000]      # ←  Only rows with 2010 
   jsonDataToWrite = json.load(df.to_json(...))
   col.insert_manY(jsonDataToWrite)
 
-● PANDAS Pivot Table [[{pandas.pivot, 01_PM.TODO]]
+## Pivot Table [[{pandas.pivot, PM.TODO]]
 @[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html]
 
 <!--
@@ -1091,13 +1147,43 @@ Drop duplicates of permuted multi-index
 -->
 [[}]]
 
-● PANDAS: Fast Large Datasets with SQLite  [[{pandas.I/O,bigdata,sql,scalability,01_PM.TODO]]
+## Fast Large Datasets with SQLite  [[{pandas.I/O,bigdata,sql,scalability,PM.TODO]]
 Fast subsets of large datasets with Pandas and SQLite
 @[https://pythonspeed.com/articles/indexing-pandas-sqlite/]
 [[}]]
+[[pandas}]]
+
+# Pandas supercharged [[{PM.TODO]]
+1. Jupyter-Datatables: Enrich the default preview of a DataFrame.Link:
+2. SummaryTools: Supercharge the describe() method.
+3. Sidetable: Supercharge the value_counts() method.
+4. Sketch: Generate code/insights by asking questions in natural language
+5. Deepchecks: Generate a comprehensive data validation report.
+6. Pandas Flavor: Extend Pandas to attach methods to the dataframe object.
+7. Pandarallel: Parallelize Pandas across all CPU cores
+8. PandasML: Pandas, sklearn and matplotlib integrated.
+9. Geopandas: Work with Geospatial data in Pandas.
+10. DuckDB: Run SQL queries on dataframes.
+11. Modin: Boost Pandas' performance up to 70x by modifying the import.
+12. PivotTableJS: Create pivot tables by using drag and drop functionality.
+13. Missingno: Visualize missing values in your dataset.
+14. Pandas Alive: Create animated charts for pandas dataframes.
+15. Skimpy: Supercharge the describe() method.
+16. Pandas-log: Debug Pandas pipeline with step-by-step logging.
+17. tsflex: Process time series and perform feature extraction.
+18. pandas-profiling: Generate EDA report of data in one-line.
+19. Mars: tensor-based framework for scaling numpy, pandas, scikit-learn, ...
+20. nptyping: Apply type hints for Pandas dataframes.
+21. popmon: Profile your data to determine its stability.
+22. Gspread-pandas: Interact with Google sheets using dataframes.
+23. pdpipe: Create pandas pipeline easily and intuitively.
+24. PrettyPandas: Prettify the dataframe when printed.
+25. Dora: Intuitive API for data cleaning, processing,
+26.      feature selection, visualization, etc.
+27. Pandapy: The speed of NumPy combined with Pandas' elegance.
 [[}]]
 
-● PyForest: [[{python,pandas,sklearn,devops,01_PM.UX,]]
+# PyForest: [[{python,pandas,sklearn,devops,PM.UX,]]
 @[https://pypi.org/project/pyforest/]
 pyforest lazy-imports all popular Python Data Science libraries so that they
 are always there when you need them. Once you use a package, pyforest imports
@@ -1117,7 +1203,7 @@ import pandas as pd
 there are also helper modules like os, re, tqdm, or Path from pathlib.
 [[}]]
 
-● PyTables: [[{numpy.pytables,low_code,scalability,01_PM.WiP]]
+# PyTables (Hierarchical Data) [[{numpy.pytables,low_code,scalability,PM.WiP]]
 - Fill the gap left by NumPy/.. to manage large amounts of  hierarchical
   datasets, providing a pythonic/numpy wrapper to (a subset of) the HDF5
   library API.
@@ -1219,9 +1305,7 @@ MAIN FEATURES:
  └─────────────────────────────────────────────┘
 [[}]]
 
-
-
-● DVC.org: [[{qa,DevOps.dvc,DevOps.git,01_PM.low_code,01_PM.TODO]]
+# DVC.org: [[{qa,DevOps.dvc,DevOps.git,PM.low_code,01_PM.TODO]]
 https://github.com/tldr-pages/tldr/tree/master/pages/common/dvc-*.md
 - Apply best ML practices and turn them into Git-like command line tool.
 - DVC: brainchild of a data scientist and an engineer.
@@ -1235,7 +1319,8 @@ https://github.com/tldr-pages/tldr/tree/master/pages/common/dvc-*.md
   could be used with DVC as a data file backend.
 [[}]]
 
-● 10/100 times smaller Neuronal Networks: [[{scalability,profiling,nn.101]]
+
+## 10/100 times smaller Neuronal Networks: [[{scalability,profiling,nn.101]]
 https://openreview.net/pdf?id=rJl-b3RcF7&
 We have been using net much bigger than needed.
 
@@ -1251,8 +1336,9 @@ Once the training is finished just a few connections are "strong"
 while all others can be discarded. We do this once training. This
 work defends that is even possible to do so before training.
 [[}]]
+[[nn.101}]]
 
-● AutoML: [[{01_PM.UX,01_PM.low_code,01_PM.TODO]]
+## AutoML [[{PM.UX,01_PM.low_code,01_PM.TODO]]
 @[https://www.infoq.com/news/2019/06/open-source-automl-tool/]
 
 - tool for visualizing and controlling automated machine-learning processes.
@@ -1286,8 +1372,7 @@ work defends that is even possible to do so before training.
   process and results.
 [[}]]
 
-
-● MLFlow: [[{ml,DevOps,qa,01_PM.TODO]]
+## MLFlow [[{ml,DevOps,qa,PM.TODO]]
 MLflow: An Open Platform to Simplify the Machine Learning Lifecycle
 - Works with any ML library, language & existing code
 - Runs the same way in any cloud
@@ -1313,7 +1398,7 @@ MLflow: An Open Platform to Simplify the Machine Learning Lifecycle
 [[}]]
 
 
-● NetWorkX: [[{graph_networks,data.visualization,01_PM.TODO]]
+## NetWorkX [[{graph_networks,data.visualization,PM.TODO]]
 @[https://networkx.org/documentation/stable/index.html]
 @[NetworkX: for graph analysis, networkx.lanl.gov/]
 @[https://www.python-course.eu/networkx.php]
@@ -1335,140 +1420,7 @@ MLflow: An Open Platform to Simplify the Machine Learning Lifecycle
 [[}]]
 
 
-● Joblib (NumPy Serialization): [[{numpy.performance.joblib,data.persistence,01_PM.TODO]]
-@[https://pypi.org/project/joblib/]
-- Alternative to Pickle to serialize NumPy matrices, ...
-
-- transparent disk-caching of functions and lazy re-evaluation (memoize pattern)
-- easy simple parallel computing
-[[numpy.performance.joblib}]]
-
-[[{01_PM.TODO]]
-● Boltmann learning algorithm
-... We discuss simulate annealing, the Boltmann learning algorithm and other ...
-[[}]]
-
-[[{numpy,101,01_PM.TODO]]
-● Numpy Random Sampling
-@[https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html]
-
-- Random Sampling:
-  - Simple random data
-  - Permutations:
-  - Distributions
-  - Random Generator.
-[[}]]
-
-[[{01_PM.TODO]]
-● Probabilistic Algorithms for View Counting
-@[https://www.infoq.com/presentations/algorithms-counting-reddit]
-[[}]]
-
-[[{01_PM.TODO]]
-● Huawei ModelArst
-@[https://www.eleconomista.es/empresas-finanzas/noticias/9449298/10/18/COMUNICADO-Huawei-lanza-una-plataforma-de-desarrollo-de-IA-con-ciclo-de-vida-completo-mas-rapida.html]
-ModelArts es una plataforma de desarrollo de IA
-más rápida e inclusiva que cualquier otra plataforma de desarrollo
-de IA del mercado", dijo Zheng Yelai, vicepresidente de Huawei y
-presidente de la unidad de negocio Huawei Cloud. "Creemos que los
-desarrolladores de IA sabrán apreciar lo rápido que se inicia,
-completa entrenamientos e implanta modelos".
-
-El etiquetado y la preparación de datos es un proceso largo en el
-desarrollo de la inteligencia artificial, y representa casi el 50%
-del tiempo necesario. ModelArts tiene un marco de gobernanza de datos
-integrado para el etiquetado y la preparación de datos durante el
-desarrollo de IA. El marco implementa un entrenamiento iterativo para
-reducir el volumen de datos que tienen que ser etiquetados
-manualmente, lo que aumenta por 100 la eficiencia del etiquetado y la
-preparación de datos.
-
-Además, ModelArts integra diversas tecnologías de optimización,
-especialmente el sistema de paralelo híbrido con cascada para
-reducir a la mitad el entrenamiento requerido en un determinado
-modelo, conjunto de datos o conjunto de recursos de hardware.
-
-La implantación de modelos de IA es un proceso complejo. Con
-ModelArts, los modelos de entrenamiento pueden moverse a
-dispositivos, la periferia y la nube con solo un clic. Los trabajos
-de inferencia en línea o por lotes se proporcionan a través de la
-nube para cumplir con los diferentes requisitos de las aplicaciones,
-como la implantación simultánea o distribuida.
-
-ModelArts también incorpora varias tecnologías de IA, como el
-aprendizaje automático, el diseño de modelos y la configuración de
-parámetros para acelerar el desarrollo de la inteligencia artificial.
-
-En términos de gestión del ciclo de vida del desarrollo de IA,
-ModelArts abarca la recogida de datos sin procesar, el etiquetado de
-datos, la creación de trabajos de entrenamiento, la selección de
-algoritmos, la creación de modelos y la creación de servicios de
-inferencia. ModelArts permite a los desarrolladores de IA compartir
-datos, modelos y API de inteligencia artificial.
-Visión de IA
-
-Por otra parte, HiLens consta de una plataforma de desarrollo de
-aplicaciones de visión con IA y de un dispositivo visual potenciado
-con capacidades de IA. HiLens cuenta con Skill, un nuevo concepto de
-desarrollo de IA. Skill consiste en un código de control y modelos
-entrenados en ModelArts. HiLens también es compatible con modelos
-entrenados en otros marcos convencionales. Las capacidades
-desarrolladas en HiLens pueden implantarse en cualquier dispositivo
-que tenga integrados los chips Ascend de IA.
-
-El dispositivo visual HiLens se compone de una cámara inteligente
-compatible con inferencias. Los desarrolladores pueden usar el
-dispositivo HiLens para crear aplicaciones de visión e implantarlas
-en dispositivos y en la nube. El dispositivo visual HiLens integra el
-chip Ascend 310, que puede procesar 100 fotogramas por segundo y
-detectar caras en milisegundos. Además, los livianos contenedores
-integrados minimizan el uso de recursos y de ancho de banda de red, y
-pueden descargarse e iniciarse de forma rápida
-[[}]]
-
-[[{01_PM.TODO]]
-● AWS SageMaker,
- a fully managed platform for training and deploying machine learning models at scale.
-- preconfigured environments for PyTorch 1.0 including automatic model tooling.
-[[}]]
-
-● Open Cog: [[{ml_type.general,01_PM.TODO]]
-@[https://opencog.org/]
-· " ... big ambition, instead of focusing on a narrow aspect of
-  AI such as deep learning or neural networks, Open Cog aims to create
-  beneficial artificial general intelligence (AGI). The project is
-  working toward creating systems and robots with the capacity for
-  human-like intelligence.
-[[}]]
-
-● How to interpret a ML model [[{101,ml,troubleshooting,01_PM.TODO]]
-@[https://francescopochetti.com/whitening-a-black-box-how-to-interpret-a-ml-model/]
-[[}]]
-
-
-● Cognitive Risk Management: [[{use_case.risk_management,finances,01_PM.TODO]]
-@[https://towardsdatascience.com/cognitive-risk-management-7c7bcfe84219]
-[[}]]
-
-● gallery-of-interesting-Jupyter-Notebooks: [[{101,scipy,01_PM.TODO]]
-@[https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks#scientific-computing-and-data-analysis-with-the-scipy-stack]
-• Collection of Jupyter Notebooks for SciPy Stack:
-  - General topics in scientific computing     [[101]]
-  - Social data
-  - Psychology and Neuroscience                [[cognitive]]
-  - Machine Learning, Statistics and Probability
-  - Physics, Chemistry and Biology             [[use_case.physics,use_case.chemistry,use_case.biology]]
-  - Economics and Finance                      [[use_case.finance]]
-  - Earth science and geo-spatial data         [[use_case.Earth_science]]
-  - Data visualization and plotting            [[data.visualization]]
-  - Mathematics                                [[use_case.mathematics]]
-  - Signal, Sound and Image Processing
-  - Natural Language Processing                [[cognitive.nlp]]
-  - Pandas for data analysis                   [[pandas]]
-[[}]]
-
-
-● Data Training/Test Sets/Data Sources:     [[{101,data.open_data,]]
+# Data Training/Test Sets/Data Sources: [[{data.open_data]]
   - Dataset Search@(Research Google):
     @[https://datasetsearch.research.google.com/]
   - @[https://ai.google/tools/#datasets]
@@ -1500,7 +1452,7 @@ pueden descargarse e iniciarse de forma rápida
       Access free GPUs and a huge repository of community published data&code.
    [[}]]
 
-  - Extracting info from Municipal Open Data APIs: [[{data.mining,standards,low_code,01_PM.TODO]]
+  - Extracting info from Municipal Open Data APIs: [[{data.mining,standards,low_code,PM.TODO]]
   @[https://www.youtube.com/watch?v=6puwaUHNRIU]
     [[}]]
 
@@ -1562,83 +1514,14 @@ pueden descargarse e iniciarse de forma rápida
     - Transportation
     - eSports
     - Complementary Collections
-[[}]]
+[[data.open_data}]]
 
-● https://pythonspeed.com/memory/ [[{data_processing,Pandas,NumPy,profiling}]]
-  Process large datasets without running out of memory
-
-● The Perceptron  [[{ml.nn.101,01_PM.TODO]]
-  The Perceptron: A Perceiving and Recognizing Automaton, Frank Rosenblatt, Cornell Aeronautical Laboratory
-  An Adaptive "Adaline" Neuron Using Chemical "Memistors", Technical Report Number 1553-2, Bernard Widrow, Ted Hoff and others
-[[}]]
-
-● From Keywords to Ontologies: [[{101]]
-@[https://gofishdigital.com/seo-moves-keywords-to-ontologies-query-patterns/]
-
-  From Keywords to Ontologies Using Query Patterns
-
-  When Google introduced its knowledge graph in 2012, it told us that
-  it was starting to focus on things instead of strings
+# Process large datasets without running out of memory [[{data_processing,Pandas,NumPy,scalability,profiling]]
+  https://pythonspeed.com/memory/
 [[}]]
 
 
-● Learning with humor, by Moez Ali:  [[{01_PM.low_code]]
-- After listening to few statisticians who believe that
-  low-code/no-code tools are spoiling data scientists and taking away
-  critical thinking from society, I am now heavily influenced by them
-  and propose the following changes in future release of PyCaret:
-
-- You will no longer be able to train logistic regression by
-  create_model('lr'), instead you have to pass the sigmoid function,
-  loss, and optimizer separately.
-
-- You won’t be able to train ensemble models with PyCaret, we
-  encourage you to draw trees by hand and then combine them on piece of
-  paper with your own hand-written booster.
-
-- You can’t preprocess the data unless you know all the
-  transformation functions by heart. If you fail to prove, we will take
-  all the bitcoins from your wallet.
-
-- Every time you download pycaret we will send you a fourier
-  transformation challenge to solve.
-
-- I also propose to replace API with Statisticians. Instead of having
-  an end-point on cloud, I suggest we keep statisticians on-duty for
-  24/7 and every time inference is required, statistician will
-  transform the data and generate boundary with their mind power only.
-
-- I am open to more ideas
-[[}]]
-
-● https://www.infoq.com/news/2021/05/pyodide-python-webassembly/  [[{01_PM.UX]]
-  Mozilla announced that Pyodide, a project aiming at providing a full
-  Python data science stack running entirely in the browser, has become
-  an independent community-driven project. Pyodide leverages the
-  CPython 3.8 interpreter compiled to WebAssembly, and thus allows
-  using Python, NumPy, Pandas, Matplotlib, SciPy, and more in Iodide,
-  an experimental interactive scientific computing environment for the
-  web.
-[[}]]
-
-● - Pedro Domingo's Book "The Master Algorithm": outlines five tribes of machine learning: [[{ml.101,01_PM.TODO]]
-  - Inductive reasoning (a reasoning method where premises supply
-    evidence for the truth of the conclusion).
-  - onnctionism (an approach in cognitive science that aims to
-    explain mental phenomena using artificial neuronal nets)
-  - Evolutionary computation (a group of global optimization
-    algorithms inspiredyb Darwinian evolution).
-  - Bayes' theoreum (a theoreum that measures the probabiliy o some
-    event, "using he prior knowledge of conditions that
-    might be related to the event").
-  - Analogical modeling ("a normal theory of exemplar-based
-    analogical reasoning").
-[[}]]
-
-● https://www.infoq.com/news/2021/03/numpy-120-typed-SIMD/  [[01_PM.TODO]]
-ML: NumPy 1.20 Released with Runtime SIMD Support and Type Annotations
-
-● JupyterLab IDE:
+# JupyterLab IDE [[{jupyterlab]]
 @[https://jupyterlab.readthedocs.io/en/stable/]
 @[https://github.com/tldr-pages/tldr/blob/master/pages/common/jupyter.md] [TODO]
 @[https://github.com/tldr-pages/tldr/blob/master/pages/common/jupytext.md]  [TODO]
@@ -1672,10 +1555,11 @@ DAILY-USE)
     $ pipenv shell    #  ← Activate environment
     $ jupyter lab 1>jupyter.log 2>&1 & # ← http://localhost:8888/lab/workspaces/
 
-● JupyterLab Voilà: turn notebooks into standalone applications and dashboards: [[{01_PM.low_code]]
+## Voilà: notebook to apps/dashboard: [[{PM.low_code]]
 @[https://voila-gallery.org] [[}]]
+[[jupyterlab}]]
 
-● agate:  [[01_PM.UX]]
+# agate DS Optimized for humans [[{PM.UX,01_PM.TODO]]
 @[https://github.com/wireservice/agate]
 - alternative Python data analysis library (to numpy/pandas)
 - optimized for humans (vs machines)
@@ -1688,3 +1572,4 @@ DAILY-USE)
   - Humans lives are nasty, brutish and short. Make it easy.
   - Mutability leads to confusion. Processes that alter data must create new copies.
   - Extensions are the way. Don’t add it to core unless everybody needs it.
+[[}]]

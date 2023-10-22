@@ -157,15 +157,15 @@ SciKit-learn Summary:
   predicted = model.predict(x_test)
 
 
-● SciKit-learn metrics: [[{sklearn,k-nearest_neighbors,metrics,01_PM.TODO]]
+# SciKit-learn metrics: [[{sklearn,k-nearest_neighbors,metrics,01_PM.TODO]]
 @[http://scikit-learn.org/stable/modules/generated/sklearn.neigbors.DistanceMetric.html]
 [[}]]
 
-● sklearn Feature Selection: [[01_PM.TODO]]
+# sklearn Feature Selection: [[01_PM.TODO]]
   http://scikit-learn.org/stable/modules/feature_selection.html
   http://rasbt.github.io/mlxtend/user_guide/feature_selection/SequentialFeatureSelector/
 
-● Model evalution and hyper-params:
+# Model evalution and hyper-params:
 List of different values acepted for the qualification :
 http://scikit-learn.org/stable/modules/model_evaluation.html
 http://scikit-learn.org/stable/modules/generated/skleran.metrics.precision_recall_curve.html

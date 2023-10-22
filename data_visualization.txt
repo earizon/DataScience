@@ -1,6 +1,13 @@
 [[{data.visualization,01_PM.TODO]]
+# https://streamlit.io/ [[{]]
+Streamlit turns data scripts into shareable web apps in minutes.
+All in pure Python. No front‑end experience required.
 
-● Seaborn: Stat Graphs: [[{]]
+Eg: https://github.com/cjgb/q2distr
+
+[[}]]
+
+# Seaborn: Stat Graphs: [[{]]
   Michael Waskom’s package providing very high-level
   wrappers for complex plots (ggplot2-like aesthetic)
   over matplotlib
@@ -11,7 +18,7 @@
 @[https://www.datacamp.com/community/tutorials/seaborn-python-tutorial]
 [[}]]
 
-● Bokeh ( Python to interactive JS charts):
+# Bokeh ( Python to interactive JS charts):
 - (Continuum Analytics)
 - "potential game-changer for web-based visualization".
 - Bokeh generates static JavaScript and JSON for you
@@ -19,11 +26,11 @@
   to interact with your plots on a webpage without you
   having to write a single line of native JS code.
 
-● Plotly Charts:
+# Plotly Charts:
 @[https://plot.ly/]
 @[https://towardsdatascience.com/animated-information-graphics-4531de620ce7]
 
-● Graph Visualization: [[{ graph_networks ]]
+# Graph Visualization: [[{ graph_networks ]]
   - Gephi
   - Cytoscape
   - D3.js
@@ -34,18 +41,18 @@
   information contained in them.
 [[}]]
 
-● JS Pivot Tables:
+# JS Pivot Tables:
 @[https://pivottable.js.org/examples/]
 @[https://github.com/search?q=pivot+table]
 @[https://www.flexmonster.com/demos/pivot-table-js/]
 
 
-● See also:
+# See also:
   - Web Technologies for Data visualization:
 @[http://www.oficina24x7.com/WebTechnologies/map.html?topics=data.visualization&showSearchMenu=false]
 
 
-● Orange GUI!!  
+# Orange GUI!!
 @[https://orange.biolab.si/]
 - Open source machine learning and data visualization for novice and expert.
 - Interactive data analysis workflows with a large toolbox.

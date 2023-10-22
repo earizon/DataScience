@@ -1,8 +1,8 @@
-● OpenCV: Cognitive, Computer Vision
+# OpenCV: Cognitive, Computer Vision
 - Python Tutorial: Find Lanes for Self-Driving Cars (Computer Vision Basics Tutorial)
 @[https://www.youtube.com/watch?v=eLTLtUVuuy4]
 
-● MS Cognitive Services:Cognitive, Computer Vision, Low_Code
+# MS Cognitive Services:Cognitive, Computer Vision, Low_Code
 https://www.patrickvankleef.com/2018/08/27/exploring-city-with-azure-durable-functions-and-the-custom-vision-service/
  Microsoft Cognitive Services makes it super easy to use AI in your
 own solution. The toolset includes services like searching for images
@@ -28,7 +28,7 @@ verifying your model. After the model is all set, it’s time to
 upload images and test the results. The Custom Vision service analyze
 the images and return the tags with a probability percentage.
 
-● Tensorflow on GPU:
+# Tensorflow on GPU:
 https://www.infoq.com/news/2019/05/google-tensorflow-graphics/
 
 At a presentation during Google I/O 2019, Google announced TensorFlow
@@ -37,10 +37,10 @@ unsupervised learning tasks in computer vision. The library contains
 3D-rendering functions written in TensorFlow, as well as tools for
 learning with non-rectangular mesh-based input data.
 
-● luminoth Comp.Vision Toolkit!!!
+# luminoth Comp.Vision Toolkit!!!
 @[https://luminoth.ai/] !!! OpenSource Computer Vision Toolkit
 
-● MS Cognitive Services:
+# MS Cognitive Services:
 https://www.patrickvankleef.com/2018/08/27/exploring-city-with-azure-durable-functions-and-the-custom-vision-service/
  Microsoft Cognitive Services makes it super easy to use AI in your
 own solution. The toolset includes services like searching for images

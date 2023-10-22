@@ -1,6 +1,6 @@
 DATA PRE-PROCESSING:
 
-● IEEE Dataport: @[https://ieee-dataport.org/]
+# IEEE Dataport: @[https://ieee-dataport.org/]
   IEEE DataPort™ is an easily accessible data platform that enables users to 
   store, search, access and manage standard or Open Access datasets up to 2TB 
   across a broad scope of topics. The IEEE platform also facilitates analysis of 
@@ -24,7 +24,7 @@ used to extract data from HTML, which is useful for web scraping.
   @[https://engineering.fb.com/core-data/apache-spark-scale-a-60-tb-production-use-case/]
 [[}]]
 
-● Open Data Kit [[{data.gathering,low_code,01_PM.TODO]]
+# Open Data Kit [[{data.gathering,low_code,01_PM.TODO]]
 @[https://opendatakit.org/]
 - Data collection is a key component of social good efforts ranging 
   from polio elimination to rainforest conservation and Open Data Kit 
@@ -45,7 +45,7 @@ used to extract data from HTML, which is useful for web scraping.
   build your custom data management app.
 
 
-● https://github.com/tldr-pages/tldr/blob/master/pages/common/csvpy.md
+# https://github.com/tldr-pages/tldr/blob/master/pages/common/csvpy.md
   Loads a CSV file into a Python shell. Included in csvkit. More
   information:
   https://csvkit.readthedocs.io/en/latest/scripts/csvpy.html.
@@ -55,35 +55,35 @@ used to extract data from HTML, which is useful for web scraping.
   More information:
   https://csvkit.readthedocs.io/en/latest/scripts/in2csv.html.
 
-● https://github.com/tldr-pages/tldr/blob/master/pages/common/mlr.md
+# https://github.com/tldr-pages/tldr/blob/master/pages/common/mlr.md
   Miller is like awk, sed, cut, join, and sort for name-indexed data
   such as CSV, TSV, and tabular JSON. More information:
   https://johnkerl.org/miller/doc.
 
-● Python: A Guide to Excel Spreadsheets in Python With openpyxl 
+# Python: A Guide to Excel Spreadsheets in Python With openpyxl 
   Real Python
   https://realpython.com/openpyxl-excel-spreadsheets-python/ 
 
 
 
-● FSDB  A flat-file database for shell scripting.
+# FSDB  A flat-file database for shell scripting.
   Text-based, TSV with a header or "key: value"
-● GNU Recutils: 
+# GNU Recutils: 
   [A] set of tools and libraries to access human-editable,
   plain text databases called recfiles., roughly "key: value"
 
-● SDB
+# SDB
   "[A] simple string key/value database based on djb's cdb disk 
    storage and supports JSON and arrays introspection."
 
 
-● CSV+SQL+CSV processing:
+# CSV+SQL+CSV processing:
   -  SQL-based tools:
   - Comparative os SQL-like tools to import/manage/export from/to CSV/Excel/...
    https://github.com/dbohdan/structured-text-tools/blob/master/sql-based.md
 
 
-● xsv: joins on CSVs:
+# xsv: joins on CSVs:
 @[https://www.johndcook.com/blog/2019/12/31/sql-join-csv-files/]
 
 weight.csv  person.csv
@@ -174,7 +174,7 @@ producing
     789,F,789,155
     ,,999,160
 
-● MDP Module: data.cleaning,mlops,data.mining
+# MDP Module: data.cleaning,mlops,data.mining
 @[https://pypi.python.org/pypi/MDP/2.4]
 · Modular toolkit for Data Processing (MDP): widely used library of
   data processing algorithms that can be combined according to a
@@ -183,7 +183,7 @@ producing
   Independent Component Analysis (ICA), Slow Feature Analysis (SFA),
   and many more.
 
-● Unix4j: [[{data.cleaning,unix,java,01_PM.TODO]]
+# Unix4j: [[{data.cleaning,unix,java,01_PM.TODO]]
 @[https://github.com/tools4j/unix4j]
 """...Working in the finance industry in Melbourne, the authors of
   Unix4j spent a lot of time writing complex text processing

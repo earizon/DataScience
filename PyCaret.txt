@@ -1,4 +1,4 @@
-● https://pycaret.org/ low-code ML Framework: [[{pycaret.101,low_code,python,101]]
+# https://pycaret.org/ low-code ML Framework: [[{pycaret.101,low_code,python,101]]
  Summary extracted from (PyCaret Summary) @[https://insaid.medium.com/a-complete-guide-to-pycaret-c07b1e51f698]
  ▸ PyCaret: wrapper around many ML models and frameworks (XGBoost, Scikit-learn, ...)
  ▸ end-to-end ML life-cycle including: [[{mlops}]]
@@ -38,7 +38,7 @@
   │ >                         (Binary)                  │
   │ > ...                                               │
   └─────────────────────────────────────────────────────┘
-● PYCARET USSAGE:
+# PYCARET USSAGE:
   # ────────────────────────────────────────────  STEP 0) IMPORT REQUIRED MODULES
   from pycaret.regression     import *
   from pycaret.classification import *
@@ -226,7 +226,7 @@
 [[pycaret.101}]]
 
 
-● ML: automl has a project’s life cycle,
+# ML: automl has a project’s life cycle,
 which includes data cleaning, feature selection/engineering, model
 selection, parameter optimization, and finally, model validation.
 #AutoML came to automate the entire process from data cleaning to
@@ -248,7 +248,7 @@ More at:
 https://lnkd.in/dAXtUtRImage
 https://lnkd.in/dicwDCF
 
-● (ML Very low code) Pycaret + Gradio tutorial   [[{01_PM.low_code]]
+# (ML Very low code) Pycaret + Gradio tutorial   [[{01_PM.low_code]]
 https://towardsdatascience.com/supercharge-your-machine-learning-experiments-with-pycaret-and-gradio-5932c61f80d9 
   PyCaret is an alternate low-code library that can be used to replace
   hundreds of lines of code with few lines only. This makes the experiment cycle exponentially fast and efficient.PyCaret is simple and easy to use. All the operations performed in PyCaret are
@@ -267,17 +267,17 @@ https://towardsdatascience.com/supercharge-your-machine-learning-experiments-wit
   developmentTo learn more about Gradio, check out their GitHub.
 [[}]]
 
-● Anomaly detection with PyCaret
+# Anomaly detection with PyCaret
   https://towardsdatascience.com/build-your-first-anomaly-detector-in-power-bi-using-pycaret-2b41b363244e
 
-● ML: ApaflowAPAflow (Advanced and Predictive Analytics Flow) is a
+# ML: ApaflowAPAflow (Advanced and Predictive Analytics Flow) is a
 free desktop application for Windows for data science and machine
 learning built on top of PyCaret and H2O. APAflow is built for data
 analysis, data preparation, feature engineering, model development,
 and deployment.Learn more about APAflow:
 https://lnkd.in/eVU_nvA
 
-● ML: PyCaret timeseries modulePyCaret Time Series Module
+# ML: PyCaret timeseries modulePyCaret Time Series Module
    What you see below is the output from the compare_models of our new
   (in-making) time series module. PyCaret Time Series Module will be an
   easy-to-use forecasting tool built on top of sktime, fbprophet,
@@ -298,25 +298,25 @@ https://lnkd.in/eVU_nvA
   #opensource #python #programing #pycaret #timeseries #analytics
   #artificialintelligencve #ai #datascientist
 
-● ML: How to use PyCaret  - the library for easy ML
+# ML: How to use PyCaret  - the library for easy ML
   https://towardsdatascience.com/how-to-use-pycaret-the-library-for-lazy-data-scientists-91343f960bd2 
 
-● ML ayesian-hyperparameter-optimization-with-tune-sklearn-in-pycaret
+# ML ayesian-hyperparameter-optimization-with-tune-sklearn-in-pycaret
   https://medium.com/distributed-computing-with-ray/bayesian-hyperparameter-optimization-with-tune-sklearn-in-pycaret-a33b1592662f
 
-● ML Machine Learning in KNIME with PyCaret | by Moez Ali | Low Code for Advanced Data Science | Medium
+# ML Machine Learning in KNIME with PyCaret | by Moez Ali | Low Code for Advanced Data Science | Medium
   https://medium.com/low-code-for-advanced-data-science/machine-learning-in-knime-with-pycaret-420346e133e2
 
-● https://medium.com/analytics-vidhya/pycaret-101-for-beginners-27d9aefd34c5
+# https://medium.com/analytics-vidhya/pycaret-101-for-beginners-27d9aefd34c5
 
-● A step-by-step tutorial on unsupervised anomaly detection for time series data using PyCaret
+# A step-by-step tutorial on unsupervised anomaly detection for time series data using PyCaret
   https://towardsdatascience.com/time-series-anomaly-detection-with-pycaret-706a6e2b2427
 
-● Topic Modeling in Power BI using PyCaret | by Moez Ali | Towards Data Science
+# Topic Modeling in Power BI using PyCaret | by Moez Ali | Towards Data Science
 https://towardsdatascience.com/topic-modeling-in-power-bi-using-pycaret-54422b4e36d6
 
-● https://www.youtube.com/watch?v=Rgr_3iXORmo
+# https://www.youtube.com/watch?v=Rgr_3iXORmo
   Anomaly Detection with Power BI and PyCaret
 
-● low_code, pycaret ML Pipeline:
+# low_code, pycaret ML Pipeline:
   https://www.datasource.ai/uploads/624e8836466a40923b64b901b5050c0f.html

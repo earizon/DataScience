@@ -7,7 +7,7 @@ PyTorch Notes: [[{pytorch,deeplearning,01_PM.TODO]]
 - Visual Studio Code extension:
   - integration of Azure ML and PyTorch APIs for streamlined PyTorch code development and training.
 
-• Why researchers love PyTorch:
+## Why researchers love PyTorch:
 @[https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/]
 
 - Simplicity. It’s similar to numpy, very pythonic, and
@@ -29,7 +29,7 @@ PyTorch Notes: [[{pytorch,deeplearning,01_PM.TODO]]
 
 
 
-• Summary:
+## Summary:
 - Image recognition for trained model:
   Image → Resize,   →  Forward  → Score  → Label max
           Center       Pass
@@ -112,12 +112,12 @@ Get Pretrained model from TorchVision project:
  (  'tennis ball' , 0.11621569097042084)      # stdout
 <hr/>
 
-● What's new:
+# What's new:
 · Pytorch 1.1                                     [2019-05][TODO]
 @[https://www.infoq.com/news/2019/05/pytorch-release-performance]
 [[}]]
 
-● Pytorch Opacus:  [[performance,gradient]]
+# Pytorch Opacus:  [[performance,gradient]]
 https://www.infoq.com/news/2020/10/facebook-privacy-opacus/
 by Anthony Alford
     Facebook AI Research (FAIR) has announced the release of Opacus,
@@ -159,7 +159,7 @@ computing the gradient for the individual samples in the minibatch.
 The implementation of this step is the key to the speed gains for
 Opacus.
 
-● pytorch-biggraph: [[{graph_networks,pytorch,01_PM.TODO]]
+# pytorch-biggraph: [[{graph_networks,pytorch,01_PM.TODO]]
 https://www.infoq.com/news/2019/04/facebook-pytorch-biggraph
 PyTorch-BigGraph: distributed system that can learn embeddings for graphs with billions of nodes.
 
@@ -202,7 +202,7 @@ million entities mapped into a 200-dimensional vector space. Facebook hopes that
 their work "encourages practitioners to release and experiment with even larger data sets."
 [[}]]
 
-● TorchServe: [[{mlops,standards,model.sharing,persistence,low_code,text_processing,k8s,QA.UX,]]
+# TorchServe: [[{mlops,standards,model.sharing,persistence,low_code,text_processing,k8s,QA.UX,]]
 @[https://aws.amazon.com/es/about-aws/whats-new/2020/04/introducing-torchserve/]
 
 - Colaboración de AWS y Facebook como parte de  PyTorch.
@@ -230,4 +230,8 @@ their work "encourages practitioners to release and experiment with even larger 
   - métricas monitoreo
   - API RESTful para aplicaciones clientes.
   - Compatible con cualquier entorno (K8s, AWS SageMaker,...)
+[[}]]
+
+# Pytorch on Jetson Nano [[{]]
+@[https://qengineering.eu/install-pytorch-on-jetson-nano.html]
 [[}]]

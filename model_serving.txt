@@ -1,8 +1,8 @@
 Model Serving (Executing Trained Models)
 
-● Importing/Exporting Models: PMML formal, TODO
+# Importing/Exporting Models: PMML formal, TODO
 
-● Keras vs. PyTorch Export:
+# Keras vs. PyTorch Export:
 https://deepsense.ai/keras-or-pytorch/
 - What are the options for exporting and deploying your trained models
   in production?

@@ -6,11 +6,11 @@ Keras [[{keras]]
 
 
 
-● Keras 101
+# Keras 101
   standard flow:
  define network → compile → train
 
-● Sequential model: (linear stack of layers)
+# Sequential model: (linear stack of layers)
   LAYER CREATION
 - pass list of layer instances to the constructor:
 
@@ -31,8 +31,8 @@ model = Sequential(                 #  STEP 1 Define layers
 [[}]]
 
 [[{]]keras,TODO">
-● 
-● Compile (multi-class, binary, mean-sq.err,custom)
+#
+# Compile (multi-class, binary, mean-sq.err,custom)
 +----------------------------------------------------------------------------------------------------+
 |                                COMPILES ARGUMENTS                                                  |
 +----------------------------------------------------------------------------------------------------+
@@ -54,7 +54,7 @@ model.compile(                    | model.compile(               | REGRE.PROBLEM
                                                                                          |   loss='binary_crossentropy',
                                                                                          |   metrics=['accuracy', mean_pred])
 ────────────────────────────────────────────────────────────────────────────────
-● TRAINING
+# TRAINING
 Ex.
 import numpy as np              # ← INPUT DATA/LABELS ARE NUMPY ARRAYS.
 input_data = np.random.random(  # ← Dummy data (input_layer.input_dim=100)
@@ -80,12 +80,12 @@ model.fit(                     | model.fit(            # ← train the model, (t
 
 [[}]]
 
-● Keras GraphViz [[{keras,nn,gui,TODO]]
+# Keras GraphViz [[{keras,nn,gui,TODO]]
   http://www.graphviz.org/Gallery/directed/neural-network.html
 [[}]]
 
-● Keras Examples: [[{]]
-• multilayer perceptron (mlp) for multi-class softmax c12n:
+# Keras Examples: [[{]]
+## multilayer perceptron (mlp) for multi-class softmax c12n:
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
@@ -121,7 +121,7 @@ model.fit(x_train, y_train,
           batch_size=128)
 score = model.evaluate(x_test, y_test, batch_size=128)
 
-• MLP for binary c12n:
+## MLP for binary c12n:
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
@@ -148,7 +148,7 @@ model.fit(x_train, y_train,
           batch_size=128)
 score = model.evaluate(x_test, y_test, batch_size=128)
 
-• VGG-like convnet:
+## VGG-like convnet:
 import numpy as np
 import keras
 from keras.models import Sequential
@@ -186,7 +186,7 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd)
 model.fit(x_train, y_train, batch_size=32, epochs=10)
 score = model.evaluate(x_test, y_test, batch_size=32)
 
-• Sequence c12n with LSTM:
+## Sequence c12n with LSTM:
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.layers import Embedding
@@ -207,7 +207,7 @@ model.compile(loss='binary_crossentropy',
 model.fit(x_train, y_train, batch_size=16, epochs=10)
 score = model.evaluate(x_test, y_test, batch_size=16)
 
-• Sequence c12n with 1D convolutions:
+## Sequence c12n with 1D convolutions:
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.layers import Embedding
@@ -241,7 +241,7 @@ The first two LSTMs return their full output sequences, but the last one only
 returns the last step in its output sequence, thus dropping the temporal
 dimension (i.e. converting the input sequence into a single vector).
 
-• stacked LSTM:
+## stacked LSTM:
 from keras.models import Sequential
 from keras.layers import LSTM, Dense
 import numpy as np
@@ -274,7 +274,7 @@ model.fit(x_train, y_train,
           batch_size=64, epochs=5,
           validation_data=(x_val, y_val))
 
-• Same stacked LSTM model rendered "stateful":
+* Same stacked LSTM model rendered "stateful":
 - Stateful recurrent model:  is one for which the internal states (memories)
    obtained after processing a batch of samples are reused as initial states for
    the samples of the next batch.
@@ -318,7 +318,7 @@ model.fit(x_train, y_train,
           batch_size=batch_size, epochs=5, shuffle=False,
           validation_data=(x_val, y_val))
 
-● Tunning Keras:
+# Tunning Keras:
   Usage of optimizers:            https://keras.io/optimizers/
   Usage of loss functions         https://keras.io/losses/
   The Sequential Model API        https://keras.io/models/sequential/
@@ -560,7 +560,7 @@ encoded_b = lstm(b)
 
 lstm.output
 
-˃˃ AttributeError: Layer lstm_1 has multiple inbound nodes,
+>> AttributeError: Layer lstm_1 has multiple inbound nodes,
 hence the notion of "layer output" is ill-defined.
 Use `get_output_at(node_index)` instead.
 

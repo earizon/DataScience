@@ -1,7 +1,7 @@
 Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
 ====================
 (by Nabih Ibrahim Bawazir)
-● List of Time Series Methods:  [[{02_DOC_HAS.taxonomy]]
+# List of Time Series Methods:  [[{02_DOC_HAS.taxonomy]]
  1. Autoregression (AR)
  2. Moving Average (MA)
  3. Autoregressive Moving Average (ARMA)
@@ -26,7 +26,7 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
 [[}]]
 
 [[{time_series.101.timecop,use_case.fraud_detection,01_PM.low_code]]
-● timecop TS Anomaly Detector (by BBVA): #[timecop_summary]
+# timecop TS Anomaly Detector (by BBVA): #[timecop_summary]
 - Time series based anomaly detector.
 - RESTful webservice engine.
 - evaluates uni/multi-variate timeseries.
@@ -40,7 +40,7 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
     metric.
 - engine algorithm set:
   - VAR (Vercot Autoregression)
-  - Holt-Winters 
+  - Holt-Winters
   - ARIMA (Autoregressive Integrated Moving Average)
   - Recurrent Neural Networks using LSTM cells.
 
@@ -68,8 +68,8 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
     - ChangePoints
     - Confidence interval
 
-• 'timecop' Getting Started:
-  → Feed engine with (JSON) uni/multi-variate TS data points through 
+## 'timecop' Getting Started:
+  → Feed engine with (JSON) uni/multi-variate TS data points through
     its webservice (POST).
     → service will return you a (JSON) result of the analysis.
                              ┌ engine1 ┐
@@ -102,7 +102,7 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
     - Symmetric mean absolute percentage error
     - Mean Absolute Percentage Error
 
-• 'timecop' Ussage:
+## 'timecop' Ussage:
   STEP 1) Launch server. eg, using Docker:   [[devops.docker]]
   $ docker pull trakuo/timecop:devel
   $ docker run --name timecoprunning \
@@ -110,8 +110,8 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
 
   http://localhost:3000/static/index.html   ← Rest interface
 
-• STEP 2.alt1) Use the server GUI, uploading the Input CSV.
-• STEP 2.alt2) Prepare/send data to server, using python API.
+* STEP 2.alt1) Use the server GUI, uploading the Input CSV.
+* STEP 2.alt2) Prepare/send data to server, using python API.
   STEP 2.alt2.presetup)
   $ pip python client package
 
@@ -130,10 +130,10 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
 
     import timecopts as tc                   MULTIVARIATE Python API
                                              =======================
-                                             analyze+predict 1 TS respect to 
+                                             analyze+predict 1 TS respect to
                                              1+ reference TS
     TS_main=[1,2,3,4,5,6,...]  <············ Target TS to analyze/predict
-    TS_timeseries= []          <············ Reference TS 
+    TS_timeseries= []          <············ Reference TS
     TS_timeseries                            Feed (from memory/disk/,...)
        .append({'data': [1,2,3,4,...]})
     URL = 'http://timecop_server/'
@@ -147,7 +147,7 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
       restart=True)            <············ True : delete all historical TS data.
                                <············        use only new (POST) data.
 
-• STEP 2.alt3) Use the exposed REST API:
+* STEP 2.alt3) Use the exposed REST API:
   $ curl -i \                                UNIVARIATE REST API
     -H "Content-Type: application/json" \    ===================
     -X POST -d \
@@ -161,7 +161,7 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
      "timeseries":[
      {
        "data":
-         [0.950007158, 1.0, 1.0, ...] 
+         [0.950007158, 1.0, 1.0, ...]
      },
      {
         "data": [0.5, 1.0, ...]
@@ -215,7 +215,7 @@ Time Series Analysis [[{time_series_analysis,01_PM.TODO]]
 
 
 
-● Prophet Timeseries Forecasting: [[{time_series,python,rlang,01_PM.TODO]]
+# Prophet Timeseries Forecasting: [[{time_series,python,rlang,01_PM.TODO]]
 - forecasts time series data.
 - Implemented in R or Python
 - fully automatic, accurate, fast and tunable.

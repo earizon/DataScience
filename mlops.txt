@@ -1,4 +1,4 @@
-● ONNX.ai: [[{persistence,standards,mlops,01_PM.TODO]]
+# ONNX.ai: [[{persistence,standards,mlops,01_PM.TODO]]
   http://onnx.ai/
   ONNX is an open format built to represent machine learning models.
   ONNX defines a common set of operators - the building blocks of
@@ -7,7 +7,7 @@
   tools, runtimes, and compilers.
 [[}]]
 
-● HDF data format: [[{HDF,big_data,standards,persistence,01_PM.TODO]]
+# HDF data format: [[{HDF,big_data,standards,persistence,01_PM.TODO]]
 @[https://en.wikipedia.org/wiki/Hierarchical_Data_Format]
 
 Hierarchical Data Format (HDF) is a set of file formats (HDF4, HDF5)
@@ -20,10 +20,10 @@ is supported by The HDF Group.
   PyTables: Used for managing HDF5 datasets
 [[}]]
 
-● ServingMachineLearningModels.pdf (Oreilly)
+# ServingMachineLearningModels.pdf (Oreilly)
 @[./OreillyServingMachineLearningModels.pdf]
 
-● DVC: ML Data Version Control: [[{data.gathering,persistence,mlops,standards,01_PM.TODO]]
+# DVC: ML Data Version Control: [[{data.gathering,persistence,mlops,standards,01_PM.TODO]]
 @[https://dvc.org/]
 Open-source Version Control System for Machine Learning Projects
 
@@ -63,14 +63,14 @@ Deployment & Collaboration
 [[}]]
 
 [[{data.open_data,data.geospatial,resource,01_PM.TODO]]
-● world.geo.json:
+# world.geo.json:
 GitHub - johan/world.geo.json: Annotated geo-json geometry files for the world
 @[https://github.com/johan/world.geo.json]
 [[}]]
 
 
 
-● Kedro: [[{mlops,01_PM.TODO]]
+# Kedro: [[{mlops,01_PM.TODO]]
 https://kedro.readthedocs.io/en/latest/01_introduction/01_introduction.html
 - OOSS development workflow framework implements soft.engineering best-practice
   for data pipelines with an eye towards productionising machine learning models.
@@ -80,7 +80,7 @@ https://kedro.readthedocs.io/en/latest/01_introduction/01_introduction.html
 
 
 
-● MLflow: Simplifying ML Lifecycle:  [[{mlops,01_PM.TODO]]
+# MLflow: Simplifying ML Lifecycle:  [[{mlops,01_PM.TODO]]
 @[https://www.infoq.com/presentations/mlflow-databricks/]
 
 · MLflow provides APIs for tracking experiment runs between multiple
@@ -89,14 +89,14 @@ https://kedro.readthedocs.io/en/latest/01_introduction/01_introduction.html
   modular platform.
 [[}]]
 
-● ML: Intel continues AI push with acquisition of MLOps vendor Cnvrg - AI Business
+# ML: Intel continues AI push with acquisition of MLOps vendor Cnvrg - AI Business
   https://aibusiness.com/document.asp?doc_id=765229
 
 
-● MLOps for Enterprise AI: @ma
+# MLOps for Enterprise AI: @ma
   https://www.infoq.com/articles/optimizing-mlops-enterprise-ai/
 
-● OOSS Terraform module for Google k8s: [[{k8s,mlops,cloud,mlops.IaC_terraform,01_PM.TODO]]
+# OOSS Terraform module for Google k8s: [[{k8s,mlops,cloud,mlops.IaC_terraform,01_PM.TODO]]
 https://www.infoq.com/news/2020/03/spotify-terraform-kubeflow/
 
 Spotify has open-sourced their Terraform module for running machine-learning
@@ -116,7 +116,7 @@ and run up to 18,000 experiments.
 [[}]]
 
 [[{standards,mlops,01_PM.TODO]]
-● Cookiecutter: logical+standardized+flexible project structure</span>
+# Cookiecutter: logical+standardized+flexible project structure</span>
 
 @[http://drivendata.github.io/cookiecutter-data-science/]
   A logical, reasonably standardized, but flexible project structure
@@ -150,7 +150,7 @@ and run up to 18,000 experiments.
   use a fairly standardized setup like this one.
 [[}]]
 
-● ML Pipeline @ Stitch Fix:
+# ML Pipeline @ Stitch Fix:
 @[https://www.infoq.com/presentations/data-ml-pipelines-stitchfix]
 
 
