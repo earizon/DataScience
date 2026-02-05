@@ -1,0 +1,35 @@
+# Python Atmosphere
+
+
+   ```
+   | [[{doc_has.report,doc_has.comparative]]
+   | Python Atmosphere (by Brij Kishore Pandey  Linked @brijpandeyji  
+   | [[DATA.PROCESSING]] ----------------------------------------------------------------
+   |
+   | Polars    Modin    Pandas    Vaex    Datatable    CuPy     NumPy    ...
+   |
+   | [[DATA.DATABASE]] ------------------------------------------------------------------
+   |
+   | Dask    PySpark     Ray    Koalas      Kafka        Hadoop
+   |
+   | [[]] -----------------------------------------------------------------------------
+   |
+   | Jax    Keras    Theano    XGBoost     Scikit-Learn    TensorFlow   Pytorch
+   |
+   | [[Data.Visualization]] ---------------------------------------------------------------
+   |
+   | Plotly    Altair    Matplotlib    Seaborn    Geoplotlib    Pygal    Folium   Bokeh
+   |
+   | [[cognitive.NLP]] --------------------------------------------------------------------
+   |
+   | NLTK   Bert   Textblob   spaCy    Polygot    Gensim    Pattern  ...
+   |
+   | [[Stats]] (Statistical Analysis) -----------------------------------------------------
+   |
+   | SciPy    PyMC3   PyStan     Statsmodels    Lifelines    Pingouin
+   |
+   | [[Web_ Scrapping]] -------------------------------------------------------------------
+   |
+   | Scrapy       Selenium     Beautiful Soup     Ocroparse
+   | [[}]]
+   ```

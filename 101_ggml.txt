@@ -1,0 +1,14 @@
+# ggml: Tensor library for machine learning
+
+* State: under active development with some of the development 
+  currently happening in the llama.cpp and whisper.cpp repos
+
+## ggml Features:
+
+* Low-level cross-platform implementation
+* Integer quantization support
+* Broad hardware support
+* Automatic differentiation
+* ADAM and L-BFGS optimizers
+* No third-party dependencies
+* Zero memory allocations during runtime!!!!

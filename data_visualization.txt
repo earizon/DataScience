@@ -1,4 +1,4 @@
-[[{data.visualization,01_PM.TODO]]
+[[{data.visualization,PM.TODO]]
 # https://streamlit.io/ [[{]]
 Streamlit turns data scripts into shareable web apps in minutes.
 All in pure Python. No front‑end experience required.
@@ -7,53 +7,48 @@ Eg: https://github.com/cjgb/q2distr
 
 [[}]]
 
-# Seaborn: Stat Graphs: [[{]]
+[[{lib.seaborn,data.visualization,theory.statistics]]
+
+## Seaborn: Stat Graphs
   Michael Waskom’s package providing very high-level
   wrappers for complex plots (ggplot2-like aesthetic)
   over matplotlib
-@[https://seaborn.pydata.org/]
+<https://seaborn.pydata.org/>
 - a high-level interface for drawing attractive and informative
   statistical graphics on top of matplotlib.
 
-@[https://www.datacamp.com/community/tutorials/seaborn-python-tutorial]
-[[}]]
+<https://www.datacamp.com/community/tutorials/seaborn-python-tutorial>
+[[lib.seaborn}]]
 
-# Bokeh ( Python to interactive JS charts):
-- (Continuum Analytics)
-- "potential game-changer for web-based visualization".
-- Bokeh generates static JavaScript and JSON for you
-  from Python code, so  your users are magically able
-  to interact with your plots on a webpage without you
-  having to write a single line of native JS code.
+[[{data.visualization.graph_networks]]
+## Graph Visualization
 
-# Plotly Charts:
-@[https://plot.ly/]
-@[https://towardsdatascience.com/animated-information-graphics-4531de620ce7]
+- Gephi:
+- Cytoscape:
+- D3.js:
+- Linkurious:
 
-# Graph Visualization: [[{ graph_networks ]]
-  - Gephi
-  - Cytoscape
-  - D3.js
-  - Linkurious.
-- The graph visualization tools usually offer ways of representing
-  graph structure and properties, interactive ways to manipulate those
-  and reporting mechanisms to extract and visualize value from the
-  information contained in them.
-[[}]]
+  Graph visualization tools usually offer ways of representing
+graph structure and properties, interactive ways to manipulate those
+and reporting mechanisms to extract and visualize value from the
+information contained in them.
+[[data.visualization.graph_networks}]]
 
-# JS Pivot Tables:
-@[https://pivottable.js.org/examples/]
-@[https://github.com/search?q=pivot+table]
-@[https://www.flexmonster.com/demos/pivot-table-js/]
+[[{data.visualization.pivot_tables]]
+## JS Pivot Tables
+<https://pivottable.js.org/examples/>
+<https://github.com/search?q=pivot+table>
+<https://www.flexmonster.com/demos/pivot-table-js/>
+[[data.visualization.pivot_tables}]]
 
 
 # See also:
   - Web Technologies for Data visualization:
-@[http://www.oficina24x7.com/WebTechnologies/map.html?topics=data.visualization&showSearchMenu=false]
+<http://www.oficina24x7.com/WebTechnologies/map.html?topics=data.visualization&showSearchMenu=false>
 
 
 # Orange GUI!!
-@[https://orange.biolab.si/]
+<https://orange.biolab.si/>
 - Open source machine learning and data visualization for novice and expert.
 - Interactive data analysis workflows with a large toolbox.
   Perform simple data analysis with clever data visualization. Explore

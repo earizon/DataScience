@@ -1,0 +1,44 @@
+[[{devops.101]]
+# MLDevOps 101
+
+##GGUF vs GGML vs Safetensors Persistence Formats for Model
+
+
+* <https://www.metriccoders.com/post/understanding-gguf-ggml-and-safetensors-a-deep-dive-into-modern-tensor-format>
+
+* GGUF: GPT-Generated Unified Format: (used y Ollama, ...)
+  * <https://github.com/ggml-org/ggml/blob/master/docs/gguf.md>
+  * GGUF is a persistence binary format used to store models for
+    inference with GGML and executors based on GGML, designed for 
+    fast loading and saving and ease of reading.
+  * Designed  to be:
+    * unambiguous: by containing all the information needed to load a model.
+      (tensor plus metadata).
+    * extensible:  new information can be added to models without breaking compatibility.
+    * Optimized for Inference: performs well on consumer-grade hardware.
+  * TIP: Models are traditionally developed using PyTorch/... frameworks,
+    then converted to GGUF for use in GGML.
+  * Developed by Georgi Gerganov
+  * Compatible with Python, R, ...
+  * supports fine-tuning for specialized applications.
+  * deprecates while keeping compatibility with older GGML, GGMF and GGJT and file format.
+  * Inherited from GGML:
+    * integer quantization support:  4-bit, 5-bit, 8-bit to help reduce the model size
+      while improving inference speed.
+    * Built-in support for automatic differentiation, making it easier to implement and
+      train ML models. [[{PM.TODO}]]
+
+* GGML: Tensor Persistence Library for ML
+  * Precursor to GGUF, it has been widely used in the machine learning community.
+
+* Safetensors:  
+  * new format developed by Hugging Face 
+  * address some limitations of traditional tensor storage formats like **pickle**.
+  * ensures confidentiality and safety of data by avoiding the use of pickle,
+    which can be insecure.
+  * designed for zero-copy operations, making it extremely fast for loading and saving tensors.
+  * Ease of Use.
+  * Wide Adoption by leading AI enterprises such as Hugging Face, EleutherAI, and StabilityAI.
+
+
+[[devops.101}]]

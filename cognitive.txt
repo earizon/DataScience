@@ -2,9 +2,9 @@ Cognitive Processing
 
 # NLP: [[{cognitive.nlp]]
 # Universal Transformer:
-@[https://arxiv.org/pdf/1807.03819.pdf] "White-paper"
+<https://arxiv.org/pdf/1807.03819.pdf> "White-paper"
 
-@[https://ai.googleblog.com/2018/08/moving-beyond-translation-with.html]
+<https://ai.googleblog.com/2018/08/moving-beyond-translation-with.html>
 Last year we released the Transformer, a new machine learning model that
 showed remarkable success over existing algorithms for machine translation
 and other language understanding tasks. Before the Transformer, most neural

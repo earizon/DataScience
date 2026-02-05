@@ -1,1575 +1,312 @@
-## Apropos:
-  Content is versioned in git.  commits, issues and pull-requests welcome!
-@[https://www.github.com/earizon/DataScience]
+[[{101,doc_has.time_line]]
+## Data Science TimeLine 
 
-# Data Science TimeLine: [[{101.timeline]]
 
-## General TimeLine [[{]]
-  (by @faviovaz, @hiezelvazquez)
-  1943 Neural Nets                                    (McCulloch&Pitt)
-  1948 A Mathematical Theory of Communication         (Shannon)
-  1950 Computing Machiner and Intelligence            (Turing)
-  1958 A Business Intelligence System
-  1962 The Future of Data Analysis                    (Tukey)
-  1970 Relational Database                            (Codd)
-  1974 Concise Surver of Computer Methods             (Naur,Werbos et al.)
-       Backpopagation
-  1977 Exploratory Data Analysis                      (Tukey)
-       International Association for Statistical
-       Computing Founded.
-  1988 An Architecture for a Business                 (Devlin&Murphy)
-       and Information System
-  1996 From Data Mining to Knowledge Discovery        (Fayyad, Piatetsky-Shapiro & Smyth)
-       in Databases
-  1997 Statistics = Data Science?                     (Wu)
-  1998 Google Paper                                   (Page & Brin)
-  2001 Data Science: An Action Plan for Expanding
-       the Technical Areas of the Field of Statistics (Cleveland)
-  2001 Statistical Modeling: The Two Culture          (Breiman)
-  2002 Data Science Journal founded
-  2004 Map Reduce Paper                               (Dean & Ghemawat)
-  2005 Competing on Analytics                         (Davenport et al.)
-  2006 Deep Belief Networks                           (Hinton)
-  2006 Hadoop                                         (Yahoo!)
-  2006 Knowledge Discovery in Databases (KDD) founded (Piatetsky-Shapiro)
-  2006 International Federtion of
-       Classification Societes(IFCS)
-       - For the first time the term "Data Science"
-         appears in the cover !!!
-  2007 Scikit-Learn
-  2009 The Three Sexy Skills of Data Geeks           (Driscoll)
-  2009 The Rise of the Data Scientist                (Yun)
-  2009 Linked Data                                   (Berners-Lee)
-  2010 Spark paper                                   (Zahaira et al.)
-  2010 The Revolution in Astronomy Education:        (Borne et al.)
-       Data Science for the Masses
-  2010 A Taxonomy of Data Science (Mason & Wiggins)                   [[02_DOC_HAS.taxonomy]]
-  2011 Data Science: What's in a nmae?              (Smith)
-  2011 Data Lakes                                   (Dixon)
-  2011 The Art of Data Science                      (Graham)
-  2011 Building Data Science Teams                  (Patil)
-  2012 Data Scientist: The Sexiest Job of the       (Davenport & Patil)
-       21st Century
-  2012 Knowledge Graph                              (Google)
-  2014 AlphaGo                                      (Deep Mind)
-  2017 Data Fabrics
-  2018 Graph Tecnologies rising
-  2019 Python as one of the most used programming
-       languages in the world.
-[[}]]
+  ```
+  | (by @faviovaz, @hiezelvazquez)
+  | 1943 Neural Nets                                    (McCulloch&Pitt)
+  | 1948 A Mathematical Theory of Communication         (Shannon)
+  | 1950 Computing Machiner and Intelligence            (Turing)
+  | 1958 A Business Intelligence System
+  | 1962 The Future of Data Analysis                    (Tukey)
+  | 1970 Relational Database                            (Codd)
+  | 1974 Concise Surver of Computer Methods             (Naur,Werbos et al.)
+  |      Backpopagation
+  | 1977 Exploratory Data Analysis                      (Tukey)
+  |      International Association for Statistical
+  |      Computing Founded.
+  | 1988 An Architecture for a Business                 (Devlin&Murphy)
+  |      and Information System
+  | 1996 From Data Mining to Knowledge Discovery        (Fayyad, Piatetsky-Shapiro & Smyth)
+  |      in Databases
+  | 1997 Statistics = Data Science?                     (Wu)
+  | 1998 Google Paper                                   (Page & Brin)
+  | 2001 Data Science: An Action Plan for Expanding
+  |      the Technical Areas of the Field of Statistics (Cleveland)
+  | 2001 Statistical Modeling: The Two Culture          (Breiman)
+  | 2002 Data Science Journal founded
+  | 2004 Map Reduce Paper                               (Dean & Ghemawat)
+  | 2005 Competing on Analytics                         (Davenport et al.)
+  | 2006 Deep Belief Networks                           (Hinton)
+  | 2006 Hadoop                                         (Yahoo!)
+  | 2006 Knowledge Discovery in Databases (KDD) founded (Piatetsky-Shapiro)
+  | 2006 International Federtion of
+  |      Classification Societes(IFCS)
+  |      - For the first time the term "Data Science"
+  |        appears in the cover !!!
+  | 2007 Scikit-Learn
+  | 2009 The Three Sexy Skills of Data Geeks           (Driscoll)
+  | 2009 The Rise of the Data Scientist                (Yun)
+  | 2009 Linked Data                                   (Berners-Lee)
+  | 2010 Spark paper                                   (Zahaira et al.)
+  | 2010 The Revolution in Astronomy Education:        (Borne et al.)
+  |      Data Science for the Masses
+  | 2010 A Taxonomy of Data Science (Mason & Wiggins)                   [[DOC_HAS.taxonomy]]
+  | 2011 Data Science: What's in a nmae?              (Smith)
+  | 2011 Data Lakes                                   (Dixon)
+  | 2011 The Art of Data Science                      (Graham)
+  | 2011 Building Data Science Teams                  (Patil)
+  | 2012 Data Scientist: The Sexiest Job of the       (Davenport & Patil)
+  |      21st Century
+  | 2012 Knowledge Graph                              (Google)
+  | 2014 AlphaGo                                      (Deep Mind)
+  | 2017 Data Fabrics
+  | 2018 Graph Tecnologies rising
+  | 2019 Python as one of the most used programming
+  |      languages in the world.
+  ```
+[[doc_has.time_line}]]
 
-# Learning with humor  [[{PM.low_code]]
+[[{doc_has.humor,PM.low_code]]
+# Learning with humor
   (by Moez Ali)
 - After listening to few statisticians who believe that
   low-code/no-code tools are spoiling data scientists and taking away
   critical thinking from society, I am now heavily influenced by them
-  and propose the following changes in future release of PyCaret:
+  and propose the following changes in future release of PyCaret
 
-- You will no longer be able to train logistic regression by
-  create_model('lr'), instead you have to pass the sigmoid function,
-  loss, and optimizer separately.
+  You will no longer be able to train logistic regression by
+create_model('lr'), instead you have to pass the sigmoid function,
+loss, and optimizer separately.
 
-- You won’t be able to train ensemble models with PyCaret, we
-  encourage you to draw trees by hand and then combine them on piece of
-  paper with your own hand-written booster.
+  You won’t be able to train ensemble models with PyCaret, we
+encourage you to draw trees by hand and then combine them on piece of
+paper with your own hand-written booster.
 
-- You can’t preprocess the data unless you know all the
-  transformation functions by heart. If you fail to prove, we will take
-  all the bitcoins from your wallet.
+  You can’t preprocess the data unless you know all the
+transformation functions by heart. If you fail to prove, we will take
+all the bitcoins from your wallet.
 
-- Every time you download pycaret we will send you a fourier
-  transformation challenge to solve.
+  Every time you download pycaret we will send you a fourier
+transformation challenge to solve.
 
-- I also propose to replace API with Statisticians. Instead of having
-  an end-point on cloud, I suggest we keep statisticians on-duty for
-  24/7 and every time inference is required, statistician will
-  transform the data and generate boundary with their mind power only.
+  I also propose to replace API with Statisticians. Instead of having
+an end-point on cloud, I suggest we keep statisticians on-duty for
+24/7 and every time inference is required, statistician will
+transform the data and generate boundary with their mind power only.
 
 - I am open to more ideas
 [[}]]
 
 
-[[101.timeline}]]
 
+[[{101,doc_has.comparative]]
+# OPTIMIZATION PROBLEMS VS DATA SCIENCE VS MACHINE LEARNING VS AI
 
-# OPTIMIZATION PROBLEMS VS DATA SCIENCE VS MACHINE LEARNING VS AI: [[{]]
-REF: @[https://www.cybertec-postgresql.com/en/data-science/]
-  ┌ NON-POLYNOMIAL SOLVABLE PROBLEMS ──────────────────────────────────────┐
-  │ ┌ OPTIMIZATION PROBLEMS ──────────────────────────────────────────────┐│
-  │ │ (No exact solution exists, but probabilistic (and/or aproximate     ││
-  │ │ is "good enough"). OR─Tools, ...                                    ││
-  │ │ Note: Probabilistic does not necesarely means "academic             ││
-  │ │       probability" (that deals with ideal and many times unknown    ││
-  │ │       probabilities).                                               ││
-  │ │ => WARN: This means there will always be random failures and        ││
-  │ │          random non-repeatable "successes".                         ││
-  │ │ ┌ DATA SCIENCE ───────────────────────────────────────────────────┐ ││
-  │ │ │          ┌───────────────────────────┐                          │ ││
-  │ │ │          │ Learn/    │ ML, AI, deep  │                          │ ││
-  │ │ │          │  Optimize │ deep-learning │                          │ ││
-  │ │ │       ┌──┴───────────────────────────┴─────────┐                │ ││
-  │ │ │       │ Explore/     │ analytics, metrics,     │                │ ││
-  │ │ │       │ transform    │ segments, aggregates,   │                │ ││
-  │ │ │       │              │ features, training data │                │ ││
-  │ │ │    ┌──┴────────────────────────────────────────┴──────────┐     │ ││
-  │ │ │    │ Move/Store      │ reliable data flow, infrastructure,│     │ ││
-  │ │ │    │                 │ pipelines, ETL, (un)structured data│     │ ││
-  │ │ │    │                 │ storage                            │     │ ││
-  │ │ │ ┌──┴──────────────────────────────────────────────────────┴────┐│ ││
-  │ │ │ │ Collect            │   Instrumentation, logging, sensons,    ││ ││
-  │ │ │ │                    │   external data, user generated content ││ ││
-  │ │ │ └──────────────────────────────────────────────────────────────┘│ ││
-  │ │ └─────────────────────────────────────────────────────────────────┘ ││
-  │ └─────────────────────────────────────────────────────────────────────┘│
-  └────────────────────────────────────────────────────────────────────────┘
-[[}]]
+REF: <https://www.cybertec-postgresql.com/en/data-science/>
 
-# DATA SCIENCE NOMENCLATURE: [[{PM.WiP]]
-- SEGMENTATION: pre-processing where objects of interest are "extracted" from background.
+  ```
+  |   ┌─ NON-POLYNOMIAL SOLVABLE PROBLEMS ───────────────────────────────────────┐
+  |   │  ┌─ OPTIMIZATION PROBLEMS ──────────────────────────────────────────────┐│
+  |   │  │  (No exact solution exists, but probabilistic (and/or aproximate     ││
+  |   │  │  is "good enough"). OR─Tools, ...                                    ││
+  |   │  │  Note: Probabilistic does not necesarely means "academic             ││
+  |   │  │        probability" (that deals with ideal and many times unknown    ││
+  |   │  │        probabilities).                                               ││
+  |   │  │  => WARN: This means there will always be random failures and        ││
+  |   │  │           random non-repeatable "successes".                         ││
+  |   │  │  ┌ DATA SCIENCE ───────────────────────────────────────────────────┐ ││
+  |   │  │  │          ┌───────────────────────────┐                          │ ││
+  |   │  │  │          │ Learn/    │ ML, AI, deep  │                          │ ││
+  |   │  │  │          │  Optimize │ deep-learning │                          │ ││
+  |   │  │  │       ┌──┴───────────────────────────┴─────────┐                │ ││
+  |   │  │  │       │ Explore/     │ analytics, metrics,     │                │ ││
+  |   │  │  │       │ transform    │ segments, aggregates,   │                │ ││
+  |   │  │  │       │              │ features, training data │                │ ││
+  |   │  │  │    ┌──┴────────────────────────────────────────┴──────────┐     │ ││
+  |   │  │  │    │ Move/Store      │ reliable data flow, infrastructure,│     │ ││
+  |   │  │  │    │                 │ pipelines, ETL, (un)structured data│     │ ││
+  |   │  │  │    │                 │ storage                            │     │ ││
+  |   │  │  │ ┌──┴──────────────────────────────────────────────────────┴────┐│ ││
+  |   │  │  │ │ Collect            │   Instrumentation, logging, sensons,    ││ ││
+  |   │  │  │ │                    │   external data, user generated content ││ ││
+  |   │  │  │ └──────────────────────────────────────────────────────────────┘│ ││
+  |   │  │  └─────────────────────────────────────────────────────────────────┘ ││
+  |   │  └──────────────────────────────────────────────────────────────────────┘│
+  |   └──────────────────────────────────────────────────────────────────────────┘
+  ```
+[[101}]]
 
-FEATURE EXTRACTION: Process that takes-in a pattern and produces feature values.
-    Number of features is virtually always chosen to be fewer than the total
-    necessary to describe the complete taret of interest, and this leads to a loss
-    in information.
+[[{101,PM.WiP]]
+# MACHINE LEARNING SUMMARY
 
-     In acts of associate-memory, the system takes in a pattern and emits another
-    pattern which is representative of a general group of patterns. It thus reduces
-    the information somewhat, but rarely to the extent that pattern classification
-    does. In short, because of the crucial role of a decision in pattern recognition
-    information, IT IS FUNDAMENTALLY AN INFORMATION REDUCTION PROCESS.
-    THE CONCEPTUAL BOUNDARY BETWEEN FEATURE-EXTRACTION AND CLASSIFICATION IS ARBITRARY.
+- MATHEMATICAL FOUNDATIONS
+  - Linear Algebra
+  - Lagrange Optimization
+  - Probability Theory
+  - Gaussian Derivatives & Integrals
+  - Hypothesis Testing
+  - Information Theory
+  - Computational Complexity
+    and Optimization Problems
 
-SUBSET AND SUPERSET PROBLEM: Formally part of mereology, the study of part/whole
-   relationships. It appears as though the best classifiers try to incorporate
-   as much of the input into the categorization as "makes sense" but not too much.
+- ALGORITHM-INDEPENDENT MACHINE LEARNING PARAMETERS:
+  - bias
+  - variance
+  - degress of freedom
 
-RISK: Total spected cost of making a wrong classification/Decision
-      (total spected cost = wrong-classification cost x probability of event)
-[[}]]
+- CENTRAL AIM OF DESIGNING A MACHINE-LEARNING CLASSIFIER:
+  Suggest actions when presented with not-yet-seen patterns,
+  This is the issue of generalization.
 
-# MACHINE LEARNING SUMMARY: [[{101,PM.WiP]]
+- There is an overall single cost associated with our decision,
+  and our true task is to make a decision rule (i.e., set a decision
+  boundary) so as to minimize such a cost.
+  This is the central task of DECISION THEORY of which pattern
+  classification is (perhaps) the most important subfiled.
 
-  ▶ MATHEMATICAL FOUNDATIONS
-   - Linear Algebra
-   - Lagrange Optimization
-   - Probability Theory
-   - Gaussian Derivatives
-     & Integrals
-   - Hypothesis Testing
-   - Information Theory
-   - Computational Complexity
-     and Optimization Problems
+- Classification is, at base, the task of recovering the model that
+  generated the patterns.
+  Because perfect classification performance is often impossible,
+  a more general task is to determine the probability for each
+  of the possible categories.
 
-  ▶ ALGORITHM-INDEPENDENT MACHINE LEARNING PARAMETERS:
-    - bias
-    - variance
-    - degress of freedom
+- Learning: "Any method" that incorporates information from training samples in the
+  design of a classifier.  Formally, it refers to some form of algorithm for reducing
+  the error on a set of training data.
 
-  ▶ CENTRAL AIM OF DESIGNING A MACHINE-LEARNING CLASSIFIER:
-    Suggest actions when presented with not-yet-seen patterns,
-    This is the issue of generalization.
+[[{101]]
+# ML LEARNING PHASE PIPELINE
 
-  ▶ There is an overall single cost associated with our decision,
-    and our true task is to make a decision rule (i.e., set a decision
-    boundary) so as to minimize such a cost.
-    This is the central task of DECISION THEORY of which pattern
-    classification is (perhaps) the most important subfiled.
+  ```
+  | ┌─ LEARNING PHASE ───────────────────────────────────────────────────────────────────┐
+  | │ └ PRE-SETUP.                                                                       │
+  | │   - Sensing          ····> Feature-Extractor                                       │
+  | │   - Measuring                                                                      │
+  | │   - Collecting                                                                     │
+  | │                                                                                    │
+  | │ └ STEP 1) Data Preprocesing                                                        │
+  | │   - Remove/Replace missing data.                                                   │
+  | │   - Split data into train/test.                                                    │
+  | │   - L1/L2 renormalization.                                                         │
+  | │   - Rescale.                                                                       │
+  | │   - in/de-crease dimmensions.                                                      │
+  | │                                                                                    │
+  | │  └ STEP 2) Choose the set of features forming the Model or                         │
+  | │            N-dimensional Feature-space B                                           │
+  | │    ┌─────────────────────────────────────┐  ┌─────────────┐                        │
+  | │    │known value1 - featureA1,featureB1,..├·>│ NON_Trained │                        │
+  | │    │known value2 - featureA2,featureB2,..│  │  Classifier │  PARAMS examples:      │
+  | │    │known value3 - featureA3,featureB3,..│  │ · param1    <─ · Percepton params    │
+  | │    │....                                 │  │ · param2,   │  · Matrix/es of weights│
+  | │    │                                     │  │ · ..        │  · Tree params         │
+  | │    └↑────────────────────────────────────┘  └─────────────┘  · ...                 │
+  | │     └ known values apply only to SUPERVISED LEARNING                               │
+  | │       - In REINFORCED LEARNING  (or LEARNING-WITH-A-CRITIC)                        │
+  | │         the external supervisor (known values) is replaced with                    │
+  | │         a reward-function when calculating the function to                         │
+  | │         maximize/minimize during training.                                         │
+  | │       - In NON-SUPERVISED LEARNING groups are forming                              │
+  | │         where elements "are close to each other in group                           │
+  | │         minimizing some sort of function.                                          │
+  | │                                                                                    │
+  | │  └ STEP 3) LEARING PROCESS                                                         │
+  | │    LEARNING CAN BE SEEN AS THE SPLIT OF THE FEATURE-SPACE IN REGIONS WHERE THE     │
+  | │    DECISION─COST IS MINIMIZED BY TUNING THE PARAMETERS.                            │
+  | │                                                                                    │
+  | │  └ STEP 4)  MODEL EVALUATION                                                       │
+  | │    - Use evaluation data list to check accuracy of Predicted data vs Known Data    │
+  | │    - Go back to STEP 3), 2) or 1) if not satified according to some metric.        │
+  | │                                                                                    │
+  | ├─ PREDICTION PHASE ─────────────────────────────────────────────────────────────────┤
+  | │└ STEP 5)                                                                           │
+  | │             ┌──────────┐                                                           │
+  | │ ┌──────┐    │ TRAINED  │    "Mostly-Correct"                                       │
+  | │ │INPUT │  → │          │  →   Predicted                                            │
+  | │ └──────┘    │CLASSIFIER│      Output                                               │
+  | │             └──────────┘                                                           │
+  | └─ PREDICTION PHASE ─────────────────────────────────────────────────────────────────┘ 
+  ```
+[[101}]]
 
-  ▶ Classification is, at base, the task of recovering the model that
-    generated the patterns.
-    Because perfect classification performance is often impossible,
-    a more general task is to determine the probability for each
-    of the possible categories.
+[[{101]] 
+# ML COMPARATIVE MATRIX  
 
-  ▶ Learning: "Any method" that incorporates information from training samples in the
-    design of a classifier.  Formally, it refers to some form of algorithm for reducing
-    the error on a set of training data.
+* Forcibely incomplete but still pertinent
 
+  ```
+  |             ┌─·········· SUPERVISED: An external "teacher" provides a category label or cost
+  |             ·
+  |             · ┌─········ UNSUPERVISED: the system forms clusters or "natural groupings"
+  |             · · ┌─······ PREDICTION TYPE: Category
+  |             · · · ┌····· PREDICTION TYPE: Continuos
+  |             · · · ·┌─────────────────────┬──────────────────────────────────┬─────────────────────────────┐
+  |             · · · ·│ USE─CASES           │ POPULAR ALGORITHMS               │                             │
+  |             · · · ·┤                     │                                  │                             │
+  |             · · · ·│                     │                                  │                             │
+  |             · · · ·│                     │                                  │                             │
+  | ┌──────────┬v┬v┬v┬v┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
+  | │Classifier│X│ │X│ │ Spam─Filtering      │ (MultiLayer)Percepton            │Fit curve to split different │
+  | │          │ │ │ │ │ Sentiment analysis  │ Adaline                          │  │     + /   ─    categories│
+  | │          │ │ │ │ │ handwritten recog.  │ Naive Bayes                      │  │+ +   /\                  │
+  | │          │ │ │ │ │ Fraud Detection     │ Decision Tree                    │  │     /  \ ─               │
+  | │          │ │ │ │ │                     │ Logistic Regression              │  │  + / o  \                │
+  | │          │ │ │ │ │                     │ K─Nearest Neighbours             │  │   / o  o \ ─             │
+  | │          │ │ │ │ │                     │ Support Vector Machine           │  └────────────              │
+  | ├──────────┼─┼─┼─┼─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
+  | │Regression│ │X│X│X│ Financial Analysis  │- Linear Regresion:               │find some functional descrip-│
+  | │          │ │ │ │ │                     │  find linear fun.(to input vars) │tion of the data.            │
+  | │          │ │ │ │ │                     │- Interpolation: Fun. is known for│Fit curve to approach        │
+  | │          │ │ │ │ │                     │  some range. Find fun for another││       /·   output data     │
+  | │          │ │ │ │ │                     │  range of input values.          ││    · /                     │
+  | │          │ │ │ │ │                     │- Density estimation: Estimate    ││     /·                     │
+  | │          │ │ │ │ │                     │  density (or probability) that a ││ ·  /                       │
+  | │          │ │ │ │ │                     │  member of a given category will ││   /  ·                     │
+  | │          │ │ │ │ │                     │  be found to have particular fea-││  / ·                       │
+  | │          │ │ │ │ │                     │  tures.                          │└──────────                  │
+  | ├──────────┼─┼─┼─┼─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
+  | │Clustering│ │X│ │ │ Market Segmentation │ K─Means clustering               │ Find clusters (meaninful    │
+  | │          │ │ │ │ │ Image Compression   │ Mean─Shift                       │ │B ┌─────┐      subgroups)  │
+  | │          │ │ │ │ │ Labeling new data   │ DBSCAN                           │ │B │x x  │                  │
+  | │          │ │ │ │ │ Detect abnormal     │                                  │ │B └─────┘  ┌────┐          │
+  | │          │ │ │ │ │   behaviour         │                                  │ │Q ┌────┐   │ y  │          │
+  | │          │ │ │ │ │ Automate marketing  │                                  │ │Q │ z  │   │   y│          │
+  | │          │ │ │ │ │  marketing strategy │                                  │ │Q │z  z│   └────┘          │
+  | │          │ │ │ │ │ ...                 │                                  │ │Q └────┘                   │
+  | │          │ │ │ │ │                     │                                  │ └──────────────             │
+  | ├──────────┼─┼─┼─┼─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
+  | │Dimension │ │X│ │ │ Data preprocessing  │ Principal Component Analysis PCA │                             │
+  | │Reduction │ │ │ │ │ Recommender systems │ Singular Value Decomposition SVD │                             │
+  | │          │ │ │ │ │ Topic Modeling/doc  │ Latent Dirichlet allocation  LDA │                             │
+  | │          │ │ │ │ │   search            │ Latent Semantic Analysis         │                             │
+  | │          │ │ │ │ │ Fake image analysis │ (LSA, pLSA,GLSA)                 │                             │
+  | │          │ │ │ │ │ Risk management     │ t─SNE (for visualization)        │                             │
+  | ├──────────┼─┴─┴─┴─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
+  | │Ensemble  │       │ search systems      │ (B)oostrap A(GG)regat(ING)       │                             │
+  | │methods   │       │ Computer vision     │ - Random Forest                  │                             │[[{ml.performance]]
+  | │ Bagging& │       │ Object Detection    │   (Much faster than Neu.Net)     │                             │[[}]]
+  | │ Boosting │       │                     │ ── ── ── ── ── ── ── ── ── ── ── │                             │
+  | │          │       │                     │ BOOSTING Algorithms              │                             │
+  | │          │       │                     │ (Doesn't paralelize like BAGGING,│                             │
+  | │          │       │                     │  but are more precise and still  │                             │
+  | │          │       │                     │  faster than Neural Nets)        │                             │
+  | │          │       │                     │  - CatBoost                      │                             │
+  | │          │       │                     │  - LightGBM                      │                             │
+  | │          │       │                     │  - XGBoost                       │                             │
+  | │          │       │                     │  - ...                           │                             │
+  | ├──────────┼─┬─┬─┬─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
+  | │Convolu-  │X│ │X│ │ Search for objects  │                                  │                             │
+  | │tional    │ │ │ │ │  in images/videos   │                                  │                             │
+  | │Neural    │ │ │ │ │ Face Recognition.   │                                  │                             │
+  | │Network   │ │ │ │ │ Generate/Enhance    │                                  │                             │
+  | │          │ │ │ │ │  images,            │                                  │                             │
+  | │          │ │ │ │ │ ...                 │                                  │                             │
+  | ├──────────┼─┼─┼─┼─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
+  | │Recurrent │X│X?X│X│ text translation,   │                                  │                             │
+  | │Neural    │ │ │ │ │ speech recognition, │                                  │                             │
+  | │Network   │ │ │ │ │ text 2 speak,       │                                  │                             │
+  | │          │ │ │ │ │ ....                │                                  │                             │
+  | │          │ │ │ │ │                     │                                  │                             │
+  | │          │ │ │ │ │                     │                                  │                             │
+  | └──────────┴─┴─┴─┴─┴─────────────────────┴──────────────────────────────────┴─────────────────────────────┘ 
+  ```
+[[101}]]
 
-# ML LEARNING PHASE PIPELINE: [[{101]]
- ┌─ LEARNING PHASE ───────────────────────────────────────────────────────────────────┐
- │ └ PRE-SETUP.                                                                       │
- │   - Sensing          ····> Feature-Extractor                                       │
- │   - Measuring                                                                      │
- │   - Collecting                                                                     │
- │                                                                                    │
- │ └ STEP 1) Data Preprocesing                                                        │
- │   - Remove/Replace missing data.                                                   │
- │   - Split data into train/test.                                                    │
- │   - L1/L2 renormalization.                                                         │
- │   - Rescale.                                                                       │
- │   - in/de-crease dimmensions.                                                      │
- │                                                                                    │
- │  └ STEP 2) Choose the set of features forming the Model or                         │
- │            N-dimensional Feature-space B                                           │
- │    ┌─────────────────────────────────────┐  ┌─────────────┐                        │
- │    │known value1 - featureA1,featureB1,..├·>│ NON_Trained │                        │
- │    │known value2 - featureA2,featureB2,..│  │  Classifier │  PARAMS examples:      │
- │    │known value3 - featureA3,featureB3,..│  │ · param1    <─ · Percepton params    │
- │    │....                                 │  │ · param2,   │  · Matrix/es of weights│
- │    │                                     │  │ · ..        │  · Tree params         │
- │    └↑────────────────────────────────────┘  └─────────────┘  · ...                 │
- │     └ known values apply only to SUPERVISED LEARNING                               │
- │       - In REINFORCED LEARNING  (or LEARNING-WITH-A-CRITIC)                        │
- │         the external supervisor (known values) is replaced with                    │
- │         a reward-function when calculating the function to                         │
- │         maximize/minimize during training.                                         │
- │       - In NON-SUPERVISED LEARNING groups are forming                              │
- │         where elements "are close to each other in group                           │
- │         minimizing some sort of function.                                          │
- │                                                                                    │
- │  └ STEP 3) LEARING PROCESS                                                         │
- │    LEARNING CAN BE SEEN AS THE SPLIT OF THE FEATURE-SPACE IN REGIONS WHERE THE     │
- │    DECISION─COST IS MINIMIZED BY TUNING THE PARAMETERS.                            │
- │                                                                                    │
- │  └ STEP 4)  MODEL EVALUATION                                                       │
- │    - Use evaluation data list to check accuracy of Predicted data vs Known Data    │
- │    - Go back to STEP 3), 2) or 1) if not satified according to some metric.        │
- │                                                                                    │
- ├─ PREDICTION PHASE ─────────────────────────────────────────────────────────────────┤
- │└ STEP 5)                                                                           │
- │             ┌──────────┐                                                           │
- │ ┌──────┐    │ TRAINED  │    "Mostly-Correct"                                       │
- │ │INPUT │  → │          │  →   Predicted                                            │
- │ └──────┘    │CLASSIFIER│      Output                                               │
- │             └──────────┘                                                           │
- └─ PREDICTION PHASE ─────────────────────────────────────────────────────────────────┘ [[}]]
+[[{data.visualization,library.matplot,numpy]]
 
-# ML COMPARATIVE MATRIX  [[{101]] (FORCIBELY INCOMPLETE BUT STILL PERTINENT)
-             ┌─·········· SUPERVISED: An external "teacher" provides a category label or cost
-             ·
-             · ┌─········ UNSUPERVISED: the system forms clusters or "natural groupings"
-             · · ┌─······ PREDICTION TYPE: Category
-             · · · ┌····· PREDICTION TYPE: Continuos
-             · · · ·┌─────────────────────┬──────────────────────────────────┬─────────────────────────────┐
-             · · · ·│ USE─CASES           │ POPULAR ALGORITHMS               │                             │
-             · · · ·┤                     │                                  │                             │
-             · · · ·│                     │                                  │                             │
-             · · · ·│                     │                                  │                             │
- ┌──────────┬v┬v┬v┬v┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
- │Classifier│X│ │X│ │ Spam─Filtering      │ (MultiLayer)Percepton            │Fit curve to split different │
- │          │ │ │ │ │ Sentiment analysis  │ Adaline                          │  │     + /   ─    categories│
- │          │ │ │ │ │ handwritten recog.  │ Naive Bayes                      │  │+ +   /\                  │
- │          │ │ │ │ │ Fraud Detection     │ Decision Tree                    │  │     /  \ ─               │
- │          │ │ │ │ │                     │ Logistic Regression              │  │  + / o  \                │
- │          │ │ │ │ │                     │ K─Nearest Neighbours             │  │   / o  o \ ─             │
- │          │ │ │ │ │                     │ Support Vector Machine           │  └────────────              │
- ├──────────┼─┼─┼─┼─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
- │Regression│ │X│X│X│ Financial Analysis  │- Linear Regresion:               │find some functional descrip-│
- │          │ │ │ │ │                     │  find linear fun.(to input vars) │tion of the data.            │
- │          │ │ │ │ │                     │- Interpolation: Fun. is known for│Fit curve to approach        │
- │          │ │ │ │ │                     │  some range. Find fun for another││       /·   output data     │
- │          │ │ │ │ │                     │  range of input values.          ││    · /                     │
- │          │ │ │ │ │                     │- Density estimation: Estimate    ││     /·                     │
- │          │ │ │ │ │                     │  density (or probability) that a ││ ·  /                       │
- │          │ │ │ │ │                     │  member of a given category will ││   /  ·                     │
- │          │ │ │ │ │                     │  be found to have particular fea-││  / ·                       │
- │          │ │ │ │ │                     │  tures.                          │└──────────                  │
- ├──────────┼─┼─┼─┼─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
- │Clustering│ │X│ │ │ Market Segmentation │ K─Means clustering               │ Find clusters (meaninful    │
- │          │ │ │ │ │ Image Compression   │ Mean─Shift                       │ │B ┌─────┐      subgroups)  │
- │          │ │ │ │ │ Labeling new data   │ DBSCAN                           │ │B │x x  │                  │
- │          │ │ │ │ │ Detect abnormal     │                                  │ │B └─────┘  ┌────┐          │
- │          │ │ │ │ │   behaviour         │                                  │ │Q ┌────┐   │ y  │          │
- │          │ │ │ │ │ Automate marketing  │                                  │ │Q │ z  │   │   y│          │
- │          │ │ │ │ │  marketing strategy │                                  │ │Q │z  z│   └────┘          │
- │          │ │ │ │ │ ...                 │                                  │ │Q └────┘                   │
- │          │ │ │ │ │                     │                                  │ └──────────────             │
- ├──────────┼─┼─┼─┼─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
- │Dimension │ │X│ │ │ Data preprocessing  │ Principal Component Analysis PCA │                             │
- │Reduction │ │ │ │ │ Recommender systems │ Singular Value Decomposition SVD │                             │
- │          │ │ │ │ │ Topic Modeling/doc  │ Latent Dirichlet allocation  LDA │                             │
- │          │ │ │ │ │   search            │ Latent Semantic Analysis         │                             │
- │          │ │ │ │ │ Fake image analysis │ (LSA, pLSA,GLSA)                 │                             │
- │          │ │ │ │ │ Risk management     │ t─SNE (for visualization)        │                             │
- ├──────────┼─┴─┴─┴─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
- │Ensemble  │       │ search systems      │ (B)oostrap A(GG)regat(ING)       │                             │
- │methods   │       │ Computer vision     │ - Random Forest                  │                             │[[{ml.performance]]
- │ Bagging& │       │ Object Detection    │   (Much faster than Neu.Net)     │                             │[[}]]
- │ Boosting │       │                     │ ── ── ── ── ── ── ── ── ── ── ── │                             │
- │          │       │                     │ BOOSTING Algorithms              │                             │
- │          │       │                     │ (Doesn't paralelize like BAGGING,│                             │
- │          │       │                     │  but are more precise and still  │                             │
- │          │       │                     │  faster than Neural Nets)        │                             │
- │          │       │                     │  - CatBoost                      │                             │
- │          │       │                     │  - LightGBM                      │                             │
- │          │       │                     │  - XGBoost                       │                             │
- │          │       │                     │  - ...                           │                             │
- ├──────────┼─┬─┬─┬─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
- │Convolu-  │X│ │X│ │ Search for objects  │                                  │                             │
- │tional    │ │ │ │ │  in images/videos   │                                  │                             │
- │Neural    │ │ │ │ │ Face Recognition.   │                                  │                             │
- │Network   │ │ │ │ │ Generate/Enhance    │                                  │                             │
- │          │ │ │ │ │  images,            │                                  │                             │
- │          │ │ │ │ │ ...                 │                                  │                             │
- ├──────────┼─┼─┼─┼─┼─────────────────────┼──────────────────────────────────┼─────────────────────────────┤
- │Recurrent │X│X?X│X│ text translation,   │                                  │                             │
- │Neural    │ │ │ │ │ speech recognition, │                                  │                             │
- │Network   │ │ │ │ │ text 2 speak,       │                                  │                             │
- │          │ │ │ │ │ ....                │                                  │                             │
- │          │ │ │ │ │                     │                                  │                             │
- │          │ │ │ │ │                     │                                  │                             │
- └──────────┴─┴─┴─┴─┴─────────────────────┴──────────────────────────────────┴─────────────────────────────┘ [[}]]
-[[}]]
-
-# NumPY SUMMARY [[{numpy.101]]
-@[https://docs.scipy.org/doc/numpy/reference/]
-@[https://csc.ucdavis.edu/~chaos/courses/nlp/Software/NumPyBook.pdf]
-
-## np.ndarray Object
-  ┌─ np.ndarray Object ──────────────────────────────┐
-  │N-Dimensional Array: OPTIMIZED WAY OF STORING     │
-  │(and manipulating) numerical data of given type   │
-  ├─ ndarray properties ─────────────────────────────┤
-  │shape  : tuple with size of each dimmension       │
-  │dtype  : type of stored elements                  │
-  │        (u)int8/16/32/64, float16/32/64, complex  <- Defaults to np.float64
-  │nbytes : Number of bytes needed to store its data │
-  │ndim   : Number of dimensions                     │
-  │size   : Total number of elements                 │
-  └──────────────────────────────────────────────────┘
-  - See also dir(np.ndarray) -
-
-## NP.NDARRAY INITIALIZATION
-  import numpy as np
-  a=np.array([1,2,3])   # ← create  array. a.shape: (3, ), m.dtype: dtype('int64')
-  m=np.array([[1,2,3],  # ← create matrix. b.shape: (2,3)
-              [3,4,6])
-  np.zeros([10])        # ← create zero-initialized 1-dimensional ndarray
-  np.ones ([10,10])     # ← create  one-initialized 2-dimensional ndarray
-  np.full ([10,10],3.1) # ← create  3.1-initialized 2-dimensional ndarray
-  np.empty([4,5,6])     # ← create   UN-initialized 3-dimensional ndarray
-  np.identity(5)        # ← Creates 5x5 identity matrix
-  np.hstack((a,b))      # ← Creates new array by stacking horizontally
-  np.vstack((a,b))      # ← Creates new array by stacking vertically
-  np.unique(a)          # ← Creates new array with NO repeated elements
-
-## Value-Range Creation (np.arange...):
-  np.arange(1, 10)    # ← Creates one-dimensional ndarray range
-                          (similar to 'range' in standard Python )
-  np.arange(-1,2,0.2) # ← creates 1d-array [-1, -0.8, ..., 1.8,   ]
-                          using the algorithm similar to Python 'range':
-                          r[i] = start+step*i where i>=0 and r[i]<stop
-                          r[i]<stop => 2.0 NOT included.
-  np.linspace(1,10,5) # ← Create 1darray [ 1., 3.25, 5.5, 7.75, 10. ]
-                          (start, end, number-of-elements)
-
-## NUMPY RANDOM SAMPLE CREATION
-  np.random.rand()      # Single (non-ndarray) value
-  np.random.rand(3,4)   # two-dimensional 3x4 ndarray with
-                          evenly distributed float random values
-                          in range [0, 1)
-  np.random.randint     # two-dimensional 3x4 ndarray
-     (2,8,size=(3,4))     with evenly distributed integer random
-                          values in range [2, 8)
-  np.random.normal      # two-dimensional 3x3 ndarray with
-     (3,1,size=(3,3)) )   element normally distributed random
-                          values with mean:3, std.deviation:1
-
-## RESHAPING NDARRAY
-
-  np.reshape(aDim3x2, 6) # ← alt1: shape 3x2 →  returns view of 1Dim, size 6
-  aDim3x2.reshape(6)     # ← alt2: shape 3x2 →  returns view of 1Dim, size 6
-  aDimNxM.ravel()        # ← shape NxM → returns view of 1 Dimension
-  aDimNxM.ravel()        # ← shape NxM → returns copy of 1 Dimension
-
-## TYPE CONVERSION
-  ndarray01.dtype        # Get data type
-  ndarray02 = ndarray01
-       .astype(np.int32) # type conversion
-                           Raises TypeError on error [[{qa.error_control}]]
-
-## SLICING/INDEXING
-@[https://docs.scipy.org/doc/numpy/user/basics.indexing.html]
-  - Slice "==" View of the original array. (vs Copy of data)
-
-  slice01 = ndarray1[2:6]         # create slice from existing ndarray
-  copy01  = slice01.copy()        # create new (independent-data) copy
-  ndarray1Dim[ row1, row2, row3 ] # select given rows.
-
-  [[TODO]] Boolean Indexing, ...
-
-## COMMON OPERATIONS
-  ndarray01.transpose()   # transpose (alt.1)
-  ndarray01.T             # transpose (alt.2)
-  ndarray01.swapaxes(0,1) # transpose (alt.3)
-
-  B = ndA**2              # B will have same shape than A and each
-                            of its elements will be the corresponding
-                            of A (same index) to the power of 2.
-
-  C = np                  # C == multiplication of A-transposed x A
-  .matmul(ndA.T, ndA)
-  REF: @[https://docs.scipy.org/doc/numpy/reference/generated/numpy.matmul.html]
-
-  np.where(A>0,True,False)# New (same shape)array with values True|False
-  np.where(A>0, 0, 1)     # Returns first "1" element
-    .argmax()
-  arrA = np.array([
-           [1,2,3],
-           [9,8,7]
-         ])
-  arrA.sort()             # For each row in ndarray, sort elements
-                            (In place sort, replacing origina arrA)
-                            array([
-                              [1,2,3],
-                              [7,8,9]
-                            ])
-  B = np.sort(arrA)       # sort rows in new instance
-  np.in1d(arrA, [1,3])    # Test if arrA values belong to [1,2,3]
-                            array([ True, True, True, False, False, False])
-
-## BASIC STATITISTICS
-  ndarray01.cumsum()      # Cumulative Sum of array elements
-  arrA.mean()             # Mean
-  arrA.mean(axis=1)       # Replace axis 1 by its mean
-  arrA.sum (axis=1)       # Replace axis 1 by its sum.
-  (arrA > 0).sum          # Count numbers of bigger-than-zero values
-  arrA.any()              # True if any member is True / non-zero
-  arrA.all()              # True if all members are True/non-zero
-
-## Universal ops:  array i ··> array op(i) [[{]]
-  new array applying 'opt' to each element
-  @[https://docs.scipy.org/doc/numpy/reference/ufuncs.html]
-  Universal operations apply to each element of the array
-  and returns new array with same shape:
-  np.maximum(A,B)       np.cos(A)   np.log
-  np.greater_equal(A,B) np.sin(A)   np.log10
-  np.power(A,B)         np.tan      np.log2
-                        np.arcsin
-  np.sign               np.arccos   np.power(A,B)
-  np.abs                np.arctan   np.sqrt(A)
-                        np.sinh     np.square(A)
-  np.floor              np.cosh
-  np.ceil               np.tanh     np.add
-  np.rint               np.arcsinh  np.substract
-                        np.arccosh  np.multiply
-                        np.arctanh  np.divide
-                                    np.remainder
-[[}]]
-
-# NDarray aggregation ops: array ··> number [[{]]
-  np.mean
-  np.var  (variance)
-  np.std
-  np.prod
-  np.sum
-  np.min
-  np.max
-  np.argmin  Index associated to minimum element
-  np.argmax  Index associated to maximum element
-  np.cumsum
-  np.cumprod [[}]]
-
-# NDarray conditional ops [[{]]
-  A=np.array([1,2,3,4])
-  B=np.array([5,6,7,8])
-  cond = np.array([True, True, False, False])
-  np.where(cond, A, B) # → array([1, 2, 7, 8])
-  np.where(cond, A, 0) # → array([1, 2, 0, 0]) [[}]]
-
-# NUMPY NDARRAY SET OPERATIONS: [[{]]
-  np.unique(arrA)   # Returns 1d-array of SORTED-and-UNIQUE values
-                      array([1,2,3,7,8,9])
-  np.in1d(A,B)     Check if elements in A are in B
-  np.union1d(A,B)  Create union set of A, B
-  np.intersect1d
-  np.diff1d [[}]]
-
-# NUMPY READ/WRITE FILES:  [[{numpy.I/O]]
-  ndA=np.random.randint(20,30,size=(10,10))   # <- Create array
-  ...
-  np    .save ("data1.npy",ndA)               # <- Save   to disk
-  ndB=np.load ("data1.npy")                   # <- Load from disk
-
-# REF: @[https://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html]
-#      @[https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html]
-
-  C=np.loadtxt(         # ← input.csv like
-      "input.csv",          13,32.1,34
-      delimiter=",",        10,53.4,12
-      usecols=[0,1]         ...,
-      )                     (Many other options are available to filter/parse input)
-
-REF: https://docs.scipy.org/doc/numpy/reference/generated/numpy.genfromtxt.html
-┌ INPUT.CSV ───┐ (See also csvkit)
-│ Param1,Param2│
-│ 1,2          │
-│ 3,4          │
-│ ...          │
-└──────────────┘
-A=np .genfromtxt ("INPUT.CSV", delimiter=",", names = True )
-array(
-  [ (1,2), (3,4), (.,.) ],
-  dtype = [ ('Param1', '<f8'), ('Param1', '<f8'), ]
-)
-A[ 'Param1' ]  # ← Now we can access by name
-[[}]]
-
-## Joblib (NumPy Serialization): [[{numpy.performance.joblib,scalability,data.persistence,PM.TODO]]
-@[https://pypi.org/project/joblib/]
-- Alternative to Pickle to serialize NumPy matrices, ...
-
-- transparent disk-caching of functions and lazy re-evaluation (memoize pattern)
-- easy simple parallel computing
-[[numpy.performance.joblib}]]
-
-## Random Sampling [[{numpy,101,PM.TODO]]
-@[https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html]
-
-- Random Sampling:
-  - Simple random data
-  - Permutations:
-  - Distributions
-  - Random Generator.
-[[}]]
-
-## What's new:
-### NumPy 1.20
-* https://www.infoq.com/news/2021/03/numpy-120-typed-SIMD/
-* Runtime SIMD Support and Type Annotations
-
-
-[[numpy.101}]]
-
-# MATPLOTLIB Charts: [[{data.visualization,matplotlib,numpy]]
- EXTERNAL LINKS
- User's Guide   : @[https://matplotlib.org/users/index.html]
- Git Source Code: @[https://github.com/matplotlib/matplotlib]
-      Python Lib: @[https://github.com/matplotlib/matplotlib/tree/master/lib/matplotlib]
-                  @[https://github.com/matplotlib/matplotlib/blob/master/lib/matplotlib/figure.py]
-                  @[https://github.com/matplotlib/matplotlib/blob/master/lib/matplotlib/axes/_axes.py]
-                  @[https://github.com/matplotlib/matplotlib/blob/master/lib/matplotlib/axis.py]
-                  @[https://github.com/matplotlib/matplotlib/blob/master/lib/matplotlib/container.py]
-
-         Recipes: @[https://github.com/matplotlib/matplotlib/tree/master/examples/recipes]
-                  - common_date_problems.py
-                  - create_subplots.py
-                  - fill_between_alpha.py
-                  - placing_text_boxes.py
-                  - share_axis_lims_views.py
-
-REF: @[https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py]
-
-## Graph Ussage Decision Tree:   [[{PM.decission_tree]]
-  - What do you want to show?
-    └ Comparasion
-    · - Among items
-    ·   - Two Vars per item: Variable width COmun Chart
-    ·   - One Var per item:
-    ·     - Many Categories: Table with embedded charts
-    ·     - Few  Categories: Bar chart horizontal|vertical
-    · - Over time:
-    ·   - by     Cyclical Data: Circular area charts
-    ·   - by Non-Cyclical Data: Line Chart
-    ·   - Few  categories: Bar chart vertical
-    ·   - Many categories: Line chart
-    ·
-    └ Distribution
-    · - Single Variable:
-    ·   - Few  data points: Bar histogram
-    ·   - many data points: Scatter plot
-    · - Two Variables:      Scatter plot
-    ·
-    └ Composition:
-    · - Changing over time
-    ·   - Few periods:
-    ·     - Only relative         differences matter: stacked 100% bar char
-    ·     - relative and absolute differences matter: stacked      bar char
-    ·   - Many periods:
-    ·     - Only relative         differences matter: stacked 100% area char
-    ·     - relative and absolute differences matter: stacked      area char
-    · - Static:
-    ·   - Simple shre of total: Pie chart
-    ·   - Accumulation of Subtraction to total: Waterfall chart
-    ·   - Components of componets: Stacked 100% bar chart with subcomponents
-    ·   - Accumulation to total and absolut diff. matters: TREE MAP
-    ·
-    └ Relationship:
-      - Two variables: Scatter plot
-      - 3+  variables: Scatter plot bubble saze.
+# Process large datasets without running out of memory [[{data.processing,Pandas,NumPy,scalability,profiling]]
+* <https://pythonspeed.com/memory/>
 [[}]]
 
 
 
-## ARCHITECTURE: [[{]]
--Everything in matplotlib is organized in a hierarchy:
- o) state-machine environment (matplotlib.pyplot module):
- ^  simple element drawing functions like lines, images, text, current axes ,...
- │
- └─o) object-oriented interface
-      - figure creation where the user explicitly  controls figure and axes objects.
-
-           Artist  ←  When the figure is rendered, all of the artists are drawn to the canvas.
-             │        Most Artists are tied to an  Axes ; and canNOT be shared
-             │        all visible elements in a figure are subclasses of it
-  ┌──────────┴──────┬───────────────────────────────┬─────┐
-  │                 │                               │     │
- Figure  1 ←→  1+  Axes    1 ←───────────────→    {2,3}  Axis    ←   WARN:  be aware of Axes vs Axis
-   ^        ^      ^^^^                             │    ^^^^
- self._axstack    (main "plot" class)               │  - number-line-like objects.
- numrows         - takes care of the data limits    │  - set graph limits
- numcols         - primary entry point to working   │  - ticks (axis marks) + ticklabels
- add_subplot       with the OO interface.           │    ^^^^^                ^^^^^^^^^^
- ....            ___________                        │    location determined  format determined
-                 set_title()                        │    by a Locator         by a Formatter
-                 set_xlabel()                       │
-                 set_ylabel()                       │
-                 ___________                        │
-                 dataLim: box enclos.disply.data    │
-                 viewLim: view limits in data coor. │
-                             ┌──────────────────────┘
-                             │
-  ┌────────┬────────┬────────┴────┬─────...
- text    Line2D    Collection   Patch
-
-
-  WARN:  All of plotting functions expect input of type:
-         -  np.array
-         -  np.ma.masked_array
-
-         np.array-'like' objects (pandas, np.matrix) must be converted first:
-         Ex:
-         a = pandas.DataFrame(np.random.rand(4,5), columns = list('abcde'))
-         b = np.matrix([ [1,2],[3,4] ])
-         a_asarray = a.values      #   ←  Correct input to matplotlib
-         b_asarray = np.asarray(b) #   ←  Correct input to matplotlib
-[[}]]
-
-## MATPLOTLIB VS PYPLOT: [[{]]
-- Matplotlib: whole package
-- pyplot    : module of Matplotlib (matplotlib.pyplot) with simplified API:
-              - state-based MATLAB-like (vs Object Oriented based)
-              - functions in this module always have a "current" figure and axes
-                (created automatically on first request)
-              @[https://github.com/matplotlib/matplotlib/blob/master/lib/matplotlib/pyplot.py]
-
-- pyplot Example:
-  import matplotlib.pyplot as plt        #
-  import numpy as np
-  from IPython.display import set_matplotlib_formats
-  set_matplotlib_formats('svg')          # ← Generate SVG (Defaults to PNG)
-
-  # Defining ranges:
-  x1 = np.linspace(0,    2,   10)         # ← generates evenly spaced numbers
-                                          #   over (start/stop/number) interval . In this case
-                                          #   [0.0, 0.1, 0.2, 0.4, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8]
-  unused_x2 = range(0,3)                  # standard python
-  unused_x3 = np.arange(2.0)              # numpy arange
-
-  xpow1 = x1**2                           # ←  With (x1)numpy arrays x1**3 is prefered (and faster)
-  xpow3 = [i**3 for i in x1]              # ←  With (x1)numpy arrays x1**3 is prefered (and faster)
-  plt.plot(x1, x1   , label='linear'   )  # ←  Automatically creates the axes"1"
-  plt.plot(x1, xpow2, label='quadratic')  # ←  add additional lines to   axes"1"
-  plt.plot(x1, xpow3, label='qubic'    )  # ←  add additional lines to   axes"1".
-                      ^^^^^                    Each plot is assigned a new color by default
-                      show in legend           (if hold is set to False, each plot clears previous one)
-
-  plt.xlabel('x label')                   # ←  set axes"1" labels
-  plt.ylabel('y label')                   # ←  "   "       "
-  plt.grid  (False)                       # ←  Don't draw grid
-  plt.legend()                            # ←  Show legend
-  plt.title("Simple Plot")                # ←  "   "       title
-  plt.legend()                            # ←  "   "       legend
-                                          #    default behavior for axes attempts
-                                          #    to find the location that covers
-                                          #    the fewest data points (loc='best').
-                                          #    (expensive computation with big data)
-
-┌→plt.show()                              # ← · interactive  mode(ipython+pylab):
-│                                               display all figures and return to prompt.
-│                                             · NON-interactive  mode:
-│                                               display all figures and  block until
-│                                               figures have been closed
-│
-│  plt.axis()                             # ← show current axis x/y  (-0.1, 2.1, -0.4, 8.4)
-│                                         #   Used as setter allows to zoom in/out of a particular
-│                                         #   view region.
-│  xmin,xmax,ymin,ymax=-1, 3, -1, 10      #
-│  plt.axis([xmin,xmax,ymin,ymax])        # ← Set new x/y axis  for axes
-│
-└─ Call signatures:
- plot([x_l], y_l    , [fmt], [x2_l], y2_l        , [fmt2], ...        , **kwargs)
- plot([x_l], y_l    , [fmt], *                   , data=None           , **kwargs)
-       ^^^   ^^^       ^^^                        ^^^^
-       list (_) of     FORMAT STRINGS             Useful for labelled data
-       Coord. points  '[marker][line][color]'     Supports
-                       |.      |-    |b(lue)      - python dictionary
-                       |,      |--   |g(reen)     - pandas.DataFame
-                       |o      |-.   |r(ed)       - structured numpy array.
-                       |v      |:    |c(yan)
-                       |^      |     |m(agenta)
-                       |<      |     |y(ellow)
-                       |>      |     |k(lack)     Other Parameters include:
-                       |1      |     |w(hite)     - scalex, scaley : bool, optional, default: True
-                       |2                           determine if the view limits are adapted to
-                       |3                           the data limits.
-                       |4                           The values are passed on to `autoscale_view`.
-                       |s(qure)
-                       |p(entagon)                - **kwargs : '.Line2D' properties lik  line label
-                       |*                           (auto legends), linewidth, antialiasing, marker
-                       |h(exagon1)                  face color. See Line2D class constructor for full list:
-                       |H(exagon2)                  lib/matplotlib/lines.py
-                       |+
-                       |x
-                       |D(iamond)
-                       |d(iamond)
-                       ||
-[[}]]
-
-i[./matplotlib_example1.svg|min-width:2rem; max-width:30em]
-i[./matplotlib_example1_zoom.svg|min-width:2rem; max-width:25em]
-
-## TODO:
-@[https://realpython.com/python-matplotlib-guide/]
-  - Why Can Matplotlib Be Confusing?
-  - Pylab: What Is It, and Should I Use It?
-  - The Matplotlib Object Hierarchy
-  - Stateful Versus Stateless Approaches
-  - Understanding plt.subplots() Notation
-  - The “Figures” Behind The Scenes
-  - A Burst of Color: imshow() and matshow()
-  - Plotting in Pandas
-  - Wrapping Up
-  - More Resources
-  - Appendix A: Configuration and Styling
-  - Appendix B: Interactive Mode
-
-## HISTOGRAMS [[{]]
-i[./matplotlib_example_histogram.svg|min-width:2rem; max-width:30em] [[}]]
-
-## BAR CHARTS: [[{]]
-@[https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html]
-  matplotlib.pyplot.bar(x, height, width=0.8, bottom=None, *, align='center', data=None, **kwargs)
-  axis_x = range(5)
-  data1=[1,2,3,2,1] ; data1_yerr=[0.1,0.2,0.3,0.2,0.1]
-  data2=[3,2,1,2,3] ; data2_yerr=[0.3,0.2,0.1,0.2,0.3]
-  p1=plt.bar(x=axis_x       , height=data1, width=0.5  , color='green', yerr=data1_yerr)
-  p2=plt.bar(x=axis_x       , height=data2, width=0.5  , color='blue' , yerr=data2_yerr, bottom=data1)
-         ^^^ ^^^^^^^^         ^^^^^^^^^^^^  ^^^^^^^^^                                    ^^^^^^^^^^^^
-         |   placement of     bar data      default 0.8                                  Stack on top of
-         |   bars                                                                        previous data
-         barh(y=axis_y,...) for horizontal bars.
-
-  plt.legend((p1[0], p2[0]), ('A', 'B'))
-  plt.show()
-i[./matplotlib_example_stacked_bars.svg|min-width:2rem; max-width:30em]
-[[}]]
-
-## SCATTER PLOT  [[{]]
-@[https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html]
-  Useful to compare bivariate distributions.
-  bivariateREF = np.random.normal(0.5, 0.1, 30)
-  bivariateVS  = np.random.normal(0.5, 0.1, 30)
-                                            ^^
-                                            number of samples
-  p1=plt.scatter(bivariateREF, bivariateVS, marker="x")
-  plt.show()
-  i[./matplotlib_example_scatter.svg|min-width:2rem; max-width:30em]
-[[}]]
-
-## CONTOUR PLOT: [[{]]
-@[https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html]
-  delta = 0.025
-  x = np.arange(-3.0, 3.0, delta)
-  X, Y = np.meshgrid(x, x) # coordinate vectors to  coordinate matrices from coordinate vectors.
-  CONTOUR1 = (X**2 + Y**2)
-  label_l=plt.contour(X, Y, CONTOUR1)
-  plt.colorbar()          # optional . Show lateral bar with ranges
-  plt.clabel(label_l)     # optional . Tag contours
-  # plt.contourf(label_l) # optional . Fill with color.
-  plt.show()
-  i[./matplotlib_example_contour.svg|min-width:2rem; max-width:30em]
-[[}]]
-
-## BOXPLOT (Quartiles): [[{]]
-@[https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html]
-@[https://matplotlib.org/examples/pylab_examples/boxplot_demo.html]
-
-v_l = np.random.randn(100)
-plt.boxplot(v_l)
-plt.show()
-i[./matplotlib_example_boxplot.svg|min-width:2rem; max-width:30em]
-[[}]]
-
-## TUNING PERFORMANCE [[{scalability]]
-  (In case of "many-data points", otherwise no tunning is needed
-
-  import matplotlib.style as mplstyle
-  mplstyle.use('fast')  # ← set simplification and chunking params.
-                        #   to reasonable settings to speed up
-                        #   plotting large amounts of data.
-  mplstyle.use([        # Alt 2: If other styles are used, get
-     'dark_background', #         sure that fast is applied last in list
-     'ggplot',          #
-     'fast'])           #
-
-## MATPLOTLIB TROUBLESHOOTING:
-  matplotlib.set_loglevel(*args, **kwargs)
-[[}]]
-
-# PANDAS SUMMARY[[{pandas]]
-- High level interface to NumPy, """sort-of Excel over Python"""
-  REF:
-  -@[https://pandas.pydata.org/]
-  -@[https://stackoverflow.com/questions/tagged/pandas?tab=Votes]
-     Most voted on StackOverflow
-  -@[https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/index.html]
-     Comparison with R , SQL, SAS, Stata
-## PANDAS SERIES: (Series == "tagged column", Series list == "DataFrame")
- Create New Serie
-import pandas as pd
-s1 = pd.Series(       s2 = pd.Series(              s3 = pd.Series(
-  [10, 23, 32]          [10, 23, 32],                [1, 1, 1],
-                        index=['A','B','C'],         index=['A','B','C','D'],
-                        name = 'Serie Name A'        name = 'Serie Name A'
-)                     )                            )
->>> print(s1)         >>> print(s2)                >>> print(s2)
-0 10                  A 10                         A 10
-1 23                  B 23                         B 23
-2 32                  C 32                         C 32
-dtype: int64          dtype: int64                 dtype: int64
-
-       s1[0] == s2["A"] == s2.A
-
->>> s4 = s2+s3  # ← Operations in series are done over similar indexes
->>> print(s4)
-A    20.0
-B    33.0
-C    42.0
-D     NaN       # ← 'D' index is not present in s2
-dtype: float64
-
->>> s4.isnull()     >>> s4.notnull()
-A    False          A     True
-B    False          B     True
-C    False          C     True
-D     True          D    False
-
->>> print(s4[  s4.notnull()] ) # ← REMOVING NULLS from series
-A    20.0
-B    33.0
-C    42.0
-dtype: float64
-
->>> plt.bar(s4.index, s4.values) # ← Draw a Bar plot (np.NaN will print a zero-height bar for given index)
->>> plt.boxplot(r.values)        # ← Draw a boxplot (first, median, second quantile) of the data
-
-
->>> description=s4[  s4.notnull()].describe() # ← Statistical description of data,
-count     3.000000                                returned as another Pandas Serie
-mean     31.666667
-std      11.060440
-min      20.000000
-25%      26.500000
-50%      33.000000
-75%      37.500000
-max      42.000000
-dtype: float64
->>> plt.bar(              # ← Draw a Bar plot of the statistical description of the data (just for fun)
-      description.index,
-      description.values)
-
->>> t2=s2*100+np.random.rand(s2.size))   # ← Vectorized inputx100 + rand operation
->>> print(t2)
-A    1000.191969                ^^^^^^^
-B    2300.220655                size&shape must match with s2/s2*100
-C    3200.967106
-dtype: int64
->>> print(np.ceil(t2))                   # ← Vectorized ceil operation
-A    1001.0
-B    2301.0
-C    3201.0
-dtype: int64
-
-## PANDAS DataFrame "spreadsheet" table
-   with indexes rows and columns.
-- Each column is a Serie and the ordered collection of columns forms the DataFrame
-- Each column has a type.
-- All columns share the same index.
-
- Creating a DataFrame
-df1 = pd.DataFrame (                                    # ←     Create from Dictionary with keys = columns-names
-         { 'Column1'   : [ 'City1', 'City2', 'City3' ],                                     values = colum values
-           'Column2'   : [ 100    , 150    , 200     ]           >>>print(df1):
-         }                                                         Column1  Column2
-      )                                                          0   City1      100
-           ^^^^^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^           1   City2      150
-           |             df1.index:                              2   City3      200
-           |             RangeIndex(start=0, stop=3, step=1)
-          print df1.colums                                       >>>print(df1.values)
-          Index(['Column1', 'Column2'], dtype='object')
-                                                                 [['City1' 100]   ← row1
-                                                                  ['City2' 150]   ← row2
-                                                                  ['City3' 200]]  ← row3
-df1.index  .name = 'Cities'  # ← assign names →    >>>print(df1):
-df1.columns.name = 'Params'  # ← assign names      Params Column1  Column2
-                                                   Cities
-                                                   0        City1      100
-                                                   1        City2      150
-                                                   ...
-
-inputSerie = pd.Series( [1,2,3], index=['City1','City2','City3'] )
-df2 = df.DataFrame(inputSerie)     # ← Create from Pandas Series
-
-df3 = pd.DataFrame (                   # ← Create with data, column/index description
-  [                                        >>>print(df3)                         >>>print(df3 .describe( ) )
-   ('City1', 99000, 100000, 101001 ),            NAME    2009    2010    2011                           └─ include='all' to
-   ('City2',109000, 200000, 201001 ),      I    City1   99000  100000  101001                              show also non-numeric clumns
-   ('City3',209000, 300000, 301001 ),      II   City2  109000  200000  201001                2009      2010      2010
-  ],                                       III  City3  209000  300000  301001    count       3.00       3.0       3.0
-  columns = ['NAME', '2009',                                                     mean   139000.00  200000.0  201001.0
-             '2010', '2011'],              >>>print(df3 .info() )                std     60827.62  100000.0  100000.0
-  index   = ['I', 'II' , 'III'],           <class 'pandas.core.frame.DataFrame'> min     99000.00  100000.0  101001.0
-)                                          Index: 3 entries, I to III            25%    104000.00  150000.0  151001.0
-                                           Data columns (total 4 columns):       50%    109000.00  200000.0  201001.0
-                                           NAME    3 non-null object             75%    159000.00  250000.0  251001.0
-                                           2009    3 non-null int64              max    209000.00  300000.0  301001.0
-                                           2010    3 non-null int64
-                                           2010    3 non-null int64
-                                           dtypes: int64(3), object(1)
-                                           memory usage: 120.0+ bytes
-
-                                           0
-df3 .plot (x='NAME' , y=['2009','2010','2011'], kind='bar') # ← Plot as bars
-i[./pandas_dataframe_bar_plot.svg|min-width:2rem; max-width:30em]
-
-df3.  loc [ ['I','II','III'],['2009','2010','2011'] ]# ←  Select rows/colums
-df3.  loc [  'I':'III'      , '2009':'2011' ]        #
-df3.  loc [ ['I',    ,'III'],['2009',       '2011'] ]#
-df3. iloc [:,:]                                      # ←   "     "           using integer ranges
-df3. iloc [:,:]                                      #
-df3. iloc [:-2,[0,1,2,3]]                            #
-df3. iloc [:-2,[0,    3]]                            #
-df3.NAME                                             # ←  Peek column by name
-df3['2009']                                          # ←  Peek column by key
-
-
-## Conditional Filter
-                                                          Conditional Filte  .
-df3[df3["2010"] > 100000]                            # ←  Only rows with 2010 > 100000
-                                                          NAME    2009    2010    2011
-                                                          II   City2  109000  200000  201001
-                                                          III  City3  209000  300000  301001
-
-df3[df3["2010"] > 100000][df3["2011"] > 250000]      # ←  Only rows with 2010 > 100000 AND 2011 > 250000
-                                                          NAME    2009    2010    2011
-                                                          III  City3  209000  300000  301001
-
-## File ←→ DataFrame (Import/Export)  [[{pandas.I/O]]
-  File → read → DataFrame
-  $ cat animals.csv
-  specie,body_weight,brain-weight
-  big brown bat,0.023,0.3
-  big brown bat,0.025,0.3
-  mouse,0.023,0.4
-  mouse,0.025,0.4
-  Ground squirrel,0.101,4
-  Goldem hamster,0.12,1
-  Rat,0.28,1.9
-
-  $ cat csv_to_dataFrame.py
-  import pandas as pd
-
-  df = pd.read_csv('./animals.csv'                     )  # alt1: Sorter
-  df = pd.read_table('./animals.csv', delimiter=','    )  # alt2: more complete
-  print(df.to_string())                           └─┬─┘
-              specie  body_weight  brain-weight     │
-  0    big brown bat        0.023             0.3   │
-  1    big brown bat        0.025             0.3   │
-  2            mouse        0.023             0.4   │
-  3            mouse        0.025             0.4   │
-  4  Ground squirrel        0.101             4.0   │
-  5   Goldem hamster        0.120             1.0   │
-  6              Rat        0.280             1.9   │
-                                                    │
-  ┌─────────────────────────────────────────────────┘
-  ├─ If header in input csv file is missing add  header = None
-  │
-  ├─ Headers can be specified also with parameter:
-  │  names = [ 'Column1', 'Column2', ...]
-  │
-  ├─ If file start like
-  │  ************************** ← line 1
-  │  * This is a CSV with data* ← line 2
-  │  ************************** ← line 3
-  │  use param   skiprows = 3   or  skiprows=[0,1,2] to skip/ignore them
-  │
-  ├─ To read just first 3 rows (after skipping):
-  │  nrows = 3
-  │
-  └─ RegEx can be used as separators (instead of ',') with param
-     sep = '\s*'
-
-  To use one input-csv-file column/s as DataFrame  primary(secondary,..)index  use:
-  index_col like:
-  df = pd.read_table('./animals.csv', delimiter=',', index_col=[0,1] )
-  print(df.to_string())
- specie          body_weight
- big brown bat   0.023                   0.3
-                 0.025                   0.3
- mouse           0.023                   0.4
-                 0.025                   0.4
- Ground squirrel 0.101                   4.0
- Goldem hamster  0.120                   1.0
- Rat             0.280                   1.9
-
-
-  CSV Batch reads
-  When input CSV is very big, it can be processed in chunks like:
-  chunckIterator01 = pd.read_csv('./myBigCSV.csv', chunksize = 100 )
-  for chunk01 in chunckIterator01:
-  print (lent(chunck01, chunk.ColumWithIntegers.max())
-
-
-  DataFrame → write → file
-  df.to_csv('./myNewCSVFile.csv', header = True, index = False)
-
-  }- By default NaN values are converted to ,,. Param na_rep allows to
-     replace with something else.
-
-  Excel → read → DataFrame
-  df = pd.read_excel('./myExcelFile.xlsx', sheetname='Sheet3',
-        converters = { 'COL_CLIENTS', lambda x : x.upper() },
-        na_values = { 'COLUMN_SEX': ['Unknown'],               ← values for given columns
-                      'COLUMN_POSTAL_ADDRESS' : ['-','','N/A']   in input excel will be replaced
-        )           }                                            with NaN in new DataFrame
-
-
-  To read N excel tabs faster:
-  book01 = pd.ExcelFile('./myNewExcelFile.xlsx')
-  df1 = pd.read_excel( book01 , sheetname = 'Sheet1', ...)
-  df2 = pd.read_excel( book01 , sheetname = 'Sheet2', ...)
-  DataFrame → write → Excel
-  df.to_excel('./myNewExcelFile.xlsx', index = False, sheet_name='Processed data',
-              columns = ['COLUMN1','COLUMN2'], na_rep='---')
-
-  To write N sheets to a single excel file  use ExcelWriter.
-  book02 = pd.ExcelWriter('./myNewExcelFile.xlsx')
-  df1.to_excel( book02 , 'Data from df1', index = False)
-  df2.to_excel( book02 , 'Data from df2', index = False)
-
-  HTML Table → parse → DataFrame
-  pd.read_html inspects an HTML file searching for tables and returning a new
-  DataFrame for each table found. Ex:
-  import request
-  url = "https://es.wikipedia.org/wiki/Anexo:Municipios_de_la_Comunidad_de_Madrid
-  response = requests.get(url)
-  if response.status_code != 200:
-     raise Exception("Couldn't read remote URL")
-  html = response.text
-  dataFrame_l = pd.read_html(html, header=0)
-  print(dataFrame_l[0].to_html()) # ← show DataFrame as html table.
-
-  XML → parse → DataFrame
-  # STEP 1. alt 1: convert local-XML-file to XML object
-  from lxml import objectify
-  xml = objectify.partse ('./songs.xml')
-  root = xml.getroot()
-  print(root.song.title)
-  el01 = root.song
-  print (el01.tag, el01.text, e1.attrib )
-
-  # STEP 1. alt convert remote-XML-resource to XML object
-  response = requests.get('http://...../resource.xml')
-  if response.status_code != 200:
-     raise Exception("Couldn't read remote URL")
-  inputData = response.text
-  root = objectify.fromstring(bytes(bytearray(data, encoding='utf-8))
-
-  # STEP 2. Convert to DataFrame Manually
-  def xml2df(root):
-      data = []
-      for elI in root.getchildren()
-        data.append ( ( elI.title.text, elI.attrib['date'] elI.singer.text ) )
-      df = pd.DataFrame (data, columns = [ 'title', 'date', 'Singer' ] )
-
-  DataFrame → serialize → JSON
-  pd.to_json('./JSONFile01.json')           # Alt.1: Simpler
-
-  from Pandas.io.json import json_normalize # Alt.2: More powerfull
-  with open('./songs.json') as json_data:
-      d = json.load(json_data)
-  df = json_normalize (d, 'Songs', ['Group','Name'], 'Genre')
-                            ^        ^                ^
-                         Doc.key   2nd key to add     3rd key to add
-  print(df)
-      Date    Length   Title   Group.Name   Genre
-  0   ...     ...       ..     ...          ...
-  1   ...
-
-  JSON → parse → DataFrame
-  df = pd.read_json('./JSONFile01.json')
-
-
-  DDBB → query → DataFrame
-  import mysql.connectro as sql
-  db_connection01 = sql.connect(
-                    host='...', port=3306, database='db1',
-                    user='...', password='...)
-
-  df = pd.read_sql('select column1, column2 ... from table1;', con=db_connection01)
-
-  df.column2 = df.column2 + 100
-
-  df.to_sql ('New table', con = db_connection, flavor = 'mysql', if_exists = 'replace')
-
-  db_connection01.close()
-
-  MongoDB → DataFrame
-  Note:  Mongo Server 1←→  N database 1 ←→ N collection
-  import pymongo
-  client = pymongo.MongoClient('localhost',27017) #
-  client.database_names()
-  ['ddbb1', 'ddbb2', ...]
-
-  db1 = client.ddbb1
-  col1 = db1.Collection1
-  col1.count()
-  col1.find_one()
-  {'key1': 'value1', ...}
-  cursor = col1.find({ 'key1': {'subkey2' : 'valueToFilterFor'} })
-  l = list(cursor) # ← find all
-
-  DataFrame → MongoD
-  new_db = client.NewDB
-  colNew = new_db.NewCol
-  jsonDataToWrite = json.load(df.to_json(...))
-  col.insert_manY(jsonDataToWrite)
-
-## Pivot Table [[{pandas.pivot, PM.TODO]]
-@[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html]
-
-<!--
-TODO: Examples :
-Drop duplicates of permuted multi-index
-- https://stackoverflow.com/questions/50223849/drop-duplicates-of-permuted-multi-index
--->
-[[}]]
-
-## Fast Large Datasets with SQLite  [[{pandas.I/O,bigdata,sql,scalability,PM.TODO]]
-Fast subsets of large datasets with Pandas and SQLite
-@[https://pythonspeed.com/articles/indexing-pandas-sqlite/]
-[[}]]
-[[pandas}]]
-
-# Pandas supercharged [[{PM.TODO]]
-1. Jupyter-Datatables: Enrich the default preview of a DataFrame.Link:
-2. SummaryTools: Supercharge the describe() method.
-3. Sidetable: Supercharge the value_counts() method.
-4. Sketch: Generate code/insights by asking questions in natural language
-5. Deepchecks: Generate a comprehensive data validation report.
-6. Pandas Flavor: Extend Pandas to attach methods to the dataframe object.
-7. Pandarallel: Parallelize Pandas across all CPU cores
-8. PandasML: Pandas, sklearn and matplotlib integrated.
-9. Geopandas: Work with Geospatial data in Pandas.
-10. DuckDB: Run SQL queries on dataframes.
-11. Modin: Boost Pandas' performance up to 70x by modifying the import.
-12. PivotTableJS: Create pivot tables by using drag and drop functionality.
-13. Missingno: Visualize missing values in your dataset.
-14. Pandas Alive: Create animated charts for pandas dataframes.
-15. Skimpy: Supercharge the describe() method.
-16. Pandas-log: Debug Pandas pipeline with step-by-step logging.
-17. tsflex: Process time series and perform feature extraction.
-18. pandas-profiling: Generate EDA report of data in one-line.
-19. Mars: tensor-based framework for scaling numpy, pandas, scikit-learn, ...
-20. nptyping: Apply type hints for Pandas dataframes.
-21. popmon: Profile your data to determine its stability.
-22. Gspread-pandas: Interact with Google sheets using dataframes.
-23. pdpipe: Create pandas pipeline easily and intuitively.
-24. PrettyPandas: Prettify the dataframe when printed.
-25. Dora: Intuitive API for data cleaning, processing,
-26.      feature selection, visualization, etc.
-27. Pandapy: The speed of NumPy combined with Pandas' elegance.
-[[}]]
-
-# PyForest: [[{python,pandas,sklearn,devops,PM.UX,]]
-@[https://pypi.org/project/pyforest/]
-pyforest lazy-imports all popular Python Data Science libraries so that they
-are always there when you need them. Once you use a package, pyforest imports
-it and even adds the import statement to your first Jupyter cell. If you don't
-use a library, it won't be imported.
-
-For example, if you want to read a CSV with pandas:
-df = pd.read_csv("titanic.csv")
-pyforest will automatically import pandas for you and add
-the import statement to the first cell:
-
-import pandas as pd
-
-(pandas as pd, numpy as np, seaborn as sns,
- matplotlib.pyplot as plt, or OneHotEncoder from sklearn and many more)
-
-there are also helper modules like os, re, tqdm, or Path from pathlib.
-[[}]]
-
-# PyTables (Hierarchical Data) [[{numpy.pytables,low_code,scalability,PM.WiP]]
-- Fill the gap left by NumPy/.. to manage large amounts of  hierarchical
-  datasets, providing a pythonic/numpy wrapper to (a subset of) the HDF5
-  library API.
-PyTables = powerful data mining/management features of HDF5
-           with up to 2**62 rows per-table.
-         + Python object orientation/introspection
-         + NumPy
-         + Numexpr's high-performance manipulation of
-           large-sets-of-objects organized in a grid-like structures.
-         + On-flight data-compression (part of HDF5 actually)
-
-MAIN FEATURES:
-- Multidimensional+nested table cells:
-  A table's column :=  values-with-any-number-of-dimensions (vs just SQL scalars)
-                     | columns-made-of-other-columns (of different types)
-
-- Indexing support for columns
-- Support for NumPy ndarrays to store homogeneous data.
-- Lazy-built-In-memory object tree replicating the underlying HDF5 file data structure.
-
-- Data compression: (Zlib, LZO, bzip2, Blosc).
-- High performance I/O:
-- No 2GB file-size limit.
-- Architecture-independent:
-
-- PyTable Object Tree:
-  - The different nodes in the object tree are instances of PyTables classes.
-  - the most important types of classes are:
-    - Node  class: All nodes in a PyTables tree are instances of the Node class.
-                   Parent class for groups ("directories") and leafs ("files"),
-                   always accessed by name.
-    - Group class: Node descendant, grouping structure containing instances of zero
-                   or more groups or leaves, together with supplementary metadata.
-                   "Sort of UNIX directory".
-    - Leaf  class: Node descendant, are containers for actual data (can NOT contain
-                   further groups or leaves). Children class types include:
-                   "Sort of UNIX file".
-                   - Table          class: COLLECTION OF FIXED SCHEMA RECORDS (STORED AS HDF5 COMPOUND DATA TYPES)
-                                           ("==" HDF5 compound-type-datasets)
-                   - Array          class: all of their components are homogeneous.
-                                           ("==" HDF5 homogeneous datasets)
-                   - CArray         class: all of their components are homogeneous.
-                   - EArray         class: (Enlargeable): Allows to add new elements to existing array in any dimension
-                                                          (but only one).
-                                           Slice views supported.
-                   - VLArray        class: (Variable length): elements can vary from row to row.
-                                           Use-case: complex data.
-                                           ("==" HDF5 var.length record datasets)
-                   - UnImplemented  class: (Supported by HDF5, but not by PyTable)
-                     └─────────┬────────┘
-                     Support for:
-                     Standard     metadata: number-of-rows, shape, flavor, ...
-                     User-defined metadata: (complementing meaning of actual table data)
-
-    In PyTables "full path" (‘/subgroup2/table3’) or
-    "natural name schema" (file.root.subgroup2.table3) can be used.
-
- NOTE: data a file is only loaded into the in-memory object tree on-demand.
-
- The object tree standard / custom metadata allows to retrieve information about
- objects on disk such as: table names, titles, column names, data types in columns,
- numbers of rows, ... arrays, arrays's shapes, typecodes, etc...)
-
- ┌─ examples/objecttree.py (create HDF5 file): ┐
- │ import tables as tb                         │
- │                                             │
- │ class Particle(tb.IsDescription):           │
- │   identity = tb.StringCol(itemsize=22,      # character String
- │                           dflt=" ", pos=0)  │
- │   idnumber = tb.Int16Col(dflt=1,   pos=1)   # short integer
- │   speed    = tb.Float32Col(dflt=1, pos=2)   # single-precision
- │                                             │
- │ fileh = tb.open_file("objecttree.h5",       # Open file in (w)rite mode
- │                      mode="w")              │
- │ root = fileh.root                           # Get HDF5-root-group
- │ group1 = fileh.create_group(root, "group1") # Create new groups ("directories")
- │ group2 = fileh.create_group(root, "group2") │
- │ array1 = fileh.create_array(root,           # create array in root
- │      "array1", ["string", "array"], "String │ array")
- │ table1 = fileh.create_table(group1,         # Create table in group1
- │          "table1", Particle)                │
- │ array2 = fileh.create_array("/group1",      # Create array in group1
- │          "array2", [1,2,3,4])               │
- │ table2 = fileh.create_table("/group2",      # Create table in group2
- │          "table2", Particle)                │
- │                                             │
- │ for table in (table1, table2):              # fill tables with values
- │     row = table.row                         # Get record object associated
- │                                             # with the table
- │     for i in range(10):                     # Fill table with 10 records
- │       row['identity'] = f'particle: {i:2d}' # 1) assign values to Particle record
- │       row['idnumber'] = i                   │
- │       row['speed']  = i * 2.                │
- │       row.append()                          # 2) inject values inrow
- │     table.flush()                           # "Flush" table buffers
- │                                             │
- │ fileh.close()                               # Free/close file (flushing any
- │                                             # remaining buffers!)
- └─────────────────────────────────────────────┘
-[[}]]
-
-# DVC.org: [[{qa,DevOps.dvc,DevOps.git,PM.low_code,01_PM.TODO]]
-https://github.com/tldr-pages/tldr/tree/master/pages/common/dvc-*.md
-- Apply best ML practices and turn them into Git-like command line tool.
-- DVC: brainchild of a data scientist and an engineer.
-- created to fill in the gaps in the ML processes tooling,
-  evolved into a successful open source project.
-- DVC versions multi-gigabyte datasets and ML models, [[scalability]]
-  and make them shareable and reproducible.
-- The tool helps to organize a more rigorous process around
-  datasets and the data derivatives.
-- Your favorite "cloud" storage (S3, GCS, or SSH server)
-  could be used with DVC as a data file backend.
-[[}]]
-
-
-## 10/100 times smaller Neuronal Networks: [[{scalability,profiling,nn.101]]
-https://openreview.net/pdf?id=rJl-b3RcF7&
-We have been using net much bigger than needed.
-
-Carbin and Frankle defend that, inside each NN, there is a subset
-much smaller that can be trained to reach the same performance that
-the bigger one.
-
-In an un-initialized NN there is always a probability for conecction
-to form a non-trainable model. The error probability decreases the
-bigger the NN is, even if we don't really know why.
-
-Once the training is finished just a few connections are "strong"
-while all others can be discarded. We do this once training. This
-work defends that is even possible to do so before training.
-[[}]]
-[[nn.101}]]
-
-## AutoML [[{PM.UX,01_PM.low_code,01_PM.TODO]]
-@[https://www.infoq.com/news/2019/06/open-source-automl-tool/]
-
-- tool for visualizing and controlling automated machine-learning processes.
-
-- Solving a problem with machine learning (ML) requires more than
-  just a dataset and training. For any given ML tasks, there are a
-  variety of algorithms that could be used, and for each algorithm
-  there can be many hyperparameters that can be tweaked. Because
-  different values of hyperparameters will produce models with
-  different accuracies, ML practitioners usually try out several sets
-  of hyperparameter values on a given dataset to try to find
-  hyperparameters that produce the best model.
-  choosing particular values for hyperparameters can involve "guesswork"
-  "if 2.5 and 2.6 produce good results, maybe 2.55 would be even better?"
-
-  Auto.ML are techniques and tools for automating the selection and
-  evaluation of hyperparameters (as well as other common ML tasks such
-  as data cleanup and feature engineering).
-
-  Both Google Cloud Platform and Microsoft Azure provide commercial
-  AutoML solutions, and there are several open-source packages such as
-  auto-sklearn and Auto-Keras.
-
-  MIT's Human Data Interaction Project (HDI) recently open-sourced an
-  AutoML library called Auto Tune Models (ATM). ATM automates the choice
-  of algorithm and hyperparameters; this allows practitioners to focus
-  on the upstream tasks of data cleanup and feature engineering.
-  ATM has a Python interface for running a search for the best model
-  and getting back a description of the results.
-  ATMSeer runs on top of ATM and provides visualization of the search.
-  process and results.
-[[}]]
-
-## MLFlow [[{ml,DevOps,qa,PM.TODO]]
-MLflow: An Open Platform to Simplify the Machine Learning Lifecycle
-- Works with any ML library, language & existing code
-- Runs the same way in any cloud
-- Designed to scale from 1 user to large orgs
-- Scales to big data with Apache Spark [[scalability]]
-
-- manage the ML lifecycle (experimentation, reproducibility,
-  deployment, and a central model registry).
-
-- Components:
-  - MLflow Tracking: Record and query experiments:
-    code, data, config, and results
-
-  - MLflow Projects
-    Package data science code in a format to reproduce runs on any
-    platform
-
-  - MLflow Models
-    Deploy machine learning models in diverse serving environments
-
-  - Model Registry
-    Store, annotate, discover, and manage models in a central repository
-[[}]]
-
-
-## NetWorkX [[{graph_networks,data.visualization,PM.TODO]]
-@[https://networkx.org/documentation/stable/index.html]
-@[NetworkX: for graph analysis, networkx.lanl.gov/]
-@[https://www.python-course.eu/networkx.php]
-- Python package for the creation, manipulation, and study of the structure,
-  dynamics, and functions of complex networks.
-
-- Gallery:
-@[https://networkx.org/documentation/stable/auto_examples/index.html]
-   - package for the creation, manipulation, and study of the structure,
-     dynamics, and functions of complex networks.
-   - Pygraphviz is a Python interface to the Graphviz graph layout and visualization package.
-   - Python language data structures for graphs, digraphs, and multigraphs.
-   - Nodes can be "anything" (e.g. text, images, XML records)
-   - Edges can hold arbitrary data (e.g. weights, time-series)
-   - Generators for classic graphs, random graphs, and synthetic networks
-   - Standard graph algorithms
-   - Network structure and analysis measures
-   - Basic graph drawing
-[[}]]
-
-
-# Data Training/Test Sets/Data Sources: [[{data.open_data]]
-  - Dataset Search@(Research Google):
-    @[https://datasetsearch.research.google.com/]
-  - @[https://ai.google/tools/#datasets]
-  - @[https://archive.ics.uci.edu/ml/datasets/]
-  - @[https://www.infoq.com/news/2019/10/google-nlp-dataset/]   [[cognitive.nlp]]
-  - @[http://www.image-net.org/] ImageNet: hundreds of thousands of images and complex models
-  - Adversarial Image DataSet:
-    https://www.infoq.com/news/2019/08/adversarial-image-dataset/
-    University Research Teams Open-Source Natural Adversarial Image DataSet for Computer-Vision AI
-    Research teams from three universities recently released a dataset
-    called ImageNet-A, containing natural adversarial images: real-world
-    images that are misclassified by image-recognition AI. When used as a
-    test-set on several state-of-the-art pre-trained models, the models
-    achieve an accuracy rate of less than 3%.
-  - Standford ImageNet: @[http://imagenet.stanford.edu]
-    Trained model with ImageNet dataset:
-    14+ million images maintained by Stanford University,
-    labeled with a hierarchy of nouns that come from the
-    WordNet dataset http://wordnet.princeton.edu,
-    which is in turn a large lexical database of the English
-    language WordNet dataset.
-  - Kaggle DataScience Home: Free GPUs  [[{cloud.price.free]]
-    https://www.kaggle.com/   @ma
-    https://github.com/Kaggle
-    - Inside Kaggle you’ll find all the code & data you need to do your
-      data science work. Use over 50,000 public datasets and 400,000 public
-      notebooks to conquer any analysis in no time.
-    - Kaggle offers a no-setup, customizable, Jupyter Notebooks environment.
-      Access free GPUs and a huge repository of community published data&code.
-   [[}]]
-
-  - Extracting info from Municipal Open Data APIs: [[{data.mining,standards,low_code,PM.TODO]]
-  @[https://www.youtube.com/watch?v=6puwaUHNRIU]
-    [[}]]
-
-  - AWS Sustainability DS:
-    @[https://sustainability.aboutamazon.com/environment/the-cloud/asdi]
-    - ASDI currently works with scientific organizations like NOAA, NASA,
-      the UK Met Office and Government of Queensland to identify, host, and
-      deploy key datasets on the AWS Cloud, including weather observations,
-      weather forecasts, climate projection data, satellite imagery,
-      hydrological data, air quality data, and ocean forecast data. These
-      datasets are publicly available to anyone.
-
-    @[https://github.com/awslabs/open-data-registry/]
-    - A repository of publicly available datasets that are available for
-      access from AWS resources. Note that datasets in this registry are
-      available via AWS resources, but they are not provided by AWS; these
-      datasets are owned and maintained by a variety government
-      organizations, researchers, businesses, and individuals.
-
-    @[https://www.infoq.com/news/2019/01/amazon-sustainability-datasets]
-    - Amazon Web Services Open Data (AWSOD) and Amazon Sustainability (AS)
-      are working together to make sustainability datasets available on the
-      AWS Simple Storage Service (S3), and they are removing the
-      undifferentiated heavy lifting by pre-processing the datasets for
-      optimal retrieval. Sustainable datasets are commonly from satellites,
-      geological studies, weather radars, maps, agricultural studies,
-      atmospheric studies, government, and many other sources.
-
-  - Awesomedata@Github: @[https://github.com/awesomedata/awesome-public-datasets]
-    - Agriculture
-    - Biology
-    - Climate+Weather
-    - ComplexNetworks
-    - ComputerNetworks
-    - DataChallenges
-    - EarthScience
-    - Economics
-    - Education
-    - Energy
-    - Finance
-    - GIS
-    - Government
-    - Healthcare
-    - ImageProcessing
-    - MachineLearning
-    - Museums
-    - NaturalLanguage
-    - Neuroscience
-    - Physics
-    - ProstateCancer
-    - Psychology+Cognition
-    - PublicDomains
-    - SearchEngines
-    - SocialNetworks
-    - SocialSciences
-    - Software
-    - Sports
-    - TimeSeries
-    - Transportation
-    - eSports
-    - Complementary Collections
-[[data.open_data}]]
-
-# Process large datasets without running out of memory [[{data_processing,Pandas,NumPy,scalability,profiling]]
-  https://pythonspeed.com/memory/
-[[}]]
-
-
-# JupyterLab IDE [[{jupyterlab]]
-@[https://jupyterlab.readthedocs.io/en/stable/]
-@[https://github.com/tldr-pages/tldr/blob/master/pages/common/jupyter.md] [TODO]
-@[https://github.com/tldr-pages/tldr/blob/master/pages/common/jupytext.md]  [TODO]
-- Python IDE + Python Notebooks
-- Instalation as local  pipenv project :
-STEP 1) Create Pipfile
-  $ mkdir myProject && cd  myProject
-  $ vim Pipfile
-   |[ [source]]
-   |name = "pypi"
-   |url = "https://pypi.org/simple"
-   |verify_ssl = true
-   |
-   |[dev-packages]
-   |
-   |[packages]
-   |scipy = "*"
-   |matplotlib = "*"
-   |scikit-learn = "*"
-   |jupyterlab = "*"
-   |pandas = "*"
-   |
-   |[requires]
-   |python_version = "3.7"
-
-STEP 2) Install dependencies
-  $ pipenv install  #  ← Install all packages and dependencies.
-
-DAILY-USE)
-    $ cd .../myProject
-    $ pipenv shell    #  ← Activate environment
-    $ jupyter lab 1>jupyter.log 2>&1 & # ← http://localhost:8888/lab/workspaces/
-
-## Voilà: notebook to apps/dashboard: [[{PM.low_code]]
-@[https://voila-gallery.org] [[}]]
-[[jupyterlab}]]
-
-# agate DS Optimized for humans [[{PM.UX,01_PM.TODO]]
-@[https://github.com/wireservice/agate]
-- alternative Python data analysis library (to numpy/pandas)
-- optimized for humans (vs machines)
-- solves real-world problems with readable code.
-- agate "Phylosophy":
-  - Humans have less time than computers. Optimize for humans.
-  - Most datasets are small. Don’t optimize for "big data".
-  - Text is data. It must always be a first-class citizen.
-  - Python gets it right. Make it work like Python does.
-  - Humans lives are nasty, brutish and short. Make it easy.
-  - Mutability leads to confusion. Processes that alter data must create new copies.
-  - Extensions are the way. Don’t add it to core unless everybody needs it.
-[[}]]

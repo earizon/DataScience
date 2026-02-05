@@ -1,4 +1,4 @@
-# ONNX.ai: [[{persistence,standards,mlops,01_PM.TODO]]
+# ONNX.ai: [[{data.persistence,standards,mlops,PM.TODO]]
   http://onnx.ai/
   ONNX is an open format built to represent machine learning models.
   ONNX defines a common set of operators - the building blocks of
@@ -7,8 +7,8 @@
   tools, runtimes, and compilers.
 [[}]]
 
-# HDF data format: [[{HDF,big_data,standards,persistence,01_PM.TODO]]
-@[https://en.wikipedia.org/wiki/Hierarchical_Data_Format]
+# HDF data format: [[{data.format.HDF,use_case.bigdata,qa.standards,data.persistence,PM.TODO]]
+<https://en.wikipedia.org/wiki/Hierarchical_Data_Format>
 
 Hierarchical Data Format (HDF) is a set of file formats (HDF4, HDF5)
 designed to store and organize large amounts of data. Originally
@@ -21,10 +21,10 @@ is supported by The HDF Group.
 [[}]]
 
 # ServingMachineLearningModels.pdf (Oreilly)
-@[./OreillyServingMachineLearningModels.pdf]
+<./OreillyServingMachineLearningModels.pdf>
 
-# DVC: ML Data Version Control: [[{data.gathering,persistence,mlops,standards,01_PM.TODO]]
-@[https://dvc.org/]
+# DVC: ML Data Version Control: [[{data.gathering,data.persistence,mlops,standards,PM.TODO]]
+<https://dvc.org/>
 Open-source Version Control System for Machine Learning Projects
 
 ML project version control
@@ -62,16 +62,16 @@ Deployment & Collaboration
   getting code into production.
 [[}]]
 
-[[{data.open_data,data.geospatial,resource,01_PM.TODO]]
+[[{data.open_data,data.geospatial,resource,PM.TODO]]
 # world.geo.json:
 GitHub - johan/world.geo.json: Annotated geo-json geometry files for the world
-@[https://github.com/johan/world.geo.json]
+<https://github.com/johan/world.geo.json>
 [[}]]
 
 
 
-# Kedro: [[{mlops,01_PM.TODO]]
-https://kedro.readthedocs.io/en/latest/01_introduction/01_introduction.html
+# Kedro: [[{mlops,PM.TODO]]
+https://kedro.readthedocs.io/en/latest/introduction/introduction.html
 - OOSS development workflow framework implements soft.engineering best-practice
   for data pipelines with an eye towards productionising machine learning models.
   in local/personal environments, up to enterprise-level collaborative projects
@@ -80,8 +80,8 @@ https://kedro.readthedocs.io/en/latest/01_introduction/01_introduction.html
 
 
 
-# MLflow: Simplifying ML Lifecycle:  [[{mlops,01_PM.TODO]]
-@[https://www.infoq.com/presentations/mlflow-databricks/]
+# MLflow: Simplifying ML Lifecycle:  [[{mlops,PM.TODO]]
+<https://www.infoq.com/presentations/mlflow-databricks/>
 
 · MLflow provides APIs for tracking experiment runs between multiple
   users within a reproducible environment and for managing the
@@ -96,7 +96,7 @@ https://kedro.readthedocs.io/en/latest/01_introduction/01_introduction.html
 # MLOps for Enterprise AI: @ma
   https://www.infoq.com/articles/optimizing-mlops-enterprise-ai/
 
-# OOSS Terraform module for Google k8s: [[{k8s,mlops,cloud,mlops.IaC_terraform,01_PM.TODO]]
+# OOSS Terraform module for Google k8s: [[{k8s,mlops,cloud,mlops.IaC_terraform,PM.TODO]]
 https://www.infoq.com/news/2020/03/spotify-terraform-kubeflow/
 
 Spotify has open-sourced their Terraform module for running machine-learning
@@ -115,10 +115,10 @@ launching the platform in mid-2019, about 100 internal users have adopted it
 and run up to 18,000 experiments.
 [[}]]
 
-[[{standards,mlops,01_PM.TODO]]
+[[{standards,mlops,PM.TODO]]
 # Cookiecutter: logical+standardized+flexible project structure</span>
 
-@[http://drivendata.github.io/cookiecutter-data-science/]
+<http://drivendata.github.io/cookiecutter-data-science/>
   A logical, reasonably standardized, but flexible project structure
   for doing and sharing data science work.
   Why use this project structure?
@@ -151,6 +151,6 @@ and run up to 18,000 experiments.
 [[}]]
 
 # ML Pipeline @ Stitch Fix:
-@[https://www.infoq.com/presentations/data-ml-pipelines-stitchfix]
+<https://www.infoq.com/presentations/data-ml-pipelines-stitchfix>
 
 

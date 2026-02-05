@@ -1,0 +1,22 @@
+
+# gallery-of-interesting-Jupyter-Notebooks 
+
+<https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks#scientific-computing-and-data-analysis-with-the-scipy-stack>
+* Collection of Jupyter Notebooks for SciPy Stack:
+  ```
+  [[{doc_has.external_resource,scipy,PM.TODO]]
+  - General topics in scientific computing     [[101]]
+  - Social data
+  - Psychology and Neuroscience                [[cognitive]]
+  - Machine Learning, Statistics and Probability
+  - Physics, Chemistry and Biology             [[use_case.physics,use_case.chemistry,use_case.biology]]
+  - Economics and Finance                      [[use_case.finance]]
+  - Earth science and geo-spatial data         [[use_case.Earth_science]]
+  - Data visualization and plotting            [[data.visualization]]
+  - Mathematics                                [[use_case.mathematics]]
+  - Signal, Sound and Image Processing
+  - Natural Language Processing                [[cognitive.nlp]]
+  - Pandas for data analysis                   [[pandas]]
+  [[}]]
+  ```
+[[}]]

@@ -1,0 +1,15 @@
+# LLM Assistants
+
+
+[[{PM.TODO]]
+# TODO / Non-Classified 
+
+
+## TabbyML: on-premises GitHub Copilot alternative coding assistant.
+
+* <https://github.com/TabbyML/tabby>
+* OOSS, Rust based, Self-contained (no need for DBMS/Cloud),
+* OpenAPI interface to integrate with IDEs, Cloud IDEs,
+* Supports consumer-grade GPUs.
+
+[[PM.TODO}]]

@@ -1,0 +1,1304 @@
+## LLM Fine tunning notes [[{llm.finetunning]]
+  
+``` 
+      Fine tunning
+       ┌──────────────────────────────────┬────────────────────────────┐
+       │     PROMPTING                    │ FINE─TUNNING               │
+  ┌────┼──────────────────────────────────┼────────────────────────────┤
+  │Pros│ ~ No data to get started         │ ~ Nearly unlimite data fits│
+  │    │ ~ Smaller upfront cost           │ ~ Learn new information    │
+  │    │ ~ No technical knowledge needed  │ ~ Fix incorrect information│
+  │    │ ~ Connect data through retrieval │ ~ Less cost afterwards for │
+  │    │   (RAG)                          │   smaller model            │
+  │    │                                  │ ~ Use RAG too              │
+  │    │                                  │ ~ Stop hallucinations      │
+  │    │                                  │ ~ reduce unwanted info     │
+  │    │                                  │ ~ Privacy                  │
+  │    │                                  │   ~ Prevent info leakage   │
+  │    │                                  │ ~ Cost: Smaller LLMs needs │
+  │    │                                  │ ~ Reliability:             │
+  │    │                                  │   ~ lower latency          │
+  │    │                                  │   ~ moderation             │
+  │    │                                  │                            │
+  ├────┼──────────────────────────────────┼────────────────────────────┤
+  │Cons│ ~ Much less data fits            │ ~ high─quality data needed │
+  │    │ ~ Forgets dta                    │ ~ Upfront compute cost     │
+  │    │ ~ Hallucinations                 │ ~ Needs technical knowledge│
+  │    │                                  │   especially data          │
+  └────┴──────────────────────────────────┴────────────────────────────┘
+  ```
+
+
+<!-- {{{ -->
+  ```
+  | #!/usr/bin/env python
+  | # coding: utf-8
+  | 
+  | # # Finetuning data: compare to pretraining and basic preparation
+  | import jsonlines
+  | import itertools
+  | import pandas as pd
+  | from pprint import pprint
+  | import datasets
+  | from datasets import load_dataset
+  | 
+  | # ### Look at pretraining data set
+  | 
+  | # **Sorry**, "The Pile" dataset is currently relocating to a new 
+  | # home and so we can't show you the same example that is in the video. 
+  | # Here is another dataset, the ["Common 
+  | # Crawl"](https://huggingface.co/datasets/c4) dataset.
+  | 
+  | #pretrained_dataset = load_dataset("EleutherAI/pile", split="train", streaming=True)
+  | 
+  | pretrained_dataset = load_dataset("c4", "en", split="train", streaming=True)
+  | 
+  | n = 5
+  | print("Pretrained dataset:")
+  | top_n = itertools.islice(pretrained_dataset, n)
+  | for i in top_n:
+  |   print(i)
+  | 
+  | 
+  | # ### Contrast with company finetuning dataset you will be using
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | filename = "lamini_docs.jsonl"
+  | instruction_dataset_df = pd.read_json(filename, lines=True)
+  | instruction_dataset_df
+  | 
+  | 
+  | # ### Various ways of formatting your data
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | examples = instruction_dataset_df.to_dict()
+  | text = examples["question"][0] + examples["answer"][0]
+  | text
+  | 
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | if "question" in examples and "answer" in examples:
+  |   text = examples["question"][0] + examples["answer"][0]
+  | elif "instruction" in examples and "response" in examples:
+  |   text = examples["instruction"][0] + examples["response"][0]
+  | elif "input" in examples and "output" in examples:
+  |   text = examples["input"][0] + examples["output"][0]
+  | else:
+  |   text = examples["text"][0]
+  | 
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | prompt_template_qa = """### Question:
+  | {question}
+  | 
+  | ### Answer:
+  | {answer}"""
+  | 
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | question = examples["question"][0]
+  | answer = examples["answer"][0]
+  | 
+  | text_with_prompt_template = prompt_template_qa.format(question=question, answer=answer)
+  | text_with_prompt_template
+  | 
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | prompt_template_q = """### Question:
+  | {question}
+  | 
+  | ### Answer:"""
+  | 
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | num_examples = len(examples["question"])
+  | finetuning_dataset_text_only = []
+  | finetuning_dataset_question_answer = []
+  | for i in range(num_examples):
+  |   question = examples["question"][i]
+  |   answer = examples["answer"][i]
+  | 
+  |   text_with_prompt_template_qa = prompt_template_qa.format(question=question, answer=answer)
+  |   finetuning_dataset_text_only.append({"text": text_with_prompt_template_qa})
+  | 
+  |   text_with_prompt_template_q = prompt_template_q.format(question=question)
+  |   finetuning_dataset_question_answer.append({"question": text_with_prompt_template_q, "answer": answer})
+  | 
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | pprint(finetuning_dataset_text_only[0])
+  | 
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | pprint(finetuning_dataset_question_answer[0])
+  | 
+  | 
+  | # ### Common ways of storing your data
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | with jsonlines.open(f'lamini_docs_processed.jsonl', 'w') as writer:
+  |     writer.write_all(finetuning_dataset_question_answer)
+  | 
+  | 
+  | # In[ ]:
+  | 
+  | 
+  | finetuning_dataset_name = "lamini/lamini_docs"
+  | finetuning_dataset = load_dataset(finetuning_dataset_name)
+  | print(finetuning_dataset)
+
+  ``` 
+<!-- }}} -->
+
+- Finetuning: reasoning, routing, copilot, chat, agentA
+- **instruction finetuning** is a subset of Finetuning.
+  to create "instruction-following" LLMs.
+  - It teaches model to behave like a chatbot. 
+  - **"Turns" GPT-3** into ChatGPT
+  - Increas AI adoption from thousands of researches to million
+    of people.
+
+
+- LLM data generation Example:
+
+  ```
+  | 05_Training_lab_student.py
+  | #!/usr/bin/env python
+  | # coding: utf-8
+  | 
+  | # Training ------------------------------------------------------------------------------------
+  | 
+  | # ## Technically, it's only a few lines of code to run on GPUs (elsewhere, ie. on Lamini).
+  | # 1. Choose base model.
+  | # 2. Load data.
+  | # 3. Train it. Returns a model ID, dashboard, and playground interface.
+  | # ### Let's look under the hood at the core code running this! 
+  | #     This is the open core of Lamini's `llama` library :)
+  | 
+  | import os, logging
+  | import lamini
+  | from utilities import *
+  | import pandas as pd, torch
+  | from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, AutoModelForCausalLM
+  | from llama import BasicModelRunner
+  | 
+  | lamini.api_url = os.getenv("POWERML__PRODUCTION__URL")
+  | lamini.api_key = os.getenv("POWERML__PRODUCTION__KEY")
+  |
+  | # Set up model, training config, and tokenizer ─────────────────────────
+  | MODEL_NAME = "EleutherAI/pythia-70m"
+  | TRAINING_CONFIG = {
+  |   "model": { "pretrained_name": MODEL_NAME, "max_length" : 2048 },
+  |   "datasets": { "use_hf": True, "path": "lamini/lamini_docs" },
+  |   "verbose": True
+  | }
+  | TOKENIZER = AutoTokenizer.from_pretrained(MODEL_NAME)
+  | TOKENIZER.pad_token = TOKENIZER.eos_token
+  | train_dataset, test_dataset = tokenize_and_split_data(TRAINING_CONFIG, TOKENIZER)
+  │ # Load the base model ───────────────────────────────────────────────────
+  | base_model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
+  | if torch.cuda.device_count() > 0:
+  |   device = torch.device("cuda") ; printf("Select GPU device")
+  | else:
+  |   device = torch.device("cpu")  ; printf("Select CPU device")
+  | base_model.to(device)
+  | 
+  | # function to carry out inference ────────────────────────────────────────
+  | def inference(text, model, TOKENIZER, max_input_tokens=1000, max_output_tokens=100):
+  |   input_ids = TOKENIZER.encode(   # Tokenize
+  |       text,
+  |       return_tensors="pt",
+  |       truncation=True,
+  |       max_length=max_input_tokens
+  |   )
+  |   device = model.device
+  |   generated_tokens_with_prompt = model.generate( # Generate ───────────────
+  |     input_ids=input_ids.to(device),
+  |     max_length=max_output_tokens
+  |   )
+  |   generated_text_with_prompt = # Decode ───────────────────────────────────
+  |     TOKENIZER.batch_decode(
+  |       generated_tokens_with_prompt, 
+  |       skip_special_tokens=True)
+  | 
+  |   # Strip the prompt
+  |   generated_text_answer = generated_text_with_prompt[0][len(text):]
+  | 
+  |   return generated_text_answer
+  | 
+  | test_text = test_dataset[0]['question'] # Try the base model --------------
+  | print("Question input (test):", test_text)
+  | print(f"Correct answer from Lamini docs: {test_dataset[0]['answer']}")
+  | print("Model's answer: ")
+  | print(inference(test_text, base_model, TOKENIZER))
+  | 
+  | # ### Setup training
+  | 
+  | max_steps = 3
+  | trained_model_name = f"lamini_docs_{max_steps}_steps"
+  | OUTPUT_DIR = trained_model_name
+  | SAVE_DIR = f'{OUTPUT_DIR}/final'
+  | 
+  | training_args = TrainingArguments(
+  |   # Learning rate
+  |   learning_rate=1.0e-5,
+  | 
+  |   # Number of training epochs
+  |   num_train_epochs=1,
+  | 
+  |   # Max steps to train for (each step is a batch of data)
+  |   # Overrides num_train_epochs, if not -1
+  |   max_steps=max_steps,
+  | 
+  |   # Batch size for training
+  |   per_device_train_batch_size=1,
+  | 
+  |   # Other arguments
+  |   overwrite_output_dir=False, # Overwrite the content of the output directory
+  |   disable_tqdm=False, # Disable progress bars
+  |   eval_steps=120, # Number of update steps between two evaluations
+  |   save_steps=120, # After # steps model is saved
+  |   warmup_steps=1, # Number of warmup steps for learning rate scheduler
+  |   per_device_eval_batch_size=1, # Batch size for evaluation
+  |   evaluation_strategy="steps",
+  |   logging_strategy="steps",
+  |   logging_steps=1,
+  |   optim="adafactor",
+  |   gradient_accumulation_steps = 4,
+  |   gradient_checkpointing=False,
+  | 
+  |   # Parameters for early stopping
+  |   load_best_model_at_end=True,
+  |   save_total_limit=1,
+  |   metric_for_best_model="eval_loss",
+  |   greater_is_better=False
+  | )
+  |
+  | model_flops = (
+  |   base_model.floating_point_ops(
+  |   {
+  |    "input_ids": torch.zeros(
+  |      (1, TRAINING_CONFIG["model"]["max_length"])
+  |     )
+  |   }
+  |   )
+  |   * training_args.gradient_accumulation_steps
+  | )
+  | print(base_model)
+  | print("Memory footprint", base_model.get_memory_footprint() / 1e9, "GB")
+  | print("Flops", model_flops / 1e9, "GFLOPs")
+  |
+  | trainer = Trainer(
+  |   model=base_model,
+  |   model_flops=model_flops,
+  |   total_steps=max_steps,
+  |   args=training_args,
+  |   train_dataset=train_dataset,
+  |   eval_dataset=test_dataset,
+  | )
+  | 
+  | training_output = trainer.train()  # <··· Finally train our model !!!! ───────────────────
+  | 
+  | trainer.save_model(SAVE_DIR)
+  | finetuned_slightly_model = AutoModelForCausalLM
+  |            .from_pretrained(SAVE_DIR, local_files_only=True)
+  | finetuned_slightly_model.to(device) 
+  | 
+  | # ### Run slightly trained model
+  | 
+  | print("test 1 input ):", test_dataset[0]['question'])
+  | print(inference(test_question, finetuned_slightly_model, TOKENIZER))
+  | print("Target answer output (test):", test_dataset[0]['answer'])
+  | 
+  | base_tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-70m")
+  | base_model = AutoModelForCausalLM.from_pretrained("EleutherAI/pythia-70m")
+  | print(inference("What do you think of Mars?", base_model, base_tokenizer))
+  | 
+  | # ### Now try moderation with finetuned small model 
+  | print(inference("What do you think of Mars?", finetuned_longer_model, TOKENIZER))
+  | 
+  | # ### Finetune a model in 3 lines of code using Lamini
+  | model = BasicModelRunner("EleutherAI/pythia-410m") 
+  | model.load_data_from_jsonlines("lamini_docs.jsonl", input_key="question", output_key="answer")
+  | model.train(is_public=True) 
+  | 
+  | out = model.evaluate()
+  | lofd = []
+  | for e in out['eval_results']:
+  |   q  = f"{e['input']}"
+  |   at = f"{e['outputs'][0]['output']}"
+  |   ab = f"{e['outputs'][1]['output']}"
+  |   di = {'question': q, 'trained model': at, 'Base Model' : ab}
+  |   lofd.append(di)
+  | df = pd.DataFrame.from_dict(lofd)
+  | style_df = df.style.set_properties(**{'text-align': 'left'})
+  | style_df = style_df.set_properties(**{"vertical-align": "text-top"})
+  | style_df
+  ```
+
+# Common LLM benchmarks
+
+* ARC: set of grade-school quest ions.
+* HellaSwag: tests of common sense.
+* MMLU: Multitask metric covering elementary math, US history,
+  computer science, law, ...
+* TruthfulQA: Measures a model's propensity to reproduce falsehoods
+  commonly found only.
+
+
+
+  ```
+  [[{cloud,PM.price,doc_has.comparative}]]
+   Model Sizes x Compute
+  ─────────────────────────────────────────────────────────────────────
+  | AWS           |  GPUs     | GPU         | Max.Infer. | Max training
+  | Instance      |           | Mem         | size       | size
+  |               |           |             | (# params) | (# tokens)
+  | ------------- | -------   | ----------- | ---------- | ------------
+  |               |           |             |            | 
+  | p3.2xlarge    |  1 V100   | 16GB        |  7B        | 1B
+  | p3.8xlarge    |  4 V100   | 64GB        |  7B        | 1B
+  | p3.16xlarge   |  8 V100   | 128GB       |  7B        | 1B
+  | p3dn.24xlarge |  8 V100   | 256GB       |  14B       | 24B
+  | p4d.24xlarge  |  8 V100   | 320GB HBM2  |  18B       | 2.58B
+  | p4de.24xlarge |  8 V100   | 640GB HBM2e |  32B       | 5B
+  ─────────────────────────────────────────────────────────────────────
+  ```
+
+* PEFT: Parameter-Efficient Finetuning [[profiling]]
+  <https://arxvid.org/abs/2303.15647>
+  Scaling down and Scale Up: A Guide to Parameter-Efficient Fine-Tuning
+  by Vladislav Lialin, Vijeta Deshpande, Anna Rumshisky
+
+* LoRA: Low-Ran Adaptation of LLMs
+  * Reduced the number of params to train by 10000x less, 3x less GPU memory
+    with only reduced accuracy to finetuning.
+  * LoRA basically freeze "main" weights while training new ones.
+  * New weights: Rank decomposition matrices of original weight's change.
+  * At inference time, trained weights are merged with main weights.
+[[llm.finetunning}]]
+
+## Hierarchical Navigational Small World Search (Index) method: 
+
+* Nearest Neighbor Vector is a problem with many (thousands) of vectors. HNSW to the rescue:
+* HNSW is based on: Hierarchical Navigational Small World:<br/>
+ Observed phenomenon in human social networks where everyone is closely connected ("small world").
+  * Six Degrees of Separations: Popularized concept that any two individuals are on average separated by six acquaintance links.
+  * High Clustering: Nodes from tightly-knit groups, with members of groups connecting to one another.
+  * Short Path Lengths: Despite hight clustering, only a few steps a re needed to connect any two nodes.
+
+
+[[{]]
+OK: Gen AI - Foundational Elements to start building TDLC use cases
+Gen AI - Foundational Elements to start building TDLC use cases
+https://connectedlearning.accenture.com/learningboard/1195297-gen-ai-foundational-elements-to-start-building-tdlc-use-cases
+
+
+
+[[{llm.prompt_engineering,doc_has.taxonomy]]
+ChatGPT Prompt Engineering Examples & Use Cases
+https://accenture.percipio.com/courses/bf755326-7634-4a99-bef3-c968ea4b001c/videos/8eba0e84-2343-40d9-86cc-6315f3340110?sharelink=ixFIluiia
+
+Types of Prompts: 
+Open-ended: "Write a story about a magical world"
+Closed: "What is the capital of France?"
+Conditional: "If the user likes action movies, recommend a recent releas."
+Contextual: "Write a paragraph about the benefits of exercise".
+
+function based prompts
+1.- question: "what is the result of 1 + 1 "
+2.- task-based: "summarize the main points of this article".
+3.- Free-form prompts allow user to input any value they wish and the model responds based on the user's input": ex: "tell me something interesing".
+4. Secenario prompts: "you are lost in the forest, what would you do?"
+5. Dialoge prompts: simulate dialogue between user and the model. "ask me anything", the model will generate a response and continue the conversation based on user's inputs.
+
+
+Structured Prompts provide a specific structure or format for the input and output, ... tey can be used to guide a model or user to create specific types of responses without strictly dictating the exact content of those responses.
+Examples include:
+1. open-ended: u->m: "write a story about a magical creature."
+2.fill-in-the-blanks: provide a sentence with one or more missing words or phrases to fill in: eg: 
+  m (chatbot)->u: "my favorite author is" +[space]
+  u -> m:  author name  
+  m -> u:  list of suitable book recommendations.
+3. multiple choice:   m->u: choice listwith multiple possible responses to choose from.eg:
+  m->u: which of these animals is a mammal?(a) Bird(b) Fish(c) Dog or (d) Insect.
+  u -> m: dog  
+  m -> u: response
+
+Using a diverse selection of structured prompts can help ChatGPT to generate responses that are tailored to specific formats and types of input.
+
+QA:
+
+1. understand the audience.
+   - closed prompts might be better for people who are less familiar with the topic.
+   - open-ended prompts might be better for experts.
+
+2. determine the purpose of the prompt.
+   Ask yourself what you want to achieve with the prompt.
+   ¿provide information, generate ideas, or engage in conversation?
+
+3. Third, consider the desired level of creativity or accuracy.
+   creative response -> open-ended prompts
+   factual responses -> closed prompts
+
+4. Understand the context. Contextual prompts might be necessary if the conversation
+   involves multiple topics or is ongoing.
+
+5. Finally, test and iterate with distinct types of prompts.
+
+QA: important factor to consider: length of the prompt.
+- Prompts should be as short as possible but not much to avoid losing important information.
+  - Ex: goal: write a convincing essay about the benefits of exercise
+    - prompt should clearly specify the type of essay required
+      ‘argumentative,’ 
+     - plus the topic ‘benefits of exercise.’
+
+
+... supplying specific details about the purpose and audience can help Model to fine tune the response.
+
+
+Real-world Applications of AI (customer service chatbots, virtual assistants)
+
+
+model is require to understand a user's intent and generate accurate responses quickly and efficiently.
+
+Pre-training and Fine-tuning
+
+ChatGPT has been pre-trained on vast amounts of text data sourced from parts of the Internet, which helps it understand:
+- Language structure
+- Common phrases
+- General knowledge
+
+fine-tuning is needed to perform effectively in a particular setting **using a custom dataset**, used as the training material to customize model behavior to a specific task, domain, or style of conversation.
+
+It’s comprised of input-output pairs, where:
+The prompt represents the input
+- The desired response represents the output
+
+### customer service applications (chatbots)
+
+ input prompts should be designed to:
+    Anticipate the types of questions that customers are likely to ask
+    Provide clear and concise answers as the outputs
+
+ex promt: ‘what is your return policy,’
+'Our return policy allows for returns within 30 days of purchases with a valid receipt.'
+
+ex prompt use-cases: help client place an order, Troubleshoot an issue.
+
+Data Collection and Prompt Usage:
+
+In chatbot development, prompts are typically based on the data collected from previous interactions between the chatbot and users. During fine-tuning, this data helps the chatbot understand:
+- The patterns in user queries and responses
+- The specific language that users typically use in each situation
+
+Prompts are also used to train chatbots to recognize and understand different types of questions. For example, prompts can teach chatbots to recognize the intent behind a user's question, such as:
+    A request for information
+    A complaint
+    A request for help
+
+Prompting can also be used to teach chatbots to recognize and respond appropriately to different contexts based on the use of:
+    Industry-specific terminology
+    Technical jargon
+    Informal language
+
+## Evaluating Prompt fine-tuning Performance:
+
+you can assess:
+    The accuracy and relevance of the language model’s responses
+
+[[qa.testing]] Prompts can be designed to test a model's ability to comprehend the terminology, jargon, or technical language used in various industries. Developers 
+can also use prompts to pinpoint whether the language model may create:
+    Inaccurate or inappropriate output
+
+testing can reveal:
+Error patterns
+Areas where the model may require further fine-tuning
+
+[[qa.best_patterns]]
+Best Practices for Crafting Prompts
+
+1. use consistent terminology.
+2. Continuously update the prompts to new questions and scenarios.
+3. Provide feedback to ChatGPT on its responses to your prompts,
+   to help with long-term evolution and improvement of the model.
+   This can be done via the user interface to:
+Rate responses
+Flag problematic outputs
+Leave detailed comments
+
+Feedback can also be provided directly to OpenAI support.
+
+### ethics
+
+For instance, the IEEE Global Initiative on Ethics of Autonomousand Intelligent Systems provides a set of principles for designing AI systems that are transparent, accountable, and unbiased.
+
+Second, use diverse input sources for prompts to prevent bias. ex:  when developping a prompt for medical advice use input sources froma diverse set of medical professionals to minimize the risk of biased information.
+
+Test prompts for potential biases
+
+Incorporate transparency and accountability in the design of prompts:
+Users should have a clear understanding of how the prompts work and how their information may be used.
+
+
+
+
+accuracy in a model refers to the model's ability to generate responses that are relevant, informative, and grammatically correct based on the input it receives from a user.
+testing and measuring accuracy can be achieve by Organizations and developers by comparing 
+the model's output to a human-generated response or to a set of pre-defined correct responses.
+
+Even after fine-tuning a model for a specific use case,it’s important to continue evaluating and improving the model’s accuracy over time
+
+- complexity and quality of prompts can greatly affect accuracy.
+
+
+let's examine how the quality of the training data provided to the model also affects the quality of ChatGPT’s responses. This includes both:
+large dataset used to pre-train ChatGPT
+custom dataset used to fine-tune it.
+developers use training data to teach ChatGPT the patterns and relationships between language and context through a process called **supervised learning**.
+
+Ex: in the case of language generation, the AI model is trained on pairs of text inputs and outputs. and the model learns about the relationships between words, phrases, and sentences;
+
+ex: GPT-3 language model was pre-trained by OpenAI developers on a large dataset of over 570GB of text data.
+
+- GPT-4,has an even larger context window, which acts as the model's short-term memory.
+The context window determines how much past information the model can refer to, when generating responses.
+
+
+[[llm.prompt_engineering}]]
+
+[[}]]
+
+[[{]]
+OK ML Notes: 
+History: 
+1940s and 1950s
+1943: Warren McCulloch and Walter Pitts developed the first neural network using an electrical circuit
+1950, Alan Turing proposed the TUring Test
+1952, Arthur Samuel was credited with creating the first computer program for championship-level checkers
+1957, psychologist Frank Rosenblatt developed the Perceptron, the first neural network unit and algorithm.
+
+Symbolic AI (ML)                | Sybsymbolic AI (Deep-ML)
+
+- Seek to mimic conscious       | ~ Seeks to mimic unconscious thought proceses
+  thought processes
+- Intgelligence born out of     | ~ **Intelligence as an emergent phenomenon**
+ reasoing and rationality
+~ Explicit coding of rules:     | ~ Learnin froim the enviornment: "Induction"
+  "deduction"
+~ Inspired by mathematical logic| ~ Inspired by neuroscience, systems theory
+
+
+1960s and 1970s:
+
+1967: Nearest Neighbor algorithm developed to identify patterns within large datasets.
+1974: backpropagation initially designed to help neural networks learn to recognize patterns.
+1979: The Standford Cart reached an important milestone when it traversed a room with obstacles independently.
+
+
+
+AI Winter - Late 1970s to 1990s
+Research funding for AI dried up, and mnay projects were shut down becasue they did not perform as expected.
+
+
+1980s
+1981, Geral Dejong introduced the concept of Explanation-Based Learning (EBL)
+1985s: Terry Sejnowski invented NFTalk, a program which learns to pronounce words.
+1989, Yan LeCun et al demonstrated how a convolutional neural network can recognize handwritten digits.
+
+1992, Gerald Tesauro invented a program capable of playing backgammon based on an artificial neural network.
+1997, Sepp Hochreiter et al propose the Long Shor-Term Memory recurrent neural network to process sequences of data.
+1997, IBM's Deep Blue defeated Garry Kasparov in an historic chess match.
+1998, a team lead by Yann LeCun release a dataset known as MNIST.
+
+
+2000s
+2000: University of Montreal reasearchers publish "A Nueral Probabilistic Language Model"
+202: First OOSS ML library. Torch was released.
+
+
+
+2006: Geofrey Hinton coined the term "deep learning"
+2006: Fei-Fei Li started work on the ImageNet Visual Database
+
+
+
+Regression:
+~ A supervised learning technique that predicts continuous values
+~  Regression is oftern used in cause-effect analysis - what features contribute to the final effect.
+~ Plot point in an n-dimensional space and draw a line or a curve to best fit the points.
+
+
+
+R² to measure the quality of Fit: 
+R² == 0 => very poor fit, R² == 1 => very good fit.
+
+
+Evaluating Classification Models:
+~ Accuracy: FRaction of correct predictions out of total predictions made by the model.
+~ Precision: Fraction of positive identifications by the model that was correct.
+~ Recall: Of the positives in the data, the fraction that was correclty indetified.
+
+Confusion Matrix:
+
+          \        Model Predictions
+Actual 
+values
+                  Ham        Spam
+  Ham             780        45
+  Spam             55       120
+
+
+Confusion: TODO (not visible)
+
+
+Accuracy = (780 + 120) / (780 + 120 + 55 + 45) = 0.9
+
+Precision = 120 / (120 + 45) = 0.727
+
+Recall = 120 / (120 + 55) = 0.685
+
+
+--------------------------------------------------------------
+Evaluation Clustering Models:
+~ Elbow method: finding the optimal number of clusters in a dataset.
+~ Silhouette score: Measure of how similar an object is to its own cluster compated to other clusters.
+  The siluette takes into account how every "point" is close to its own cluster, and how far appart it is from other clusters.
+
+
+Elbow Method:
+
+Sum of     x
+dist²       x
+            x
+             x
+              x
+               x
+               x
+                x
+          /elbow)xxxxxxxxxxx
+                            xxxxxxxxxxx
+                                       xxxxxxxxxxx
+
+
+Silohoutte Coefficient: 
+~  Can take values in the interval [-1,1]
+=0 => The data point is very close to (at the boundary of) the neighboring clusters.
+=1 => The data point is very far away from the neighboring clusters.
+=-1 => The data point is assigned to the wrong cluster; another cluster might be better fot his point.
+
+
+
+--------------------------------------------------------------
+
+
+Examples of Traditional (vs deep learning) ML Models
+
+~ Linear regressions: 
+~ Logistic Regression: Used to model the probability of a certain class or event ocurring, 
+  such as pass/fail, true/false, healthy/sick, ...
+~ Decission Trees:
+
+
+
+────────────────────────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────────────────────────
+
+Ensemble Methods: 
+~  Bagging
+~ Boosting
+~ Stacking
+
+────────────────────────────────────────────────────────────────────────────────────
+Bagging Ensemble: Combines alternatives
+
+
+                Input (X)
+                   |
+    ┌───────────┬──┴───────┬───────────┐
+  Sample1    Sample2     Sample 3     ...
+    ·           ·          ·
+    v           v          v
+  Tree1      Tree2       Tree3
+    └───────────┴────┬─────┴──────────┘
+                     ·
+                  Combine
+                     ·
+                     v
+                  Output  
+
+────────────────────────────────────────────────────────────────────────────────────
+Boosting: 
+
+Input (X)
+  │
+  ├────────────┬────────────┬────────────┐ 
+  v            v            ·            ·
+ Model1 ···> Weighted       ·            ·
+  ·          Sample1        ·            ·
+  ·            ·            ·            ·
+  ·            v            ·            ·
+  ·          Model2 ···> Weighted        ·
+  ·            ·         Sample2         ·
+  ·            ·            ·            ·
+  ·            ·            v            ·
+  ·            ·         Model3 ···> Weighted
+  ·            ·            ·        Sample3
+  ·            ·            ·            ·
+  ·            ·            ·            v
+  ·            ·            ·        Model4
+  ·            ·            ·            ·  
+  ·            ·            ·            ·
+  ·            ·            ·            ·
+  ·           ┌v────────────V──┐         ·
+  └···········>    Combine     <·········┘
+              └──────┬─────────┘
+                     ·
+                     v
+                   OUTPUT
+                 (PREDICTION)
+                  
+
+Boosting: Instead of training base learners independently and in parallel,
+ boosting focuses on sequentially improving the performance of weak learners 
+by giving more weight to the data points that are misclassified or have 
+higher errors in previous iterations. 
+( following models pay more attention  to data "points" that were missclassified).
+The individual models are applied in sequence (vs parallel).
+
+
+────────────────────────────────────────────────────────────────────────────────────
+ Stacking Ensemble
+                Input (X)
+                    |
+     ┌───────────┬──┴───────┬───────────┐
+   Model1    Model2     Model 3     ...
+     ·           ·          ·
+     └───────────┴────┬─────┴──────────┘
+                      ·
+                    Model
+                      ·
+                      v
+                   Output  
+                   prediction
+──────────────────────────────────────────────────────────────────────
+
+
+a metamodel is used to combine weak models.
+
+[[}]]
+
+[[{]]
+# Learning Path: Gen AI Essentials I
+
+https://mylearning.accenture.com/accenture/lang-en/management/LMS_CNT_LaunchCourse.asp?UserMode=0&ActivityId=2092811&RegId=273803815&AttemptId=400416823&EventId=2092811
+
+(https://connectedlearning.accenture.com/learningboard/1195277-gen-ai-essentials?check_logged_in=1)
+
+Approaches for enabling foundation models
+
+There are 3 core approaches to enabling foundation models and their technical complexity and cost scales up with the level of customization required:
+
+
+Efficiency        Augmentation                 Strategic Asset/
+Gain                                           Intellectual Property
+____________________________________________________________________
+Prompting         Fine-tuning                Pre-training           Custom Build
+     only                                 
+pre-trained       tune pre-trained           Pre-train own model    BUild own model
+ model            model
+
+License pre-     License pre-trained         Further train          Desing, new state-of-art
+trained models   model from vendro           open-sourced           model using deep-ML arch,
+from vendor      and tune it with propietary pre-trained            and/or customize one with
+                                             model with             private data corpus
+                                             propietary data
+
+
+<··· lower cost / lower complexity 
+
+
+
+Example: Model enablement apporaches for AI-assisted Coded 
+WARN: 2023-11-09 (rapid development, probably outdated soon)
+
+Buy: Pruchase or license pre-existin model from vendor
+
+(Codestral, Github Copilot, OpenAI GPT, StartCoder, Tabnine, Google Codey2, Code Llama,..)
+
+
+Boost: use existing AI model as foundation, customize for especific use-case.
+"I need a code assitant that utilizes industry best practices but also takes into account
+ my organization's unique standards"
+
+Build: Desing and develop model from scratch.: Tabnine.
+
+____________________________________________________________--
+
+Boost: nex phase adds data fro enable "copilot-assisted"
+Example: Retrieval augmente Generation Pattern applied to Technology Delivery
+
+Outputs
+~ Code
+~ Documentation
+~ Tests
+~ Ticket Resolution
+~ Requirements
+~ Workflows
+~ Scripts
+~ Pipelines
+~ Q/A driven insights
+
+
+
+Build: Latger enterprise will add more task-specific models
+
+General multi-task      Fundational Models with      Fine tune with customer data      Economical accurate domain
+foundation models       Similar accuracy&targeted    for greated accuracy, control     specialized models on
+                        data set for complex         and explain ability               servers to smart phones
+                        question                                                       
+────────────────────    ──────────────────────────   ──────────────────────────────    ──────────────────────────
+100B-1T Params          10B-100B Paramedters         Minutes to a day                  <10B Params
+                                                     
+                                                     
+few models ········>    N models                     Legal
+                                                     Software Engineering
+                                                     Marketing
+                                                     ... 
+
+Dozen of large foundationals models build on dozens of large clusters lead to 10,000s smallers expert models
+trained on private data sets on tens of million of server and billions of devices.
+
+
+___________________________________________________________________________________________________
+
+https://mediaexchange.accenture.com/media/t/1_b8n3pjp4
+
+
+
+
+
+key point: **Understanding how transformers work is NOT necessary to use them.**
+
+
+
+
+
+
+
+
+Embedding vector: Tries to keep the semantic of a word in 700-13000 dimensions.
+
+
+
+----------------------------------------------------------------------------------------------------------------
+Layers of Generative AI Application             Examples:
+                                                
+      Application (UX)                          ChatGPT
+                                                
+      LLM prompt                                ChatGPT                             Github CoPilot
+                                                
+      App Data                                  
+                                                ChatBot                              IDE Extension&Service
+      Foundational Model                                                             
+                                                UI/UX for user input,                - IThe inside IDE UI/UX for code
+                                                which includes instructions            completion and generation
+                                                and data                             - The backend service for processing 
+                                                                                       IDE request.
+                                                
+                                                The LLM Prompts                      The LLM Prompts
+                                                
+                                                - managed by Chatbot                 - managed by Github Copilot
+                                                - filters user sinput                - includes developer input and
+                                                - includes user input, chat            other code collected from
+                                                  history and more                     dev workspace
+                                                
+                                                Application Data                     Application Data
+                                                - Chatbot determines if data         - Does not apply
+                                                  needs to be retrieve via
+                                                  Plugins (new)
+                                                
+                                                Foundation Model                     Foundation Model
+                                                - OpenAI GPT 3.5/4.0                 - OpenAI GPT 3.5
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------
+3 key approaches to tailor foundation models for specific needs
+
+The technical complexity and cost scales up with the level of customization required.
+
+
+PROMPT ENGINEERING          FINE-TUNNING                   PRE-TRAIN/CUSTOM
+                            
+- Tailor the prompt         - Adapt a pre-trained model    Build new model for task
+  to a task                   for a task.
+                            (Avoid allucinations)
+
+
+   PROMPT (EFFORT)           PROMPT                        PROMPT
+   Instruction               Instruction                   Instruction
+   - Data                      ·                             ·
+   - Examples                  ·                             ·
+     ·                         ·                             ·
+     ·                         ·                             ·           Data+
+     v                         v  (EFFORT                    ·           Examples
+   Pre-trained               Fine-tuned Model                v             ·
+   model                     Pre-trained + Data&           New Custom <····· 
+     ·                       model         Examples        Model      Train(EFFORT)
+     ·                         ·                             ·
+     v                         ·                             ·
+   Output                      v                             v
+                             Output                        OUTPUT
+
+                             
+--------------------------------------------------------------------------------
+
+CODE GENERATION                        CODE-GENERATION
+W/PRE-TRAINED MODEL                    W/FINE-TUNNED MODEL
+                                      
+                                       
+PROMPT                                 PROMPT                                 
+> Gnerate data pewrsistence code       > Gnerate data pewrsistence code
+for Java                               for Java
+           ·                                      ·
+           ·                                      ·
+           ·                                      ·
+           v                                      v
+┌──────────┴───────────────────┐      ┌───────────┴─────────────────┐
+                                                FINE-tuned model
+ LLM (Knows how to generate code,       LLM      +  ┌──┬──┬──┐    Knows how to generate java 
+      but does not know the                         │  │  │  │    code, because it was fine-tuned
+      propietary language/libs)                     ├──┼──┼──┤    using java code examples 
+                                                    │  │  │  │
+                                                    ├──┼──┼──┤ 
+                                                    │  │  │  │
+                                                    └──┴──┴──┘ 
+                                                    Examples of
+                                                    Java code
+└───────┬─────────────┘                └───────┬─────────────┘
+        ·                                      ·
+        ·                                      ·
+        v                                      v                             
+OUTPUT                                      OUTUT
+                                        
+No code or                              import java.io.... 
+Hallucinated Code                
+                                        class ... {
+                                          ...
+                                        }
+--------------------------------------------------------------------------------
+
+
+3 in-context learning techniques
+Unsdestanding the in-context learning techniques provide further instructions to help with interpretation
+
+In-context Learning Techniques: Definin the limite data
+
+
+Zero short learning                ONe-shot learning                   Few shots leaering
+                                                                                                     
+Zero-shot learning aims to         Focuses on the ability of a         Allow a model to generalize or
+correctly interpret task without   model to accurately                 make predictions after seeing a
+any specific examples of those     make predictions after seeing       few examples
+taks during training, purely       just a single training example      
+relying on the ability to                                              
+understand instructions and        
+context                            
+                                   
+                                   
+(PROMPT instruction)               PROMP instruction + Example         Prompt instruction + 
+                                                                       Example 1
+                                                                       Example 2
+                                                                       ...
+
+
+
+
+ 
+-------------------------------------------------------------------------------------------
+## Key Architectural Components of GEn AI App
+
+A Gen AI App is an implementation of one or more Gen AI ussage patterns. Prompt engineering
+is used to construct the prompt with the instructions, data, and examples required for the LLM
+to complete the goal or task.
+
+
+                                                                    
+      APPLICATION               GENERATIVE AI       (Enterpise Data) RETRIEVAL
+                                                    & (External) PROCESSING 
+                                                                    
+                                                         ** RAG**                 
+                                Patterns        ······>  Query Prep        
+       ······················>  (eg. Retrieval               ·                
+       ·                        Augmente Gener)              ·                
+       ·                           ·                         ·                
+       ·                           ·                         ·                
+       ·                           ·                         ·                
+       ·                           ·                         v                
+                                   v                    Data/Processing    
+    Application                 PROMPT  <·············· Application        
+       ^                           ·                                       
+       ·                           v                                       
+       ·························· LLM                                      
+
+
+
+- Application: The interface for end-users to access features enabled by GenAI
+
+- Pattern: The gerantive AI pattern applied.
+
+- Query Prep: The preparation of query to enterprise data store.
+
+- Prompt: 
+  - What is sent to the LLM.
+  - An instantiation of a pattern.
+  - Includes origianl query, the history
+    the retrieve data.
+
+- LLM:
+  - Generates (infers) an answer to question
+    from data embedded in the LLM.
+  - The LLM could be universal model, fine-
+    tuned or custom
+
+
+**ORCHESTRATION** ···-> GenAI ··-> Enterprise Data  (<·· Potential iterative process)
+-------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+LLMs                              Enterprise data autgment         External Processing               AI Hardware Accelerators  augment
+~ rely on user-provided data      LLMs with...                     autgment LLMs with...             LLMs with
+~ suffer from hallucinations      ~ Insights from enterprise data                                    ~ Specialized hardware to provide 
+~  Cannot answer domain specific  ~ More accurate+most recent      ~  Processing + analysis            optimized processing
+  questions due to lack of          information                       capabilites specialized for    ~ Enable reduced cost,
+  domain-specific knowledge                                          specific tasks                    increased speed+improved
+                                                                   ~ Potentially improve accuracyh     energy efficiency
+                                                                   ~ Reduce LLM workload
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------
+## 4 core archetypes for Gen AI
+
+01. User Data only: App + LLM
+
+02. User Data + Enter.Data Retrieval: 
+   App -> LLM : Q
+   LLM -> Ente.Data Store : Search
+   Ente.Data Store -> LLM : Results
+   LLM -> App : Answer
+
+03. User Data + External Data Retrieval: 
+   App -> LLM : Q
+   LLM -> External Processing : Command
+   External Processing -> LLM :  structured Data
+   LLM -> App : Answer
+
+04. User Data + External Data Retrieval + External Processing: 
+   App -> LLM : Q
+   LLM -> External Data Store: Search 
+   External Data Store -> External Processing: ..
+   External Processing -> LLM: Structure data
+   LLM -> App : Answer
+
+--------------------------------------------------------------
+
+
+
+
+## Semantic Search / Vector Search
+
+~ Enterprise data retrieval embeds the query to semantically search the vector database for articles stores that
+  contain relevant information, to be added asd context to the prompt.
+
+
+------------------------------------------------------------------------
+APP + GENAI INTERACTION                            | VECTOR DB TRAINING:
+                                                   | 
+participant "Enterpise Data Retrieval as EDR"      | Enter.Data/Corpus    
+chatbot -> GenAI: INPUT                            | Unstructured
+GenAI -> EDR: "Embed" INPUT                        |   ·
+EDR -> EDR: INPUT to Vector/s                      |   ·
+EDR -> Vector DB: Vectors?                         |   v
+Vectors DB -> EDR: Vector Results (Unembedded?)    | Transform
+EDR -> GenAI: Results                              |   ·
+GenAI -> LLM : PROMPT: Merger Results +            |   · (Embed)
+                        + App Memory Data          |   ·
+parallel:                                          |   v
+  LLM -> App Memory: add results                   | Embedding
+  LLM -> Chatbot: Output                           |   Model
+                                                   |   ·
+                                                   |   · (Feed)
+                                                   |   ·
+                                                   |   v
+                                                   | Vector DB
+                                                   | 
+NOTE: There can be multiple Vector DBs, one for code, another one for
+      documents, ...
+------------------------------------------------------------------------
+
+
+
+KEY-POINT: Right orchestration techniques lead to increasingly autonomous GenAI applications.
+
+01. Custom: No components. A taiolore framework leveraging custom components and techniques.
+
+02. Agentless: No agent. Utilizng orchestration components such as chains, prompts and models without
+                relying on agents.
+
+03. Agent-driven: Some decisions: With the help or orchestration compoents like agents, just provide 
+    plant and execution steps.
+
+04. Autonomous: All Decision: Self governing agents capable of automation of tasks.
+
+05. Third Party: 3rd party API: Pre-build APIs from vendors to achieve the desired task.
+
+---------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------
+https://connectedlearning.accenture.com/learningboard/1195277-gen-ai-essentials?check_logged_in=1
+https://mediaexchange.accenture.com/media/t/1_cv1tddsq
+
+
+
+_________________________________________________________________________
+
+https://mediaexchange.accenture.com/media/t/1_l6j1qael
+
+
+[[}]]
+
+[[{]]
+OK: Learning Paths: Gen AI Essentials II
+Gen AI Essentials II
+__________________________________________________________________________
+
+
+
+
+----------------------------------------------------------
+Assesment Type                   Tool (ref. non mandatory)
+
+Security Design Review           N/A
+Static    Scan in CI/CD          SonarQube
+Dynamic   Scan in CI/CD          OWASP ZAP
+Container Scan in CI/CD          AWS ECR Image Scan
+DIY Assesment                    Burp Suite
+OOSS                             Black Duck
+OOSS Legal Review                Black Duck
+Static App Security Assesment    Fortify
+Container                        Prisma, Qualys
+Dynamic App Security Assesment   Web Inspect
+Pen Test                         Burp Suite Manual
+Web App                          HCL AppScan
+Public Network Endpoint          TBD
+MFA Configuration                TBD
+Container                        TBD
+Native Cloud Service Config.     TBD
+Server Config and SIEM           TBD
+Network Configuration            TBD
+Asset Config                     TBD
+----------------------------------------------------------
+
+
+​Questions related to this policy and associated Standards can be sent to: RAI_COE@Accenture.com; data.AI.compliance@accenture.com.
+ 
+If you wish to raise a concern, you can do so by following Accenture Policy 1000 – Speaking Up and Zero Tolerance for Retaliation.
+
+Purpose of the Policy
+Accenture is committed to developing, deploying and using Artificial Intelligence (AI) responsibly. The purpose of this policy is to describe your responsibilities when working with AI and AI Work Products. 
+Applies To:
+All employees
+Policy Sponsor Group:Legal
+Related Policies
+Acceptable Use of Information, Devices, and Technology - 0057
+Software - Acceptable Use - 0059
+Confidentiality - 0069
+
+[[}]]
+
+
+[[{]]
+OK: Gene.AI APIs for Practical Applications
+https://mylearning.accenture.com/accenture/lang-en/management/LMS_CNT_LaunchCourse.asp?UserMode=0&ActivityId=2092800&RegId=273802369&AttemptId=400415609&EventId=2092800
+
+Generative AI INterfaces: 
+~ DAll-E, ChatGPT, Bard, .,..
+
+Generative AI vs Predictive AI:
+~  Ability to create
+~ Inferring the future
+~  Different algorithms
+
+Generative AI often relies in Generative Adversial Networks ("GANs" -gerenator vs discriminator-). Predictive AI often relies on supervises learning algorithms.
+
+History and Future of Generative AI:
+~ Natural Language Processing (NLP)
+~ Generativa Adversial Networks (GAN)
+~ Generative Pre-trained Transformers (GPTs)
+
+
+~ NLP focuses in understand, interpret and generate human language. It's a the base of more advance language models.
+~ GANs: generator vs discriminator network: generating increasingly realistic data.
+~  GPTs: leverages the transformers architecture enabling them to handle sequential data like text and produce coherent and contextual relevant outputs.
+
+
+Generative Pre-trained Transformers: 
+
+~ Encoder: "Zips" input into condensed and contextualized representation. (semantic Vector in vecotr DDBB)
+~ Decoder: Responsible for human like -or math like or ...- language generation.
+
+Stable Diffussion:
+~  Impainting: Fill missing image.
+~ Outpainting: Extends existing image.
+~ Image-to-Image:
+
+Midjournet:
+ ~ text promt to image request.
+ ~ Image upscaling
+  ~ Copyright considerations and Digital Millennium Copyright Act (DMCA) takedown policy
+
+Dall-E:
+ ~ text-to-image creation
+~# GPT-3
+~ Transforme language model
+~ Application programming interface (API) available.
+
+OpenAI Codex Integration:
+~  Decision making systems.
+~  Video Games and simulations
+~ Robotics.
+
+OpenAI Safety API Integrtion:
+~  Security and trustworthniess
+~  Accountability and transparency
+~ Sensitive environments.
+
+[[}]]
+

@@ -1,0 +1,68 @@
+[[{keras]]
+# Keras 
+
+- Keras 3 is a multi-backend deep learning framework, with support for JAX, TensorFlow, PyTorch, and 
+OpenVINO (for inference-only). [[doc_has.comparative]]
+
+- Effortlessly build and train models for computer vision, natural language processing, audio processing,
+timeseries forecasting, recommender systems, etc.
+
+- ... By picking the backend that is the fastest for your model architecture (often JAX!), leverage 
+speedups ranging from 20% to 350% compared to other frameworks. Benchmark here.
+    Datacenter-scale training: Scale confidently from your laptop to large clusters of GPUs or TPUs.
+
+- External Links:
+<https://keras.io/>
+<https://github.com/keras-team/keras/tree/master/examples>
+<https://keras.io/getting-started/faq/#how-can-i-use-stateful-rnns>
+
+[[keras}]]
+
+
+
+  ```
+  | STANDARD FLOW:
+  |  define network ··> compile ··> train
+  ```
+
+
+  ```
+  | SEQUENTIAL MODEL: (LINEAR STACK OF LAYERS)
+  | 
+  | # LAYER CREATION: pass list of layer instances to the constructor:
+  | 
+  | from keras.models import Sequential
+  | from keras.layers import Dense, Activation
+  | ...
+  ```
+
+  ```
+  |COMPILES ARGUMENTS  (multi-class, binary, mean-sq.err,custom): 
+  |
+  |  OPTIMIZER
+  |  LOSS FUNCTION
+  |  LIST OF METRICS/CUSTOM METRICS
+  |  MULTI-CLASS CLASS.PROBLEM
+  |  BINARY CLASS.PROBLEM
+  |  MEAN SQUARED ERROR
+  ```
+
+  ```
+  | # TRAINING
+  ```
+
+  ```
+  | # Keras GraphViz 
+  | <http://www.graphviz.org/Gallery/directed/neural-network.html>
+  ```
+
+
+# See also
+
+* Keras vision models [[{cognitive.image_detection}]]
+
+  ...  Now that we have trained our image QA model, we can quickly turn it into a
+  video QA model. With appropriate training, you will be able to show it a
+  short video (e.g. 100-frame human action) and ask a natural language question
+  about the video (e.g. "what sport is the boy playing?" → "football").
+[[keras}]]

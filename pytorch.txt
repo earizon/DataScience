@@ -1,14 +1,15 @@
-PyTorch Notes: [[{pytorch,deeplearning,01_PM.TODO]]
-@[./Deep-Learning-with-PyTorch.pdf]
-- deep learning framework
+[[{pytorch,PM.TODO]]
+# PyTorch
+
+* <./Deep-Learning-with-PyTorch.pdf>
+
+- deep learning framework.
 - tighter integration with technology providers ARM, Intel, IBM, NVIDIA, and Qualcomm.
-- Google is working with Facebook's PyTorch team to enable support for
-  PyTorch on custom application-specific integrated circuits (ASIC) hardware.
-- Visual Studio Code extension:
-  - integration of Azure ML and PyTorch APIs for streamlined PyTorch code development and training.
+- Google is working with Facebook to enable support for PyTorch on custom 
+  application-specific integrated circuits (ASIC) hardware.
 
 ## Why researchers love PyTorch:
-@[https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/]
+<https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/>
 
 - Simplicity. It’s similar to numpy, very pythonic, and
   integrates easily with the rest of the Python ecosystem. For ex,
@@ -29,11 +30,15 @@ PyTorch Notes: [[{pytorch,deeplearning,01_PM.TODO]]
 
 
 
-## Summary:
-- Image recognition for trained model:
-  Image → Resize,   →  Forward  → Score  → Label max
-          Center       Pass
-          Normalize
+[[{cognitive.vision]]
+## PyTorch Vision Summary
+
+  ```
+- | Image recognition for trained model:
+  | Image → Resize,   →  Forward  → Score  → Label max
+  |         Center       Pass
+  |         Normalize
+  ```
 
   torch.Tensor
   5 dimensional
@@ -110,17 +115,16 @@ Get Pretrained model from TorchVision project:
  (  'Labrador retriever', 2.80812406539917)   # stdout
  [(labels[fifth], percentage[fifth].item())
  (  'tennis ball' , 0.11621569097042084)      # stdout
-<hr/>
 
-# What's new:
-· Pytorch 1.1                                     [2019-05][TODO]
-@[https://www.infoq.com/news/2019/05/pytorch-release-performance]
-[[}]]
+[[cognitive.vision}]]
 
-# Pytorch Opacus:  [[performance,gradient]]
-https://www.infoq.com/news/2020/10/facebook-privacy-opacus/
+[[{performance,gradient]]
+## Pytorch Opacus
+
+* <https://www.infoq.com/news/2020/10/facebook-privacy-opacus/>
 by Anthony Alford
-    Facebook AI Research (FAIR) has announced the release of Opacus,
+
+Facebook AI Research (FAIR) announced Opacus ...
 a high-speed library for applying differential privacy techniques
 when training deep-learning models using the PyTorch framework.
 Opacus can achieve an order-of-magnitude speedup compared to other
@@ -159,70 +163,59 @@ computing the gradient for the individual samples in the minibatch.
 The implementation of this step is the key to the speed gains for
 Opacus.
 
-# pytorch-biggraph: [[{graph_networks,pytorch,01_PM.TODO]]
-https://www.infoq.com/news/2019/04/facebook-pytorch-biggraph
-PyTorch-BigGraph: distributed system that can learn embeddings for graphs with billions of nodes.
+[[{pytorch.biggraph,data.graphs,pytorch,scalability.distributed,PM.TODO]]
+## pytorch-biggraph
 
-A graph is a data structure that represents relationships (or edges) between entities (or nodes).
-One challenge of using a graph as input to machine learning is that the size of the data structure
-is proportional to the square of the number of entities. Using such a data structure as an input
-for machine learning can lead to extremely large models. Similar problems occur in natural
-language processing (NLP), and one common solution is to use an embedding as the first stage
-in the model.
+* <https://www.infoq.com/news/2019/04/facebook-pytorch-biggraph>
 
-An embedding is a mapping from a vector space with higher dimensions to one with fewer,
-that preserves some feature of the original space. NLP tasks often use a word embedding
-such as word2vec; in this embedding, the coordinates for words with similar meaning are
-closer to each other than to words with different meanings. Similarly, in a graph embedding,
-nodes that share an edge would have coordinates closer to each other than to nodes with no
-shared edge. Once an embedding is created, it can be used by machine learning tasks to
-transform input data into a more compact form, making the subsequent model much simpler.
-Graph embeddings often map from an original space with millions of dimensions into one
-with fewer than one thousand.
+Distributed system that can learn embeddings for graphs with billions of nodes.
 
-However, embeddings themselves are constructed from a deep-neural-network (DNN) trained
-using unsupervised learning techniques, and the large space of the input data makes that
-task difficult: training takes a long time, and the DNN model has so many parameters that
-they may not fit into the memory of the server performing the training.
+... One challenge of using a graph as input to machine learning is that the size of 
+the data structure is proportional to the square of the number of entities leading
+to extremely large models. Similar problems occur in natural language processing 
+(NLP), 
+embedding such as word2vec helps in NLP ... Similarly, in a graph embedding,
+nodes that share an edge would have coordinates closer to each other ...
+Once the embedding is created, it can be used to compact data input...
+... Graph embeddings often map an original space with millions of dimensions into
+one with fewer than one thousand.
 
-To overcome the latter problem, PyTorch-BigGraph (PBG) divides the nodes of the graph
-into multiple partitions, sized such that two partitions can fit into a machine's
-memory. The edges are partitioned into "buckets", with a bucket containing the edges
-that connect nodes from one partition with the nodes from another partition. Training
-is performed on one bucket at a time. The training can be done on one machine, or across
-multiple machines using distributed training to decrease training time.
+PyTorch-BigGraph (PBG) divides the nodes of the graph into multiple partitions,
+sized such that two partitions can fit into a machine's memory.
+Edges are partitioned into "buckets", with a bucket containing the edges
+that connect nodes from one partition with the nodes from another partition.
+- Training is performed on one bucket at a time.
 
-In a paper that was presented at the recent SysML Conference, experimental results
+... In a paper presented at the recent SysML Conference experimental results
 on publicly available social graph data sets show that "PBG outperforms competing
 methods," such as DeepWalk and MILE.
 
-In addition to releasing the source code, Facebook has also published a pre-trained
-model containing embeddings of the full WikiData graph. This model contains 78
-million entities mapped into a 200-dimensional vector space. Facebook hopes that
-their work "encourages practitioners to release and experiment with even larger data sets."
-[[}]]
+- source code public.
+- Facebook has also published a pre-trained model containing embeddings of
+ the full WikiData graph. (78 million entities mapped into a 200-dimensional
+ vector space).
+[[pytorch.biggraph}]]
 
-# TorchServe: [[{mlops,standards,model.sharing,persistence,low_code,text_processing,k8s,QA.UX,]]
-@[https://aws.amazon.com/es/about-aws/whats-new/2020/04/introducing-torchserve/]
+[[{devmlops,QA.standards,data.model,data.persistence,PM.low_code,]]
+## TorchServe 
 
+* <https://aws.amazon.com/es/about-aws/whats-new/2020/04/introducing-torchserve/>
+
+- servidor (OOSS) ligero de baja latencia que facilita la publicación de 
+  modelos de PyTorch.
 - Colaboración de AWS y Facebook como parte de  PyTorch.
-
-- servidor (OOSS) ligero de baja latencia que facilita la publicación de modelos de PyTorch.
-  y el paso "rápido" de investigación a producción.
-
 - Popular entre investigadores del aprendizaje automático , data scientits.
   por su facilidad de uso y su interfaz de estilo “Python”.
-
--  marco de publicación de modelos de PyTorch para implementar
+- Marco de publicación de modelos de PyTorch para implementar
   modelos entrenados a escala sin tener que escribir código
   personalizado.
 
 - Centrado en la implementación y administración de
   modelos en producción (API de predicción, escalado, ...)
 
-- Proporciona controladores predeterminados para las aplicaciones más comunes, [low_code][cognitive]
-  - detección de objetos
-  - clasificación de texto             [text_processing]
+- Proporciona controladores predeterminados para las aplicaciones más comunes
+  - detección de objetos  [[use_case.object_detection]]
+  - clasificación de texto [[use_case.text_classification]]
 
 - Características:
   - publicación de varios modelos
@@ -232,6 +225,17 @@ their work "encourages practitioners to release and experiment with even larger 
   - Compatible con cualquier entorno (K8s, AWS SageMaker,...)
 [[}]]
 
-# Pytorch on Jetson Nano [[{]]
-@[https://qengineering.eu/install-pytorch-on-jetson-nano.html]
-[[}]]
+[[{hardware.nvidia.jetson]]
+## Pytorch on Jetson Nano
+
+* <https://qengineering.eu/install-pytorch-on-jetson-nano.html>
+[[hardware.nvidia.jetson}]]
+
+[[{PM.whats_new]]
+# What's new
+
+* Pytorch 1.1 2019-05<br/>
+  <https://www.infoq.com/news/2019/05/pytorch-release-performance>
+[[PM.whats_new}]]
+
+

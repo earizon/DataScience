@@ -1,5 +1,5 @@
 # All_Of_Statistics.pdf:
-@[./All_Of_Statistics.pdf]
+<./All_Of_Statistics.pdf>
 
 # PROBABILITY NOMENCLATURE: [[{]]
 (Summary of Statisticals terms that also apply to Machine learning)
@@ -24,7 +24,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
  Easy to implement, efficient and work very well in relatively smalls data.
  Naive Bayes and Text Classification I, Introduction and Theory,
  R.Raschka, Computing Research Repository (CoRR), abs/1410.5329,2014,
- @[http://arxiv.org/pdf/1410.5329v3.pdf]
+ <http://arxiv.org/pdf/1410.5329v3.pdf>
 
  BAYES PARAMETER ESTIMATION & MAX.LIKELIHOOD:
  We address the case when the full probability structure underlying the
@@ -91,7 +91,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
     A canonical example of an estimator is the sample mean,
     which is an estimator of the population mean.
 
- Geometric Mean.  @[https://en.wikipedia.org/wiki/Geometric_mean]
+ Geometric Mean.  <https://en.wikipedia.org/wiki/Geometric_mean>
  For an entity with atributes (a1, a2, a3, ... , aN), it's defined has the
  pow  (a1 x a2 x ... xaN, 1/N).  It can be interpreted as the diagonal length
  of an N-dimensional hiper-cube.
@@ -123,7 +123,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
     range of measured values, imputing a corresponding value of y is called
     extrapolation .
 
- Kalman Filte   @[https://en.wikipedia.org/wiki/Kalman_filter]
+ Kalman Filte   <https://en.wikipedia.org/wiki/Kalman_filter>
    - also known as linear quadratic estimation (LQE)
    - algorithm that uses a series of measurements observed over time,
      containing statistical noise and other inaccuracies, and produces
@@ -191,7 +191,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
     - A discrete random variable is one whose  possible values are countable .
       (its cumulative probability distribution function is stair-step)
 
- Quartiles (of a list of numbers): @[https://en.wikipedia.org/wiki/Quartile]
+ Quartiles (of a list of numbers): <https://en.wikipedia.org/wiki/Quartile>
     - First cited by  Jeff Brubacker in 1879.                                                IQR
     - lower quartile(LQ): a number such that at least 1/4 of the numbers in             ├───────────┤
                           the list are no larger than it, and at least 3/4 of           Q1          Q3
@@ -284,7 +284,7 @@ AVERAGE:   ambiguous term  for arithmetic|geometric mean, median, mode, weighted
 
 
 # StatsModels.org:
-@[http://www.statsmodels.org/stable/index.html]
+<http://www.statsmodels.org/stable/index.html>
  - statsmodels: Python module providing classes and functions
    for the estimation of many different statistical models, as well as
    for conducting statistical tests, and statistical data exploration.

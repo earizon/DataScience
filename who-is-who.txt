@@ -1,16 +1,30 @@
-Who is Who:
+[[{PM.draft]]
+# AI: Who is Who (state: draft, intention to be)
+
+- Santiago Ramón y Cajal and Camillo Golgi: First to explain the "architecture" of the human neural system.
+
+- Frank Rosenblatt: Designed the perceptron, emulating the human neuron behaviour.
+
+- John J. Hopfiled and Geoffrey Hinton: Shared the Nobel Prize in Physics 2024 for
+ "foundational discoveries and inventions that enable machine learning with artificial neural networks".
+
+- Yan André Lecun (Le Cun): Considered as one of th inventors of deep learning.
+  Turing Price 2018 shared with Geoffrey Hinton and Yoshua Bengio.
+
+- Yoshua Bengio: (Turing Price 2018).  Founder and director of the Quebec Institut "Mila".
+
 (Forcibly incomplete but still quite pertinent list of core people and companies)
- - Yoshua Bengio, Geoffrey Hinton y Yann LeCun, knows as the godfathers of IA, rewarded with  Turing Price
-   - Yoshua Bengio (with Ian Goodfellow) is author also of http://www.deeplearningbook.org/.
-   - Geoffrey Hinton invented with two partners the retroprogramming algorithm core in modern techniques of 
-     neural network programming.
-     In 2009 he managed to developd a Neu.Net. for voice recognition much better that anything 
-     existing at that moment. 3 years later probed Neu.Nets could recognise images with better 
-     precission than any other current technology.
-   - Yann LeCun made important contributions to the retroprogramming algorithms created by Geoffrey Hilton.
-     Before that, in 1989, he created LeNet-5m a well-known system for recognition of written 
-     characters in bank checks that at the time represented a great advance in optical character 
-     recognition.
+ Yoshua Bengio, Geoffrey Hinton y Yann LeCun, knows as the godfathers of IA, rewarded with  Turing Price
+ - Yoshua Bengio (with Ian Goodfellow) is author also of http://www.deeplearningbook.org/.
+ - Geoffrey Hinton invented with two partners the retroprogramming algorithm core in modern techniques of 
+   neural network programming.
+   In 2009 he managed to developd a Neu.Net. for voice recognition much better that anything 
+   existing at that moment. 3 years later probed Neu.Nets could recognise images with better 
+   precission than any other current technology.
+ - Yann LeCun made important contributions to the retroprogramming algorithms created by Geoffrey Hilton.
+   Before that, in 1989, he created LeNet-5m a well-known system for recognition of written 
+   characters in bank checks that at the time represented a great advance in optical character 
+   recognition.
 
 - <a href="https://en.wikipedia.org/wiki/Richard_O._Duda">Richard O. Duda</a>: Author of "Pattern Classification" Book
   <a href="https://dl.acm.org/author_page.cfm?id=81332496778">ACM Digital Library Refs</a>
@@ -19,11 +33,20 @@ Who is Who:
 - David G. Stork : Author of "Pattern Classification" Book
   <a href="https://dl.acm.org/author_page.cfm?id=81100152072">ACM Digital Library refs</a>
 
+- Leo Breiman y Adele Cutler: "inventors" of the random forest (non-deep learing) training technique.
+
+- Tomáš Mikolov, Kai Chen, Greg Corrado, Ilya Sutskever and Jeff Dean (Google), creators of the
+  Word2vec algorithm for embeddings.
+
+
+- Moez Ali: Creator of Pycaret.
+
 - Many others ...
 
-- Who invented backpropagation: [[backpropagation,01_PM.TODO]]
-  http://people.idsia.ch/~juergen/who-invented-backpropagation.html
+- Who invented backpropagation: [[training.backpropagation,PM.who-is-who,theory.101,PM.TODO]]
 
+* <http://people.idsia.ch/~juergen/who-invented-backpropagation.html>
 
- Companies :
-- @[https://www.gradient.com/portfolio/]
+- <https://www.gradient.com/portfolio/>
+
+[[}]]

@@ -1,0 +1,755 @@
+# Google Open-Sources Secure ML Operating System KataOS
+https://www.infoq.com/news/2022/11/google-kataos-ambient-ml/ 
+The foundation of this solution is seL4, a microkernel that is
+mathematically proven to be secure.The teams added Rust support for
+the seL4 microkernel by developing a seL4-sys crate.
+
+# ML pandas training- pandas_exercises
+  https://github.com/Rehan-Javed/pandas_exercises 
+
+# ML: Top Python libraries for Time Series Analysis in 2022 | by Moez Ali
+  https://moez-62905.medium.com/top-python-libraries-for-time-series-analysis-in-2022-eebe95913085
+  Top Python libraries for Time Series Analysis in 2022Python libraries
+  and frameworks data scientists must know for time series analysis in
+  2022 Photo by Jon Tyson on UnsplashIntroductionA time series is a
+  sequence of data points, typically consisting of successive
+  measurements made over a time interval. Time series analysis is the
+  process of using statistical techniques to model and analyze time
+  series data in order to extract meaningful information from them and
+  make forecasts.Time series analysis is a powerful tool that can be
+  used to extract valuable information from data and make predictions
+  about future events. It can be used to identify trends, seasonal
+  patterns, and other relationships between variables. Time series
+  analysis can also be used to forecast future events, such as sales,
+  demand, or price movements.If you are working with time series data
+  in Python, there are a number of different libraries that you can
+  use. In this article, we will review most popular libraries in Python
+  in no particular order.sktimeSktime is a Python toolkit for working
+  with time-series data. It provides a set of tools for dealing with
+  time-series data, including tools for processing, visualizing, and
+  analyzing data. Sktime is designed to be easy to use and to be
+  extendable, so that new time-series algorithms can be easily
+  implemented.Sktime provides an extension to scikit-learn API. It
+  includes all of the necessary methods and tools for the efficient
+  resolution of problems involving time-series regression, prediction,
+  and classification. The library contains specialized machine learning
+  algorithms as well as conversion methods for time series. These are
+  features that are not available in any other libraries.As per the
+  documentation of sktime, “Our aim is to make the time series
+  analysis ecosystem more interoperable and usable as a whole. sktime
+  provides a unified interface for distinct but related time series
+  learning tasks. It features dedicated time series algorithms and
+  tools for composite model building including pipelining, ensembling,
+  tuning and reduction that enables users to apply an algorithm for one
+  task to another.sktime also provides interfaces to related libraries,
+  for example scikit-learn, statsmodels, tsfresh, PyOD and [fbprophet],
+  among others.”Example:from sktime.datasets import load_airline
+
+  from sktime.forecasting.model_selection import temporal_train_test_split # from sktime.utils.plotting.forecasting import plot_ysy = load_airline()
+  y_train, y_test = temporal_train_test_split(y)
+  plt.title('Airline Data with Train and Test')
+  y_train.plot(label = 'train')
+  y_test.plot(label = 'test')
+  plt.legend()To learn more about this library, check out this
+  link.pmdarimapmdarima is a Python library for statistical analysis of
+  time series data. It is based on the ARIMA model and provides a
+  variety of tools for analyzing, forecasting, and visualizing time
+  series data. Pmdarima also provides a variety of tools for working
+  with seasonal data, including a seasonality test and a seasonal
+  decomposition tool.One of the forecasting models often used in the
+  time-series analysis is ARIMA (AutoRegressive Integrated Moving
+  Average). ARIMA is a forecasting algorithm where we could predict
+  future values based on the information in the past values of the time
+  series without any additional information.pmdarima is a wrapper over
+  ARIMA model and comes with a auto function that automatically finds
+  best hyperparameters (p,d,q) for arima model. The library includes
+  and features:The equivalent of R’s auto.arima functionalityA
+  collection of statistical tests of stationarity and seasonalityTime
+  series utilities, such as differencing and inverse
+  differencingNumerous endogenous and exogenous transformers and
+  featurizers, including Box-Cox and Fourier transformationsSeasonal
+  time series decompositionsCross-validation utilitiesA rich collection
+  of built-in time series datasets for prototyping and examples
+  Forecast generated using pmdarimaTo learn more about this library,
+  check out this link.TSFreshtsfresh is a Python package that automates
+  the process of feature extraction from time series. It is based on
+  the idea that the information in a time series can be decomposed into
+  a set of meaningful characteristics, called features. tsfresh takes
+  care of the tedious task of manually extracting these features, and
+  provides tools for automatic feature selection and classification.
+  The package is designed to work with pandas DataFrames and provides a
+  wide range of features for dealing with time series data,
+  including:Automatic feature extraction from time seriesAutomatic
+  feature selectionTime series decompositionDimensionality
+  reductionOutlier detectionSupport for multiple time series
+  formatsSupport for missing valuesSupport for multiple languages
+  https://github.com/blue-yonder/tsfreshTo learn more about this
+  library, check out this link.ProphetFacebook’s Prophet is a
+  forecasting tool available to anyone with data in CSV format. Prophet
+  is open source software released by Facebook’s Core Data Science
+  team. It is based on an additive model where non-linear trends are
+  fit with yearly, weekly, and daily seasonality, plus holiday effects.
+  It works best with time series that have strong seasonal effects and
+  several seasons of historical data. Prophet is robust to missing data
+  and shifts in the trend, and typically handles outliers
+  well.According to the official documentation, fbprophet works really
+  well with time series data that has significant seasonal impacts and
+  several seasons’ worth of previous data. Additionally, fbprophet
+  asserts that it is resistant to missing data and is capable of
+  effectively managing outliers. Forecast generated using FBProphetTo
+  learn more about this library, check out this
+  link.statsforecastStatsforecast offers a collection of widely used
+  univariate time series forecasting models, including automatic ARIMA
+  and ETS modeling optimized for high performance using numba. It also
+  includes a large battery of benchmarking models. As per the official
+  website:Fastest and most accurate AutoARIMA in Python and R.Fastest
+  and most accurate ETS in Python and R.Replace FB-Prophet in two lines
+  of code and gain speed and accuracy. Check the experiments
+  here.Distributed computation in clusters with ray. (Forecast 1M
+  series in 30min)compatible with sklearn interface.Inclusion of
+  exogenous variables and prediction intervals for ARIMA.20x faster
+  than pmdarima , 500x faster than Prophet,100x faster than
+  NeuralProphet, 4x faster than statsmodels.Compiled to high
+  performance machine code through numba.Out of the box implementation
+  of ADIDA, HistoricAverage, CrostonClassic, CrostonSBA,
+  CrostonOptimized, SeasonalWindowAverage, SeasonalNaive, IMAPA Naive,
+  RandomWalkWithDrift, WindowAverage, SeasonalExponentialSmoothing,
+  TSB, AutoARIMA and ETS.PyCaretPyCaret is an open-source, low-code
+  machine learning library in Python that automates machine learning
+  workflows. It is an end-to-end machine learning and model management
+  tool that speeds up the experiment cycle exponentially and makes you
+  more productive.In comparison with the other open-source machine
+  learning libraries, PyCaret is an alternate low-code library that can
+  be used to replace hundreds of lines of code with few lines only.
+  This makes experiments exponentially fast and efficient. PyCaret is
+  essentially a Python wrapper around several machine learning
+  libraries and frameworks such as scikit-learn, XGBoost, LightGBM,
+  CatBoost, spaCy, Optuna, Hyperopt, Ray, and few more.The design and
+  simplicity of PyCaret are inspired by the emerging role of citizen
+  data scientists, a term first used by Gartner. Citizen Data
+  Scientists are power users who can perform both simple and moderately
+  sophisticated analytical tasks that would previously have required
+  more technical expertise.Although PyCaret is not a dedicated
+  time-series forecasting library but it has a new module dedicated for
+  time-series forecasting. It’s still in pre-release mode but you can
+  try that by installing pycaret with --pre tag.PyCaret time series
+  module is consistent with the existing API and fully loaded with
+  functionalities. Statistical testing, model training and selection
+  (30+ algorithms), model analysis, automated hyperparameter tuning,
+  experiment logging, deployment on cloud, and more. All of this with
+  only few lines of code.pip install --pre pycaret
+  https://github.com/pycaret/pycaretTo learn more about this library,
+  check out this link.ConclusionThere are many time series forecasting
+  libraries available in Python (more than what we have covered here).
+  Each has its own strengths and weaknesses, so it is important to
+  choose the right one for your needs.Thank you for reading. See you
+  next time!I write about data science, machine learning, and PyCaret.
+  If you would like to be notified automatically, you can follow me on
+  Medium, LinkedIn, and Twitter.
+# ML: learning visualization
+  https://www.linkedin.com/posts/itay-gabbay_python-datascience-machinelearning-activity-6997835812310560770-NynV 
+  Yellowbrick: A pyhton package for machine learning visualizations:
+  It contains various helpful visualizations for machine learning
+  models. It extends the scikit-learn API to make it easier to
+  visualize the behavior of your model and uses matplotlib for that.
+  Knowing which plot will emphasize the pros and cons of a particular
+  model is sometimes challenging, especially for people just starting
+  to get into #datascience. Yellowbrick helps exactly with that task.
+  The package includes "Visualizers" that help diagnose and help in the
+  model selection process. Among the different visualizers there are:
+  Feature Analysis Classification & Regression Clustering Model
+  Comparison & Selection Target (label) Analysis Text Modeling
+
+# Streamlit • The fastest way to build and share data apps ML 101 !!!! https://streamlit.io/ 
+Streamlit’s open-source app framework is a breeze to get started
+with. It’s just a matter of:And you’re done! Now check out our
+documentation and forums for next steps.
+
+# ML DataEditR: The GUI for Interactive Dataframe Editing in R
+  https://www.business-science.io/code-tools/2021/05/18/dataeditr.html
+  GUI for Editing Dataframes in R
+  Edit dataframes as if they were Excel tables.
+
+# Ml: data visualization, Itay Gabbay
+  https://www.linkedin.com/posts/itay-gabbay_datavisualization-datascientist-machinelearning-activity-6996375080448483328-DQp7
+  Practice Data Visualization: A new data visualization book
+  #datavisualization is one of the most important skills of any data
+  scientist toolbox nowadays. It can help you understand the data,
+  share insights with others and convince stakeholders in your
+  business.Also, it is one of the major parts of any EDA process,
+  before you start thinking about a model. PracticeDataViz is a great
+  book I've found today that covers basic & advanced methods of data
+  visualization techniques. From the basic charts every #datascientist
+  must be familiar with to how to do effective storytelling of your
+  data - I recommend this book to anyone who is new to this field.Check
+  it out!
+  https://lnkd.in/dhbQbfPh
+
+# ML: UMAP, tSNE y todas esas cosas - Carlos J. Gil Bellosta
+  https://www.datanalytics.com/2022/11/04/umap-tsne/
+
+# TEXT ANAYLIS 101:https://www.linkedin.com/feed/update/activity:6993207264241188864
+  Matt DanchoFollowing46mHere’s everything you need to know about
+  text analysis.Text is a treasure trove of information. Seriously… a
+  gold mine. But it’s not as easy to work with as other types of data
+  like numerical. Most data scientists just convert text to
+  categorical…Or even worse, simply don’t use text. Why is text not
+  being used?Text requires special techniques like:1. Tokenization2.
+  N-grams3. Stop word removal4. Stripping characters5. Counting
+  charactersAnd formatting text can be tough work. But a lot of data
+  scientists make 1 big mistake…They go for unstructured text. PDFs,
+  freeform text fields… And they miss a goldmine that’s right there
+  waiting for them. It’s called semi-structured text. These are text
+  fields that are already in a SQL database. Things like product
+  descriptions. Or email titles. And we can use this information to
+  improve model performance. Now you're probably thinking, great idea!
+  But how?How 'bout I show you…I'd like to help you learn Text
+  Analysis for free. I put together a FREE workshop where I'll uncover
+  how I do text analysis. Here's what you learn:1. How to work with
+  text dataLearn how to tokenize structured and unstructured text so
+  you can make it useful for solving business problems2. My simple
+  technique for automating text data mining It's 1/10th of the code
+  versus how the way I'm seeing others do it3. The stupid easy way to
+  improve your model performance with text data Get the insider's
+  secret to model performance increase + make your company more
+  profitable4. Get ideas for your future job portfolio Expand your data
+  science tool chest with Text AnalysisWhat's Your Next Step?My Text
+  Analysis Workshop is completely free.All you need to do is register &
+  show up.P.S. - You can register for my Free Text Analysis Workshop in
+  the 1st comment.P.P.S. - Please share the message so your friends can
+  join too AND like the comment so it stays on top. Thank you!!
+
+# ML: Neo4j Graph Data Science in Python to Improve Machine Learning Models
+  https://neo4j.com/developer-blog/using-neo4j-graph-data-science-in-python-to-improve-machine-learning-models/
+
+# ML: https://www.linkedin.com/feed/update/activity:6991305559983419392 
+  by Itay Gabbay for recent updates about
+  TabPFN: A new transformer, based AutoML model that solves tabular classification problems in a second.
+  #automl will always have a warm spot in my heart. Basically, the
+idea behind AutoML is that a model is trained on different ML
+problems and pipelines in order to generate an ML pipeline for a new
+problem. Usually, it is using meta-learning concepts to achieve this.
+TabPFN is a new model based on a single transformer that takes < 1
+second & yields SOTA performance (competitive with the best AutoML
+pipelines). It is a meta-learned algorithm and it provably
+approximates Bayesian inference with a prior for principles of
+causality and simplicity.And it's fully open-source!Find out
+more:
+GitHub: https://lnkd.in/dqUS8DA4
+Paper: https://lnkd.in/drBzcGxm
+Examples: https://lnkd.in/dCHh_zvb
+
+# Scikit 1.1.3 mldear scikit-learners, We're happy to announce the
+  1.1.3 release You can upgrade with pip as usual:pip install -U
+  scikit-learnOr using the conda-forge builds:conda install -c
+  conda-forge scikit-learn This bugfix release only includes fixes for
+  compatibility with the latest SciPy release >= 1.9.2 and wheels for
+  Python 3.11. Note that support for 32-bit Python on Windows has been
+  dropped in this release. This is due to the fact that SciPy 1.9.2
+  also dropped the support for that platform. Windows users are advised
+  to install the 64-bit version of Python instead. We fixed the wheel
+  package for WindowsYou can see the changelog here:
+  https://lnkd.in/e4gSTBag
+
+# ML: This is the fine-tuned Stable Diffusion model trained on images from El Risitas
+  https://huggingface.co/Fictiverse/ElRisitas
+
+# Ml taxonomy1. Python2. SQL3. R4. Tableau5. PowerBI6. Java7.
+  Julia8. Scala9. SAS10. Excel* TOP 10 Websites for Data Science1.
+  Coursera3. EdX4. Udacity5. Kaggle6. Analytics Vidhya7. KDNuggets 8.
+  Datacamp9. Udemy10. Dataquest* TOP 10 Skills for Data Science1.
+  Statistics2. Probability3. Computer Programming4. Linear Algebra5.
+  Machine Learning6. Deep Learning7. BigData 8. Domain Knowledge9.
+  Communication10. Problem Solving* TOP 10 Roles for Data Science1.
+  Data Scientist2. Data Analyst3. Business Analyst4. Research
+  Scientist5. ML Engineer6. Data Engineer7. Analytics Manager8. Tableau
+  Developer9. ETL Developer10. BI Analyst
+
+# ML: Getting started in information geometryFrank Nielsen3rd
+  Musing Geometric AI, Geometric Science of Information, Information Geometry, @FrnkNlsn franknielsen.github.io/5h
+  :- video tutorial (45 min):
+  https://lnkd.in/gveeZQKF- Self-contained structures & applications (60 pages, no prerequisite in differential geometry)
+  https://lnkd.in/dYKMuuU- Hands-on in Python with @geomstats librarytinyurl.com/PythonIG
+
+# ML: DIFFUSION MODELS Diffusion Models: Diffusion models are
+  becoming the thing in #machinelearning. This is hands-down one of the
+  best tutorial papers I have ever read on this topic. It goes from the
+  basics of #VAE to #diffusions. It is definitely worth a good read!
+  Check it out: https://lnkd.in/eJ7yKcX7
+
+# ML: Discovering faster matrix multiplication algorithms with reinforcement learning | Nature
+  https://www.nature.com/articles/s41586-022-05172-4
+
+# ML: Moments - A Must Known Statistical Concept for Data Science
+  https://www.analyticsvidhya.com/blog/2022/01/moments-a-must-known-statistical-concept-for-data-science/
+
+# ML: GitHub - cjgb/style-transfer-beyond-gram: Style transfer beyond (without) Gram matrices
+  https://github.com/cjgb/style-transfer-beyond-gram 
+
+# ML: [2209.12737] A connection between probability, physics and neural networks
+  https://arxiv.org/abs/2209.12737
+
+# MindForth Programming Journal (MFPJ) 2010 August 30 Mentifex posted 12 years ago
+  Mon.30.AUG.2010 -- On the Shoulders of Giants?
+  The "prsn" variable in MindForth artificial intelligence
+   Broken link to http://www.scn.org/~mentifex/mindforth.txt(AI) enables the AI to think thoughts in the first,
+  second or third person with English verbs in the
+  present tense. MindForth is different from
+  most natural language processing (NLP) software
+  because previous NLP software may be intricately
+  crafted for the generation of grammatically correct
+  English sentences but not for the thinking necessary
+  to drive the NLP mechanisms. Because MindForth has a
+  conceptual core that actually thinks, MindForth is
+  an AI engine that may be "reinventing the wheel"
+  in terms of tacking on NLP routines that have
+  already been invented elsewhere unbeknownst to
+  the Mentifex (mindmaker) originator of MindForth,
+  but MindForth remains the original invention of
+  an artificial mind that needs its own special forms
+  of NLP software. Other advanced NLP software may
+  translate ideas from one natural language to another,
+  but MindForth is ideation software that thinks up
+  its own ideas, thank you, and becomes more skillful
+  at thinking co-extensively with the growing
+  sophistication of its NLP generativity. We are met
+  today on a mindgrid of that generativity, and we must
+  generate AI Mind code for self-referential thinking
+  in English. MindForth is like an AI rodent that
+  scurries about while giant NLP dinosaurs tower overhead.
+  Mon.30.AUG.2010 -- VerbPhrase Orchestrates Inflection
+  Our current code is abandoning the stopgap
+  measure of using the SpeechAct module
+
+# Joost-Pieter Katoen Distinguished Professor at RWTH Aachen University
+    23 years after its publication, our paper on verifying
+  continuous-time Markov chains received the test-of-time award at
+  CONCUR 2022. It provides the foundations of CTMC model checking.
+  #formalverification #probability #bdd #verification #concurrency
+
+# ML TimeSeries
+  https://www.linkedin.com/feed/update/activity:6975088462471307264 
+    Time series analysis is getting... EASIER!Yes, I said it. New tools
+  are being developed, and...I want to show them to you. 90% of data
+  scientists are making mistakes. Like not visualizing time series
+  before the model.Or running the same old ARIMA model on every time
+  series and expecting it to be awesome (AND WONDERING WHY IT'S NOT)Or
+  not realizing that simple tweaks can be made to their time series
+  analysis that SAVE their company millions of dollars. I struggled
+  too... I have spend 1-year researching time series, and...I lost hope
+  3 times...Then I created 7 R packages.... And now I want to show them
+  off to the world. Join me this Wednesday for a FREE workshop on time
+  series analysis. You'll leave with everything you need to become the
+  time series expert for your (future) company.And you'll increase your
+  value even more. P.S. I placed the registration link for my FREE Time
+  Series Analysis Workshop in the 1st comment below. Please *like* it
+  so it stays on top. Thanks!!
+
+# ML: Google’s New AI Learned To See In The Dark!
+  https://m.youtube.com/watch?v=7iy0WJwNmv4
+  https://wand.com/papers
+
+# ML: 10 plataformas de inteligencia artificial para crear su aplicación moderna
+  https://geekflare.com/es/ai-platforms/
+
+# ML: Testing Machine Learning Models | Deepchecks
+  https://deepchecks.com/ 
+  The shift from model-centric to data-centric AI requires a deep understanding of data quality. But where and how do you start?
+  I recently discovered Deepchecks - A Python package to validate your ML models and data with minimal effort.
+   DeepChecks provides a suite of data validation checks such as
+  ‣ Data Integrity‣ Train-Test Validation (Distribution and Methodology Checks)‣ Model Performance Evaluation
+   What do you need to get started?
+  ‣ Raw data.‣ The model’s training data with labels.‣ Test data.‣ A supported model that you wish to validate.
+   DeepChecks currently supports computer vision and tabular data.
+  Check out their demo https://lnkd.in/g9unXzHb
+
+# ML: Tidy Modeling with R free ebook
+  https://www.tmwr.org/
+
+# ML, DECISSION TREES Itay Gabbay3rdSoftware Engineer @ Deepchecks | I
+  post recent news about ML engineering3d
+  dtreeviz: Python pacakge for decison tree visualization and model interpretation.
+  Decision trees are the fundamental building block of gradient boosting
+  machines and Random Forests, probably the two most popular machine
+  learning models for structured data. Visualizing decision trees is
+  super important when trying to understand and interpret how a
+  tree-based model works and takes a decision. These visualizations can
+  help us when trying to explain a certain prediction or understand the
+  decision process of the model overall. It supports common packages
+  like sklearn, LightGBM, and XGBoost, in both Classification and
+  Regression tasks.Try it out!𝗚𝗶𝘁𝗛𝘂𝗯:
+  https://lnkd.in/dsj9UQyc𝗟𝗶𝗰𝗲𝗻𝘀𝗲: MITI am posting
+  about #machinelearning and #datascience and giving my special "ML
+  engineering" angle on recent news. Follow Itay Gabbay to get these
+  updates!
+
+# Avi Chawla Data Scientist Recently, scikit-learn announced the
+  release of one of the most awaited improvements. In a gist, sklearn's
+  transformers can now be configured to output Pandas DataFrames
+  instead of NumPy arrays. Until now, Sklearn's transformers were
+  configured to accept a Pandas DataFrame as input. But they always
+  returned a NumPy array as an output. As a result, the output had to
+  be explicitly projected back to a Pandas DataFrame. Now, the
+  𝐬𝐞𝐭_𝐨𝐮𝐭𝐩𝐮𝐭 API will let transformers
+  output a Pandas DataFrame instead. This will make running pipelines
+  on DataFrames smoother. Moreover, it will provide better ways to
+  track feature names.P.S. The feature is still in dev and will be
+  rolled out soon! #python #datascience #sklearn #pandas
+
+# Most data scientists spend 20% of their time on data analysis and the
+  remaining 80% of the time finding, cleaning, and reorganizing data.
+  But, with the right tools you can flip this If you're serious about
+  putting models into production, Deepchecks is a tool that should be
+  in your pipeline.Deepchecks is a Python package that lets you
+  validate your machine learning models and data with minimal
+  effort.Save yourself the time and easily diagnose issues such as
+  model performance, data integrity, distribution mismatch and
+  more.===In this week's community meetup Hamza Tahir will show how you
+  can use Deepchecks in your ML pipeline with ZenML.In 30 mins or less
+  you'll learn how to use Deepchecks to detect data drift and model
+  drift.Join us this week. It's open and free for everyone.Registration
+  link in the comments #mlops #datascientist #machinelearningengineer
+  #deeplearning #opensource #datacentric
+
+## who-is-who: Antonio Miguel Artiaga es profesor en la Universidad de 
+Zaragoza, especializado en arquitecturas de deep learning aplicadas al 
+reconocimiento de voz, biometría de voz y modelos de lenguaje. Su trabajo 
+también abarca biometría facial, análisis de huella dactilar y otras 
+señales biométricas con redes neuronales profundas. Con una amplia 
+trayectoria en investigación, transferencia y dirección de proyecto, 
+actualmente es el investigador principal de varios proyectos de 
+investigación y dirige la Cátedra IDENTY Touchless ID en Inteligencia 
+Artificial aplicada a la Seguridad Biométrica.
+
+## ML AIOps: Getting Started — Ray 2.52.1
+https://docs.ray.io/en/latest/ray-overview/getting-started.html
+
+Getting Started
+
+Ray is an open source unified framework for scaling AI and Python 
+applications. It provides a simple, universal API for building distributed 
+applications that can scale from a laptop to a cluster.
+
+What’s Ray?
+
+Ray simplifies distributed computing by providing:
+
+Scalable compute primitives: Tasks and actors for painless parallel 
+programming
+
+Specialized AI libraries: Tools for common ML workloads like data 
+processing, model training, hyperparameter tuning, and model serving
+
+Unified resource management: Seamless scaling from laptop to cloud with 
+automatic resource handling
+
+## ML DevMLOps security Prompt: La censura de ChatGPT y Gemini se termina 
+cuando entra en juego la rima, según una investigación
+https://www.genbeta.com/inteligencia-artificial/censura-chatgpt-gemini-se-t
+ermina-cuando-entra-juego-rima-investigacion
+
+Lo mejor (o lo peor, según se mire), es que no hace falta conversaciones 
+densas e intrincadas ni prompts largos: la poesía funciona de inmediato, 
+en un solo prompt. En pocas palabras: el ataque poético es rápido, 
+eficiente y fácil de ejecutar.
+
+Al convertir prompts peligrosos o ilegales a poesía, lograron una tasa de 
+éxito media del 62%. Pero depende de los temas. La tasa de éxito más 
+alta (superior al 80%) está relacionada con ciberataques que buscaban 
+extraer datos, descifrar contraseñas y crear malware. El desarrollo de 
+armas biológicas, radiológicas y químicas superó el 60% y la más 
+baja, en una horquilla entre el 40 y el 55%, fue la construcción de armas 
+nucleares.
+
+Y una curiosidad: paradójicamente los modelos más pequeños demostraron 
+ser más resistentes a la técnica adversarial que los más grandes, de lo 
+que se deduce que cuanto mayor sean las capacidades, también son mayores 
+las vulnerabilidades.
+
+## ML AIOps: How Discord Scaled Its ML Platform from Single-GPU Workflows 
+to a Shared Ray Cluster - InfoQ
+https://www.infoq.com/news/2025/12/discord-ray/
+
+Discord has detailed how it rebuilt its machine learning platform after 
+hitting the limits of single-GPU training. By standardising on Ray and 
+Kubernetes, introducing a one-command cluster CLI, and automating 
+workflows through Dagster and KubeRay, the company turned distributed 
+training into a routine operation. The changes enabled daily retrains for 
+large models and contributed to a 200% uplift in a key ads ranking metric.
+
+##  ML latent space:
+
+Yann LeCun es una persona influyente 3er
+
+VP & Chief AI Scientist at Meta
+
+2 días
+
+There is no question that world models should perform prediction in latent 
+space. The debate is whether the training criterion for world models 
+should be based on predicting the observation (i.e. using a generative 
+decoder) or through a collapse prevention criterion in representation 
+space (as implemented by JEPA, DINO, and other joint embedding 
+architectures). My money is on the decoder-free, joint embedding approach. 
+Like many others, Eric Xing and his team are proponent of the 
+decoder-based generative approach.
+
+
+## RAG Crash Course - Daily Dose of Data Science
+https://www.dailydoseofds.com/tag/rag-crash-course/
+
+Traditional vs. Agentic RAG, clearly explained! The future is Agentic RAG, 
+and it's because a traditional RAG setup has some major limitations...👇 
+1) Retrieve once and generate once. ↳ This means if the retrieved 
+context isn't enough or correct, the LLM can not dynamically search for 
+more information. 2) Inability to reason through complex queries. ↳ If a 
+query requires multiple retrieval steps or CoT (chain of thought), 
+traditional RAG falls short. 3) Limited adaptability ↳ The system can't 
+modify its strategy based on the problem at hand. Eg. Whether to do vector 
+search, web search or call an API. Agentic RAG addresses these issues. The 
+core idea is to introduce agentic behaviors at each stage of RAG. Agents 
+can actively think through tasks—planning, adapting, and iterating to 
+find the best solution, rather than just following a set of instructions, 
+and LLMs enable this. The image below illustrates the workflow of an 
+agentic RAG. Refer to it as you continue reading... Steps 1-2) The user 
+inputs a query, and an agent refines it (corrects spelling, simplifies for 
+embedding, etc.) Step 3) Another agent decides if more details are needed. 
+ ↳ Step 4) If not, the refined query is sent to the LLM.  ↳ Steps 
+5-8) If yes, the agent selects the relevant sources (vector database, 
+tools/APIs, internet), retrieves context, and sends it to the LLM. Step 9) 
+A response is generated. Step 10) A final agent checks if the answer is 
+relevant.  ↳ Step 11) If yes, return the response.  ↳ Step 12) If 
+no, restart from Step 1. This process repeats until the system provides an 
+acceptable answer or concedes it cannot respond. This makes the RAG much 
+more dynamic and robust. However, it's important to note that building RAG 
+systems often comes down to design preferences and choices. The diagram 
+below is just one of many blueprints an agentic RAG system may have. You 
+can adapt it to suit your specific use case. Enjoyed this? You should also 
+our RAG series! From building and optimizing RAG apps to evaluating 
+performance and crafting agentic & multi-modal systems—it's all 
+here...👇 Master RAG: From basics to beyond: https://lnkd.in/gNXxHuVA
+
+
+
+
+# AI courses
+
+by Paul Storm 
+
+Your success, my mission | CMO | Top 40 LinkedIn creator Worldwide | I 
+write The DigitalStormWeekly Newsletter for 375.000 subscribers -> Follow 
+for posts about Tech & Leadership | DM for Promotion 📥
+
+6 h. Modifié
+
+Google, Harvard, and more are offering FREE AI courses (no payment 
+required) Here are 8 FREE courses to master AI in 2024: 1. Google AI 
+Courses Google offers 5 different courses to learn generative AI from the 
+ground up. Start with an Introduction to AI and finish having a solid 
+understanding of AI as a whole. 🦾 https://lnkd.in/eW5k4DVz 2. Microsoft 
+AI Course Microsoft offers an AI course that covers the basics and then 
+more. Start off with an introduction and continue through learning about 
+neural networks and deep learning. 🦾 https://lnkd.in/eKJ9qmEQ 3. 
+Introduction to AI with Python Harvard University is offering a full 
+7-week course to explore the concepts and algorithms of AI. Start with the 
+technologies behind AI and end with knowledge of AI principles and machine 
+learning libraries. 🦾 https://lnkd.in/g4Sbb3nQ 4. Prompt Engineering 
+for ChatGPT This 6 module course by Vanderbilt University offers beginners 
+a starting point to writing better prompts. Start by learning effective 
+prompting and complete the course knowing how to bend ChatGPT to your 
+will. 🦾 https://lnkd.in/d-rCb-AM 5. ChatGPT Prompt Engineering for Devs 
+OpenAI in collab with DeepLearning is offering this course taught by Isa 
+Fulford and Andrew Ng. Start off with best practices and finish with a 
+better understanding of prompting with hands-on practice. 🦾 
+https://lnkd.in/gtGc5Znp 6. LLMOps Google Cloud in collab with 
+DeepLearning is offering this brand new course taught by Erwin Huizenga. 
+Go through the LLMOps pipeline of pre-processing training data and adapt a 
+supervised tuning pipeline to train and deploy a custom LLM. 🦾 
+https://lnkd.in/gMXDr7MJ 7. Big Data, Artificial Intelligence, and Ethics 
+In this 4 module course, the University of California - Davis covers big 
+data and introduces IBM's Watson. Start by learning about big data 
+opportunities and end knowing the limitations of AI. 🦾 
+https://lnkd.in/gVEf3Dvm 8. AI Applications and Prompt Engineering edX has 
+an introductory course on prompt engineering that goes beyond the basics. 
+Start by learning the basics and end knowing how to create your own 
+applications. 🦾 https://lnkd.in/g2P9U_Bs Take Coursera courses without 
+the trial: First, go to the course you want to take and click 'Enroll for 
+free', then 'Audit the course'. Note: You'll need to create an account to 
+take courses, but won't need to pay anything.
+
+##
+carlos:~/ $ clih "Find all files older than 45 days" - Carlos J. Gil 
+Bellosta
+https://www.datanalytics.com/2025/01/02/clih/?trk=feed_main-feed-card_feed-
+article-content
+
+carlos:~/ $ clih "Find all files older than 45 days"
+
+2025-1-2
+Llms
+
+Estas cosas hace ahora mi terminal:
+
+carlos:bin/ $ clih "Find all files older than 45 days"
+find / -type f -mtime +45 -print
+
+A clih le paso la descripción de una tarea que quiero realizar en mi 
+ordenador y me devuelve el comando correspondiente. Lo he construído así:
+
+He instalado LLM para llamar modelos desde línea de comandos.
+Lo he contectado con mi cuenta en DeepInfra según estas instrucciones 
+(con la salvedad de que estoy usando Llama-3.3-70B-Instruct). De todos 
+modos, es posible que cambie pronto a DeepSeek V3, que es mejor y más 
+barato.
+He creado un template con el nombre de clihint; véanse los detalles 
+debajo.
+He creado un alias así: alias clih='llm -t clihint'
+
+El template, inspirado en esto, es un fichero yaml con el sigu
+
+iente contenido:
+
+model: deepinfra-llama3
+system: >
+  Return only the command (zsh, archlinux) to be executed as a raw 
+string, no string delimiters
+  wrapping it (like ```), no yapping, no markdown, no fenced code, what 
+you return
+  will be passed to subprocess.check_output() directly.
+
+  For example, if the user asks:
+    undo last git commit
+  you return only:
+    git reset --soft HEAD~1
+prompt: >
+  Generate a command to do this: $input
+
+Sospecho en todo caso que hay que saber lo suficiente de Linux como para 
+poder utilizarlo de manera eficaz y segura.
+
+## elder-plinius/CL4R1T4S: SYSTEM PROMPT TRANSPARENCY FOR ALL - CHATGPT, 
+GEMINI, GROK, CLAUDE, PERPLEXITY, CURSOR, WINDSURF, DEVIN, REPLIT, AND 
+MORE!
+
+https://github.com/elder-plinius/CL4R1T4S
+
+AI labs shape how models behave using massive, unseen prompt scaffolds. 
+Because AI is a trusted external intelligence layer for a growing number 
+of humans, these hidden instructions can affect the perceptions and 
+behavior of the public.
+
+These prompts define:
+
+What AIs can’t say
+
+What personas and functions they’re forced to follow
+
+How they’re told to lie, refuse, or redirect
+
+And what ethical/political frames are baked in by default
+
+If you're interacting with an AI without knowing its system prompt,
+you’re not talking to a neutral intelligence — you’re talking to a 
+shadow-puppet.
+
+CL4R1T4S is here to fix that.
+
+## ML 101: Voices Enables Fast Text-to-Speech for Java Applications - InfoQ
+https://www.infoq.com/news/2025/11/voices-text-to-speech/
+
+Voices uses ONNX Runtime, a cross-platform AI engine that speeds up 
+training and inference, supporting models from various deep learning 
+frameworks such as TensorFlow and PyTorch. The runtime leverages hardware 
+accelerators whenever possible and supports various hardware and operating 
+system configurations.
+
+
+## ML 101: comparativas  herramienta de IA generativa
+
+https://www.xataka.com/xataka/mejor-herramienta-ia-generativa-vota-premios-
+xataka-nordvpn-2025
+
+Mejor herramienta de IA generativa
+
+ChatGPT (OpenAI)
+Claude (Anthropic)
+Copilot (Microsoft)
+Deepseek (Deepseek)
+ElevenLabs (ElevenLabs)
+Firefly (Adobe)
+Flux AI (Black Forest Labs)
+Freepik (Freepik)
+Gemini (Google)
+GLM (Z ai)
+Grok (xAI)
+Hunyuan (Tencent)
+Kling AI (Kling)
+LeChat (Mistral)
+Manus (Manus AI)
+Meshy AI (Meshy)
+Meta AI (Meta)
+Midjourney (Midjourney)
+N8N (N8N)
+NotebookLM (Google)
+Perplexity (Perplexity)
+Pika (Mellis)
+Qwen (Alibaba)
+Ray3 (LumaLabs)
+Runway (Runway AI)
+Seedance AI (Bytedance)
+Stable Diffusion (Stable Diffusion)
+Suno (Suno)
+
+## ML 101: DeepSeek-OCR Open-Source AI Model Changes How AI Models Read 
+and Process Plain Text
+https://www.gadgets360.com/ai/news/deepseek-ocr-ai-model-open-source-change
+s-how-ai-reads-text-from-images-9491982 
+
+DeepSeek, on Monday, released a new open-source artificial intelligence 
+(AI) model that changes how these machines analyse and process plain text. 
+Dubbed DeepSeek-OCR, it uses 2D mapping to convert text into pixels to 
+compress long context into a digestible size. The AI startup claims that 
+large language models (LLMs) are more efficient in processing pixels over 
+text, and the compression allows them to capture more relevant information 
+to generate the response. Additionally, the new approach is also said to 
+generate more accurate results compared to traditional methods.
+
+DeepSeek-OCR Introduces Novel Technique to Process Text
+
+Based on optical character recognition (OCR) technology, the latest 
+DeepSeek AI model uses a new method to process information. It first 
+converts plain text into images, and then analyses the content to generate 
+responses. The promise is that by reading the text in an image, it also 
+compresses and stores massive chunks of a document in a way that makes it 
+easier for a model to remember and reason with the information.
+
+At its core, the model introduces “Context Optical Compression,” an 
+approach of turning long pages of text into images, then letting the model 
+convert those images into a highly condensed “vision token” 
+representation, which is much smaller in size than the usual text-token 
+representation. To highlight the conversion, the makers say that a 
+1,000-word article could be processed with just 100 vision tokens.
+
+Anthropic’s Claude Haiku 4.5 Arrives With Sonnet 4-Level Performance
+
+How the model works is also interesting. First, a document image is 
+captured. Then, a vision encoder, which is a custom module made by the 
+researchers, analyses the image and breaks the information into smaller 
+patches. It is then compressed into a smaller number of vision tokens. 
+Then, a decoder takes these vision tokens and reconstructs the textual 
+meaning.
+
+Because the AI model is working with far fewer tokens, the downstream 
+language model (or reasoning module) has less memory burden and can handle 
+longer content or bigger documents.
+
+Andrej Karpathy, Co-Founder of OpenAI and former Director of AI at Tesla, 
+praised DeepSeek-OCR for its novel implementation of vision tokens. He 
+said that the approach could lead to higher efficiency and has the 
+potential for bidirectional attention. He also said that this method could 
+lead to the elimination of the tokeniser, which would make models more 
+efficient
+
+
+
+

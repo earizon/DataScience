@@ -1,12 +1,12 @@
-[[{use_case.Earth_science,data.open_data,data.geospatial,resource,01_PM.TODO]]
+[[{use_case.Earth_science,data.open_data,data.geospatial,resource,PM.TODO]]
 # world.geo.json:
 GitHub - johan/world.geo.json: Annotated geo-json geometry files for the world
-@[https://github.com/johan/world.geo.json]
+<https://github.com/johan/world.geo.json>
 [[}]]
 
-# GeoJSON/GeoPanda: [[{data.geospatial,pandas,low_code,01_PM.TODO]]
+# GeoJSON/GeoPanda: [[{data.geospatial,pandas,low_code,PM.TODO]]
 Getting Started on Geospatial Analysis with Python, GeoJSON and GeoPandas - Twilio
-@[https://www.twilio.com/blog/2017/08/geospatial-analysis-python-geojson-geopandas.html]
+<https://www.twilio.com/blog/2017/08/geospatial-analysis-python-geojson-geopandas.html>
 
 · GeoJSON is a format for representing geographic objects. It’s
   different from regular JSON because it supports geometry types, such

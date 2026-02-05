@@ -1,69 +1,23 @@
-DATA PRE-PROCESSING:
+# DATA PRE-PROCESSING
 
-# IEEE Dataport: @[https://ieee-dataport.org/]
-  IEEE DataPort™ is an easily accessible data platform that enables users to 
-  store, search, access and manage standard or Open Access datasets up to 2TB 
-  across a broad scope of topics. The IEEE platform also facilitates analysis of 
-  datasets, supports Open Data initiatives, and retains referenceable data for 
-  reproducible research.
+## IEEE Dataport™ <https://ieee-dataport.org/>
 
-- Beautiful Soup (HTML parsing):  [[{data.cleaning,I/O.web_scrapping,TODO]]
-Python package for parsing HTML and XML documents 
-(including having malformed markup, i.e. non-closed tags, so named 
-after tag soup). It creates a parse tree for parsed pages that can be 
-used to extract data from HTML, which is useful for web scraping.
+* Easily accessible data platform that enables users to store, 
+  search, access and manage standard or Open Access datasets up to 2TB 
+  across a broad scope of topics. The IEEE platform also facilitates 
+  analysis of datasets, supports Open Data initiatives, and retains 
+  referenceable data for reproducible research.
+
+[[{doc_has.comparative,data.cleaning,TODO]]
+## Data cleaning comparative
+* Trifacta Wrangler (Local)
+* Google DataPrep
+* AWS Glue
+* MLStudio
+* Spark Data cleaning, Example architecture at Facebook.
+  (60 TB+ production use case)
+  <https://engineering.fb.com/core-data/apache-spark-scale-a-60-tb-production-use-case/>
 [[}]]
-
-- Data cleaning comparative: [[{02_doc_has.comparative,data.cleaning,bigdata,spark,TODO]]
-  • Trifacta Wrangler (Local)
-  • Google DataPrep
-  • AWS Glue
-  • MLStudio
-  • Spark Data cleaning, Example architecture at Facebook:                      [spark][bigdata]
-    (60 TB+ production use case)
-  @[https://engineering.fb.com/core-data/apache-spark-scale-a-60-tb-production-use-case/]
-[[}]]
-
-# Open Data Kit [[{data.gathering,low_code,01_PM.TODO]]
-@[https://opendatakit.org/]
-- Data collection is a key component of social good efforts ranging 
-  from polio elimination to rainforest conservation and Open Data Kit 
-  (ODK) helps thousands of organizations collect data quickly, 
-  accurately, offline, and at scale.
-
-  Contact: yanokwa at opendatakit.org@gmail.com [[}]]
-
-- https://getodk.org
-  ODK kit lets to build  powerful offline forms to collect the data 
-  you need wherever it is.
-
-- https://odk-x.org/
-  ODK-X lets you build custom apps to gather, manage, and visualize 
-  your data just as well in the field as you do in the office.
-  From cold chain management to longitudinal patient tracking to 
-  geographic data collection on mosquito releases, ODK-X helps you 
-  build your custom data management app.
-
-
-# https://github.com/tldr-pages/tldr/blob/master/pages/common/csvpy.md
-  Loads a CSV file into a Python shell. Included in csvkit. More
-  information:
-  https://csvkit.readthedocs.io/en/latest/scripts/csvpy.html.
-  
-  https://github.com/tldr-pages/tldr/blob/master/pages/common/in2csv.md
-  Converts various tabular data formats into CSV. Included in csvkit.
-  More information:
-  https://csvkit.readthedocs.io/en/latest/scripts/in2csv.html.
-
-# https://github.com/tldr-pages/tldr/blob/master/pages/common/mlr.md
-  Miller is like awk, sed, cut, join, and sort for name-indexed data
-  such as CSV, TSV, and tabular JSON. More information:
-  https://johnkerl.org/miller/doc.
-
-# Python: A Guide to Excel Spreadsheets in Python With openpyxl 
-  Real Python
-  https://realpython.com/openpyxl-excel-spreadsheets-python/ 
-
 
 
 # FSDB  A flat-file database for shell scripting.
@@ -84,7 +38,7 @@ used to extract data from HTML, which is useful for web scraping.
 
 
 # xsv: joins on CSVs:
-@[https://www.johndcook.com/blog/2019/12/31/sql-join-csv-files/]
+<https://www.johndcook.com/blog/2019/12/31/sql-join-csv-files/>
 
 weight.csv  person.csv
 ----------  ----------
@@ -175,7 +129,7 @@ producing
     ,,999,160
 
 # MDP Module: data.cleaning,mlops,data.mining
-@[https://pypi.python.org/pypi/MDP/2.4]
+<https://pypi.python.org/pypi/MDP/2.4>
 · Modular toolkit for Data Processing (MDP): widely used library of
   data processing algorithms that can be combined according to a
   pipeline analogy to build more complex data processing software.
@@ -183,8 +137,8 @@ producing
   Independent Component Analysis (ICA), Slow Feature Analysis (SFA),
   and many more.
 
-# Unix4j: [[{data.cleaning,unix,java,01_PM.TODO]]
-@[https://github.com/tools4j/unix4j]
+# Unix4j [[{data.cleaning.unix4j,dev_stack.java,PM.TODO]]
+<https://github.com/tools4j/unix4j>
 """...Working in the finance industry in Melbourne, the authors of
   Unix4j spent a lot of time writing complex text processing
   applications in bash. Frustrated with the inherent limitations of the
@@ -200,7 +154,7 @@ producing
   - Unix4j.cat("test.txt").grep("Tuesday").sed("s/kilogram/kg/g").sort();
 
 See also:
-@[http://www.oficina24x7.com/Python/map.html#pyline_and_pipes]
+<http://www.oficina24x7.com/Python/map.html#pyline_and_pipes>
 [[}]]
 
 

@@ -1,0 +1,307 @@
+[[{llm.101]]
+# LLM 101
+
+* Based on vector embeddings.
+* Massive scaling up of parameters:
+  * GPT-2: 1.5 billion
+  * GPT-3: 175 billion
+  * GPT-4:   1 trillion
+
+* early 2022: post-training and fine-tunning of models based on human 
+  instructions, which teaches the model how to perform a task by 
+  providing demonstrations and feedback.
+* 2024 Q4: A few models have recently started to perform better than 
+  an average human rater, but generally, they still haven't reached the 
+  performance of a human expert.
+* Representation learning is about a model learning its internal 
+  representations of raw data to perform a machine learning task, 
+  rather than relying only on engineered feature extraction. 
+* For example, an image classification model based on representation 
+  learning might learn to represent images according to visual features 
+  like edges, shapes and textures.
+* The model isn't told explicitly what features to look fro - it learns 
+  representations of the raw pixel data that help it make predictions.
+
+
+Early attention mechanism scaled quadratically with the length of 
+the sequences (context size), rendering them inapplicable to settings
+with long sequences. Differnet mechainsm have been tried out to
+alleviate this. Many LLMs use some form of Multi-Query Attention (MQA),
+including OpenAI's GPT-series models, Falcon, SnatCoder and
+StarCoder.
+
+MQA is an MHA extension (Multihead attention), where attention computation
+is replicated multiple times. MQA improves the performance and efficiency
+of LM for various lang. tasks. By removing the heads dimension from certain
+computations and optimizing memory usage, MQA allows for x11 times better 
+throughput and 30% lower latency in inference tasks compared to baseline models
+without MQA.
+
+Llama 2 and other use Grouped-Query Attention (GQA), wich is a practice used
+in autoregressive decoding to cache the
+key (K) and value (V) pairs for the previous tokens in the sequence, speeding up 
+attention computations. However, as the context window or batch 
+sizes increase, the memory costs associated with the KV cache size in MHA 
+models aslo increase significantly. To address this, the key and value
+projections can be shared across multiple heads without much degration of 
+performance.
+
+
+Negative Log-Likelihood (NLL) and Perplexity (PPL) are important metrics used in
+training and evalutaing LM.
+- NLL is a loss function used in ML algorithms, aimed at maximizing the probaility of 
+  correct predictions. A low NLL indicates that the network has successfully 
+  learned patterns from the training set, so it will accurately predict 
+  the labels of the training samples. It's important to mention that NLL is a 
+  value that's constrained within a posibitive internavl.
+- PPL, on the other hand, is an exponentaition of NLL, providing a more intuitive
+   way to understand the model's performance. Small PPL values indicate a well-trained
+  network that can predict accurately, while high values indicate poor learning 
+  performance. Intuitively, we could say that a low PPL means that the model is not
+  surprised by the next world. Therefore, the goal in pre-training is to minimize PPL,
+  which means the model's predictions align more with the actual outcomes.
+
+
+## Tokenization
+
+... It's important to note that tokenizers do not produce arbitrary integers.
+Instead, they output integers within a specific range - from 0 to N, where N
+represent the vocabulary size of the tokenizer.
+ A token is an instance of a sequence of characters, typically forming a word,
+punctuation mark or number. 
+
+There are a lot of tokenizers that work according to different principles, but
+common types of tokenizers employed in models are:
+* Byte-Pair Encoding (BPE):
+* WordPiece:
+* SentencePiece:
+For example, Llama 2's BPE tokenizer splits numbers into individual digits and 
+uses bytes to decompose unknown UTF-8 characters. The total vocabulary size is 
+32,000 tokens. [[devops,llm.101]]
+
+The tokenizer, more precisely, its dictionary- is typically fitted to the
+entire training dataset and the frozen [[qa.inmutability]].
+
+Tokenizer do NOT produce arbitrary integers, but just values within an specific range 
+-0 to N, where N is the vocabulary size.
+
+
+Another key area of innovation has been in model architectures. For example, the 
+Mixtral and  Leeroo models employ a mixture-of-experts (MoE) approach, where different 
+subsets of the model's parameters are specialized for different tasks, potentially
+improving performance and computational efficency.
+Mixtral 7x7B outperforms or matches Llama 2 70B and GPT-3.5 across various benchmarks,
+excelling particularly in math, code generation and multilingual task. Its 
+instruction-tuned version, Mixtral 8x7B-Instruct, surpasses several other prominent
+modles, like GPT-3.5 Turbo and Claude-2.1, on human benchmarks.
+
+The Leeroo Orchestrator by Leeroo proposes an architecture that integrates multiple 
+LLMs to create a new state-of-the-art model. It achieves performance on par with 
+Mixtral at lower computationl cost and even exceees GPT-4's accuracy on the MMLU
+benchmark with further cost reductions.
+
+GPT-4 has a training set 10x bigger than GPT-3. It also uses a "Mixture of Experts"
+model consisting of 16 experts within their model, each having about 111 billion
+parameters.
+
+...Llama series of models, with up to 70 billion parameters, by Meta AI in February
+and July 2023, respectively, have been highly influential by enabling the community to 
+build on top of them, thereby kicking off a Cambrian explosion of open-source LLMs.
+Llama triggered the creation of models such as Vicuna, Koala, RedPajama, MPT, Alpaca
+and Gorilla. Llama 2, since its recent release, has already inspired several very
+competitive coding models, such as WizardCoder.
+... Llama 2 70B model perfomrs on a par with or better than PaLM (540 billion params)
+on almost all benchmarks, but here is still a large performance gap between Llama 2 
+70B and GPT-4 and PaLM-2-L.
+
+
+
+[[{data.source]]
+2018 GPT-1  was trained on BookCorpus (985 million words).
+2018 BERT, trained on a combined corpus of BookCorpus and English Wikipedia, (3,3 billion words)
+2024 Trillions of tokens.
+
+Llam2 training corpus size is 40% bigger than Llama up to 2 trillions tokens of data,
+context lenght has doubled and grouped-query attention has been adopted. 
+Variants of sizes 7 billion, 13 billion, 34 billion, 70 billion have been released.
+
+
+Claude 3 Opus (up to 200.000 tokens of context) surpassed OpenAI's GPT-4 on the
+Chatbot Arena leaderboard, while exhibiting improved multilingual fluency, with 
+strong performance on coding, summarization and long document understanding tasks.
+
+[[data.source}]]
+
+
+Text to Image models ...
+
+Although they sometimes produce striking results, the instability and inconsistencey
+are significatn obstacles to applying these models more broadly. (no so more with
+"Stable DIffusion").
+
+2 main classes of models are used: Generative Adversarial Netwroks (GANs) and 
+diffusion models. GAN models like StyleGAN or GANPaint Studio can produce highly 
+realistic images, but training is unstable and computationally expensive.
+They consist of two networkss that are pitted against each other in a game-like
+setting -the generator, which generates new images from text embeddings and noise, 
+and the discriminator, which estimates the probability of the new data being real.
+As these two networks compete, GANs get better at their task, generating realistic
+images and other types of data.
+
+
+Diffusion models have become poupalr and promising for a wide tange of generative 
+tasks, including text-to-image syntheis. These models offer advantages over previous
+approaches, such as GANs, by reducing computation costs and sequential error 
+accumulation. Diffusion modles operate throught a process like diffusion in physics.
+They follow a "**forward diffusion process**" by adding noise to an images until it
+becomes uncharacteristic and noisy. This process is analogous to an ink drop 
+falling into a gralss of water and gradually diffusing.
+The unique aspect of generative images models is the reverse diffusion process,
+where the model attempts to recover the original image from a noisy, meaningless one.
+By iteratively applying noise removeal transformations, the model generates 
+images of increasing resolutions that alaign twith the given text input.
+The final outpus is an image DAthat has been modified based on the text input.
+... An example is "Photorealist Text-o-Images Diffusion Models with Deepl Language
+Understanding by Google Research, 2022) which incorpoartes frozen text embeddings 
+from LLMs, pre-trained on text-only corpora. A text encoder first maps the input text 
+to  a sequence of embeddings. A cascade of conditional diffusion models takes the
+text embeddings as input and generates images.
+
+... Stable Diffusion, by the CompVis group at LMU Munich (High-Resolution Image 
+Synthesis with Latent Diffusion Models by Blattmann et al., 2002) significantly cuts
+training costs and sampling time compared to the preious (pixel-based) diffusion
+models.  It introduces operations in latent (lower-dimensional) space representations,
+which capture the essential properties of an image, in order to improve computational
+efficency. A VAE provides latent space compression (called perceptual compression in
+the paperl) while a U-Net performs iterative denoising.
+
+...It can be run on consumer hardware with a modest GPU. By creating high-fidelity
+images from text on consumer GPUs, the Stable Diffusion model democratizes access.
+
+## Zipf Law
+
+* <https://es.wikipedia.org/wiki/Ley_de_Zipf>
+
+* La llamada ley de Zipf, formulada en la década de 1940 por George Kingsley 
+  Zipf, lingüista de la Universidad de Harvard, es una ley empírica según la 
+  cual en una determinada lengua la frecuencia de aparición de distintas 
+  palabras sigue una distribución que puede aproximarse por
+
+    ```
+    P n ∼ 1 / n a {\displaystyle P_{n}\sim 1/n^{a}}
+    ```
+  donde Pn representa la frecuencia de la n-ésima palabra más frecuente y el 
+  exponente a es un número real positivo, en general ligeramente superior a 
+  1.[1]​ Esto significa que el segundo elemento se repetirá aproximadamente 
+  con una frecuencia de 1⁄2 de la del primero, el tercer elemento con una 
+  frecuencia de 1⁄3 del primero y así sucesivamente. Una ley no empírica, 
+  pero más precisa, derivada de los trabajos de Claude Shannon fue descubierta 
+  por Benoît Mandelbrot. 
+
+* Although Zipf's law holds for most natural languages, and even certain 
+artificial ones such as Esperanto[24] and Toki Pona,[25] the reason is still 
+not well understood.[26] Recent reviews of generative processes for Zipf's law 
+include Mitzenmacher, "A Brief History of Generative Models for Power Law and 
+Lognormal Distributions",[27] and Simkin, "Re-inventing Willis".[28]
+
+* However, it may be partly explained by statistical analysis of randomly 
+generated texts. Wentian Li has shown that in a document in which each 
+character has been chosen randomly from a uniform distribution of all letters 
+(plus a space character), the "words" with different lengths follow the 
+macro-trend of Zipf's law (the more probable words are the shortest and have 
+equal probability).[20] In 1959, Vitold Belevitch observed that if any of a 
+large class of well-behaved statistical distributions (not only the normal 
+distribution) is expressed in terms of rank and expanded into a Taylor series, 
+the first-order truncation of the series results in Zipf's law. Further, a 
+second-order truncation of the Taylor series resulted in Mandelbrot's 
+law.[29][30] 
+
+
+
+## LLM Economics
+
+
+[[{PM.price,date.2024]]
+# Models & Pricing Comparative
+
+* REF:
+  * <https://api-docs.deepseek.com/quick_start/pricing/>
+
+  ```
+  |                     ┌───┬─ CONTEXT LENGTH
+  |                     ·   · ┌───┬─ MAX COT TOKENS ²
+  |                     ·   · ·   · ┌───┬─ MAX OUTPUT TOKENS ³
+  |                     ·   · ·   · ·   · ┌────┬─·······1M TOKENS, INPUT PRICE, CACHE HIT⁴
+  |                     ·   · ·   · ·   · ·    · ┌───┬─ 1M TOKENS, INPUT PRICE, CACHE MISS
+  |  MODEL              ·   · ·   · ·   · ·    · ·   · ┌───┬─ 1M TOKENS PRICE
+  |┌───────────────────┬·───·┬·───·┬·───·┬·────·┬·───·┬·───·┐
+  |│ deepseek─chat ¹   │ 64K │  -  │  8K │0.014$│0.14$│0.28$│
+  |├───────────────────┼─────┼─────┼─────┼──────┼─────┼─────┤
+  |│ deepseek─reasoner¹│ 64K │ 32K │  8K │0.14$ │0.55$│2.2$⁶│
+  |└───────────────────┴─────┴─────┴─────┴──────┴─────┴─────┘
+  | ¹ deepseek-chat model upgraded to DeepSeek-V3. 
+  |   deepseek-reasoner points to the new model DeepSeek-R1.
+  |
+  | ² CoT (Chain of Thought) is the reasoning content deepseek-reasoner
+  |   gives before output the final answer. 
+  |   For details, please refer <https://api-docs.deepseek.com/guides/reasoning_model>
+  |
+  | ³ If not set, the default max. output length is 4K. Adjust `max_tokens` for longer outputs.
+  |
+  | ⁴ Context Caching on Disk, cutting price by an order of magnitud: 
+  |   <https://api-docs.deepseek.com/news/news0802> [[PM.price,scalability.LLM.cache]]
+  |
+  | ⁶  output token count includes all tokens from CoT and the final answer, priced equally.
+ ```
+[[PM.price}]]
+
+
+[[{doc_has.comparative]]
+## standard LLMs vs reasoning LLMs
+
+
+```
+             Feature     LLMs                       Reasoning LLMs
+
+    Primary Strength     Language generation and    Explicit, step-by-step 
+	                 understanding based on     logical problem-solving.
+                         patterns.
+
+     Problem-Solving     Tends to provide a         Breaks down problems 
+	                 direct answer.             into intermediate steps 
+                                                    ("shows its work").
+
+      Training Focus
+	
+
+Broad text corpora for general language understanding.
+
+Datasets emphasizing logic, mathematics, and structured reasoning.
+
+Interpretability
+	
+
+Can be a "black box," making it hard to trace the reasoning.
+	
+
+Higher interpretability due to the explicit thought process.
+
+Best For
+	
+
+Creative and language-based tasks.
+	
+
+Complex, multi-step logical and reasoning tasks.
+
+Examples
+	
+
+Standard versions of GPT-4, Llama 3
+	
+
+OpenAI's o1 series, DeepSeek-R1
+```
+[[doc_has.comparative}]]
+
+[[llm.101}]] 

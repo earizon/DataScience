@@ -1,6 +1,6 @@
 # OpenCV: Cognitive, Computer Vision
 - Python Tutorial: Find Lanes for Self-Driving Cars (Computer Vision Basics Tutorial)
-@[https://www.youtube.com/watch?v=eLTLtUVuuy4]
+<https://www.youtube.com/watch?v=eLTLtUVuuy4>
 
 # MS Cognitive Services:Cognitive, Computer Vision, Low_Code
 https://www.patrickvankleef.com/2018/08/27/exploring-city-with-azure-durable-functions-and-the-custom-vision-service/
@@ -38,7 +38,7 @@ unsupervised learning tasks in computer vision. The library contains
 learning with non-rectangular mesh-based input data.
 
 # luminoth Comp.Vision Toolkit!!!
-@[https://luminoth.ai/] !!! OpenSource Computer Vision Toolkit
+<https://luminoth.ai/> !!! OpenSource Computer Vision Toolkit
 
 # MS Cognitive Services:
 https://www.patrickvankleef.com/2018/08/27/exploring-city-with-azure-durable-functions-and-the-custom-vision-service/
@@ -66,4 +66,25 @@ verifying your model. After the model is all set, it’s time to
 upload images and test the results. The Custom Vision service analyze
 the images and return the tags with a probability percentage.
 
+## Google PaliGemma 2
 
+* <https://www.infoq.com/news/2025/01/google-paligemma-2/>
+
+* 2025-01: released PaliGemma 2 family of vision-language models (VLM).
+* three different sizes and three input image resolutions:
+* nine different models, combining LLM sizes of 2B, 9B, and 27B parameters 
+  with vision encoders of 224, 448, and 896 pixels-squared resolution. 
+* achieves state-of-the-art performance on several vision-language benchmarks,
+  where it sets new state-of-the-art records, including **OCR, molecular 
+  structure recognition, and radiography report generation**.
+* It uses the same SigLIP-So400m vision encoder as the original PaliGemma, 
+  but upgrades to the Gemma 2 LLM. 
+* PaliGemma 2 is a combination of a pre-trained SigLIP-So400m image 
+  encode and a Gemma 2 LLM. This combination is then further 
+  pre-trained on a 1B example multimodal dataset. Besides the 
+  pre-trained base models, Google also released variants that were 
+  fine-tuned on the Descriptions of Connected and Contrasting Images 
+  (DOCCI) dataset, a collection of images and corresponding detailed 
+  descriptions. **The fine-tuned variants can generate long, detailed 
+  captions of images, which are "more factually aligned sentences" than 
+  those produced by other VLMs**.
