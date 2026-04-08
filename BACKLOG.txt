@@ -1,9 +1,0 @@
-# DeepDetect  [[{]]
-- cross-collaboration project.
-- Used by organizations like Airbus and Microsoft.
-- OOSS deep learning server based on Caffe, TensorFlow and XGBoost.
-- easy-to-use API for image classification, object detection, and
-  text and numerical data analysis.
-[[}]]
-
-

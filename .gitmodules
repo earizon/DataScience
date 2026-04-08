@@ -1,0 +1,6 @@
+[submodule "PlayingWithOpenVINO"]
+	path = PlayingWithOpenVINO
+	url = https://github.com/earizon/PlayingWithOpenVINO.git
+[submodule "openvino_notebooks"]
+	path = openvino_notebooks
+	url = https://github.com/openvinotoolkit/openvino_notebooks

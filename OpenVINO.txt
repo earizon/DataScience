@@ -1,0 +1,118 @@
+[[{hardware.intel]]
+# Intel OpenVINO
+
+* OpenVINO toolkit stands for Open Visual Inference and Neural Network Optimization.
+
+* It supports GenAI and conventional AI models.
+* For GenAI it provides LLM-specific interfaces for easy integration of 
+  language models, handling tokenization and text generation.
+
+* "Lower layer" supporting PyTorch, TensorFlow, TensorFlowLite, PaddlePaddle,  
+  ONNX, Keras and  JAX (As of 2026). <br/>
+  
+* Supported Intel CPUs: Atom/Core/Core Ultra/Xeon/ARM 
+* Supported Intel GPUs: IRIXMax,  ARC, DataCenter GPU
+* Supported Intel NPUs: Core Ultra.
+* Supported Intel FPGA: "AI Suite".
+
+
+* designed for Intel's new generation of "Meteor Lake" ("Intel Core Ultra") 
+  mobile CPUs herald a new age of "AI PCs," (2024) featuring an NPU (neural 
+  processing unit) that's purpose-built to handle AI tasks.  In support 
+
+* Can be installed through PIP virt.environemts, tarballs, APT/YUM, Docker, Conda,
+  Zypper (C++ API only), ...
+
+OpenVINO plugins exists also for different apps like:
+
+* (OpenVINO Stable Diffusion) Generate images in GIMP.
+* (OpenVINO Music Generation): text (prompt)-to-(simple)music in Audacity.
+* (OpenVINO Whisper Transcription): Transcribes your audio to text in Audacity.
+* (OpenVINO Noise Reduction): Removes background noise in Audacity.
+REF: <https://www.tomshardware.com/laptops/i-tested-intels-meteor-lake-cpus-on-ai-workloads-and-amds-chips-sometimes-beat-them>
+
+
+## OpenVINO Runtime vs OpenVINO GenAI
+
+
+  ```
+  | [[doc_has.comparative]]
+  | P: what are the differences between openvino runtime and openvino GenAI.
+  |    Explain some examples exposed by each API and how GenAI makes use of openvino.
+  |
+  | (summarized answer from ChatGPT response 2026-04): 
+  |  ┌───────────────────────────────────────────────┬───────────────────────────────────────────┐
+  |  │       OV Runtime                              │      OV GenAI                             │
+  |  ├───────────────────────────────────────────────┼───────────────────────────────────────────┤
+  |  │                                               │                                           │
+  |  │- low-level, general inference engine,         │ - OV Runtime + "everything needed to run  │
+  |  │  model-agnostic (transformers, RRN, ...)      │   LLMs and diffusion models"              │
+  |  │                                               │                                           │
+  |  │- Load models (IR, ONNX, etc.)                 │ - GenAI delegates to OV Runtime:          │
+  |  │- Compile them for hardware (CPU, GPU, NPU)    │   - Model compilation                     │
+  |  │- Run inference manually                       │   - Device execution                      │
+  |  │- Control inputs/outputs, memory, batching     │   - Graph optimizations                   │
+  |  │- Requires ML knowledge and boilerplate code   │   - Kernel scheduling                     │
+  |  │                                               │                                           │
+  |  │                                               │ - GenAI adds:                             │
+  |  │                                               │   - Tokenization                          │
+  |  │                                               │   - KV cache                              │
+  |  │                                               │   - Sampling (greedy, top-k, top-p)       │
+  |  │                                               │   - Streaming output                      │
+  |  │                                               │   - Prompt handling                       │
+  |  ├───────────────────────────────────────────────┼───────────────────────────────────────────┤
+  |  │ # Ex Use-Case 1. Image classification         │  # Ex Use-Case 1. Text generation (LLM)   │
+  |  │ core = ov.Core()                              │  from openvino_genai import LLM           │
+  |  │ model = core.read_model("resnet.xml")         │                                           │
+  |  │ compiled = core.compile_model(model, "CPU")   │  llm = LLM.from_pretrained("llama2")      │
+  |  │                                               │  response = llm.generate("some prompt...")│
+  |  │ result = compiled([input_tensor])             │                                           │
+  |  │                                               │  No need to:                              │
+  |  │                                               │  - Tokenize manually                      │
+  |  │ "You handle"                                  │  - Manage attention masks                 │
+  |  │ - Preprocessing (resize, normalize)           │  - Implement decoding loop                │
+  |  │ - Postprocessing (softmax, top-k)             │                                           │
+  |  │                                               │  # Ex Use-Case 2. Chat applications       │
+  |  │ # Ex Use-Case 2. Object detection             │  llm.chat([                               │
+  |  │ "You handle":                                 │    {"role": "user", "content": "Hello!"}  │
+  |  │ - Decode bounding boxes                       │  ])                                       │
+  |  │ - Apply NMS (non-max suppression)             │                                           │
+  |  │                                               │  Automatic handling of:                   │
+  |  │ # Ex Use-Case 3. Custom NLP model (e.g. BERT) │  - Conversation history                   │
+  |  │ "You must":                                   │  - Formatting prompts                     │
+  |  │ - Tokenize text yourself                      │                                           │
+  |  │ - Manage attention masks                      │  # Ex Use-Case 3. Streaming output        │
+  |  │ - Handle output logits                        │  for token in llm.stream("Write a story"):│
+  |  │   print(token, end="")                        │      print(token)                         │
+  |  │                                               │                                           │
+  |  │# Ex Use-Case 4: Image generation (diffusion)  │                                           │
+  |  └───────────────────────────────────────────────┴───────────────────────────────────────────┘
+  |          App code -> OpenVINO GenAI -> OpenVINO Runtime -> Hardware (CPU/GPU/NPU)
+  ```
+
+## OpenVINO GenAI vs PyTorch, TensorFlow, JAX, ...
+
+* PyTorch, TensorFlow, JAX, ... offer general programming libraries for model training, matrix
+  optimizations in GPUs, general APIs "a la NumPy", ...
+* OpenVINO GenAI focuses in executing the inference phase of Deep-Neural Networks previously
+  architected and trained with PyTorch, TensorFlow, JAX...
+
+* PyTorch, TensorFlow, JAX, ... have different "low level" layers to interact with the hardware
+  like NVidia CUDA, Intel OpenVINO, ...
+* OpenVINO GenAI is a library of the most popular Generative AI model pipelines, optimized
+  execution methods, and samples that run on top of highly performant OpenVINO Runtime.
+
+
+
+
+[[hardware.intel}]]
+
+
+## OpenVINO TODO
+
+* Summarize: <https://docs.openvino.ai/2026/get-started/learn-openvino/openvino-samples/hello-classification.html>, ...
+* Summarize: OpenVINO IR format <https://docs.openvino.ai/2025/documentation/openvino-ir-format.html> and
+  <https://github.com/huggingface/optimum-intel> to "compile" models to IR. Ex:
+  ```
+  | $ optimum-cli export openvino --model TinyLlama/TinyLlama_v1.1 ov_TinyLlama_v1_1
+  ```

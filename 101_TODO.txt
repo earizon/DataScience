@@ -1,9 +1,1 @@
-## Summarizing PDFs with Ollama and LangChain
 
-* <https://vincent.codes.finance/posts/documents-llm/#loading-pdfs>
-
-
-
-
-
-[[PM.TODO}]]

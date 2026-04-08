@@ -1,18 +1,21 @@
-101.txt                               # OK, WiP
-101_numpy.txt                         # OK, WiP
-101_pandas.txt                        # OK, WiP
-101_Python_Atmosphere.txt             # OK
-101_MCP.txt                           # WiP
-101_open_data_catalog.txt             # WiP
-# 101_HierarchicalReasoning_vs_CoT.txt  # TODO  
-# 101_TODO.txt                          # TODO 
-# 101_DevOps.txt                        # TODO 
+101.txt                                 # OK, WiP
+101_numpy.txt                           # OK, WiP
+101_pandas.txt                          # OK, WiP
+101_Python_Atmosphere.txt               # OK,
+101_MCP.txt                             # OK, WiP
+101_open_data_catalog.txt               # OK, WiP
+101_LLM.txt                             # OK, WiP
+101_TODO.txt                            # OK
+101_MLOps.txt                           # OK, Draft
+101_backpropagation.txt                 # OK, TODO
 # 101_external_resources.txt            # TODO 
 # 101_ggml.txt                          # TODO 
 # 101_langchain.txt                     # TODO 
-# 101_LLM.txt                           # TODO 
-# 101_LLM_assistants.txt                # TODO 
 # 101_transformers.txt                  # TODO 
+# Transformers/101_transformers.txt
 # 101_nomenclature_and_acronyms.txt     # TODO 
 # 101_jupyter.txt                       # Draft
+# 101_vibbe_coding.txt                  # TODO
 # TODO.txt                              #
+# 101_LLM_assistants.txt                # TODO 
+# 101_HierarchicalReasoning_vs_CoT.txt  # TODO  

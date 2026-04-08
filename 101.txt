@@ -1,5 +1,7 @@
 # Bird's Eye view of Model types
 
+
+* <http://www.deeplearningbook.org/> by 
 (forcibely incomplete and outdate by still pertinent)
 
 ```

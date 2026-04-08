@@ -1,0 +1,9 @@
+[[{training.101,training.backpropagation,101,PM.TODO]]
+# Backgropagation   
+
+* Backpropagation in NN replaces the techniques of gradient descendant in simple neuronal networks with linear behaviour.
+
+
+
+
+[[training.backpropagation}]]

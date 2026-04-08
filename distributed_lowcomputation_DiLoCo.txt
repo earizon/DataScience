@@ -1,4 +1,4 @@
-[[{scalability.DiLoCo]]
+[[{scalability.DiLoCo,architecture.distributed,PM.radar]]
 
 # DiLoCo: Distributed Low Computation
 

@@ -6,7 +6,7 @@
 
 * <https://www.metriccoders.com/post/understanding-gguf-ggml-and-safetensors-a-deep-dive-into-modern-tensor-format>
 
-* GGUF: GPT-Generated Unified Format: (used y Ollama, ...)
+* GGUF: GPT-Generated Unified Format: (used by Ollama, ...)
   * <https://github.com/ggml-org/ggml/blob/master/docs/gguf.md>
   * GGUF is a persistence binary format used to store models for
     inference with GGML and executors based on GGML, designed for 

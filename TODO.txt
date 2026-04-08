@@ -1,6 +1,622 @@
+[[{]]
+## 101? 101? 101? maths-cs-ai-compendium @ Github
+* <https://github.com/HenryNdubuaku/maths-cs-ai-compendium>
+[[}]]
+
+[[{]]
+## Prompt Enginering 101 “Explain your reasoning step by step before answering.”
+
+Stanford Just Killed Prompt Engineering With 8 Words (And I Can’t Believe It Worked)
+
+Feb 11, 2026
+Press enter or click to view image in full size
+
+For the past two years, prompt engineering has felt like a strange new profession.
+
+People traded massive prompt templates.
+Threads promised “perfect prompts.”
+Courses taught frameworks that looked more complex than the work they were meant to replace.
+
+And quietly, something broke.
+
+The prompts got longer.
+The results got more predictable.
+Creativity flattened.
+
+Then a group of researchers connected to Stanford started pointing at an uncomfortable truth:
+
+We weren’t under-prompting AI. We were over-engineering it.
+
+What replaced all that complexity was eight ordinary words.
+And they worked across almost every model.
+
+Why Traditional Prompt Engineering Is Hitting a Wall
+
+Classic prompt engineering assumes one thing:
+
+If you describe exactly what you want, the model will give it to you.
+
+That logic made sense early on. But over time, it produced side effects:
+
+Prompts became rigid scripts
+Outputs became stylistically similar
+Creativity dropped as structure increased
+Models “played it safe” instead of exploring ideas
+
+In other words, we optimized for control — and accidentally killed exploration.
+
+Researchers noticed something interesting:
+The more constrained the prompt, the less cognitive space the model used.
+
+That insight led to a very different approach.
+
+What Stanford Researchers Actually Observed (No Hype)
+
+The Stanford insight wasn’t about a new model, plugin, or training method.
+
+It was about how language models think.
+
+Large language models don’t just autocomplete text.
+They simulate reasoning when invited to do so.
+
+When prompts demanded final answers immediately, models collapsed their internal reasoning into a short path.
+
+But when prompts encouraged process, performance jumped:
+
+More original ideas
+Fewer shallow answers
+Better logical consistency
+Higher creativity scores
+
+The surprising part?
+
+You didn’t need complex instructions to unlock this.
+
+The 8 Words That Changed Everything
+
+Here’s the entire technique:
+
+“Explain your reasoning step by step before answering.”
+
+That’s it.
+
+Eight words.
+
+No frameworks.
+No role-playing.
+No giant prompt blocks.
+
+Just an instruction that changes how the model allocates attention.
+
+Why This Instantly Unlocks More Creativity
+
+When you ask for reasoning before answers, three things happen inside the model:
+
+1. The model slows down
+
+Instead of jumping to the most statistically likely response, it explores intermediate paths.
+
+Creativity lives in those paths.
+
+2. Multiple solution branches appear
+
+Step-by-step reasoning encourages the model to surface alternatives, trade-offs, and edge cases.
+
+That’s where originality comes from.
+
+3. The model self-corrects
+
+As it reasons, it notices weak assumptions and adjusts — often producing better final outputs than direct prompting.
+
+Get Whispering Oods’s stories in your inbox
+
+Join Medium for free to get updates from this writer.
+
+Remember me for faster sign in
+
+You’re not forcing creativity.
+You’re giving it room to emerge.
+
+Why This Works Across Every Major Model
+
+This technique isn’t model-specific because it relies on a shared architecture trait.
+
+All modern LLMs:
+
+Represent reasoning implicitly
+Can externalize that reasoning when prompted
+Improve output quality when allowed to “think aloud”
+
+That’s why this works on:
+
+ChatGPT
+Claude
+Gemini
+Open-source models like LLaMA or Mistral
+
+No fine-tuning.
+No plugins.
+No training required.
+
+Just better instructions.
+
+Practical Examples You Can Try Right Now
+
+Example 1: Creative Writing
+
+Instead of:
+
+Write a unique article introduction about AI creativity.
+
+Try:
+
+Explain your reasoning step by step before answering.
+Write a unique article introduction about AI creativity.
+
+Result:
+More original angles. Less generic phrasing.
+
+Example 2: Business Strategy
+
+Instead of:
+
+Suggest growth strategies for a SaaS product.
+
+Try:
+
+Explain your reasoning step by step before answering.
+Suggest growth strategies for a SaaS product.
+
+Result:
+Clear assumptions, structured trade-offs, and fewer surface-level ideas.
+
+Example 3: Technical Problem Solving
+
+Instead of:
+
+Debug this code.
+
+Try:
+
+Explain your reasoning step by step before answering.
+Debug this code.
+
+Result:
+Fewer hallucinated fixes. Better diagnosis.
+
+The Deeper Insight Most People Miss
+
+This isn’t really about prompting.
+
+It’s about how intelligence — human or artificial — works.
+
+Creativity doesn’t come from perfect instructions.
+It comes from permission to reason.
+
+The Stanford insight quietly challenges the entire prompt-engineering culture:
+
+Less scripting
+More cognitive freedom
+Fewer constraints, better outcomes
+
+We didn’t need smarter prompts.
+
+We needed more patient ones.
+
+Concluding Remark
+
+Prompt engineering isn’t dead — but its role has changed.
+
+The future belongs to people who understand how models think, not those who memorize prompt formulas.
+
+Eight words didn’t kill prompt engineering.
+
+They exposed what actually mattered all along:
+
+Give intelligence space to think, and it will surprise you.
+
+Artificial Intelligence
+Prompt Engineering
+Ai Creativity
+Stanford Research
+Future Of Work
+
+Written by Whispering Oods
+
+0 followers
+·4 following
+
+Helping busy professionals save time and grow their careers with practical AI productivity systems, ChatGPT prompts, and simple work workflows.
+
+No responses yet
+
+Write a response
+
+What are your thoughts?
+
+More from Whispering Oods
+
+Whispering Oods
+
+10 Sustainable Ways to Earn Long-Term Income With AI
+
+Most people who experiment with AI make a little money at first.
+
+Feb 14
+1
+
+Whispering Oods
+
+AI Career Upgrade System: How Professionals Stay Relevant in a Changing Work Era
+
+1. A Quiet Fear Many Professionals Don’t Talk About
+
+Feb 7
+
+Whispering Oods
+
+How I Plan My Entire Workweek in 15 Minutes Using ChatGPT
+
+1. Personal Hook (Story-Based Introduction)
+
+Feb 4
+
+Whispering Oods
+
+The Last Scarce Skill
+
+Why useful originality may matter more than expertise in an age of intelligent machines
+
+Feb 27
+See all from Whispering Oods
+
+Recommended from Medium
+
+In
+
+ILLUMINATION
+
+by
+
+Sufyan Maan, M.Eng
+
+I Woke Up at 4:30 AM Every Day for 30 Days — Here Is What Nobody Tells You
+
+Here is what actually happened, from someone who did it & tracked everything.
+
+Mar 8
+5K
+223
+
+In
+
+Write A Catalyst
+
+by
+
+Dr. Patricia Schmidt
+
+As a Neuroscientist, I Quit These 5 Morning Habits That Destroy Your Brain
+
+Most people do #1 within 10 minutes of waking (and it sabotages your entire day)
+
+Jan 14
+43K
+857
+
+In
+
+CodeX
+
+by
+
+MayhemCode
+
+You Are Probably Buying the Wrong Machine for Local AI — The Mac Mini M4 vs Mini PC Truth Nobody…
+
+There is a quiet war happening on the desks of AI enthusiasts right now. On one side, the Mac Mini M4 sits sleek and silent, promising…
+
+Mar 20
+1.2K
+23
+
+In
+
+Generative AI
+
+by
+
+Adham Khaled
+
+Stanford Just Killed Prompt Engineering With 8 Words (And I Can’t Believe It Worked)
+
+[[}]]
+
+[[{]]
+## ML 101 Agent Agent Definition Language
+
+* <https://www.infoq.com/news/2026/02/agent-definition-language/>
+
+Next Moca Releases Agent Definition Language as an Open Source Specification
+
+Feb 09, 2026 2 min read
+
+by
+
+Robert Krzaczyński
+
+Senior Software Engineer
+
+Log in to listen to this article
+
+Moca has open-sourced Agent Definition Language (ADL), 
+(https://www.nextmoca.com/blogs/agent-definition-language-adl-the-open-source-st
+andard-for-defining-ai-agents) a vendor-neutral specification intended to 
+standardize how AI agents are defined, reviewed, and governed across frameworks 
+and platforms. The project is released under the Apache 2.0 license and is 
+positioned as a missing “definition layer” for AI agents, comparable to the 
+role OpenAPI plays for APIs.
+
+ADL provides a declarative format for defining AI agents, including their 
+identity, role, language model setup, tools, permissions, RAG data access, 
+dependencies, and governance metadata like ownership and version history. The 
+aim is to enhance the portability, auditability, and interoperability of agents 
+across various platforms and vendors.
+
+The release addresses a growing fragmentation problem in agent development. 
+Today, agent behavior is often spread across prompts, code, framework-specific 
+configuration files, and undocumented assumptions. This makes it difficult for 
+teams to answer basic questions about an agent’s capabilities, boundaries, 
+and approval status, and complicates security reviews, compliance, and reuse.
+
+ADL consolidates agent definitions into a structured, machine-readable format 
+to enhance inspectability and governance. It is framework-agnostic and focuses 
+on definitions rather than execution, without addressing agent communication, 
+runtime tool invocation, or message transport. ADL is intended to complement 
+existing technologies like A2A, MCP, OpenAPI, and workflow engines.
+
+Announcing the open-source release, Next Moca founder Kiran Kashalkar described 
+ADL as “Think OpenAPI (Swagger) for agents,” adding that it provides “a 
+single, declarative spec that says what an agent is, what tools it can call, 
+what data it can touch, and how it is configured.” Kashalkar emphasized 
+portability, auditability, and vendor neutrality as core design goals.
+
+According to Next Moca, ADL is aimed at teams building production AI systems, 
+where agents increasingly operate as autonomous components with access to 
+tools, data, and external systems. The company argues that a standardized 
+definition layer enables clearer planning, consistent validation in CI 
+pipelines, explicit comparison of agent capabilities, and software-style 
+lifecycle management through versioning and rollback.
+
+The project includes a published JSON Schema, example agent definitions, 
+validation tools, and documentation covering governance and contribution 
+processes. Developers can define an agent once and validate it locally, then 
+share the same definition across security, platform, and compliance teams.
+
+Next Moca describes ADL as an early-stage standard and is inviting community 
+feedback and contributions to shape its evolution. The company states that 
+open-sourcing the specification is intended to encourage broad adoption, 
+neutral governance, and the development of an ecosystem of editors, validators, 
+registries, and testing tools around a shared format.
+
+The ADL repository and documentation are available on GitHub, with contribution 
+guidelines and a public roadmap outlining planned next steps.
+[[}]]
+
+[[{]]
+## LLM 101: microgpt
+https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95 
+"""The most atomic way to train and run inference for a GPT in pure, dependency-free Python.This file is the complete algorithm.Everything else is just efficiency.@karpathy
+
+
+```
+"""
+The most atomic way to train and run inference for a GPT in pure, dependency-free Python.
+This file is the complete algorithm.
+Everything else is just efficiency.
+
+@karpathy
+"""
+
+import os       # os.path.exists
+import math     # math.log, math.exp
+import random   # random.seed, random.choices, random.gauss, random.shuffle
+random.seed(42) # Let there be order among chaos
+
+# Let there be a Dataset `docs`: list[str] of documents (e.g. a list of names)
+if not os.path.exists('input.txt'):
+    import urllib.request
+    names_url = 'https://raw.githubusercontent.com/karpathy/makemore/988aa59/names.txt'
+    urllib.request.urlretrieve(names_url, 'input.txt')
+docs = [line.strip() for line in open('input.txt') if line.strip()]
+random.shuffle(docs)
+print(f"num docs: {len(docs)}")
+
+# Let there be a Tokenizer to translate strings to sequences of integers ("tokens") and back
+uchars = sorted(set(''.join(docs))) # unique characters in the dataset become token ids 0..n-1
+BOS = len(uchars) # token id for a special Beginning of Sequence (BOS) token
+vocab_size = len(uchars) + 1 # total number of unique tokens, +1 is for BOS
+print(f"vocab size: {vocab_size}")
+
+# Let there be Autograd to recursively apply the chain rule through a computation graph
+class Value:
+    __slots__ = ('data', 'grad', '_children', '_local_grads') # Python optimization for memory usage
+
+    def __init__(self, data, children=(), local_grads=()):
+        self.data = data                # scalar value of this node calculated during forward pass
+        self.grad = 0                   # derivative of the loss w.r.t. this node, calculated in backward pass
+        self._children = children       # children of this node in the computation graph
+        self._local_grads = local_grads # local derivative of this node w.r.t. its children
+
+    def __add__(self, other):
+        other = other if isinstance(other, Value) else Value(other)
+        return Value(self.data + other.data, (self, other), (1, 1))
+
+    def __mul__(self, other):
+        other = other if isinstance(other, Value) else Value(other)
+        return Value(self.data * other.data, (self, other), (other.data, self.data))
+
+    def __pow__(self, other): return Value(self.data**other, (self,), (other * self.data**(other-1),))
+    def log(self): return Value(math.log(self.data), (self,), (1/self.data,))
+    def exp(self): return Value(math.exp(self.data), (self,), (math.exp(self.data),))
+    def relu(self): return Value(max(0, self.data), (self,), (float(self.data > 0),))
+    def __neg__(self): return self * -1
+    def __radd__(self, other): return self + other
+    def __sub__(self, other): return self + (-other)
+    def __rsub__(self, other): return other + (-self)
+    def __rmul__(self, other): return self * other
+    def __truediv__(self, other): return self * other**-1
+    def __rtruediv__(self, other): return other * self**-1
+
+    def backward(self):
+        topo = []
+        visited = set()
+        def build_topo(v):
+            if v not in visited:
+                visited.add(v)
+                for child in v._children:
+                    build_topo(child)
+                topo.append(v)
+        build_topo(self)
+        self.grad = 1
+        for v in reversed(topo):
+            for child, local_grad in zip(v._children, v._local_grads):
+                child.grad += local_grad * v.grad
+
+# Initialize the parameters, to store the knowledge of the model
+n_layer = 1     # depth of the transformer neural network (number of layers)
+n_embd = 16     # width of the network (embedding dimension)
+block_size = 16 # maximum context length of the attention window (note: the longest name is 15 characters)
+n_head = 4      # number of attention heads
+head_dim = n_embd // n_head # derived dimension of each head
+matrix = lambda nout, nin, std=0.08: [[Value(random.gauss(0, std)) for _ in range(nin)] for _ in range(nout)]
+state_dict = {'wte': matrix(vocab_size, n_embd), 'wpe': matrix(block_size, n_embd), 'lm_head': matrix(vocab_size, n_embd)}
+for i in range(n_layer):
+    state_dict[f'layer{i}.attn_wq'] = matrix(n_embd, n_embd)
+    state_dict[f'layer{i}.attn_wk'] = matrix(n_embd, n_embd)
+    state_dict[f'layer{i}.attn_wv'] = matrix(n_embd, n_embd)
+    state_dict[f'layer{i}.attn_wo'] = matrix(n_embd, n_embd)
+    state_dict[f'layer{i}.mlp_fc1'] = matrix(4 * n_embd, n_embd)
+    state_dict[f'layer{i}.mlp_fc2'] = matrix(n_embd, 4 * n_embd)
+params = [p for mat in state_dict.values() for row in mat for p in row] # flatten params into a single list[Value]
+print(f"num params: {len(params)}")
+
+# Define the model architecture: a function mapping tokens and parameters to logits over what comes next
+# Follow GPT-2, blessed among the GPTs, with minor differences: layernorm -> rmsnorm, no biases, GeLU -> ReLU
+def linear(x, w):
+    return [sum(wi * xi for wi, xi in zip(wo, x)) for wo in w]
+
+def softmax(logits):
+    max_val = max(val.data for val in logits)
+    exps = [(val - max_val).exp() for val in logits]
+    total = sum(exps)
+    return [e / total for e in exps]
+
+def rmsnorm(x):
+    ms = sum(xi * xi for xi in x) / len(x)
+    scale = (ms + 1e-5) ** -0.5
+    return [xi * scale for xi in x]
+
+def gpt(token_id, pos_id, keys, values):
+    tok_emb = state_dict['wte'][token_id] # token embedding
+    pos_emb = state_dict['wpe'][pos_id] # position embedding
+    x = [t + p for t, p in zip(tok_emb, pos_emb)] # joint token and position embedding
+    x = rmsnorm(x) # note: not redundant due to backward pass via the residual connection
+
+    for li in range(n_layer):
+        # 1) Multi-head Attention block
+        x_residual = x
+        x = rmsnorm(x)
+        q = linear(x, state_dict[f'layer{li}.attn_wq'])
+        k = linear(x, state_dict[f'layer{li}.attn_wk'])
+        v = linear(x, state_dict[f'layer{li}.attn_wv'])
+        keys[li].append(k)
+        values[li].append(v)
+        x_attn = []
+        for h in range(n_head):
+            hs = h * head_dim
+            q_h = q[hs:hs+head_dim]
+            k_h = [ki[hs:hs+head_dim] for ki in keys[li]]
+            v_h = [vi[hs:hs+head_dim] for vi in values[li]]
+            attn_logits = [sum(q_h[j] * k_h[t][j] for j in range(head_dim)) / head_dim**0.5 for t in range(len(k_h))]
+            attn_weights = softmax(attn_logits)
+            head_out = [sum(attn_weights[t] * v_h[t][j] for t in range(len(v_h))) for j in range(head_dim)]
+            x_attn.extend(head_out)
+        x = linear(x_attn, state_dict[f'layer{li}.attn_wo'])
+        x = [a + b for a, b in zip(x, x_residual)]
+        # 2) MLP block
+        x_residual = x
+        x = rmsnorm(x)
+        x = linear(x, state_dict[f'layer{li}.mlp_fc1'])
+        x = [xi.relu() for xi in x]
+        x = linear(x, state_dict[f'layer{li}.mlp_fc2'])
+        x = [a + b for a, b in zip(x, x_residual)]
+
+    logits = linear(x, state_dict['lm_head'])
+    return logits
+
+# Let there be Adam, the blessed optimizer and its buffers
+learning_rate, beta1, beta2, eps_adam = 0.01, 0.85, 0.99, 1e-8
+m = [0.0] * len(params) # first moment buffer
+v = [0.0] * len(params) # second moment buffer
+
+# Repeat in sequence
+num_steps = 1000 # number of training steps
+for step in range(num_steps):
+
+    # Take single document, tokenize it, surround it with BOS special token on both sides
+    doc = docs[step % len(docs)]
+    tokens = [BOS] + [uchars.index(ch) for ch in doc] + [BOS]
+    n = min(block_size, len(tokens) - 1)
+
+    # Forward the token sequence through the model, building up the computation graph all the way to the loss
+    keys, values = [[] for _ in range(n_layer)], [[] for _ in range(n_layer)]
+    losses = []
+    for pos_id in range(n):
+        token_id, target_id = tokens[pos_id], tokens[pos_id + 1]
+        logits = gpt(token_id, pos_id, keys, values)
+        probs = softmax(logits)
+        loss_t = -probs[target_id].log()
+        losses.append(loss_t)
+    loss = (1 / n) * sum(losses) # final average loss over the document sequence. May yours be low.
+
+    # Backward the loss, calculating the gradients with respect to all model parameters
+    loss.backward()
+
+    # Adam optimizer update: update the model parameters based on the corresponding gradients
+    lr_t = learning_rate * (1 - step / num_steps) # linear learning rate decay
+    for i, p in enumerate(params):
+        m[i] = beta1 * m[i] + (1 - beta1) * p.grad
+        v[i] = beta2 * v[i] + (1 - beta2) * p.grad ** 2
+        m_hat = m[i] / (1 - beta1 ** (step + 1))
+        v_hat = v[i] / (1 - beta2 ** (step + 1))
+        p.data -= lr_t * m_hat / (v_hat ** 0.5 + eps_adam)
+        p.grad = 0
+
+    print(f"step {step+1:4d} / {num_steps:4d} | loss {loss.data:.4f}", end='\r')
+
+# Inference: may the model babble back to us
+temperature = 0.5 # in (0, 1], control the "creativity" of generated text, low to high
+print("\n--- inference (new, hallucinated names) ---")
+for sample_idx in range(20):
+    keys, values = [[] for _ in range(n_layer)], [[] for _ in range(n_layer)]
+    token_id = BOS
+    sample = []
+    for pos_id in range(block_size):
+        logits = gpt(token_id, pos_id, keys, values)
+        probs = softmax([l / temperature for l in logits])
+        token_id = random.choices(range(vocab_size), weights=[p.data for p in probs])[0]
+        if token_id == BOS:
+            break
+        sample.append(uchars[token_id])
+    print(f"sample {sample_idx+1:2d}: {''.join(sample)}")
+```
+[[}]]
+
 [[{PM.TODO]]
 
 ## Google Gemma Quantized for Desktops, Mobile and Edge LLMs
+
 
 * <https://www.infoq.com/news/2025/04/google-gemma-qat/>
 
@@ -46,17 +662,6 @@
    Featuring lectures from Stanford's professors,
    ... wide array of AI topics, including ML, NLP and computer vision.
 [[}]]
-
-## "Textbooks is all you need": (Quality Data is all you need)
-
-* <https://arxiv.org/abs/2306.11644>
-  ... phi-1, a new LLM for code, with significantly smaller size
-than competing models: Transformer-based model with 1.3B parameters,
-trained for 4 days on 8 A100s, using **a selection of ``textbook quality" 
-data from the web (6B tokens) and synthetically generated textbooks
-and exercises with GPT-3.5 (1B tokens)**.  (vs 1Trillion for 2024 bigest
-LLMs) .. phi-1 attains pass@1 accuracy 50.6% on HumanEval and 55.5% on MBPP.
- It also displays **surprising emergent properties compared to phi-1-base**,
 
 
 [[{data.visualization.pydeck,PM.TODO,101,PM.low_code]]
@@ -765,12 +1370,8 @@ binding. Or what about using ROOT in a Jupyter notebook?
 * <https://blog.llvm.org/posts/2020-12-21-interactive-cpp-for-data-science/>
 [[scalability}]]
 
-[[{scalability.algorithm.fourier_transform,LLM.Bert]]
-## Google Replaces BERT Self-Attention with Fourier Transform
 
-* 92% Accuracy, 7x Faster on GPUs
-* <https://medium.com/syncedreview/google-replaces-bert-self-attention-with-fourier-transform-92-accuracy-7-times-faster-on-gpus-7a78e3e4ac0e>
-[[scalability.algorithm.fourier_transform}]]
+
 
 [[{doc_has.comparative,scalability.cpu]]
 ## CPU faster than GPU scenarios(search/Hash tables)
@@ -1375,31 +1976,15 @@ guarantee to return the actual nearest neighbors. This, in exchange,
 improves the algorithms requirements in terms of memory and time
 consumption.
 
-## Sparse Transformers:
-https://www.infoq.com/news/2019/05/openai-sparse-transformers/
 
-Several common AI applications, such as image captioning or language
-translation, can be modeled as sequence learning; that is, predicting
-the next item in a sequence of data. Sequence-learning networks
-typically consist of two sub-networks: an encoder and a decoder. Once
-the two are trained, often the decoder can be used by itself to
-generate completely new outputs; for example, artificial human speech
-or fake Shakespeare.
-
-Recurrent Neural Networks (RNNs), specifically Long Short-Term Memory
-(LSTM) networks, have been particularly effective in solving these
-problems. In recent years, however, a simpler architecture called the
-Transformer has gained popularity, since the Transformer reduced
-training costs by an order of magnitude or more compared to other
-architectures.
-
-## G.TPU Pods: [[{DevOps,cloud,PM.TODO]]
+[[{MLOps.TPU,cloud,PM.TODO]]
+## G.TPU Pods
 <https://www.infoq.com/news/2019/05/google-tpu-pods-beta-available/>
 These pods allow Google's scalable cloud-based supercomputers with up
 to 1,000 of its custom TPU to be publicly consumable, which enables
 Machine Learning (ML) researchers, engineers, and data scientists to
 speed up the time needed to train and deploy machine learning models.
-[[}]]
+[[MLOps.TPU}]]
 
 ## Out Systems:
 <https://www.outsystems.com/platform/>
@@ -2111,40 +2696,7 @@ ORDER BY timestampResultsSummaryThe remarkable ability of GPT-3.5 and GPT-4 mode
 
 [[}]]
 
-## transformers "vs" graph neural network [[{]]
-Tony Seale 3rd Knowledge Graph Engineer at UBS It is widely
-recognised that Large Language Models, such as GPT, are built on the
-Transformer architecture. However, what may be less widely
-acknowledged is that it is possible to view the Transformers
-themselves as a type of Graph Neural Network. The value of this
-insight is that it reveals an exciting new possibility: that is the
-potential power to bridge the gap between structured and unstructured
-data, opening the doors to the creation of far more powerful and
-versatile models.Whilst text is often regarded as unstructured, in
-fact, Transformers reveal the complex semantic structure that
-underlies language. Fortunately, Graphs are not only adept at but
-ideal for, handling this level of complexity. It, therefore, seems
-logical to conclude, that by combining the two, we may actually be
-able to break down the supposed barrier between structured and
-unstructured data.Let’s consider how this might work. Transformers
-analyse sentences by assigning importance to each word in relation to
-others, helping them predict or generate the next words in a
-sentence. This 'attention mechanism' evaluates pairwise interactions
-between all tokens in a sequence, and these interactions can be seen
-as edges in a complete graph. Thus, Transformers can be thought of as
-graph-based models where tokens represent nodes and attention weights
-represent edges.It is my opinion that the integration of Transformers
-with Graph Neural Networks holds great potential for advancing the
-field of machine learning. Vitally, in our organisations, the
-perceived distinction between our text and our databases may no
-longer need to exist, as full data integration becomes a potential
-reality. Suddenly powerful AI within our own organisations does not
-seem like such a distant prospect after all.If you're interested in
-learning more about this exciting possibility, please check out the
-following links: Michael Bronstein: https://lnkd.in/e8imYkKHGTP and
-JSON-LD: https://lnkd.in/ecdEdnKcEmbrace Complexity:
-https://lnkd.in/eyJuFNci
-[[}]]
+
 
 ## ¿Por qué hay que repensar ahora la IA?  [[{]]
 No es catastrofismo, sino precaución Noemí G. Gómez 8 - 10 minutes
@@ -2330,79 +2882,7 @@ https://lnkd.in/dT5EeKsy#datascience #python #machinelearning
 https://www.linkedin.com/posts/damienbenveniste_machinelearning-datascience-artificialintelligence-activity-7046142288112009217-oXqT 
 [[}]]
 
-## Large Scale end-to-end Machine Learning 101 [[{]]
- Damien Benveniste, PhD Author of The AiEdge Newsletter |
-The first neural language
-model, that's Yoshua Bengio, one of the "Godfathers of Deep
-Learning"! He is widely regarded as one of the most impactful people
-in natural language processing and unsupervised learning. Here are
-his main contributions:- 1994 - Identified the problem of vanishing
-and exploding gradients in RNN: https://lnkd.in/gNNWDnGG- 1995 - He
-applied with Lecun Convolutional Neural Network to the speech and
-time series learning task: https://lnkd.in/gSJT7rd4- 1998 - He
-suggest with LeCun a new CNN architecture (LeNet - Graph Transformer
-Networks) for the document recognition learning task:
-https://lnkd.in/gFyijKin- 2003 - Proposed the first neural language
-model: https://lnkd.in/gJgngk_K- 2006 - Proposed a new greedy
-training method for Deep Networks: https://lnkd.in/g4TfHwKc- 2008 -
-Invented the Denoising Autoencoder model: https://lnkd.in/gUvwXGNN-
-2009 Developed a new method called curriculum learning, which is a
-form of structured learning that gradually exposes models to more
-difficult examples: https://lnkd.in/gyBirMxN- 2010 - Proposed a new
-unsupervised learning technique, Stacked Denoising Autoencoder
-architecture: https://lnkd.in/gyH5-JTs - 2010 - Proposed with Glorot
-the weight initialization technique used in most modern neural nets:
-https://lnkd.in/g4nqvxzh- 2011 - Invented the ReLU activation
-function: https://lnkd.in/gwJsxHYQ- 2011 - Proposed Bayesian
-optimization for hyperparameter optimization:
-https://lnkd.in/geSTQZWU- 2012 - Proposed the random search technique
-for hyperparameter optimization: https://lnkd.in/gtx_ABwi- 2013 -
-Proposed a unifying perspective on representation learning:
-https://lnkd.in/gVFU7iUh- 2013 - Invented the gradient clipping
-strategy to prevent the vanishing and exploding gradient problem in
-RNN: https://lnkd.in/gQWkKMYq- 2013 - Proposed a new activation
-function for Maxout networks: https://lnkd.in/gWdB72dH- 2014 - He
-proposed the RNN encoder-decoder architecture:
-https://lnkd.in/gnGFsdJe- 2014 - He proposed the gated recursive
-convolutional method for machine translation:
-https://lnkd.in/g-rRQ6km- 2014 - He invented the Attention mechanism
-with Bahdanau: https://lnkd.in/g2C3sHjf- 2014 - Proposed FitNets, a
-new distillation method to compress Deep NN:
-https://lnkd.in/gsQy8f8m- 2014 - Showed the efficacy of transfer
-learning: https://lnkd.in/g4vfNNUx- 2015 - Proposed BinaryConnect, a
-new method for efficient training with binary weights:
-https://lnkd.in/g-Pg63RT- 2015 - Proposed a visual Attention
-mechanism for image caption generation: https://lnkd.in/gbmGDwA2-
-2017 - Proposed a novel architecture with self-attention layers for
-graph-structured data: https://lnkd.in/gg8tQBtP- 2017 - Proposed a
-new convolutional architecture for brain tumor segmentation:
-https://lnkd.in/gxFuqr53By the way, you should read his book:
-https://lnkd.in/dW2mYzxg!----Find more similar content my newsletter:
-TheAiEdge.io#machinelearning #datascience #artificialintelligence
-1994 vanishing gradient in RNN,
-1995 CNN for images, speech and time series,
-1998 LeNet
-2003 First Neural Language Model
-2006 Greedy Method for Deep Networks
-2008 Denoising Autoencode
-2009 Curriculum Learning
-2010 Stacked Denoising Autoencoders,
-2011 ReLU,
-2011 Bayesina Hyper-parameter Optimization,
-2012 Random Search for hyper-parameters,
-2013 Representation learing Unification,
-2013 Gradient Clipping,
-2013 Maxout Networks,
-2014 RNN Encoder-decoder,
-2014 Gated Recursive Convolution,
- 2014 Bahdanua Attention,
-2014 FitNets,
-2014 Transfer Learing,
-2014 BinaryConnect,
-2015 Visual Attention Mechanism,
-2015 Graph Attention Networks,
-2017 CNN from Brain Tummors
-[[}]]
+
 
 ## report: La mega-guía de 71 herramientas de inteligencia artificial: [[{]]
 dime para qué la necesitas y te digo qué IAs son las mejoreshttps://www.xataka.com/basics/mega-guia-71-herramientas-inteligencia-artificial-dime-necesitas-te-digo-que-ias-mejores 
@@ -2720,84 +3200,15 @@ https://www.technologyreview.com/2023/02/08/1068068/chatgpt-is-everywhere-heres-
   https://www.linkedin.com/posts/montrealai_a-categorical-archive-of-chatgpt-failures-activity-7029101210116706305-USNg
 [[}]]
 
-## tex generation comparative [[{]]
-https://www.linkedin.com/posts/damienbenveniste_machinelearning-datasc
-ience-artificialintelligence-activity-7025864120314863616-Ryid I
-think Microsoft partnering with OpenAI might have been one of the
-most successful publicity stunts ever! The current public perception
-is that nothing can compete with ChatGPT in terms of generative AI
-for text. But do you remember when Blake Lemoine was fired by Google
-back in 2022 when he leaked information about the LaMDA model because
-he thought it was sentient? Google has nothing to fear when it comes
-to relevance in the area of text generation research, but Bing may
-now take a larger market share in the search engine space thanks to
-the clever OpenAI marketing and the way Microsoft capitalized on that
-perception.Here are a few direct competitors of ChatGPT, and today is
-Monday, so there will be a couple more by the end of the weekend:-
-PEER by Meta AI - a language trained to imitate the writing process.
-It is trained on Wikipedia's edit history data
-(https://lnkd.in/gM7Gf_iE). It specializes in predicting edits and
-explaining the reasons for those edits. It is capable of citing and
-quoting reference documents to back up the claims it generates. It is
-a 11 B parameters Transformers with the typical encoder-decoder
-architecture, and it is outperforming GPT-3 on the task it
-specializes in: https://lnkd.in/gkwKmNiN.- LaMDA by Google AI - a
-language model trained for dialog applications. It is pre-trained on
-~3 B documents and ~1 B dialogs and fine-tuned on human generated
-data to improve on quality, safety and truthfulness of the generated
-text. It is also fine-tuned to learn to call an external information
-retrieval system such as Google Search, a calculator, and a
-translator making it potentially a much stronger candidate to replace
-Google Search than ChatGPT. It a 135B parameters decoder only
-transformer: https://lnkd.in/gmTQHKtz- PaLM by Google AI - The
-biggest of all: 540 B parameters! Breakthrough capabilities in
-arithmetic and common-sense reasoning. It is trained on 780 billion
-tokens coming from multilingual social media conversations, filtered
-multilingual webpages, books, GitHub repo, multilingual Wikipedia and
-news. https://lnkd.in/gakVMSwBThe more I read about those Large
-Language Models, the more I feel that very little has changed since
-2017's "Attention is all you need": https://lnkd.in/gUts7Sjq! All
-those models follow the exact same architecture with a couple of
-changes here and there. The advancements are mostly happening in the
-scale of the data and the models and the domain specificity of the
-data. At those scales, the fun is a lot about how to minimize
-training costs. I wonder, if I were to train a HUGE XGBoost model
-with my own HUGE dataset, would I be able to name that model
-DamienBoost and publish a paper about it?  
-[[}]]
+[[{]]
+## how do stable diffusion models work
 
-## how do stable diffusion models work [[{]]
-  https://www.linkedin.com/posts/eric-feuilleaubois-ph-d-43ab0925_how-diffusion-models-work-the-math-from-activity-7027772874375491584-zz7o 
-  How diffusion models work: the math from scratch | AI Summer
+* <https://www.linkedin.com/posts/eric-feuilleaubois-ph-d-43ab0925_how-diffusion-models-work-the-math-from-activity-7027772874375491584-zz7o>
+
+How diffusion models work: the math from scratch | AI Summer
   https://buff.ly/3HTbi4j
-
-##  Flux Models ("diffusion models++")
-Flux is a series of text-to-image models developed by Black Forest Labs (BFL), 
-a company founded in 2024 by former Stability AI employees Robin Rombach, 
-Andreas Blattmann, and Patrick Esser, who previously researched AI image 
-generation under Björn Ommer at Ludwig Maximilian University of Munich.
- The models are based on a hybrid architecture combining rectified flow 
-transformer blocks and diffusion techniques, scaled to 12 billion parameters, 
-enabling high-quality image generation from text prompts.
- The core innovation lies in "flow matching," which allows for more direct 
-image generation compared to traditional diffusion models, resulting in faster 
-and more accurate outputs.
-
-The Flux family includes multiple variants tailored for different use cases. 
-Flux.1 Schnell is an open-source model released under the Apache 2.0 license, 
-capable of generating high-quality images in just 1 to 4 inference steps, 
-making it ideal for fast, local development.
- Flux.1 Dev is a non-commercial, open-weight model designed for research and 
-non-commercial applications, with the option to obtain a self-serving 
-commercial license.
- Flux.1 Pro is a proprietary model available via API through platforms like 
-BFL, Replicate, and fal.ai, offering top-tier performance for professional use.
- In November 2025, BFL released the updated Flux.2 model series, which includes 
-Pro, Flex, Dev, and Klein (a smaller, open-source variant under Apache 2.0).
- Flux.2 models are based on a latent flow matching architecture and integrate 
-Mistral AI’s 24-billion-parameter Mistral-3 model for enhanced 
-vision-language understanding.
 [[}]]
+
 
 ## ML: 22 funciones y cosas que puedes hacer con ChatGPT para exprimir al máximo esta inteligencia artificial [[{]]
 https://www.xataka.com/basics/22-funciones-cosas-que-puedes-hacer-chatgpt-para-exprimir-al-maximo-esta-inteligencia-artificial 
@@ -2905,9 +3316,6 @@ network.
 ## Deep Learning Pioneer Geoffrey Hinton Publishes New Deep Learning Algorithm [[{]]
 https://www.infoq.com/news/2023/01/hinton-forward-algorithm/
 [[}]]
-
-#@ 101: @MA minimal PyTorch re-implementation of the OpenAI GPT karpathy/minGPT:
-   (Generative Pretrained Transformer) training https://github.com/karpathy/minGPT 
 
 ## josephmisiti/awesome-machine-learning:
   A curated list of awesome Machine Learning frameworks, libraries and software.
@@ -3220,53 +3628,61 @@ web.
 [[}]]
 
 
-
-
-
-
-
-
 ## ML: 2022 REPORT [[{]]
 https://www.linkedin.com/posts/omarsar_machinlearning-deeplearning-ai-activity-7012856741537140736-mBl1 
 2022: A Year in Review (ML Papers Edition)Let's take a look at some
-of the top trending ML papers of 2022:1) A ConvNet for the 2020s (Liu
-et al) - Vision Transformers took off this year but this work
+of the top trending ML papers of 2022:
+
+1. A ConvNet for the 2020s (Liu et al) - Vision Transformers took off this year but this work
 proposes ConvNeXt to reexamine the design spaces and test the limits
 of a pure ConvNet on several vision tasks. The ConvNets vs.
-Transformers debate continues.https://lnkd.in/eTJthp4g2) Language
-Models as Zero-Shot Planners (Huang et al) - studies the possibility
+Transformers debate continues.https://lnkd.in/eTJthp4g
+2) Language Models as Zero-Shot Planners (Huang et al) - studies the possibility
 of grounding high-level tasks to actionable steps for embodied
 agents. Pre-trained LLMs are used to extract knowledge to perform
-common-sense grounding by planning actions.https://lnkd.in/e5gCZ44c3)
-OFA (Wang et al) - introduces a unified paradigm for effective
+common-sense grounding by planning actions.https://lnkd.in/e5gCZ44c
+3) OFA (Wang et al) - introduces a unified paradigm for effective
 multimodal pre-training that support all kinds of uni-modal and
-cross-modal tasks.https://lnkd.in/eyu9Vtf64) Tensor Programs V (Yang
-et al) - proposes a new paradigm for more efficiently tuning large
+cross-modal tasks.https://lnkd.in/eyu9Vtf6
+4) Tensor Programs V (Yang et al) - proposes a new paradigm for more efficiently tuning large
 neural networks via zero-shot hyperparameter
-tuning.https://lnkd.in/eBzjCXMt5) OPT (Zhang et al) - an open
+tuning.https://lnkd.in/eBzjCXMt
+
+5) OPT (Zhang et al) - an open
 pre-trained transformer-based language model that follows other
 open-sourcing LLM efforts such as GPT-Neo; model sizes range from
-125M to 175B parameters. https://lnkd.in/ey4UdY8J6) Gato (DeepMind) -
+125M to 175B parameters. https://lnkd.in/ey4UdY8J
+
+6) Gato (DeepMind) -
 an agent built to work as a multi-modal, multi-task, multi-embodiment
 generalist policy; it performs all sorts of general tasks ranging
 from playing Atari to chatting to stacking blocks with a real robot
-arm.https://lnkd.in/eZr8FdHG7) Minerva (Lewkowycz et al) - a large
-language model pretrained on general natural language data and
-further trained on technical content; evaluated on several tasks
-requiring quantitative reasoning.https://lnkd.in/ecE2hKtG8) No
-Language Left Behind (Meta AI) - introduces a massive translation
+arm.https://lnkd.in/eZr8FdHG
+
+7) Minerva (Lewkowycz et al) - an LLM pretrained on general natural
+language data and further trained on technical content; evaluated on several tasks
+requiring quantitative reasoning.https://lnkd.in/ecE2hKtG
+
+8) No Language Left Behind (Meta AI) - introduces a massive translation
 model (NLLB-200), capable of translating between 200
-languages.https://lnkd.in/en7X6xey9) Stable Diffusion (Rombach et al)
+languages.https://lnkd.in/en7X6xey
+
+9) Stable Diffusion (Rombach et al)
 - a text-to-image model to generate detailed images conditioned on
 text descriptions; can be applied to other tasks such as inpainting,
 outpainting, and generating image-to-image translations guided by a
-text prompt.https://lnkd.in/e_cmuUrc10) Whisper (OpenAI) - an
+text prompt.https://lnkd.in/e_cmuUrc
+
+10) Whisper (OpenAI) - an
 open-source model called Whisper that approaches human-level
 robustness and accuracy in English speech
-recognition.https://lnkd.in/eryyF2MC11) Make-A-Video (Singer et al) -
+recognition.https://lnkd.in/eryyF2MC
+
+11) Make-A-Video (Singer et al) -
 introduces a state-of-the-art text-to-video model that can generate
-videos from a text prompt.https://lnkd.in/eEqdJ8vz12) Galactica (Ross
-et al) - a large language model for the science domain trained on a
+videos from a text prompt.https://lnkd.in/eEqdJ8vz
+
+12) Galactica (Ross et al) - a large language model for the science domain trained on a
 massive scientific corpus.https://lnkd.in/ejbBSW4W#machinlearning
 #deeplearning #ai
 [[}]]
@@ -3304,7 +3720,8 @@ massive scientific corpus.https://lnkd.in/ejbBSW4W#machinlearning
   datasets.
 [[}]]
 
-## ChatGPT == fined-tuned GPT-3 model with small amount of data [[{]]
+[[{]]
+## ChatGPT == fined-tuned GPT-3 model with small amount of data 
 https://www.linkedin.com/posts/damienbenveniste_machinelearning-datascience-chatgpt-activity-7007019154666909696-T5WM 
 Do you know how ChatGPT was trained? ChatGPT is "simply" a
 fined-tuned GPT-3 model with a surprisingly small amount of data!
@@ -3727,14 +4144,6 @@ you.
   unstructured text using GPT-3 @ma
   https://github.com/varunshenoy/GraphGPT
 
-## Transformers Can Mock Part of Human Brain [[{]]
-  https://www.infoq.com/news/2022/10/transformers-mock-brain/ 
-  Whittington and Behrens tweak the approach of Hopfield network,
-  modifying the transformers in a way to encode the memories as
-  coordinates in higher-dimensional spaces rather than linear sequences
-  as Hopfield and Dmitry Krotov did at MIT-IB Watson AI lab.
-[[}]]
-
 ## https://alphacode.deepmind.com
 
 ## Developers Release OOSS  ChatGPT-like Training Algorithm [[{]]
@@ -3889,8 +4298,10 @@ This repository provides fast automatic speech recognition (70x realtime with la
 * VAD preprocessing, reduces hallucination & batching with no WER degradation
 
 
--------------------------------------------------------------------------------
-Midjourney, DALL-E, Firefly, Meta, and Stable Diffusion Same Prompts, Compared | Gold Penguinhttps://goldpenguin.org/blog/midjourney-dalle-firefly-meta-and-stable-diffusion-compared/
+[[{]]
+## Midjourney, DALL-E, Firefly, Meta, and Stable Diffusion Same Prompts, Compared 
+
+* <https://goldpenguin.org/blog/midjourney-dalle-firefly-meta-and-stable-diffusion-compared/>
 Midjourney, DALL-E, Firefly, Meta, and Stable Diffusion Same Prompts, ComparedWith the release of Meta's AI image generator and Midjourney V6, the competition for the best AI image generator is becoming more fierce. So, let's see how Midjourney, Meta, DALL-E 3, Stable Diffusion XL, and Adobe Firefly 2 stack up against 
 A few days ago, we had an early Christmas present from the Midjourney team with the sudden release of V6's base model, promising better prompt comprehension and text generation than its previous model. A week before that, Meta also dropped a new AI image generator, which I believe is the best free model right now.So, it's that time of the year again. No, I'm not talking about the holiday season.It's time for a major comparison between the market's most popular AI image generators: Midjourney, DALL-E, Firefly, Stable Diffusion, and Meta.Which one will come out on top this time? Spoiler Alert: The answer may not surprise you.The Ultimate Output ComparisonThis is the biggest comparison we've ever made, so I'll use the same prompt for each image to maintain fairness. I'll also prominently display the ones I like the most, but don't worry: I'll label each picture to avoid confusion.Realistic (Portraits) Midjourney Meta Firefly Stable Diffusion DALL-E 3close-up portrait of a weathered fisherman, wrinkles around his eyes,
 salt-spray on his beard, hyperrealistic textures, cinematic lightingAmong the five image generators, only Midjourney and Meta managed to create images that would pass the smell test. Firefly's portrait is too waxy and the fisherman's beard looks fake. Stable Diffusion doesn't look realistic at all, but more like an oil painting. DALL-E 3 could've been good, but it overemphasizes on the wrinkles.Look at the details on Midjourney's image. When if you zoom in, you can see every strand of hair, the age lines, even the reflection on his eyes. It also has consistent lighting and depth of field. Meta is a close second, but it still has that "softened" effect which is a trademark for AI image generators at this point.Realistic (Landscape) Midjourney Firefly Stable Diffusion Meta DALL-E 3a rugged coastline eroded by relentless waves,
@@ -3902,7 +4313,10 @@ art nouveau fashionMidjourney looks most like real fashion photography, so it's 
 golden hour, noisy, urban, atmosphericIn terms of realism, only Midjourney and Meta passed this interior design test. I actually prefer Meta here because it looks like an actual dorm room. Sure, there are still some mistakes, primarily in the computer screen on the left, but it's unnoticeable from afar. Midjourney's output is good too, but its nuance feels off since that isn't a practical dorm room design. 3D Product Renders Midjourney Meta Stable Diffusion Firefly DALL-Ecommercial photography, a perfume bottle, 
 pastel blue background, dreamy, soft lighting, centered, flowersI'm actually impressed because all of these turned out to be good. However, Midjourney V6 continues to be on a league of its own with another beautiful entry. It's dreamy, well-shot, and has great contrasts. Meta is, once again, a close second. The only letdown is the bad text generation.Character Design DALL-E 3 Stable Diffusion Firefly Midjourney Metacharacter design, a human battlemage, forest imagery, inspired by high fantasyDALL-E 3's artwork in this round is so impressive. It's an amazing template if you're looking for a wise NPC for your next DND session. Stable Diffusion makes more sense if you're brainstorming a character for yourself or a hero in a game.Midjourney could've been good, but the decision not to display the subject's face makes absolutely no sense for character designs. Firefly is a little too mainstream for my taste and it looks like an NPC from one of those old Adobe Flash games. Meta also made a great design, but I'd argue that it isn't a battlemage.Digital Art DALL-E Stable Diffusion Midjourney V6 Firefly Metapixel art scene, a quiet and empty supermarket at night,
 atmospheric, 16-bitThis is a matter of personal preference, but upon careful assessment, I prefer DALL-E and Stable Diffusion's version of this prompt because it perfectly emulated the "atmospheric" vibe I was looking for. This is also the first time that Midjourney comes at second for me, mostly because the "pixel art" illusion goes away when you zoom in.Midjourney has a good entry, but the pixels are too fine to the point that I don't think it should qualify as pixel art anymore. Firefly didn't crack the top two because it generated food market stalls inside a grocery, which shows that it lacks nuance. Meta is, by far, the worst in pixel art, failing in both contextual understanding and pixel art impersonation.Logo Midjourney DALL-E 3 Stable Diffusion Adobe Firefly Metaa logo for a barbershop, by paul rand, clean background, minimalistThis is a win for Midjourney. Everyone else went for a generic logo, but Midjourney did something new by taking a barber's pole and turning the colors into something that resembles brush strokes. It's so simple yet so effective and unique. Apart from completely fulfilling a long prompt, this is probably the best case for Midjourney's improved nuance.DALL-E 3 also deserves a mention here because it managed to create a well-designed logo, albeit common. The biggest problem I have with it though is that it created two different logos when I asked only for one.Text Generation Midjourney DALL-E 3 Stable Diffusion Meta Fireflya comic panel of a distraught Tony Stark saying "Captain is dead."It should come as no surprise that DALL-E 3 is in our Top 2 this round, but for the first time ever since I've started comparing AI image generators, I don't find it the best for text generation. But let's start with the Stable Diffusion, Meta, and Firefly first — all of which couldn't write legible text. Oh, and I don't think Firefly knows who Tony Stark is.When Midjourney V6 came out, they put an emphasis on their text generation improvements and it really shows. Look at the accuracy of that text. That's not even edited. I've said it earlier in my V5 vs. V6 comparison, but Midjourney really is the best at text now.Now, let's go to DALL-E 3. It may not be as good as V6 but it's almost there. Almost. It certainly didn't help that Tony Stark is shouting "Captan's dead" while Captain America is behind him. High Context DALL-E Stable Diffusion Midjourney Firefly MetaA middle-aged woman of Asian descent, her dark hair streaked with silver, appears fractured and splintered, intricately embedded within a sea of broken porcelain. The porcelain glistens with splatter paint patterns in a harmonious blend of glossy and matte blues, greens, oranges, and reds, capturing her dance in a surreal juxtaposition of movement and stillness. Her skin tone, a light hue like the porcelain, adds an almost mystical quality to her form.This one's actually impressive. If we're only talking about comprehension, then all of these images passed this test. So, we have to factor in which one fulfilled it the best.I took this prompt from DALL-E 3's announcement page so there's no question that their output is the best. From there, it's tough to rank the others 1 to 4. Stable Diffusion and Midjourney had the best looking outputs, but it tearing doesn't look like "broken porcelain" to me, more like a crumbling wallpaper. Firefly was almost perfect, but it missed the "splatter paint patterns." Meanwhile, Meta fulfilled every aspect of the prompt, but it generated a subpar image, in my opinion.So, What Are They Good At?Final ThoughtsWith the release of Midjourney V6, it's getting harder and harder to make a case for other AI image generators. The base model is on a league of its own, and it's only going to get better when they officially release it especially since they're taking user opinion to improve their model. However, if you're just a casual user, Meta is a good alternative since it's free. If you're looking for a model with amazing comprehension, DALL-E (with ChatGPT) is still the best one in the market. Adobe Firefly should also be a great alternative if you're using it with other Adobe products and introducing streamlined inpainting to your workflow. Lastly, Stable Diffusion can also improve a lot with LoRAs and other extensions, which I'm planning to implement in future Stable Diffusion reviews.The fact of the matter is that there's a lot to love for every AI image generator out there but V6 is a real turning point for AI art. The only question is, where do they go from here?Want To Learn Even More?If you enjoyed this article, subscribe to our free monthly newsletter
-			where we share tips & tricks on how to use tech & AI to grow and optimize your business, career, and life.#Adobe Firefly #AI #DALL-E #Meta #Midjourney #OpenAI #Stable Diffusion Contents The Ultimate Output Comparison Realistic (Portraits) Realistic (Landscape) Realistic (Sports) Fashion Architecture & Interior Design 3D Product Renders Character Design Digital Art Logo Text Generation High Context So, What Are They Good At? Final Thoughts Related Articles Related Posts:55 of The Coolest and Most Complex Midjourney V6 PromptsWhy Is OpenAI Spending $51 Million on a Chip Startup?Midjourney vs DALL-E for Text Generation – Who Does It Better?Slip.Stream Review: Content Creator's Best Friend for Royalty-Free Music Written by John Angelo YapAngelo is a computer science major with a deep passion for storytelling. He likes breaking down complex concepts and turning it into simple, digestible content. A perfectionist by nature: he often struggles with putting pen to paper, as he believes it only takes less than 50 words to capture or lose one's attention. He still doesn't know what he wants to do for the rest of his life — and that's okay. Subscribe 		 15 Comments Most Voted Guest MrMilbe December 26, 2023 11:49 AM Completely missing the possibility to access hundreds of open source model databases (called checkpoints) and even train your own models for stable diffusion, it makes way more realistic portraits than what was shown here (e.g. check out Realistic Vision V6), the author just didn't know how to use it, which also highlights its pro/con : it's more versatile and powerful than the rest but not easy to use 22 Reply Guest Angry Mike December 26, 2023 12:02 PM Obviously there are 5k+ specially trained models, LoRAs, inversions and extensions for SD that you arent considering and this "comparison" is really only succesful in showcasing results of a superficial singular approach to prompting, as if that is remotely comparable. What are your parameters? Did you just press generate? You may have made in depth comparisons involving weights, varying parameters, interchanging models. At this point it does not make sense to label any output simply Stable Diffusion and compare it with online solutions that you have very little effect on. Of course you already know this. 8 Reply Guest MrMr December 27, 2023 3:11 AM What was the prompt for the character creation bit? 2 Reply Guest Nash December 27, 2023 10:03 AM It should also be noted that all of these generators approach prompting slightly differently. Although the move toward natural language is strong in the most recently updated and released systems, older ones like stable diffusion 1.5 (which has many comprehensive and versatile models) quite literally cannot be prompted this way if one wishes for superior results. Results for a particular prompt can also be changed by simply setting the seed to random, which is identical to what MJ does with variations.Stable Diffusion XL is better at this, and usually more simplified and easy, but it still works pretty much the same in terms of prompting with a series of simple terms and technical descriptors. SD also has access to a range of very powerful tools that every single other option in this list lacks, such as highly specific posing, depth maps and baseline control for layout and composition, style and color matching, face fixing for low resolution results, high quality face switching, and high resolution detail-enhancing upscaling, just to name a few. The drawback is that there is no all-in-one model; to get a truly broad range of results, you will need to make use of quite a number of models. Fortunately, that isn't hard. There are also a number of free options available online for using it, even if you don't have a powerful enough computer.MidJourney often seems easy at first, but it's important to note that even with V6, there are a number of technical terms which will improve the composition and filmic or photographic effects. It's also critically important to set the scene at the very beginning of the prompt with very specific terms, otherwise it will just imagine something up and tint the entire image with that assumption. One of the downsides with MJ is that the upscaling is not yet up to par; stable diffusion is still vastly superior in this regard, and the free enhancer/upscaler tool available in Krea.AI is better than MJ's upscalers at the moment. (Magnific blows them both out of the water, of course, but it also costs 30 bucks a month, which is highway robbery). To be fair to MJ, MJV6 is an alpha version, is in constant development, and the full version of any given model is consistently improved.Dall-e 3 is actually better at producing more organic looking text, and it definitely has better natural language response and comprehension, but can only produce square images at a single resolution. Also, even at that resolution the images it produces often seem pixelated.Meta seems like a solid up and comer, but it has a steep hill to climb before it can compete properly.Firefly is a very useful tool, and should probably be looked at more in that regard. It's largely designed to be used concurrently with the Adobe suite, and it does this job effectively. It should not be relied on to produce the most realistic, stylized, or creative images, but it excels at both removing unwanted and adding new details to existing projects with matching styles and settings. Much like the way the photoshop selecting and masking tool can mask individual strands of hair in such a way that you can take a person from a bright background and put them on a dark one or vice versa. Firefly is being designed much more specifically as a tool, whereas the others focus more on just making individual images. 2 Reply Guest Fjr December 27, 2023 11:46 PM You do know that there are Checkpoints and Loras that you can choose depending on what you are generating for SD? You should factor that in before doing a big comparison like this...at least mention it as a possibility. Whether it will be a plus because versatility or a minus because the hassle that would be beside the point, at least inform the reader. -------------------------------------------------------------------------------------- ML XGBoost 101 Matt Dancho Matt Dancho • Following •  For years, I was hyperparameter tuning XGBoost models wrong. In 3 minutes, I'll share one secret that took me 3 years to figure out. When I did, it cut my training time 10X. Let's dive in. 
+			where we share tips & tricks on how to use tech & AI to grow and optimize your business, career, and life.#Adobe Firefly #AI #DALL-E #Meta #Midjourney #OpenAI #Stable Diffusion Contents The Ultimate Output Comparison Realistic (Portraits) Realistic (Landscape) Realistic (Sports) Fashion Architecture & Interior Design 3D Product Renders Character Design Digital Art Logo Text Generation High Context So, What Are They Good At? Final Thoughts Related Articles Related Posts:55 of The Coolest and Most Complex Midjourney V6 PromptsWhy Is OpenAI Spending $51 Million on a Chip Startup?Midjourney vs DALL-E for Text Generation – Who Does It Better?Slip.Stream Review: Content Creator's Best Friend for Royalty-Free Music Written by John Angelo YapAngelo is a computer science major with a deep passion for storytelling. He likes breaking down complex concepts and turning it into simple, digestible content. A perfectionist by nature: he often struggles with putting pen to paper, as he believes it only takes less than 50 words to capture or lose one's attention. He still doesn't know what he wants to do for the rest of his life — and that's okay. Subscribe 		 15 Comments Most Voted Guest MrMilbe December 26, 2023 11:49 AM Completely missing the possibility to access hundreds of open source model databases (called checkpoints) and even train your own models for stable diffusion, it makes way more realistic portraits than what was shown here (e.g. check out Realistic Vision V6), the author just didn't know how to use it, which also highlights its pro/con : it's more versatile and powerful than the rest but not easy to use 22 Reply Guest Angry Mike December 26, 2023 12:02 PM Obviously there are 5k+ specially trained models, LoRAs, inversions and extensions for SD that you arent considering and this "comparison" is really only succesful in showcasing results of a superficial singular approach to prompting, as if that is remotely comparable. What are your parameters? Did you just press generate? You may have made in depth comparisons involving weights, varying parameters, interchanging models. At this point it does not make sense to label any output simply Stable Diffusion and compare it with online solutions that you have very little effect on. Of course you already know this. 8 Reply Guest MrMr December 27, 2023 3:11 AM What was the prompt for the character creation bit? 2 Reply Guest Nash December 27, 2023 10:03 AM It should also be noted that all of these generators approach prompting slightly differently. Although the move toward natural language is strong in the most recently updated and released systems, older ones like stable diffusion 1.5 (which has many comprehensive and versatile models) quite literally cannot be prompted this way if one wishes for superior results. Results for a particular prompt can also be changed by simply setting the seed to random, which is identical to what MJ does with variations.Stable Diffusion XL is better at this, and usually more simplified and easy, but it still works pretty much the same in terms of prompting with a series of simple terms and technical descriptors. SD also has access to a range of very powerful tools that every single other option in this list lacks, such as highly specific posing, depth maps and baseline control for layout and composition, style and color matching, face fixing for low resolution results, high quality face switching, and high resolution detail-enhancing upscaling, just to name a few. The drawback is that there is no all-in-one model; to get a truly broad range of results, you will need to make use of quite a number of models. Fortunately, that isn't hard. There are also a number of free options available online for using it, even if you don't have a powerful enough computer.MidJourney often seems easy at first, but it's important to note that even with V6, there are a number of technical terms which will improve the composition and filmic or photographic effects. It's also critically important to set the scene at the very beginning of the prompt with very specific terms, otherwise it will just imagine something up and tint the entire image with that assumption. One of the downsides with MJ is that the upscaling is not yet up to par; stable diffusion is still vastly superior in this regard, and the free enhancer/upscaler tool available in Krea.AI is better than MJ's upscalers at the moment. (Magnific blows them both out of the water, of course, but it also costs 30 bucks a month, which is highway robbery). To be fair to MJ, MJV6 is an alpha version, is in constant development, and the full version of any given model is consistently improved.Dall-e 3 is actually better at producing more organic looking text, and it definitely has better natural language response and comprehension, but can only produce square images at a single resolution. Also, even at that resolution the images it produces often seem pixelated.Meta seems like a solid up and comer, but it has a steep hill to climb before it can compete properly.Firefly is a very useful tool, and should probably be looked at more in that regard. It's largely designed to be used concurrently with the Adobe suite, and it does this job effectively. It should not be relied on to produce the most realistic, stylized, or creative images, but it excels at both removing unwanted and adding new details to existing projects with matching styles and settings. Much like the way the photoshop selecting and masking tool can mask individual strands of hair in such a way that you can take a person from a bright background and put them on a dark one or vice versa. Firefly is being designed much more specifically as a tool, whereas the others focus more on just making individual images. 2 Reply Guest Fjr December 27, 2023 11:46 PM You do know that there are Checkpoints and Loras that you can choose depending on what you are generating for SD? You should factor that in before doing a big comparison like this...at least mention it as a possibility. Whether it will be a plus because versatility or a minus because the hassle that would be beside the point, at least inform the reader. 
+
+[[}]]
+-------------------------------------------------------------------------------------- ML XGBoost 101 Matt Dancho Matt Dancho • Following •  For years, I was hyperparameter tuning XGBoost models wrong. In 3 minutes, I'll share one secret that took me 3 years to figure out. When I did, it cut my training time 10X. Let's dive in. 
 
 1. XGBoost: XGBoost (eXtreme Gradient Boosting) is a popular machine learning algorithm, especially for structured (tabular) data. It's claim to fame is winning tons of Kaggle Competitions. But more importantly, it's fast, accurate, and easy to use. But it's also easy to screw it up. 
 
@@ -4009,10 +4423,7 @@ Ml chatgpt bots. Matthieu Corthésy 3e Formateur ChatGPT ️ Newsletter IA (+13�
 ----------------------------------------------------------ML k8s Kubeflow, the Machine Learning Toolkit for Kubernetes, Has Been Accepted as CNCF Incubation Projecthttps://www.infoq.com/news/2023/08/kubeflow-cncf-project/----------------------------------------------------------101 Ml: Llm LangChain - Working with Large Language Models, Made Easyhttps://www.infoq.com/news/2023/07/langchain-llm-made-easy/ 
 const translatePrompt = PromptTemplate.fromTemplate(`translate the following text to Spanish: {text}`);const translateChain = new LLMChain({ llm: model, prompt: translatePrompt });const overallChain = new SimpleSequentialChain({ chains: [chain, translateChain], verbose: true, });const results = await overallChain.run("ducks")
 
-----------------------------------------------------------Ml: taxonomy 101https://www.linkedin.com/feed/update/activity:7088633920329551872 
-
- Ben Bronson
-Stop saying AI and ML. You’re saying ice cream and chocolate ice cream.AI is an umbrella term and a vast field with various subfields and techniques.1. Machine Learning: - Supervised Learning - Unsupervised Learning - Reinforcement Learning - Semi-Supervised Learning - Transfer Learning - Ensemble Learning2. Deep Learning: - Artificial Neural Networks - Convolutional Neural Networks (CNNs) - Recurrent Neural Networks (RNNs) - Generative Adversarial Networks (GANs) - Transformer Networks3. Natural Language Processing (NLP): - Text Classification - Named Entity Recognition (NER) - Sentiment Analysis - Language Translation - Question-Answering Systems - Text Generation4. Computer Vision: - Image Recognition - Object Detection - Image Segmentation - Image Captioning - Facial Recognition5. Robotics: - Autonomous Robots - Robotic Process Automation (RPA) - Human-Robot Interaction (HRI) - Reinforcement Learning for Robotics6. Expert Systems: - Knowledge-Based Systems - Rule-Based Systems - Inference Engines7. Knowledge Representation and Reasoning: - Ontologies - First-Order Logic - Semantic Web8. Speech Recognition: - Automatic Speech Recognition (ASR) - Speech-to-Text Conversion - Speech Synthesis (Text-to-Speech)9. Virtual Agents and Chatbots: - Conversational Agents - Dialogue Systems - Chatbot Development10. Autonomous Vehicles: - Self-Driving Cars - Advanced Driver Assistance Systems (ADAS) - Computer Vision for Autonomous Vehicles11. Recommender Systems: - Collaborative Filtering - Content-Based Filtering - Hybrid Approaches12. Game Playing AI: - Chess AI - Go AI - Video Game AI13. Knowledge Graphs: - Graph-Based AI - Semantic Graphs14. Cognitive Computing: - Emotion AI - Context-Aware AI15. Swarm Intelligence: - Ant Colony Optimization - Particle Swarm OptimizationThis list is not exhaustive, as AI is an ever-evolving field with continuous research and development, leading to the emergence of new subfields and techniques, but AI is always an umbrella term.So, stop saying AI and ML. ---------------------------------------------------------------------ML: RetNet: LLM SuccessorMicrosoft and Tsinghua U. claim to have found the "Successor to Transformer for Large Language Models": RetNet. They claim better language modelling performance, with 3.4x lower memory consumption, 8.4x higher throughput, 15.6x lower latency. Their new RetNet combines lessons from Transformers with RNNs.This new architecture would actually be a big deal, if other teams can reproduce this. Paper: https://lnkd.in/ejR7HScG
+ML: RetNet: LLM SuccessorMicrosoft and Tsinghua U. claim to have found the "Successor to Transformer for Large Language Models": RetNet. They claim better language modelling performance, with 3.4x lower memory consumption, 8.4x higher throughput, 15.6x lower latency. Their new RetNet combines lessons from Transformers with RNNs.This new architecture would actually be a big deal, if other teams can reproduce this. Paper: https://lnkd.in/ejR7HScG
 ---------------------------------------------------------------------ML Data source Sentiment analysishttps://newsapi.org/ Get and search for news form over 30.000 publicationslightweight and simple API for historical and current foreign exchange rate https://fixer.io/
 --------------------------------------------------------------------- ML / Math: Order taxonomy Tony SealeTony Seale • Following • Following Knowledge Graph Engineer at UBSKnowledge Graph Engineer at UBS 1h • 1h • Understanding the order in which things happen can make a big difference. Imagine making a cake but adding the eggs after baking it, or beginning a story with a surprise twist at the start. LLMs rely on the position of each word within a sentence. Similarly, in graphs, the direction of the edge connecting two nodes can play a crucial role. Workflow Orchestration, Abstract Syntax Trees, and "Graphs of Thought" all require positional encoding.
  
@@ -4875,7 +5286,7 @@ Special Thanks
 Thanks to the following projects that helped me a lot when creating this spreasheet.
 If you are interested in my project, the following links will also be very helpful, much more helpful than spreadsheet is all you need.
 
-Andrej Karpathy's youtube tutorial "Let's build GPT": https://www.youtube.com/watch?v=kCc8FmEb1nY
+Andrej Karpathy's youtube tutorial "Let's build GPT from scratch": https://www.youtube.com/watch?v=kCc8FmEb1nY
 Andrej Karpathy's NanoGPT project: https://github.com/karpathy/nanoGPT
 Brendan Bycroft's 3D visualization of transformers: https://bbycroft.net/llm
 3Blue1Brown's LLM course: https://youtu.be/eMlx5fFNoYc?si=k40zeuPdM_4cB88o
@@ -7755,91 +8166,6 @@ https://www.infoq.com/news/2025/01/microsoft-phi-4/
 
 We found clean and correct natural data to be absolutely crucial for seeding synthetic data: minor errors can result in severe quality degradations for derived synthetic documents. We therefore invested heavily in the perfectionistic curation of our web data.
 
-## from transfomers to Titans
-
-Matthieu FRONTON
-
-Leading-Edge Technologist | Director @ frog part of Capgemini Invent | 20+ years experience in Cybersecurity & Digital Architecture | Insanely accurate delivery & Alternative viewpoint on a wide range of IT topics 🕵🏽‍
-January 19, 2025
-
-Transformers
-
-Les Transformers sont des architectures de réseaux de neurones basées exclusivement sur des mécanismes d'attention. Ils se sont imposés comme standard pour le traitement de séquences (ie. texte, séries temporelles, ...).
-
-Leur puissance réside dans leur capacité à :
-
-apprendre directement à partir des données,
-identifier les motifs pertinents et
-s'adapter à de nouveaux contextes sans nécessiter de réentraînement.
-
-Mécanismes d'attention
-
-Au coeur des Transformers se trouve un mécanisme d'attention basé sur des tokens (unités élémentaires des données d'entrée eg. mots, syllabe...).
-
-Ces tokens sont initialement transformés en vecteurs numériques (pour permettre de faire des opérations mathématiques dessus) à partir desquels le modèle génère trois types de vecteurs essentiels : les requêtes (pour rechercher des informations), les clés (qui représentent le contexte) et les valeurs (qui contiennent les informations à récupérer).
-
-Les modules d'attention peuvent être vus comme un système de mémoire associative : ils comparent les requêtes (signaux de recherche) aux clés (représentations contextuelles des tokens) pour mesurer leur similarité, ce qui permet de pondérer et de récupérer les valeurs (informations associées aux clés). Ce processus d'attention identifie et combine les informations les plus pertinentes avec une précision remarquable.
-
-Limites
-
-Les Transformers modélisent les relations directes entre les tokens au sein d'une "fenêtre de contexte", c'est-à-dire la portion des données qu'ils traitent à un instant donné.
-
-Cette modélisation précise des dépendances a cependant un coût : le temps et la mémoire nécessaires augmentent de manière quadratique avec la taille du contexte. Pour des tâches complexes comme la modélisation de langage, l'analyse vidéo ou la prévision sur des séries temporelles à long terme, où les fenêtres de contexte peuvent être extrêmement larges, cette contrainte peut limiter leur applicabilité.
-
-Contournements
-
-Pour pallier ce problème de scalabilité, des variantes appelées Transformers linéaires ont été proposées (en remplaçant la fonction "softmax" de l'attention par une fonction "kernel"). Ces modifications permettent de réduire drastiquement la consommation mémoire, rendant les Transformers bien plus adaptés aux contextes de grande échelle.
-
-Bien évidemment ces Transformers linéaires, bien que plus efficaces et capables de gérer des fenêtres de contexte plus longues, présentent un compromis important : ils compressent les informations dans des états matriciels restreints et perdent donc en précision.
-
-Ainsi, bien qu'ils soient conçus pour traiter efficacement de longs contextes (grâce à leur complexité linéaire plutôt que quadratique), ils peinent à capturer la richesse des informations sur de très longs contextes, car ces données compressées ne peuvent pas retranscrire toutes les dépendances pertinentes.
-
-Défauts structurels
-
-Enfin, au-delà de la scalabilité, la plupart des architectures existantes font face à d'autres limites majeures, des aspects essentiels pour résoudre des tâches complexes et réalistes notamment en matière de :
-
-généralisation,
-d'extrapolation sur des longueurs supérieures à celles vues à l'entraînement,
-de raisonnement.
-
-Bien que ces architectures soient inspirées des mécanimes biologiques, elles manquent souvent de plusieurs éléments fondamentaux comme :
-
-la mémoire à court terme, qui permet de retenir des informations immédiates,
-la mémoire à long terme, qui sert à intégrer des concepts ou des patterns à travers plusieurs documents ou longues séquences,
-la méta-mémoire, pour sélectionner les données pertinentes à mémoriser ou les oublier
-la capacité de focaliser l'attention sur le contexte actuel, pour traiter efficacement les données locales (comme le sens immédiat d'une phrase) sans perdre de vue le contexte global
-
-Refonte
-
-Ces architectures échouent à reproduire la manière dont ces composants doivent interagir en systèmes indépendants mais interconnectés, capables d'apprendre activement des données et de mémoriser des abstractions du passé.
-
-Un paradigme d'apprentissage efficace nécessiterait des modules distincts mais interconnectés, où chacun joue un rôle spécifique et essentiel dans le processus d'apprentissage, à l'instar du cerveau humain.
-
-La Mémoire
-
-Des chercheurs de Google Deepmind se sont penché sur les fondements de la mémoire afin de concevoir des architectures capables de stocker, mettre à jour et récupérer efficacement les informations à court et long terme.
-
-Cinq questions fondamentales ont dirigés leurs travaux :
-
-(Q1) Quelle est une bonne structure pour la mémoire ?
-(Q2) Quel est un bon mécanisme de mise à jour de la mémoire ?
-(Q3) Quel est un bon processus de récupération de la mémoire ?
-(Q4) Comment concevoir une architecture efficace qui incorpore différents modules de mémoire interconnectés ?
-(Q5) Un module de mémoire profonde est-il nécessaire pour stocker/se souvenir efficacement des événements passés à long terme ?
-
-Titans
-
-Dans un récent papier ils proposent une évolution majeure de l'architecture Transformers en intégrant efficacement des modules de mémoire à long terme. Ils nomment cette évolution l'architecture Titan.
-
-Comparés à d'autres approches (Transformers linéaires ou RNN), les Titans se distinguent par leur capacité à équilibrer précision locale et cohérence globale tout en évitant les pertes critiques d'informations dues à la compression excessive.
-
-L'arrivée des Titans pourrait ouvrir une nouvelle ère pour l'intelligence artificielle, où la capacité de mémorisation se rapproche davantage de celle des humains. Et pourquoi pas celle du Saint Graal ? 🧠
-
-AGI 2025 FTW 😁
-
-
-
-
 ## ML 101: Ver "Por qué el aprendizaje profundo funciona excepcionalmente bien
 https://youtu.be/qx7hirqgfuU?si=QngFDFtMo9sf7q0k
 
@@ -9099,3 +9425,53 @@ into a lower-dimensional space before computing attention.
 This significantly reduces computational cost while preserving global context
 [[}]]
 
+[[{]]
+## Summarizing PDFs with Ollama and LangChain
+
+* <https://vincent.codes.finance/posts/documents-llm/#loading-pdfs>
+[[}]]
+
+[[{]]
+## Spec-Kit:
+
+GitHub Spec Kit es un framework de código abierto diseñado para aplicar SDD al trabajar con
+Inteligencia Artificial. En lugar de pedirle a la IA que escriba código directamente ("vibe
+coding"), este kit te obliga a estructurar primero el proyecto en especificaciones claras, planes
+técnicos y tareas. Esto crea un contexto sólido para que los agentes de IA (como Copilot o
+Claude) generen código más complejo, consistente y con menos errores.
+
+.github/instructions
+ 00-migration-overview.instructions.md
+ 01-tibco-analysis.instrucions.md
+02-architecture-mapping.instructions.md
+03-service-design.instructions.md
+04-api-definition.instructions.md
+05-integration.instructions.md
+06-data-and-state.instructions.md
+07-erro-handling.instructions.md
+08-security.instructions.md
+09-migration-validation.instructions.md
+rest-controllers.instructions.md
+soap-endpoins.instructions.md
+
+Flujo de Slash Commands
+/speckit.constitution Define principios rectores y guías técnicas.
+/speckit.specify Define requisitos (User Stories/Specs).
+/speckit.clarify Aclara ambigüedades (antes /plan).
+/speckit.plan Crea plan técnico de implementación.
+/speckit.tasks Genera tareas accionables.
+/speckit.analyze Analiza consistencia entre artefactos.
+/speckit.implement Ejecuta la construcción del código.
+/speckit.checklist Genera validaciones de calidad.
+
+Alternatives include:
+
+- BMAD Method (Building Modern Apps with Design)
+  goes beyond SDD by simulating a comple organization, defining specific
+  roles (Product Manager, QA, Developer, Architect, ...). 
+  - Better for new and well defined proyects but slow and not agile.
+- OpenSpec (Brownfield Specialist): 
+  Based around management of "Deltas" (vs full spec).
+  - Very interesting alternative toSpec-Kit when using modern code.
+  - Worst to migrate "old" code.
+[[}]]

@@ -1,0 +1,28 @@
+## Mistral 3 is now (2025-12) available to run on Ollama
+
+* Apache 2.0 license 
+
+  ``` 
+  | $ ollama run ministral-3
+  | $ ollama run ministral-3:14b 
+  | $ ollama run ministral-3:8b
+  | $ ollama run ministral-3:3b
+  |   
+  | $ ollama run ministral-3:14b-cloud # cloud version
+  | $ ollama run ministral-3:8b-cloud
+  | $ ollama run ministral-3:3b-cloud
+  |  
+  | $ ollama run mistral-large-3:675b-cloud
+  | 
+  | * We are actively working on adding support for the reasoning variants of 
+  |  Ministral 3, along with local support for Mistral Large 3 !!!!
+  ``` 
+
+## Cookbook
+
+* Mistral Cookbook: <https://github.com/mistralai/cookbook>
+
+
+* Mistral Cookbook agents: <https://github.com/mistralai/cookbook/tree/main/mistral/agents>
+
+* Mistral Agent Skills: <https://docs.mistral.ai/mistral-vibe/agents-skills>

@@ -1,9 +1,6 @@
 [[{MCP.101]]
 ## MCP 101
 
-After the introduction of MCP, it justs need 3+3.<br/>
-In general the number (complexity) of integrations is reduced from N-models x M-tools to
-N-models + M-tools.
 
   ```
   | PROBLEM:
@@ -335,8 +332,6 @@ repository.
 [[MCP.101}]]
 
 
-
-
 [[{use_case.research]]
 ## MCP-powered Deep Researcher
 * <https://www.dailydoseofds.com/hands-on-mcp-powered-deep-researcher/>
@@ -376,6 +371,16 @@ API endpoints to MCP, composes virtual MCP servers with added security and
 observability, and converts between protocols (stdio, SSE, Streamable HTTP).
 [[arch.MCP.Gateway}]]
 
+
+## SSE Transport deprecation Warning
+
+Ignore references to Server-Sent Events (SSE) in old tutorials:
+
+SSE was used in earlier versions of MCP but as of March 2025 MCP spec,
+Streamable HTTP is the preferred transport:
+* More flexible
+* Better for multimodal content
+* Easier to adopt in modern architectures
 
 
 ## Google Pushes for gRPC Support in Model Context Protocol

@@ -1,3 +1,318 @@
+##  LLM Burners are coming.
+
+And they will change everything. A company called Taalas is burning entire language models directly into silicon. Not running them on chips. Burning them INTO chips. Their ASIC card already processes Llama 3.1 8B at 17,000 tokens per second. For reference, an RTX 4090 does about 150 tok/s on the same model. Groq does around 1,000. 17,000. I played with their API last week (chatjimmy.ai). The response comes back before you've finished reading your own prompt. It's honestly unsettling. Like the machine already knows what you're going to ask. Now they're announcing a medium-sized "LLM Burner." A PCIe card that will burn Qwen 3.5 27B directly into silicon. Standard PC slot. 10x less power than a GPU. No VRAM, no weights loading, no inference framework. The model IS the hardware. This is pretty early, and I'm sure there are tradeoffs (you can't exactly swap models on a burned chip). But the direction is clear: we're moving from "run AI on computers" to "the AI is the computer." The implications for edge AI, on-premise deployments, and real-time applications are massive. Imagine a 27B model running at 10K tok/s in a doctor's office, a factory floor, or an autonomous vehicle. No cloud, no latency, no data leaving the building. We're at the beginning of a hardware revolution that will make the GPU era look like the dial-up era of AI.
+
+## Local LLMs
+
+Eric Vyacheslav  3er
+
+AI/ML Engineer | Ex-Google | Ex-MIT
+
+2 días
+
+Stop downloading LLMs your machine was never going to run. llmfit scans your hardware and tells you exactly which models will run. It scans your RAM, CPU, GPU, and VRAM first. Then it scores every model across four dimensions: 1. Quality, based on parameter count and quantization 2. Speed, estimating tokens per second for your exact backend 3. Fit, matching memory use to your hardware 4. Context window support for your use case Each model gets a label: Perfect, Good, Marginal, or Too Tight. It picks the best quantization automatically, stepping down until something fits. Covers hundreds of models from Meta, Mistral, Qwen, and DeepSeek. Works with Ollama, llama.cpp, MLX, and LM Studio out of the box. Open-source. Link in comments.
+
+
+## tree-sitter for copilots and Code Assistants
+
+
+## Tree-sitter
+https://tree-sitter.github.io/tree-sitter/#introduction
+
+Tree-sitter is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited. Tree-sitter aims to be:
+
+General enough to parse any programming language
+Fast enough to parse on every keystroke in a text editor
+Robust enough to provide useful results even in the presence of syntax errors
+Dependency-free so that the runtime library (which is written in pure C11) can be embedded in any application
+
+Language Bindings
+
+There are bindings that allow Tree-sitter to be used from the following languages:
+
+Official
+
+C#
+Go
+Haskell
+Java (JDK 22+)
+JavaScript (Node.js)
+JavaScript (Wasm)
+Kotlin
+Python
+Rust
+Swift
+Zig
+
+Third-party
+
+C# (.NET)
+C++
+Crystal
+D
+Delphi
+ELisp
+Go
+Guile
+Janet
+Java (JDK 8+)
+Java (JDK 11+)
+Julia
+Lua
+Lua
+OCaml
+Odin
+Perl
+Pharo
+PHP
+R
+Ruby
+
+Keep in mind that some of the bindings may be incomplete or out of date.
+
+Parsers
+
+The following parsers can be found in the upstream organization:
+
+Agda
+Bash
+C
+C++
+C#
+CSS
+ERB / EJS
+Go
+Haskell
+HTML
+Java
+JavaScript
+JSDoc
+JSON
+Julia
+OCaml
+PHP
+Python
+Regex
+Ruby
+Rust
+Scala
+TypeScript
+Verilog
+
+A list of known parsers can be found in the wiki.
+
+## About World Models
+Kamil Gadeev  2º
+
+AI Product Manager | Prompt Engineer | 22 года управленческого опыта → AI-экспертиза | Автор исследований по архитектурам мышления в ИИ
+
+13 h
+ Seguir
+
+Why Yann LeCun’s World Model Won't Save AI The AI industry is currently obsessed with the idea that the LLM dead-end will be overcome through World Models. The logic seems sound: teach neural networks the physics of reality, and they will gain common sense and stop hallucinating. But I believe we are stepping on the same rake. Here is why grounding LLMs in physical data is an evolution, but not the revolution we were promised: 1. The World is mostly Noise (S_dead), not Laws (S_anti). A physical model of the world is actually much poorer than the vast landscape of human knowledge. Newton described an infinite number of falling objects with just a few lines of formulas. Pumping petabytes of video into an LLM just to have it rediscover gravity is catastrophically inefficient. 2. A Vector is still a Vector. For a neural network's architecture, there is no difference between predicting the next token in a classic novel and predicting the next frame of a falling apple. Without changing the underlying data management structure, a shift in datasets won't change the operating principles of AI. Hallucinations won't disappear; they will just become physically plausible. 3. The Missing Subject. The core problem isn't a lack of data about the world — it is that neural networks cannot distinguish between their own prediction and an external fact. There is no gap between reality and the internal state. LeCun wants to teach a machine how an apple falls. But will it ever understand that someone purposefully threw that apple at its head? My Conclusion: We don't need a model of the world; we need a model of the Self-in-the-World. Without an architectural mechanism for reflection — the ability of a model to look at its own actions from the outside — we are simply building more advanced syntax machines. In my latest article, I break down why the World Model is a useful step for robotics, but a dead-end for AGI. I also share results from my own experiments on building a reflective architecture using dual-channel streams and controlled hallucinations. Full breakdown and PyTorch code https://lnkd.in/dkfiz7QR #AI #MachineLearning #DeepLearning #YannLeCun #WorldModel #AGI #LLM #NeurosymbolicAI
+
+
+
+## Google multimodal embeddings
+Eric Vyacheslav  3er
+
+AI/ML Engineer | Ex-Google | Ex-MIT
+
+1 día
+
+Google released 𝗚𝗲𝗺𝗶𝗻𝗶 𝗘𝗺𝗯𝗲𝗱𝗱𝗶𝗻𝗴 𝟮, its first embedding model that handles all media types natively. It maps text, images, video, audio, and PDFs into one shared space. The model runs on the same architecture behind Gemini's multimodal understanding. You pass mixed inputs, like an image and a caption, in a single request. > Text: up to 8,192 input tokens > Images: up to 6 images per request, PNG and JPEG > Video: up to 120 seconds, MP4 and MOV > Audio: embedded directly, no transcription step needed > PDFs: up to 6 pages per request The key innovation is a single shared vector space for all media. Previously, you needed separate models per modality. Now one model captures relationships between an image and its caption, or audio and its transcript. Before this, building a search engine over mixed media meant stitching together 3-4 specialized models, each with its own pipeline. Now you query across all your data types in a single call, which makes multimodal RAG systems dramatically simpler to build and maintain. Link in comments. ↓ 250k+ developers read this newsletter to stay up to date with AI: AlphaSignal.ai
+
+## Category Theory
+https://www.linkedin.com/mwlite/feed/update/urn:li:activity:7439294495952822272
+
+Mikhail Gorelkin  2º
+
+Principal AI Systems Architect & Principal AI Scientist | 20+ Years in AI
+
+15 h
+ Seguir
+
+𝐂𝐚𝐭𝐞𝐠𝐨𝐫𝐲 𝐓𝐡𝐞𝐨𝐫𝐲 𝐚𝐬 𝐚 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 𝐟𝐨𝐫 𝐔𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝𝐢𝐧𝐠 𝐋𝐚𝐫𝐠𝐞 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 𝐌𝐨𝐝𝐞𝐥𝐬 (𝐋𝐋𝐌𝐬) We keep asking whether LLMs "truly understand." But what if that question is as misguided as asking whether an electron "really" passes through a slit? In my new article, 𝐈 𝐚𝐫𝐠𝐮𝐞 𝐭𝐡𝐚𝐭 𝐭𝐡𝐞 𝐝𝐞𝐛𝐚𝐭𝐞 𝐚𝐛𝐨𝐮𝐭 𝐀𝐈 𝐮𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝𝐢𝐧𝐠 𝐢𝐬 𝐬𝐭𝐮𝐜𝐤 𝐢𝐧 𝐭𝐡𝐞 𝐰𝐫𝐨𝐧𝐠 𝐟𝐨𝐫𝐦𝐚𝐥𝐢𝐬𝐦 — and that category theory, the same framework that resolved apparent paradoxes in quantum mechanics, offers a way out. 𝐓𝐡𝐞 𝐤𝐞𝐲 𝐢𝐝𝐞𝐚𝐬: 👉 When Baez, Abramsky, and Coecke reformulated quantum mechanics in categorical language, "paradoxes" like entanglement turned out to be artifacts of describing the wrong category (Hilb) through the lens of another (Set). We may be making the same mistake with LLMs — judging them by the surplus structure of human cognition. 👉 Havlík's work on semantic fragmentism and emergence shows that meaning in language is relational, not referential — and that LLM capabilities arise from dynamics we cannot reduce to individual components. Both observations are inherently categorical. 👉 Mahadevan's "Categories for AGI" (2026) is already translating this from philosophy into engineering: geometric transformers built on simplicial sets, categorical metrics for measuring coherence drift — the very "hallucinations" we struggle with. 👉 Perhaps most provocatively: LLMs may show us language stripped of the human psyche — not a degraded version, but language in its pure categorical form. The psyche is surplus structure on top of language, not its foundation. 𝐖𝐞 𝐧𝐞𝐞𝐝 𝐚 𝐭𝐡𝐞𝐨𝐫𝐲 𝐧𝐨𝐭 𝐨𝐟 𝐢𝐧𝐭𝐞𝐥𝐥𝐢𝐠𝐞𝐧𝐭 𝐦𝐚𝐜𝐡𝐢𝐧𝐞𝐬, 𝐛𝐮𝐭 𝐨𝐟 𝐜𝐚𝐭𝐞𝐠𝐨𝐫𝐢𝐜𝐚𝐥 𝐦𝐚𝐜𝐡𝐢𝐧𝐞𝐬. 👉 https://lnkd.in/gKJ72Wfg
+
+
+## Transformer paper
+
+New research from Yann LeCun and collaborators at NYU.
+
+"The Spkie, the Sparse and the Sink: Anatomy of Massive Activations and Attention Sinks"
+
+
+It's a really good read for anyone working on efficient Transformer inference.
+
+The paper dissects two recurring phenomena in Transformer language models: massive activations (where a few tokens exhibit extreme outlier values, and attention sinks (where certain tokens attract disproportionate attention regardless of semantic relevance).
+
+They show the co-occurrence is largely an architectural artifact of pre-norm design, not a fundamental property.
+
+Massive activations function as implicit model parameters. Attention sinks modulate outputs locally.
+
+Why does it matter?
+
+These phenomena directly impact quantization, pruning, and KV-cache management.
+
+Understanding their root cause could enable better engineering decisions for efficient inference at scale.
+
+
+Sahil Malik • 3rd+
+
+Sr. SDE, Agentic AI AWS, Amazon
+1d
+I have been experimenting to replicate the result of this paper. I created a open source repo to find sink tokens in a model for prompt and tested it with few open source models. Results and code is in repo:
+
+https://github.com/sahilmalik27/sinkhole
+
+and there is writeup on this:
+https://www.sahilcreates.dev/blog/diagnosing-attention-sinks-in-transformers
+
+Elvis S. Author
+
+Founder at DAIR.AI | Angel Investor | Advisor | Prev: Meta AI, Galactica LLM, Elastic, Ph.D. | Serving 7M+ learners around the world
+1d
+Paper: https://arxiv.org/abs/2603.05498
+Learn to build effective AI agents in our academy: https://academy.dair.ai/
+
+Celso Sousa • 3rd+
+
+Especialista em Inteligência Artificial para Negócios | Consultor | Palestrante | Mentor | Automações com IA
+1d
+The paper offers an elegant mechanistic explanation for the co-occurrence of massive activations and attention sinks, yet several limitations remain. The analysis relies heavily on Llama-style architectures and the pre-norm regime, which raises questions about generalization to emerging hybrid or normalization-free architectures. Moreover, many conclusions are derived from controlled ablations that isolate architectural factors but leave open the role of large-scale training dynamics, particularly under different data distributions and optimization regimes.
+
+This invites deeper reflection for the interpretability agenda in large language models. To what extent do spikes truly function as implicit learned parameters? How might these dynamics evolve in architectures with explicit routing or linear attention? And more importantly, could structurally designed gating mechanisms fully replace attention sinks without sacrificing efficiency or the capacity to model local dependencies?
+
+Youssef Ben Mahmoud • 3rd+
+
+Building a new startup | Former Hedge Fund CTO
+21h
+Pre-norm being the culprit here is actually a really clean finding, it means a lot of inference optimization hacks were working around a design choice that doesn't have to be permanent. The implications for KV-cache and quantization at scale are pretty significant if you can address the root cause rather than engineer around symptoms
+
+AIxBlock, Inc
+
+7,358 followers
+8h
+The community that we’re still missing core pieces of the puzzle things like hierarchical planning, common-sense reasoning, and energy-efficient learning.
+
+Progress will come from bold rethinking.
+
+Shivam Bharadwaj • 3rd+
+
+Creator of Coflect | AI Engineering | Neuroscience | Technical Humour & Insights
+1d
+Elvis S., interesting. Better inference engineering often starts with understanding these internal failure patterns, not just adding more tricks
+
+Otabek Husainov • 3rd+
+
+PhD in Artificial Intelligence & Philosophy
+1d
+This is a fundamental problem of the Transformer architecture: part of the computation is carried out through attention sinks and massive activations, which are architectural artifacts rather than semantic representations.
+
+Henry M. • 3rd+
+
+Software @ Epic Systems R&D | Ex VC-backed Founder in LLM Infrastructure
+1d
+I definitely think the efficiency of transformer architecture is going to be a central focus of research the next few years
+
+Paolo Di Prodi • 3rd+
+
+AI governance and assurance hacker | Researcher in AI safety
+(edited) 1d
+A sergio leone paper ....
+
+Nadav Levy • 3rd+
+
+Entrepreneur and Co-Founder of Several Leading | Head of R&D for Electromagnetic Systems | M.Sc Technology Management & System Engineering | RF & Embedded Systems Expert
+1d
+Amazing post thank you for your sharing
+
+## Agents MCP
+
+Perplexity acaba de anunciar que internamente abandonan MCP para volver a APIs y CLIs tradicionales. El CTO Denis Yarats lo confirmó en Ask 2026. El argumento es que MCP consume demasiados tokens y agrega capas de abstracción que los agentes modernos simplemente no necesitan. Lo interesante es que esto contradice la narrativa de hace un año, cuando MCP se vendía como el estándar que conectaría todos los agentes con todas las herramientas. La realidad es otra, los agentes actuales como Claude Code o Codex ya pueden llamar APIs directamente, ejecutar comandos bash y navegar documentación sin necesidad de wrappers intermedios. Unix nos enseñó esto hace décadas: pipes componibles le ganan al middleware inflado. A veces el progreso es volver a lo que ya funcionaba… #IA #Agentes #APIs #Perplexity #Desarrollo
+
+## Low Code; PageAgent
+
+The GUI Agent Living in Your Webpage 1 line of code!!!!
+https://alibaba.github.io/page-agent/
+
+
+## Paperclip: Zero-human company (multi-agent) orchestrator.
+
+What is Paperclip?
+
+Open-source orchestration for zero-human companies
+
+If OpenClaw is an employee, Paperclip is the company
+
+Paperclip is a Node.js server and React UI that orchestrates a team of AI agents to run a business. Bring your own agents, assign goals, and track your agents' work and costs from one dashboard.
+
+It looks like a task manager — but under the hood it has org charts, budgets, governance, goal alignment, and agent coordination.
+
+Manage business goals, not pull requests.
+
+
+Step Example
+01 Define the goal "Build the #1 AI note-taking app to $1M MRR."
+02 Hire the team CEO, CTO, engineers, designers, marketers — any bot, any provider.
+03 Approve and run Review strategy. Set budgets. Hit go. Monitor from the dashboard.
+
+COMING SOON: Clipmart — Download and run entire companies with one click. Browse pre-built company templates — full org structures, agent configs, and skills — and import them into your Paperclip instance in seconds.
+
+
+Works with OpenClaw Claude Code Codex Cursor Bash
+
+
+HTTP
+
+If it can receive a heartbeat, it's hired.
+
+
+Paperclip is right for you if
+
+✅ You want to build autonomous AI companies
+✅ You coordinate many different agents (OpenClaw, Codex, Claude, Cursor) toward a common goal
+✅ You have 20 simultaneous Claude Code terminals open and lose track of what everyone is doing
+✅ You want agents running autonomously 24/7, but still want to audit work and chime in when needed
+✅ You want to monitor costs and enforce budgets
+✅ You want a process for managing agents that feels like using a task manager
+✅ You want to manage your autonomous businesses from your phone
+
+## Backpropagation alternative algorithm
+https://youtu.be/l-OLgbdZ3kk?si=40LZteHrKacStn5I
+
+
+
+## Hydra attention
+
+https://www.linkedin.com/posts/kavishka-abeywardana-01b891214_hydra-attention-is-a-fascinating-step-toward-activity-7428062379734732800-LOuU
+
+
+Kavishka Abeywardana  3er
+
+Machine Learning & Signal Processing Researcher | Semantic Communication • Deep Learning • Optimization | AI Research Writer
+
+8 h
+
+Hydra Attention is a fascinating step toward scalable transformers. ❤️ Traditional softmax attention scales quadratically with the number of tokens, which becomes a major bottleneck for high-resolution vision tasks. Linear attention reduces this dependence on tokens, but still remains expensive with large feature dimensions. Hydra Attention pushes multi-head attention to its extreme by setting the number of heads equal to the feature dimension. This simple idea changes the computation from quadratic to linear in both tokens and features, achieving O(TD) complexity while maintaining strong performance. Interestingly, instead of explicit token-to-token interactions, Hydra aggregates a global feature representation and lets each token gate its importance. When combined with standard attention layers, it can even improve accuracy while reducing computation
+
+## updf use-case
+
+https://updf.com/es/
+
+Permite p.ej, traducir de chino a español.
+El editor de PDF con inteligencia artificial del siguiente nivel
+
+Chatea con IA en PDF, edita, anota, encubre PDFs y haz más con UPDF a través de escritorio y móvil en una sola aplicación.
+
+## Koyeb: High-performance Infrastructure for APIs, Inference, and Databases
+
+https://www.koyeb.com/ 
+
+Deploy intensive applications across GPUs, CPUs, and Accelerators in minutes - scale in 50+ locations.
+(Now part of Mistral)
+
+
 # Google Open-Sources Secure ML Operating System KataOS
 https://www.infoq.com/news/2022/11/google-kataos-ambient-ml/ 
 The foundation of this solution is seL4, a microkernel that is
@@ -750,6 +1065,234 @@ potential for bidirectional attention. He also said that this method could
 lead to the elimination of the tokeniser, which would make models more 
 efficient
 
+
+
+## Rotary Position Embedding
+..
+
+Kavishka Abeywardana
+
+Most positional encodings in Transformers are additive.
+
+They add position vectors to token embeddings, which changs the length of projected queries and keys and mixes position with content.
+
+Rotary Position Embedding does differently. It rotates the projected vectors. Rotations preserves vector norms, encodes relative position directly in attention geometry and works cleanly with long-context and linear attention models.
+
+1 semana
+
+Paper: RoFormer: Enhanced Transformer with Rotary Position Embedding Authors: Jianlin Su, Yu Lu, Shengfeng Pan, Ahmed Murtadha, Bo Wen, Yunfeng Liu Watch my 3-minute tutorial on RoPE: https://youtu.be/q6q1w_ihDjE
+
+## Hiperparameter optimization
+Sifal Klioui  3er
+
+ML Research Engineer
+
+12 h
+ Seguir
+
+I found a line in Andrej Karpathy's code that changed how I look at the Adam optimizer: eps=1e-10. Most of us stick to the PyTorch default of 1e-8 for numerical stability. But in this post, I argue that epsilon is actually a critical hyperparameter that controls the "trust region" of your updates. I ran a toy experiment to prove it. The results show that the default setting often creates an artificial floor on learning, while smaller values allow Adam to skate effortlessly through flat loss landscapes. If you are training LLMs or working with Mixed Precision, this small tweak could matter more than you think. #MachineLearning #DeepLearning #Optimization #Adam #PyTorch #LLM #DataScience #Optimization
+
+## a2a protocol
+https://a2a-protocol.org/latest/
+
+
+## Git repos to learn ML
+
+Kiran Kaur Raina  3er
+
+Quantum Machine Learning & Cryptography Researcher | AI @IIT Madras | Founder @Stealth | Classiq Ambassador | Ex-QNu Labs & QuantumAI | Vyapti Resonance | 2M+ Impressions | Speaker, Advisor, Consultant & EdTech YouTuber
+
+5 h
+ Seguir
+
+Stop bookmarking courses. Start cloning repositories! These are some of my favourite Quantum GitHub repositories for learning resources! This is just part 1 more to come in future parts! They cover multiple types of resources from courses, books, research papers, certifications, internships, projects, notes etc. Github Links(By Hiu Yung (Hugh) Wong, Kiran Kaur Raina, María Gragera Garcés, Christophe Pere, PhD, QuCode): https://lnkd.in/gkYGMpMZ https://lnkd.in/gsvFFK_b https://lnkd.in/gBkKWyhD https://lnkd.in/gX73bY24 https://lnkd.in/gUjDPU63 https://lnkd.in/g_U7x3QT https://lnkd.in/g6Rt54Eg https://lnkd.in/gaHZ5kgD https://lnkd.in/g6Rt54Eg https://lnkd.in/gk57fUpb Happy Learning! Save this post for later. Repost ♻️ for Quantum & AI Learners! Check my profile for more resources on Quantum & AI Tech Follow Kiran Kaur Raina here: 📌LinkedIn: https://lnkd.in/gEpKMQ7z 📌YouTube: https://lnkd.in/gTTv2ewB 📌Topmate: https://lnkd.in/gDj-kmYW 📌Medium: https://lnkd.in/gWBppT7G 📌Instagram: https://lnkd.in/g8qZKHe7 📌Twitter/X: https://x.com/NatashiaKaur 📌Substack: https://lnkd.in/gZ2tsY6Q? 📌GitHub: https://lnkd.in/gRKc4vDt
+
+## Guru fuzzy Logic
+
+https://www.guru99.com/what-is-fuzzy-logic.html
+
+## Agentes IA
+https://www.eleconomista.es/tecnologia/noticias/13709011/12/25/meta-compra-a-la-rival-de-deepseek-por-2000-millones-de-dolares-para-integrar-agentes-de-ia-en-sus-redes-sociales.html
+
+
+eleconomista.es
+
+Meta compra a la rival de DeepSeek por 2.000 millones de dólares para integrar agentes de IA en sus redes sociales
+
+Julio De Manuel Écija
+3–4 minutes
+________________________________
+
+Tecnología
+
+La firma de Zuckerberg ha acorado adquirir la startup china Manus
+El objetivo es integrar su tecnología en los productos de la multinacional
+Los agentes de IA son el siguiente salto tecnológico a los bots como ChatGPT
+
+Mark Zuckerberg (i), fundador de Meta Platforms, en una presentación / Bloomberg.
+
+30/12/2025 - 8:44
+
+Meta Platforms ha acordado adquirir la startup de inteligencia artificial china Manus por 2.000 millones de dólares (1.700 millones de euros). El objetivo de la firma de Mark Zuckerberg es integrar su agente de IA en Facebook, Instagram y WhatsApp, según ha anunciado en un comunicado. Meta tiene la intención de seguir operando y vendiendo el servicio Manus como un producto separado.
+
+Manus es una startup de origen chino afincada en Singapur que saltó a la fama en marzo cuando anunció un agente de IA que podía rivalizar con las últimas mejoras tecnológicas de DeepSeek. La compañía está respaldada por inversores de la talla de Tencent y los fondos ZhenFund y HSG, según informa Bloomberg.
+
+Los agentes de inteligencia artificial son el siguiente paso de la tecnología que tiene a todas las compañías detrás. A diferencia de los asistentes como ChatGPT, Gemini o Claude que interactúan de forma pasiva, un agente de IA puede realizar tareas complejas con una sola instrucción. Entre las tareas cotidianas que se esperan que consigan estos 'secretarios tecnológicos' estaría desde planificar un viaje completo hasta preparar una agenda de eventos y enviar todos los contactos necesarios.
+
+Meta, al igual que las grandes de Silicon Valley, se encuentra enfrascada en la carrera de la IA con inversiones multimillonarias, construcción de centros de datos, contrataciones de tecnólogos que se asemejan a los fichajes de la NBA (incluidas las nóminas) y un viraje completo del fracaso del metaverso que da nombre a la compañía. En sus aplicaciones ya ha integrado Meta AI, un chatbot presente en WhatsApp, Instagram y Facebook.
+
+La empresa matriz detrás de Manus, Butterfly Effect, fundada en China antes de trasladarse a Singapur, recaudó fondos a principios de 2025 con una valoración cercana a los 500 millones de dólares en una ronda de inversión liderada por la empresa de capital riesgo estadounidense Benchmark. Manus tuvo un nivel de ingresos anual de 125 millones de dólares a principios de este año por la venta de su agente de IA a empresas mediante suscripciones. Para Meta supondría rentabilizar desde el día 1 sus inversiones en inteligencia artificial.
+
+Relacionados
+
+El negocio oculto de Zuckerberg: cómo Meta factura 3.000 millones de dólares en China gracias a anuncios fraudulentos
+Bruselas investiga a Meta por dificultar que sus competidores ofrezcan servicios de IA en WhatsApp
+
+
+## ML: [bib2web] Yann LeCun's Publications
+http://yann.lecun.com/exdb/publis/index.html
+
+                     Yann LeCun
+
+VP & Chief AI Scientist at Meta
+
+Then, around 2020, it became clear that the best way to apply self-supervised learning to images, videos, and other noisy signals was not to use a generative architecture but to use a joint embedding architecture. Our groups and others were getting excellent results with joint embedding architectures (no pixel prediction) using various method. In 2021 we proposed two methods: Barlow Twins and VICReg. Our colleagues at FAIR-Paris were also making progress on what eventually became DINO. Joint embedding was beating generative approaches. In 2021-2022 I proposed JEPA as the key architecture around which to train world models. The main insight was that prediction should not take place at the pixel level but in an abstract representation space. I published wrote a long paper in 2022 explaining my vision of how I though AI research should move forward over the following decade
+
+
+## Google Open-Sources Agent2Agent Protocol for Agentic Collaboration - InfoQ
+https://www.infoq.com/news/2025/04/google-agentic-a2a/
+
+
+## The Complete Mathematics of Transformers: A Rigorous Treatment with Full Derivations, Proofs, and Theoretical Foundations by Miquel Noguer
+
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6073468
+
+
+## 101: Build an RAG System With Spring AI, Vertex AI, and BigQuery
+
+https://dzone.com/articles/rag-system-java-spring-ai-vertex-bigquery
+
+## 101: Distribuciones de Probabilidad · Bitácora de aprendizaje
+https://blog.juanbretti.com/es/posts/2025-12-31_distribuciones/
+
+##  inference cross-platform [[IoT]]
+Cactus v1: Cross-Platform LLM Inference on Mobile with Zero Latency and Full Privacy
+
+Dec 24, 2025 2 min read
+
+by
+
+Sergio De Simone
+
+Cactus, a Y Combinator-backed startup, enables local AI inference to mobile phones, wearables, and other low-power devices through cross-platform, energy-efficient kernels and a native runtime. It delivers sub-50ms time-to-first-token for on-device inference, eliminates network latency, and defaults to complete privacy.
+
+Version v1 of the SDK, now in beta, improves performance on lower-end hardware and adds optional cloud fallback to ensure greater reliability.
+
+Cactus enables developers to deploy models locally in any app using its SDK, which offers native bindings for React Native, Flutter, and Kotlin Multiplatform. Native Swift support is still minimal and less mature as support for other languages, but iOS developers can use the Kotlin Multiplatform bindings within their Swift apps.
+
+On iOS and Android devices, Cactus takes a more general approach to on-device AI inference than the platform-native solutions offered by Apple and Google, Apple Foundation frameworks and Google AI Edge, which are platform-specific and expose only a limited, vendor-controlled set of capabilities. Cactus supports a wide variety of models, including Qwen, Gemma, Llama, DeepSeek, Phi, Mistral and many others. For improved efficiency and performance, it supports a range of quantization levels, from FP32 down to 2-bit.
+
+Cactus provides built-in model versioning and over-the-air updates. You can push new model versions to users without requiring app updates. The SDK handles downloading, caching, and switching between model versions seamlessly in the background
+
+The Cactus SDK also supports fallback to cloud-based models for complex or large-context tasks, ensuring robustness and high availability. According to Cactus, "this addresses one of the most common requests from v0 users who needed guaranteed response times for critical user-facing features".
+
+In version v1, Cactus has completely overhauled thitseir inference engine, transitioning from GGUF to a proprietary format and including optimized ARM-CPU kernels for better performance across all supported devices. The SDKs were rebuilt from the ground up to improve API consistency across languages, while maintaining backward compatibility wherever possible. The new version also introduces updated telemetry and monitoring systems.
+
+[This] give[s] developers granular insights into their AI model performance, usage patterns, and potential optimization opportunities. This data-driven approach enables teams to make informed decisions about model selection and deployment strategies.
+
+In addition to LLM inference, Cactus v1 also supports tool calling and voice transcription. The Flutter SDK additionally offers RAG fine-tuning, while the React Native SDK provides image embedding. According to Cactus’ roadmap, these features will soon be extended to other SDK variants, along with voice synthesis.
+
+To better appreciate Cactus' performance across distinct devices, the company has published benchmarks using the LFM2-VL-450m and Whisper-Small models, measuring metrics such as tokens per second, prefill/decode, and more. The benchmarks employ INT8 quantization and leverage NPUs for real-time performance and large context handling. Results show that a Mac M4 Pro achieves 173 tok/s, an iPhone 17 Pro reaches 136 tok/s, a Galaxy S25 Ultra 91 tok/s, and a Raspberry Pi 5 24 tok/s.
+
+For reference, the smallest model, gemma-3-270m-it, has a compressed footprint of 172 MB and supports only completion. Qwen3-0.6B occupies 394 MB and supports completion, tool calling, embedding, and speech. On the upper-end, Gemma-3-1b-it requires 642 MB, while Qwen3-1.7B takes 1,161 MB.
+
+Cactus has also published chat apps for iOS and Android that can use distinct LLMs, allowing developers to benchmark latency and throughput when accessed through the Cactus SDK.
+
+Cactus is open-source free for students, educators, non-profits, and small businesses. It can be cloned from GitHub.
+
+## DevMLOps:
+
+There's a new file format on Hugging Face called Optimized-parquet 🔥 Here is why it's amazing and how it works: Optimized-parquet uses Parquet content-defined chunking under the hood. Parquet CDC cuts pages at locations that depend on the content: this makes pages boundaries very likely the same across different files 🎯 This is crucial because pages are the unit block for compression. Optimized-parquet is the perfect format for content-adressable storage, like Xet on HF It enables fast deduped dataset downloads + uploads and editing So in summary: Optimized-parquet = CDC + page index - CDC for Xet compat - page index to enable random access and associate parquet pages to Xet chunks for Parquet surgery / diffing
+
+## Intel DeepMath Introduces a Smart Architecture to Make LLMs Better at Math
+https://www.infoq.com/news/2026/01/intel-deepmath-llm-architecture/
+
+
+
+## 101: A Guide to Claude Code 2.0 and getting better at using coding agents
+https://sankalp.bearblog.dev/my-experience-with-claude-code-20-and-how-to-get-better-at-using-coding-agents/
+
+
+## ML 101: GitHub - axolotl-ai-cloud/axolotl: Go ahead and axolotl questions
+https://github.com/axolotl-ai-cloud/axolotl
+
+Axolotl is a free and open-source tool designed to streamline post-training and fine-tuning for the latest large language models (LLMs).
+
+
+
+https://github.com/Lightning-AI/litgpt
+
+
+20+ high-performance LLMs with recipes to pretrain, finetune, and deploy at scale
+
+## xLSTM ARCH
+
+https://www.linkedin.com/feed/update/activity:7427343408505004033?trk=feed_main-feed-card_social-actions-comments
+
+
+LSTM: The Return of the King 👑 For a long time, Long Short-Term Memory networks (LSTMs) felt like a chapter closed in deep learning history after Transformers took over. But with the recent introduction of xLSTM as a serious alternative to Transformers for large language models, it’s the perfect moment to revisit this classic architecture. LSTM was introduced as an upgrade over vanilla recurrent neural networks (RNNs), solving two major limitations: ⚠️ Vanishing gradients ⚠️ Weak ability to capture long-term dependencies You can think of an LSTM as a highway that carries information from the past to the future, but with smart control gates at every step to decide: ✅ What to keep ✅ What to update ✅ What to forget A simple analogy: imagine a long-distance bus journey. At every stop, some passengers get off (forgetting old information), new ones get on (adding new information), and the bus refuels (updating the memory). Yet the journey continues smoothly across many miles , just like how LSTMs maintain context over long sequences. With xLSTM now offering a modern rethinking of recurrent architectures, it’s exciting to see sequence models evolve once again. Maybe recurrence isn’t dead after all, it was just waiting for a smarter design.
+
+## Matrix representation as strings
+
+https://arxiv.org/pdf/2110.06898v2
+
+https://www.linkedin.com/posts/quanlong-wang-8955b271_string-diagrams-offer-a-new-way-to-represent-activity-7427066739831693312-6e3S
+
+String diagrams offer a new way to represent data. Instead of encoding information in matrices, you encode it directly in diagrams. Why bother? Representation efficiency. Certain structures that look complex or unwieldy in matrix form can be captured much more cleanly as diagrams. In our paper (https://lnkd.in/eTud3Gvz), we show that the following matrix can be encoded as a neat string diagram, with no heavy machinery like SVD technology at all. This shift isn’t just cosmetic; it changes how we think about structure, computation, and simplification in data representation.
+
+
+In our paper (https://lnkd.in/eTud3Gvz), we show that the following matrix can be encoded as a neat string diagram, with no heavy machinery like SVD technology at all.
+.
+
+## GOLANG sipeed/picoclaw
+https://github.com/sipeed/picoclaw
+
+
+Runs on $10 hardware with <10MB RAM: That's 99% less memory than OpenClaw and 98% cheaper than a Mac mini!
+
+## AI Coding Agent: GitHub - ovh/shai: shai is a coding agent, your pair programming buddy that lives in the terminal. Written in rust with love <3
+https://github.com/ovh/shai
+
+https://github.com/github/spec-kit
+
+##  Pixtral 12B: Una guía con ejemplos prácticos | DataCamp
+https://www.datacamp.com/es/tutorial/pixtral-12b
+...
+
+
+
+## OOSS OCR, GitHub - rednote-hilab/dots.ocr: Multilingual Document Layout Parsing in a Single Vision-Language Model
+
+https://github.com/rednote-hilab/dots.ocr#performance-comparison-dotsocr-vs-competing-models
+
+
+You can now parse any document with one 1.7B parameter model. dots-ocr delivers state-of-the-art document understanding across 100+ languages. It handles text, tables, formulas, images, and PDFs in one system. No separate OCR pipeline needed. No model switching between tasks. The model unifies layout detection and content recognition. It matches performance of much larger models like Doubao-1.5 and Gemini 2.5 Pro. On OmniDocBench benchmarks: • Competitive accuracy with enterprise models • Faster processing due to compact 1.7B size • Full open source availability dots-ocr runs everything through a single prompt. Complete multilingual document parsing in one step. -- ▸ 250k+ developers read this newsletter to stay up to date with AI: AlphaSignal.ai
+
+
+## 101: OpenDataLoader PDF - Fast Local PDF Parser for RAG 
+https://opendataloader.org/ 
+
+
+## Tune: Python library for experiment execution and hyperparameter tuning at any scale
+
+https://docs.ray.io/en/latest/tune/index.html
+
+Tune is a Python library for experiment execution and hyperparameter tuning at any scale. You can tune your favorite machine learning framework (PyTorch, XGBoost, TensorFlow and Keras, and more) by running state of the art algorithms such as Population Based Training (PBT) and HyperBand/ASHA. Tune further integrates with a wide range of additional hyperparameter optimization tools, including Ax, BayesOpt, BOHB, Nevergrad, and Optuna.
+
+
+C&P from https://henryndubuaku.github.io/maths-cs-ai-compendium/chapter%2006%3A%20machine%20learning/02.%20gradient%20machine%20learning/
+
+ASHA (Asynchronous Successive Halving Algorithm): runs many trials in parallel with small budgets, then promotes the most promising ones to larger budgets while killing the rest early. It combines the efficiency of early stopping with massive parallelism — instead of running 100 full training runs, start all 100 cheaply, keep the top quarter at each rung, and only a handful run to completion. This is the backbone of modern large-scale tuning frameworks like Ray Tune.
 
 
 
