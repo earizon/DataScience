@@ -26,3 +26,17 @@
 * Mistral Cookbook agents: <https://github.com/mistralai/cookbook/tree/main/mistral/agents>
 
 * Mistral Agent Skills: <https://docs.mistral.ai/mistral-vibe/agents-skills>
+
+
+[[{]]
+## ML: Mistral vs Silo AI vs Aleph Alpha:
+
+* Mistral Large Foundation Model Now Available on Amazon Bedrock 
+
+* <https://www.infoq.com/news/2024/04/aws-mistral-large/>
+
+Mistral AI together with Silo AI, located in Helsinki, and Aleph Alpha, based 
+in Germany.  All three businesses are providing their models as open-source 
+tools, in contrast to their US competitors, opening the door for decentralized, 
+community-based AI development.
+[[}]]

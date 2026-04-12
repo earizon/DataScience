@@ -1,10 +1,18 @@
 agents_101.txt                # OK
+MCP.txt                       # OK, WiP
+A2A.txt                       # content 1%
+firecrawl.txt                 # OK
 skills.txt                    # TODO
 google_ADK.txt                # TODO
 Koog_AI_Agents.txt            # TODO
 llama_index_AI_Agents.txt     # TODO
 claude_code.txt               # md OK. TODO
+local_ai.txt                  # TODO
 open_shell.txt                # TODO
 tigerfs.txt                   # TODO
+Tabby_Copilot.txt             # TODO
+# ejemplo_asistente_minerales.txt # TODO
+ejemplo_asistente_minerales.txt
 # 101_Reflexion_Language_Agents_With_Verbal_Reinforcement_Learning_2303.11366v4.pdf
 # agents
+# mlflow                      # https://mlflow.org/

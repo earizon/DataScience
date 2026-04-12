@@ -62,7 +62,10 @@ THE CONCEPTUAL BOUNDARY BETWEEN FEATURE-EXTRACTION AND CLASSIFICATION IS ARBITRA
   several other versions and spin-offs, such as MMLU-Pro, MMMLU and MMLU-Redux.  [[LLM]]
 
 - Reinforcment Learning from Human Feedback (RLHF): Trains the model using feedback from
-  humans. 
+  humans.  RLHF implementation requires three main components:
+  - Supervised Fine-Tuning (SFT) - Initial model training on demonstration data
+  - Reward Model Training - Learning to predict human preferences
+  - Reinforcement Learning - Optimizing policy using the reward mode
 
 - Text-to-Image Models: Models trained to create realistic images  from text.
   - Midjourney:
@@ -144,6 +147,8 @@ THE CONCEPTUAL BOUNDARY BETWEEN FEATURE-EXTRACTION AND CLASSIFICATION IS ARBITRA
   (<https://huggingface.co/docs/peft/tutorial/peft_model_config>), ...
 
 [[}]]
+
+[[{]]
 - Low-Rank (LoRa) fine-tunning training (<https://arxiv.org/abs/2106.09685>)
   "full fine-tuning of base models becomes less feasible as the complexity 
   increases. (ex: deploying independent instances of fine-tuned models
@@ -168,9 +173,15 @@ THE CONCEPTUAL BOUNDARY BETWEEN FEATURE-EXTRACTION AND CLASSIFICATION IS ARBITRA
 - Quantization: Technique to reduce numerical precision of weights and activations 
   in neural networks like LLMs. Ex: from Floating Point 32bytes to 8-bit integers.
   - LLMs like BERT and GPT-3 have been shown to work well with 4-8 bit quantization.
+[[}]]
 
+[[{]]
+- GPT: Generative Pretrained transformer.
+[[}]]
 
+[[{]]
 - Generative Adversarial Network (GAN): [[training.GAN]]
+[[}]]
 [[PM.draft.intention_to_be}]]
 
 

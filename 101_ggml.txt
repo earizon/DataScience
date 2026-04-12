@@ -1,3 +1,4 @@
+[[{PM.RADAR.ggml,PM.TODO]]
 # ggml: Tensor library for machine learning
 
 * State: under active development with some of the development 
@@ -12,3 +13,4 @@
 * ADAM and L-BFGS optimizers
 * No third-party dependencies
 * Zero memory allocations during runtime!!!!
+[[PM.RADAR.ggml}]]

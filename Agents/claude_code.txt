@@ -3,6 +3,7 @@
 
 ## Alternatvies
 
+* Local AI
 * Codex
 * OpenCode
 * OpenClaw

@@ -26,7 +26,7 @@ Two usage models:
   with atomic writes and automatic versioning allowing existing tools such as editors and
   command-line utilities to work with the files without modification, while also enabling 
   concurrent access and simple coordination by moving files between directories to represent
-  task states such as todo, doing, and done.
+  task states such as todo, doing, and done.  [[data.versioning]]
 
 * data-first workflow: users mount an existing PostgreSQL database and explore its data
   using standard Unix tools. Filesystem paths can include filters and sorting that translate

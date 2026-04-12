@@ -7,7 +7,17 @@
    perceptron, emulating the human neuron behaviour.
 
 ## John J. Hopfiled and Geoffrey Hinton: Shared the Nobel Prize in Physics 2024 for
- "foundational discoveries and inventions that enable machine learning with artificial neural networks".
+
+"foundational discoveries and inventions that enable machine learning with artificial neural networks".
+
+* ‘Godfather of AI’ quits Google with regrets and fears about his life's work
+  <https://www.theverge.com/2023/5/1/23706311/hinton-godfather-of-ai-threats-fears-warnings>.<br/>
+    Geoffrey Hinton, who alongside two other so-called “Godfathers of AI” won 
+  the 2018 Turing Award for their foundational work that led to the current boom 
+  in artificial intelligence, now says a part of him regrets his life's work. 
+  Hinton recently quit his job at Google in order to speak freely about the risks 
+  of AI, according to an interview with the 75-year-old in The New York Times.
+[[}]]
 
 ## Yan André Lecun (Le Cun): Considered as one of th inventors of deep learning.
 
@@ -113,9 +123,21 @@
 
 - Creator of Pycaret.
 
+## who-is-who: Marcelo Rovai
+* <https://towardsdatascience.com/@rovai>
+
+## Romain Beaumont
+
+* <https://github.com/rom1504?tab=repositories>
+* Github profile: Interested in machine learning (computer vision, natural language processing, deep learning),...
+  (2.2k followers)
+
+
 ## Many others ...
 
 * <http://people.idsia.ch/~juergen/who-invented-backpropagation.html>
 * <https://www.gradient.com/portfolio/>
 
 [[PM.who-is-who}]]
+
+

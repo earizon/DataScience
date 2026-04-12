@@ -1,0 +1,18 @@
+[[{]]
+## NLTK: <https://www.nltk.org/> 
+Toolkit for building Python programs to work with human language data.
+- easy-to-use interfaces to over 50 corpora and lexical resources (WordNet,...)
+- suite of text processing libraries for CLASSIFICATION, TOKENIZATION,
+  STEMMING, TAGGING, PARSING, SEMANTIC REASONING.
+- wrappers for industrial-strength NLP libraries.
+
+  ```
+  import nltk
+  sentence = """At eight o'clock on Thursday morning Arthur didn't feel very good."""
+  tokens = nltk.word_tokenize(sentence) # ← ['At', 'eight', "o'clock", 'on', 'Thursday', 'morning',
+                                        #    'Arthur', 'did', "n't", 'feel', 'very', 'good', '.']
+  tagged = nltk.pos_tag(tokens)
+  tagged[0:6]                           # ← [('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'), ('on', 'IN'),
+                                             ('Thursday', 'NNP'), ('morning', 'NN')]
+  ```
+[[}]]

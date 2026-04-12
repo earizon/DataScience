@@ -2,11 +2,18 @@
 101_numpy.txt                           # OK, WiP
 101_pandas.txt                          # OK, WiP
 101_Python_Atmosphere.txt               # OK,
-101_MCP.txt                             # OK, WiP
 101_open_data_catalog.txt               # OK, WiP
-101_LLM.txt                             # OK, WiP
+hierarchical_reasoning_model.txt        # md OK, content 1%
+LLMs/101.payload
+Agents/101.payload
+PROMPTING/101.payload
+MLOps/101.payload                       #
+TIME_SERIES/101.payload
+DataVisualization/101.payload
+# NLTK/101.payload
+USE_CASES/101.payload
+RAG/101.txt                             # md OK, fix content
 101_TODO.txt                            # OK
-101_MLOps.txt                           # OK, Draft
 101_backpropagation.txt                 # OK, TODO
 # 101_external_resources.txt            # TODO 
 # 101_ggml.txt                          # TODO 

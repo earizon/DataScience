@@ -1,8 +1,13 @@
 101.payload
 COGNITIVE.payload
-Agents/agents.payload
-# mistral.md                           # TODO(0)
+Agents/ALL.payload
+RAG/ALL.payload
+MLOps/ALL.payload
+# mistral.md                           # ???
 OpenVINO.txt
+PROMPTING/ALL.payload
+TIME_SERIES/ALL.payload
+KANs.txt                               #
 # AutoML.txt                           # ??? 
 # bibliography_from_ML_book.txt        # ??? 
 # openAI.txt                           # ???
@@ -21,7 +26,6 @@ OpenVINO.txt
 # geodata.txt                          # ??? 
 # JupyterLab.txt                       # ??? 
 # keras.txt                            # ??? 
-# mlops.txt                            # ??? 
 # ML_tools.txt                         # ??? 
 # model_serving.txt                    # ??? 
 # NetWorkX.txt                         # ??? 
@@ -39,7 +43,9 @@ OpenVINO.txt
 # statsmodels.txt                      # ??? 
 # tensor_flow.txt                      # ??? 
 # time_series.txt                      # ??? 
-# vector_databases.txt                 # ??? 
 who-is-who.txt                         # OK, WiP
+who-is-who_companies.txt               # OK, WiP
 # TODO.txt                             # ??? 
 # TODO_transformers.txt                # ???
+# NLTK/ALL.payload                     
+USE_CASES/ALL.payload

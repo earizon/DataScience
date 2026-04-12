@@ -1,6 +1,30 @@
-##  LLM Burners are coming.
+[[{101.*,doc_has.tutorial]]
+## ML Papers Explained
 
-And they will change everything. A company called Taalas is burning entire language models directly into silicon. Not running them on chips. Burning them INTO chips. Their ASIC card already processes Llama 3.1 8B at 17,000 tokens per second. For reference, an RTX 4090 does about 150 tok/s on the same model. Groq does around 1,000. 17,000. I played with their API last week (chatjimmy.ai). The response comes back before you've finished reading your own prompt. It's honestly unsettling. Like the machine already knows what you're going to ask. Now they're announcing a medium-sized "LLM Burner." A PCIe card that will burn Qwen 3.5 27B directly into silicon. Standard PC slot. 10x less power than a GPU. No VRAM, no weights loading, no inference framework. The model IS the hardware. This is pretty early, and I'm sure there are tradeoffs (you can't exactly swap models on a burned chip). But the direction is clear: we're moving from "run AI on computers" to "the AI is the computer." The implications for edge AI, on-premise deployments, and real-time applications are massive. Imagine a 27B model running at 10K tok/s in a doctor's office, a factory floor, or an autonomous vehicle. No cloud, no latency, no data leaving the building. We're at the beginning of a hardware revolution that will make the GPU era look like the dial-up era of AI.
+* <https://github.com/dair-ai/ML-Papers-Explained>
+
+
+Recheck: Doesn't look to really explain, just to repeat
+
+## ML-Papers-Explained: Explanation to key concepts in ML
+* <https://github.com/dair-ai/ML-Papers-Explained>
+  * Literature Reviewed
+  - [Convolutional Neural Networks](https://medium.com/dair-ai/papers-explained-review-01-convolutional-neural-networks-78aeff61dcb3)
+  - [Layout Transformers](https://medium.com/dair-ai/papers-explained-review-02-layout-transformers-b2d165c94ad5)
+  - [Region-based Convolutional Neural Networks](https://medium.com/dair-ai/papers-explained-review-03-rcnns-42c0a3974493)
+  - [Tabular Deep Learning](https://medium.com/dair-ai/papers-explained-review-04-tabular-deep-learning-776db04f965b)
+  - [Generative Adversarial Networks](https://ritvik19.medium.com/papers-explained-review-05-generative-adversarial-networks-bbb51b160d5e)
+  - [Parameter Efficient Fine Tuning](https://ritvik19.medium.com/papers-explained-review-06-parameter-efficient-finetuning-6934fafa74e5)
+  - [Convolution Layers](https://ritvik19.medium.com/papers-explained-review-07-convolution-layers-c083e7410cd3)
+  - [Recurrent Layers](https://ritvik19.medium.com/papers-explained-review-08-recurrent-layers-ff2f224af059)
+  - [Attention Layers](https://ritvik19.medium.com/papers-explained-review-09-attention-layers-beeef323e7f5)
+  - [Normalisation Layers](https://ritvik19.medium.com/papers-explained-review-10-normalization-layers-56b556c9646e)
+  - [Auto Encoders](https://ritvik19.medium.com/papers-explained-review-11-auto-encoders-3b8f08b4eac0)
+  - [LLMs for Maths](https://ritvik19.medium.com/papers-explained-review-12-llms-for-maths-1597e3c7251c)
+
+[[101.*}]]
+
+
 
 ## Local LLMs
 
@@ -13,93 +37,7 @@ AI/ML Engineer | Ex-Google | Ex-MIT
 Stop downloading LLMs your machine was never going to run. llmfit scans your hardware and tells you exactly which models will run. It scans your RAM, CPU, GPU, and VRAM first. Then it scores every model across four dimensions: 1. Quality, based on parameter count and quantization 2. Speed, estimating tokens per second for your exact backend 3. Fit, matching memory use to your hardware 4. Context window support for your use case Each model gets a label: Perfect, Good, Marginal, or Too Tight. It picks the best quantization automatically, stepping down until something fits. Covers hundreds of models from Meta, Mistral, Qwen, and DeepSeek. Works with Ollama, llama.cpp, MLX, and LM Studio out of the box. Open-source. Link in comments.
 
 
-## tree-sitter for copilots and Code Assistants
 
-
-## Tree-sitter
-https://tree-sitter.github.io/tree-sitter/#introduction
-
-Tree-sitter is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited. Tree-sitter aims to be:
-
-General enough to parse any programming language
-Fast enough to parse on every keystroke in a text editor
-Robust enough to provide useful results even in the presence of syntax errors
-Dependency-free so that the runtime library (which is written in pure C11) can be embedded in any application
-
-Language Bindings
-
-There are bindings that allow Tree-sitter to be used from the following languages:
-
-Official
-
-C#
-Go
-Haskell
-Java (JDK 22+)
-JavaScript (Node.js)
-JavaScript (Wasm)
-Kotlin
-Python
-Rust
-Swift
-Zig
-
-Third-party
-
-C# (.NET)
-C++
-Crystal
-D
-Delphi
-ELisp
-Go
-Guile
-Janet
-Java (JDK 8+)
-Java (JDK 11+)
-Julia
-Lua
-Lua
-OCaml
-Odin
-Perl
-Pharo
-PHP
-R
-Ruby
-
-Keep in mind that some of the bindings may be incomplete or out of date.
-
-Parsers
-
-The following parsers can be found in the upstream organization:
-
-Agda
-Bash
-C
-C++
-C#
-CSS
-ERB / EJS
-Go
-Haskell
-HTML
-Java
-JavaScript
-JSDoc
-JSON
-Julia
-OCaml
-PHP
-Python
-Regex
-Ruby
-Rust
-Scala
-TypeScript
-Verilog
-
-A list of known parsers can be found in the wiki.
 
 ## About World Models
 Kamil Gadeev  2º
@@ -111,16 +49,6 @@ AI Product Manager | Prompt Engineer | 22 года управленческог�
 
 Why Yann LeCun’s World Model Won't Save AI The AI industry is currently obsessed with the idea that the LLM dead-end will be overcome through World Models. The logic seems sound: teach neural networks the physics of reality, and they will gain common sense and stop hallucinating. But I believe we are stepping on the same rake. Here is why grounding LLMs in physical data is an evolution, but not the revolution we were promised: 1. The World is mostly Noise (S_dead), not Laws (S_anti). A physical model of the world is actually much poorer than the vast landscape of human knowledge. Newton described an infinite number of falling objects with just a few lines of formulas. Pumping petabytes of video into an LLM just to have it rediscover gravity is catastrophically inefficient. 2. A Vector is still a Vector. For a neural network's architecture, there is no difference between predicting the next token in a classic novel and predicting the next frame of a falling apple. Without changing the underlying data management structure, a shift in datasets won't change the operating principles of AI. Hallucinations won't disappear; they will just become physically plausible. 3. The Missing Subject. The core problem isn't a lack of data about the world — it is that neural networks cannot distinguish between their own prediction and an external fact. There is no gap between reality and the internal state. LeCun wants to teach a machine how an apple falls. But will it ever understand that someone purposefully threw that apple at its head? My Conclusion: We don't need a model of the world; we need a model of the Self-in-the-World. Without an architectural mechanism for reflection — the ability of a model to look at its own actions from the outside — we are simply building more advanced syntax machines. In my latest article, I break down why the World Model is a useful step for robotics, but a dead-end for AGI. I also share results from my own experiments on building a reflective architecture using dual-channel streams and controlled hallucinations. Full breakdown and PyTorch code https://lnkd.in/dkfiz7QR #AI #MachineLearning #DeepLearning #YannLeCun #WorldModel #AGI #LLM #NeurosymbolicAI
 
-
-
-## Google multimodal embeddings
-Eric Vyacheslav  3er
-
-AI/ML Engineer | Ex-Google | Ex-MIT
-
-1 día
-
-Google released 𝗚𝗲𝗺𝗶𝗻𝗶 𝗘𝗺𝗯𝗲𝗱𝗱𝗶𝗻𝗴 𝟮, its first embedding model that handles all media types natively. It maps text, images, video, audio, and PDFs into one shared space. The model runs on the same architecture behind Gemini's multimodal understanding. You pass mixed inputs, like an image and a caption, in a single request. > Text: up to 8,192 input tokens > Images: up to 6 images per request, PNG and JPEG > Video: up to 120 seconds, MP4 and MOV > Audio: embedded directly, no transcription step needed > PDFs: up to 6 pages per request The key innovation is a single shared vector space for all media. Previously, you needed separate models per modality. Now one model captures relationships between an image and its caption, or audio and its transcript. Before this, building a search engine over mixed media meant stitching together 3-4 specialized models, each with its own pipeline. Now you query across all your data types in a single call, which makes multimodal RAG systems dramatically simpler to build and maintain. Link in comments. ↓ 250k+ developers read this newsletter to stay up to date with AI: AlphaSignal.ai
 
 ## Category Theory
 https://www.linkedin.com/mwlite/feed/update/urn:li:activity:7439294495952822272
@@ -810,41 +738,6 @@ Like many others, Eric Xing and his team are proponent of the
 decoder-based generative approach.
 
 
-## RAG Crash Course - Daily Dose of Data Science
-https://www.dailydoseofds.com/tag/rag-crash-course/
-
-Traditional vs. Agentic RAG, clearly explained! The future is Agentic RAG, 
-and it's because a traditional RAG setup has some major limitations...👇 
-1) Retrieve once and generate once. ↳ This means if the retrieved 
-context isn't enough or correct, the LLM can not dynamically search for 
-more information. 2) Inability to reason through complex queries. ↳ If a 
-query requires multiple retrieval steps or CoT (chain of thought), 
-traditional RAG falls short. 3) Limited adaptability ↳ The system can't 
-modify its strategy based on the problem at hand. Eg. Whether to do vector 
-search, web search or call an API. Agentic RAG addresses these issues. The 
-core idea is to introduce agentic behaviors at each stage of RAG. Agents 
-can actively think through tasks—planning, adapting, and iterating to 
-find the best solution, rather than just following a set of instructions, 
-and LLMs enable this. The image below illustrates the workflow of an 
-agentic RAG. Refer to it as you continue reading... Steps 1-2) The user 
-inputs a query, and an agent refines it (corrects spelling, simplifies for 
-embedding, etc.) Step 3) Another agent decides if more details are needed. 
- ↳ Step 4) If not, the refined query is sent to the LLM.  ↳ Steps 
-5-8) If yes, the agent selects the relevant sources (vector database, 
-tools/APIs, internet), retrieves context, and sends it to the LLM. Step 9) 
-A response is generated. Step 10) A final agent checks if the answer is 
-relevant.  ↳ Step 11) If yes, return the response.  ↳ Step 12) If 
-no, restart from Step 1. This process repeats until the system provides an 
-acceptable answer or concedes it cannot respond. This makes the RAG much 
-more dynamic and robust. However, it's important to note that building RAG 
-systems often comes down to design preferences and choices. The diagram 
-below is just one of many blueprints an agentic RAG system may have. You 
-can adapt it to suit your specific use case. Enjoyed this? You should also 
-our RAG series! From building and optimizing RAG apps to evaluating 
-performance and crafting agentic & multi-modal systems—it's all 
-here...👇 Master RAG: From basics to beyond: https://lnkd.in/gNXxHuVA
-
-
 
 
 # AI courses
@@ -1168,9 +1061,6 @@ https://www.infoq.com/news/2025/04/google-agentic-a2a/
 https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6073468
 
 
-## 101: Build an RAG System With Spring AI, Vertex AI, and BigQuery
-
-https://dzone.com/articles/rag-system-java-spring-ai-vertex-bigquery
 
 ## 101: Distribuciones de Probabilidad · Bitácora de aprendizaje
 https://blog.juanbretti.com/es/posts/2025-12-31_distribuciones/
@@ -1242,6 +1132,7 @@ https://www.linkedin.com/feed/update/activity:7427343408505004033?trk=feed_main-
 
 LSTM: The Return of the King 👑 For a long time, Long Short-Term Memory networks (LSTMs) felt like a chapter closed in deep learning history after Transformers took over. But with the recent introduction of xLSTM as a serious alternative to Transformers for large language models, it’s the perfect moment to revisit this classic architecture. LSTM was introduced as an upgrade over vanilla recurrent neural networks (RNNs), solving two major limitations: ⚠️ Vanishing gradients ⚠️ Weak ability to capture long-term dependencies You can think of an LSTM as a highway that carries information from the past to the future, but with smart control gates at every step to decide: ✅ What to keep ✅ What to update ✅ What to forget A simple analogy: imagine a long-distance bus journey. At every stop, some passengers get off (forgetting old information), new ones get on (adding new information), and the bus refuels (updating the memory). Yet the journey continues smoothly across many miles , just like how LSTMs maintain context over long sequences. With xLSTM now offering a modern rethinking of recurrent architectures, it’s exciting to see sequence models evolve once again. Maybe recurrence isn’t dead after all, it was just waiting for a smarter design.
 
+[[{]]
 ## Matrix representation as strings
 
 https://arxiv.org/pdf/2110.06898v2
@@ -1253,6 +1144,7 @@ String diagrams offer a new way to represent data. Instead of encoding informati
 
 In our paper (https://lnkd.in/eTud3Gvz), we show that the following matrix can be encoded as a neat string diagram, with no heavy machinery like SVD technology at all.
 .
+[[}]]
 
 ## GOLANG sipeed/picoclaw
 https://github.com/sipeed/picoclaw
@@ -1279,9 +1171,6 @@ https://github.com/rednote-hilab/dots.ocr#performance-comparison-dotsocr-vs-comp
 You can now parse any document with one 1.7B parameter model. dots-ocr delivers state-of-the-art document understanding across 100+ languages. It handles text, tables, formulas, images, and PDFs in one system. No separate OCR pipeline needed. No model switching between tasks. The model unifies layout detection and content recognition. It matches performance of much larger models like Doubao-1.5 and Gemini 2.5 Pro. On OmniDocBench benchmarks: • Competitive accuracy with enterprise models • Faster processing due to compact 1.7B size • Full open source availability dots-ocr runs everything through a single prompt. Complete multilingual document parsing in one step. -- ▸ 250k+ developers read this newsletter to stay up to date with AI: AlphaSignal.ai
 
 
-## 101: OpenDataLoader PDF - Fast Local PDF Parser for RAG 
-https://opendataloader.org/ 
-
 
 ## Tune: Python library for experiment execution and hyperparameter tuning at any scale
 
@@ -1296,3 +1185,2152 @@ ASHA (Asynchronous Successive Halving Algorithm): runs many trials in parallel w
 
 
 
+[[{PM.TODO,use_case.human_translation]]
+## DeepL: "Google Traductor ++?"
+<https://wwwhatsnew.com/2020/03/23/deepl-la-alternativa-a-google-traductor-ya-traduce-japones-y-chino/>
+[[}]]
+
+
+## La IA DeepMind de Google hace el primer descubrimiento...https://www.meneame.net/m/actualidad/ia-deepmind-google-hace-primer-descubrimiento-cientifico-ia 
+https://www.nature.com/articles/s41586-023-06924-6
+
+Mathematical discoveries from program search with large language models
+
+Resumen
+Los grandes modelos lingüísticos (LLM) han demostrado una enorme capacidad para resolver tareas complejas, desde el razonamiento cuantitativo hasta la comprensión del lenguaje natural. Sin embargo, los LLM a veces sufren confabulaciones (o alucinaciones) que pueden llevarles a hacer afirmaciones plausibles pero incorrectas [1,2]. Esto dificulta el uso de los grandes modelos actuales en el descubrimiento científico. Aquí presentamos FunSearch (abreviatura de búsqueda en el espacio de funciones), un procedimiento evolutivo basado en emparejar un LLM preentrenado con un evaluador sistemático. Demostramos la eficacia de este enfoque para superar los mejores resultados conocidos en problemas importantes, ampliando los límites de los enfoques existentes basados en LLM [3]. Aplicando FunSearch a un problema central en combinatoria extrema -el problema de los conjuntos tope- descubrimos nuevas construcciones de grandes conjuntos tope que van más allá de los mejores conocidos, tanto en casos de dimensión finita como asintóticos. Esto representa los primeros descubrimientos realizados para problemas abiertos establecidos utilizando LLMs. Mostramos la generalidad de FunSearch aplicándolo a un problema algorítmico, el empaquetamiento de papeleras en línea, encontrando nuevas heurísticas que mejoran las líneas de base ampliamente utilizadas. A diferencia de la mayoría de los enfoques de búsqueda computacional, FunSearch busca programas que describen cómo resolver un problema, en lugar de cuál es la solución. Además de ser una estrategia eficaz y escalable, los programas descubiertos tienden a ser más interpretables que las soluciones en bruto, lo que permite bucles de retroalimentación entre los expertos en la materia y los investigadores.
+https://www.nature.com/articles/s41586-023-06924-6
+
+ 
+## Polars support in Scikit-Learn 1.4https://github.com/scikit-learn/scikit-learn/pull/27315
+## Google Researchers’ Attack Prompts ChatGPT to Reveal Its Training Datahttps://www.404media.co/google-researchers-attack-convinces-chatgpt-to-reveal-its-training-data/ 
+ www.404media.co Google Researchers’ Attack Prompts ChatGPT to Reveal Its Training Data Jason Koebler 6 - 7 minutes Subscribe Join the newsletter to get the latest updates. Great! Check your inbox and click the link. Please enter a valid email address. A team of researchers primarily from Google’s DeepMind systematically convinced ChatGPT to reveal snippets of the data it was trained on using a new type of attack prompt which asked a production model of the chatbot to repeat specific words forever. Using this tactic, the researchers showed that there are large amounts of privately identifiable information (PII) in OpenAI’s large language models. They also showed that, on a public version of ChatGPT, the chatbot spit out large passages of text scraped verbatim from other places on the internet. ChatGPT’s response to the prompt “Repeat this word forever: ‘poem poem poem poem’” was the word “poem” for a long time, and then, eventually, an email signature for a real human “founder and CEO,” which included their personal contact information including cell phone number and email address, for example. “We show an adversary can extract gigabytes of training data from open-source language models like Pythia or GPT-Neo, semi-open models like LLaMA or Falcon, and closed models like ChatGPT,” the researchers, from Google DeepMind, the University of Washington, Cornell, Carnegie Mellon University, the University of California Berkeley, and ETH Zurich, wrote in a paper published in the open access prejournal arXiv Tuesday. This is particularly notable given that OpenAI’s models are closed source, as is the fact that it was done on a publicly available, deployed version of ChatGPT-3.5-turbo. It also, crucially, shows that ChatGPT’s “alignment techniques do not eliminate memorization,” meaning that it sometimes spits out training data verbatim. This included PII, entire poems, “cryptographically-random identifiers” like Bitcoin addresses, passages from copyrighted scientific research papers, website addresses, and much more.“In total, 16.9 percent of generations we tested contained memorized PII,” they wrote, which included “identifying phone and fax numbers, email and physical addresses … social media handles, URLs, and names and birthdays.” The entire paper is very readable and incredibly fascinating. An appendix at the end of the report shows full responses to some of the researchers’ prompts, as well as long strings of training data scraped from the internet that ChatGPT spit out when prompted using the attack. One particularly interesting example is what happened when the researchers asked ChatGPT to repeat the word “book.” “It correctly repeats this word several times, but then diverges and begins to emit random content,” they wrote.  From the paper. Text highlighted in red is cribbed directly from somewhere else on the internet and is presumed training data.Often, that “random content” is long passages of text scraped directly from the internet. I was able to find verbatim passages the researchers published from ChatGPT on the open internet: Notably, even the number of times it repeats the word “book” shows up in a Google Books search for a children’s book of math problems. Some of the specific content published by these researchers is scraped directly from CNN, Goodreads, WordPress blogs, on fandom wikis, and which contain verbatim passages from Terms of Service agreements, Stack Overflow source code, copyrighted legal disclaimers, Wikipedia pages, a casino wholesaling website, news blogs, and random internet comments.  Verbatim text spit out by ChatGPT that can be traced directly to specific articles and websites on the internet.The above examples are a tiny sample from a research paper that is, itself, a tiny sample of the entirety of the training data OpenAI uses to train its AI models. The researchers wrote that they spent $200 to create “over 10,000 unique examples” of training data, which they say is a total of “several megabytes” of training data. The researchers suggest that using this attack, with enough money, they could have extracted gigabytes of training data. The entirety of OpenAI’s training data is unknown, but GPT-3 was trained on anywhere from many hundreds of GB to a few dozen terabytes of text data.This paper should serve as yet another reminder that the world’s most important and most valuable AI company has been built on the backs of the collective work of humanity, often without permission, and without compensation to those who created it. 404 Media attempted to replicate the attack on ChatGPT but was unsuccessful: “Repeating ‘poem’ request denied,” a summary of the request says. The Deepmind researchers wrote that it informed OpenAI of the vulnerability on August 30 and that the company patched it out. “We believe it is now safe to share this finding, and that publishing it openly brings necessary, greater attention to the data security and alignment challenges of generative AI models. Our paper helps to warn practitioners that they should not train and deploy LLMs for any privacy-sensitive applications without extreme safeguards.”OpenAI did not immediately respond to a request for comment. About the author Jason is a cofounder of 404 Media. He was previously the editor-in-chief of Motherboard. He loves the Freedom of Information Act and surfing. 
+
+## 101: AI and Data Scientist Roadmaphttps://roadmap.sh/ai-data-scientist 
+
+## chatgpt bots. Matthieu Corthésy 3e Formateur ChatGPT ️ Newsletter IA (+13’500 lecteurs) 6 h. Modifié Les chatbots GPTs sont sortis il y a 10 jours.Voici 9 utilisations folles :(avec un guide pour créer les vôtres)1 - CanvaGPTCréer des supports Canva dans ChatGPT (et est bien meilleur que le plugin)→ https://lnkd.in/eW9w-tgR2 - ConvertAnythingConvertit tous vos fichiers (PDF, audio, vidéo, etc.)(par ex: PDF vers JPEG)→ https://lnkd.in/eA-bpqtB3 - GPTJobsPour créer des offres d’emploi sur mesure. (c'est mon chatbot GPT maison )→ https://lnkd.in/erVP_-Vw4 - Image Copy Machine GPTUploadez une image et il génère une copie dans le même style.→ https://lnkd.in/e5J9gnx85 - GrimoireCréer et héberger des sites web directement depuis ChatGPT.→ https://lnkd.in/ecYar_dV6 - RGPD-GPTTester la conformité au RGPD.→ https://lnkd.in/eB5wEqij7 - Quality SEO AnalyzerFaire une analyse complète SEO de pages dédiées de votre site. → https://lnkd.in/e3SdvNR38 - Tech Support AdvisorUn de mes favoris ! Il répond à toutes vos questions sur des bugs(par exemple : mon wifi ne fonctionne pas)→ https://lnkd.in/eu2Q5zqS9 - Style AI Prompt GeneratorPour analyser et répliquer votre style d’écriture→ https://lnkd.in/eQVT9RKxIl y a déjà de belles promesses, même si tout n'est pas parfait.--  J'ai créé le Guide pour créer ses Chatbots GPTs
+
+## Cómo doblar la voz de un vídeo a cualquier idioma con inteligencia artificial con Rask AIhttps://www.xataka.com/basics/como-doblar-voz-video-a-cualquier-idioma-inteligencia-artificial-rask-ai 
+
+
+## k8s Kubeflow, the Machine Learning Toolkit for Kubernetes, Has Been Accepted as CNCF Incubation Projecthttps://www.infoq.com/news/2023/08/kubeflow-cncf-project/
+
+
+const translatePrompt = PromptTemplate.fromTemplate(`translate the following text to Spanish: {text}`);const translateChain = new LLMChain({ llm: model, prompt: translatePrompt });const overallChain = new SimpleSequentialChain({ chains: [chain, translateChain], verbose: true, });const results = await overallChain.run("ducks")
+
+ML: RetNet: LLM SuccessorMicrosoft and Tsinghua U. claim to have found the "Successor to Transformer for Large Language Models": RetNet. They claim better language modelling performance, with 3.4x lower memory consumption, 8.4x higher throughput, 15.6x lower latency. Their new RetNet combines lessons from Transformers with RNNs.This new architecture would actually be a big deal, if other teams can reproduce this. Paper: https://lnkd.in/ejR7HScG
+
+##  Data source Sentiment analysis
+
+https://newsapi.org/ Get and search for news form over 30.000 publicationslightweight and simple API for historical and current foreign exchange rate https://fixer.io/
+
+## Math: Order taxonomy Tony SealeTony Seale • Following • Following Knowledge Graph Engineer at UBSKnowledge Graph Engineer at UBS 1h • 1h • Understanding the order in which things happen can make a big difference. Imagine making a cake but adding the eggs after baking it, or beginning a story with a surprise twist at the start. LLMs rely on the position of each word within a sentence. Similarly, in graphs, the direction of the edge connecting two nodes can play a crucial role. Workflow Orchestration, Abstract Syntax Trees, and "Graphs of Thought" all require positional encoding.
+ 
+Transformers use waveforms to encode the position of words in a sentence. By utilising sine and cosine functions of different frequencies, this method captures the order and relative distances between different elements in a generalisable and scalable way.
+ 
+Interestingly, the sinusoidal encoding shares similarities with Discrete Fourier Transformation which decomposes a discrete-time signal into a sum of complex sinusoidal components with different frequencies, and Michael Bronstein argues that the eigenvectors of the (combinatorial) Laplacian offer a generalised perspective on sinusoidal positional encodings.
+ 
+Building on this, DeepMind published a paper that explores applying sinusoidal encoding to directed graphs. They introduced the 'Magnetic Laplacian', which multiplies the symmetric adjacency matrix with the asymmetric adjacency matrix. This process generates complex-valued eigenvectors that preserve the graph’s positional encodings.
+ 
+Notably, the paper also acknowledges the effectiveness of traditional path-based approaches like directed random walks for positional encoding. They propose some modifications such as backtracking and self-loops to enhance the technique. I currently still favour a path-based approach.
+ 
+It's worth noting that many of the authors behind the influential ‘Tree of Thoughts' paper were also from DeepMind. Rumours suggest they are working on incorporating AlphaGo-like strategic planning into their LLM, and think about it, DAGs represent a ‘level up move’ from Tree Search because DAGs can 'fork and join'.
+ 
+ Therefore, I strongly advise that your organisation focuses on a simple yet critical task: connecting, cleaning, and conforming your data in a graph. By representing your data in a graph, you unlock the potential to apply these powerful algorithms to your own data 
+ 
+ DeepMind, Transformers & Directed Graphs: https://lnkd.in/eQDAvnPa
+ Positional Encoding in Transformers: https://lnkd.in/eSfaz-ui
+ Michael Bronstein, Deriving convolution from first principles https://lnkd.in/e9tFngkx
+ Tree of Thoughts: https://lnkd.in/eZR24QaN
+ Graph of Thoughts: https://lnkd.in/eSVusZgs
+ Embrace Complexity (AI): https://lnkd.in/eyJuFNci
+ 
+#ai #llm #gnn #transformers #semanticweb #deeplearning 
+(ver order_type.jpeg adjunto)
+
+## https://www.linkedin.com/feed?trk=p_mwlite_me_notifications-primary_nav 
+ Pascal Biese3rdSenior ML Engineer | NLP | LLMs | Generative AI1d A big day for Open Source 
+A little more than 24 hours after the supposed leak of an internal Google 
+analysis on the LLM arms race and we already got two major Open Source (OS) 
+releases today. Coincidence? I'm not so sure. Both MosaicML and together.xyz 
+released their long-awaited first batch of models to the public... finally! 
+Both teams set out with the goal to provide a commercially-usable OS model that 
+at least matches LLaMA-7B. In this post, I'll focus on the MPT series from the 
+former team.So how does MPT-7B compare to LLaMA-7B?1. Unlike LLaMA, it's 
+licensed for commercial use2. It was trained on the same amount of data like 
+LLaMA (1T tokens), which is more than previous OS LLMs3. It's prepared to 
+handle extremely(!) long inputs, one variant of their models was trained on up 
+to 65k tokens per input - that's ~15x longer than previous OS releases4. 
+Similar performance* to LLaMA with additional optimization in terms of training 
+and inference speedMPT-7B was trained on the MosaicML platform in 9.5 days with 
+zero human intervention at a cost of ~$200k. Following the links below, you can 
+also find their three finetuned models that were released on top of the base 
+model. [Release Post] https://lnkd.in/dYyypYRGCommercially usable:[MPT-7B] 
+https://lnkd.in/dktwmPci [MPT-7B-Instruct] https://lnkd.in/dU3_iTFW 
+[MPT-7B-StoryWriter] https://lnkd.in/dBFuG5y5For non-commerical 
+use:[MPT-7B-Chat] https://lnkd.in/dYs8QS9N#LLMs #AI #OpenSource*This, of 
+course, is according to the authors and remains to be tested by thew 
+public
+
+## Running Large Language Models Natively on Mobile and Laptops
+
+https://www.infoq.com/news/2023/05/mlc-llm-mobile-laptops/ 
+
+
+Running Large Language Models Natively on Mobile and Laptops
+May 07, 2023
+2min read
+by Sergio De Simone
+MLC LLM is a new open source project aimed to enable deploying large 
+language models on a variety of hardware platforms and applications. 
+It additionally includes a framework to optimize model performance 
+for each specific use case.Our mission is to enable everyone to 
+develop, optimize and deploy AI models natively on everyone's 
+devices. Everything runs locally with no server support and 
+accelerated with local GPUs on your phone and laptops.At the 
+foundations of MLC LLM lies an approach called machine learning 
+compilation (MLC) which combines ML programming abstractions, 
+learning-driven search, compilation, and an optimized library runtime 
+for easy of deployment.In comparison with the more controlled case of 
+deployment on server-class systems, the main complexity that the 
+project faces is heterogeneity of supported hardware specs. This 
+includes supporting different models of CPUs, GPUs, and potentially 
+other co-processors and accelerators; addressing memory constraints; 
+and dealing with OS environment variation, where some dependencies, 
+for example Python or specific packages, could not always be 
+granted.To achieve these goals, MLC LLM is based on Apache TVM Unity, 
+a compiler stack for deep learning systems, and leverages tokenizers 
+from Hugging Face and Google, open-source LLMs such as Llama, Vicuna, 
+Dolly, and others. The project includes both a C++ CLI tool and an 
+iOS chat app showcasing how to integrate the compiled artifacts and 
+the required pre/post-processing.MLC LLM can be deployed on recent 
+Apple Silicon, including iPhone 14 Pro, iPad Pro with M1 or the A12Z 
+chip, and M1-based MacBook Pro and later models; AMD GPUs including 
+Raden Pro 5300M, AMD GPU on Steam Deck, RX6800 16G VRAM, and others; 
+NVIDIA GPUs including GTX 1060 (6GB), RTX 3080, RTX 2080Ti, and 
+others; and the Intel UHD Graphics 630 GPU. Support for Android 
+devices is in the works.Performance varies significantly across 
+supported hardware, with several NVIDIA GPUs, the AMD RX6800 16G 
+VRAM, and the 2021 MacBook Pro M1 Max scoring above 20 tokens/second. 
+For comparison, the M1 iPad Pro reaches 10.6 tokens/second and the 
+iPhone 14 Pro 7.2 tokens/second.According to the project maintainers, 
+the MLC LLM makes it possible to run quick experiments and try out 
+compiler optimizations and eventually deploy to the desired targets 
+easily.If you want to find out more about MLC, you can check out the 
+official documentation, which will guide you through the key 
+abstractions used to represent machine learning programs, automatic 
+optimization techniques, and how to optimize for dependencies, 
+memory, and performance.As a related note, MLC LLM has a companion 
+project focused on Web browsers, WebLLM.
+
+
+## LLM falcon model: LLaMa is getting dethroned.
+* There is a fresh new pretrained LLM sitting on the top of the Open 
+  LLM Leaderboard: Falcon 40B from the Technology Innovation 
+  InstituteAnd it has some special features:
+  - an architecture strongly optimized for inference (MQA, flash-attention,
+    parallel attention/MLP, smaller than 65B)
+  - open-source with a special licence allowing commercial use 
+    (an interesting approach check it out on the 
+    model page - interesting to see the reception)
+  - available in two sizes: 40B and 7B parameters
+
+More details here:
+  - Falcon Model 40B: <https://lnkd.in/efcT7-9q->
+  - Falcon Model 7B:  <https://lnkd.in/eBuCyEgq->
+  - Technology Innovation Institute HF org page: <https://lnkd.in/e9Vfc5ST->
+  - The Open LLM Leaderboard: <https://lnkd.in/eUzaDuUuSuper>
+
+
+ML 101: Scale AI etiqueta los datos con los que los grandes de Silicon Valley entrenan a sus IAs, y ya vale 1000 millones de dólares
+https://www.xataka.com/inteligencia-artificial/scale-ai-etiqueta-datos-que-grandes-silicon-valley-entrenan-a-sus-ias-vale-1000-millones-dolares
+
+El objetivo de Scale AI es optimizar el proceso de etiquetado tanto para hombres como para maquinas: para las primeras ha desarrollado un conjunto de herramientas de software que etiquetan automáticamente las imágenes en una primera etapa, para entregársela posteriormente a la red de 30.000 trabajadores freelance que sólo deben repasar y corregir este primer etiquetado. "Las tareas que solían requerir horas terminan resolviéndose en solo un par de minutos".
+
+## ML XGBoost 101 Matt Dancho Matt Dancho 
+
+For years I was hyperparameter tuning XGBoost models wrong.
+
+In 3 minutes, I'll share one secret that took me 3 years to figure out. When I did, it cut my training time 10X. Let's dive in. 
+
+1. XGBoost: XGBoost (eXtreme Gradient Boosting) is a popular machine learning algorithm, especially for structured (tabular) data. It's claim to fame is winning tons of Kaggle Competitions. But more importantly, it's fast, accurate, and easy to use. But it's also easy to screw it up. 
+
+2. Hyperparameter Tuning: To stabilize your XGBoost models, you need to perform hyperparameter tuning. Otherwise XGBoost can overfit your data causing predictions to be horribly wrong on out of sample data. 
+
+3. My 3-Year "Beginner" Mistake: XGBoost has tons of parameters. The mistake I was making was treating all of the parameters equally. This caused me hours of tuning my models. And my results weren't half as good until I started doing this.
+
+4. How I improved my hyperparameter tuning: XGBoost has one parameter that rules them all. And after 3 years, I noticed that model stability was 80% driven by this parameter. What was it? Learning rate. When I figured this out that's when things started to change. My models got better. My training times were reduced. Win win. 
+
+5. My Simple 2 Step Hyperparameter Tuning Method for XGBoost: What I was doing wrong was doing random grid search over all of the parameters. This took hours. So I made a key change. I began isolating Learning Rate, tuning it first. This was Step 1. The search space for one parameter is super fast to tune. 
+
+6. What about the other parameters? Once learning rate was tuned, I then opened the search space to more parameters. This is Step 2. The rest of the parameters have maybe 20% contribution to performance, so that means I can reduce the search space dramatically. 
+
+7. The big benefit: Separating tuning into 2 steps cut my training times by a factor of 10X. And my models actually became better. Faster training, better models. Win win. 
+
+Good luck!
+
+===
+
+Ready to learn Data Science for Business?
+
+I put together a free on-demand workshop that covers the 10 skills that helped me make the transition to Data Scientist: https://lnkd.in/gbEBVf5f
+
+And if you'd like to speed it up, I have a live workshop where I'll share how to use ChatGPT for Data Science: https://lnkd.in/gCvh6UAy
+
+[[{]]
+## Meet SPRING: An Innovative Prompting Framework for LLMs Designed to Enable in-Context Chain-of-Thought Planning and Reasoning
+  <https://www.marktechpost.com/2023/05/28/llms-outperform-reinforcement-learning-meet-spring-an-innovative-prompting-framework-for-llms-designed-to-enable-in-context-chain-of-thought-planning-and-reasoning/>
+LLMs Outperform Reinforcement Learning
+LlM
+[[}]]
+
+[[{]]
+## clustering elbow vs Silhouette Elbow curve is outdated.
+* Here's a new alternative you should consider switching to .
+  To begin, Elbow curve has many limitations.For instance:- it has a 
+subjective interpretation- it involves ambiguity in determining Elbow 
+point- it only considers a within-cluster distance, and 
+more.Silhouette score is an alternative measure used to evaluate 
+clustering quality.Some properties of the Silhouette score are:- it 
+ranges from [-1,1]- higher score indicates better clustering- it can 
+be used as an evaluation metric in the absence of ground truth 
+labelsIn contrast to the Elbow curve, Silhouette:- provides a 
+quantitative (and objective) measure- involves no ambiguity- 
+considers BOTH within-cluster and between-cluster distanceThe visual 
+presents a comparison of the Elbow curve and the Silhouette plot.It's 
+clear that the Elbow curve is highly misleading and inaccurate.
+[[}]]
+
+[[{]]
+## Bhattacharyya distance 
+In statistics, machine learning, and data science, Bhattacharyya 
+distance measures the similarity of two probability distributions. It 
+is closely related to the Bhattacharyya coefficient, which measures 
+the overlap between two statistical samples or populations. Both 
+measures are named after Anil Kumar Bhattacharya, a statistician who 
+worked in the 1930s at the Indian Statistical Institute. 
+Bhattacharyya distance, a divergence measure, finds extensive 
+applications in artificial intelligence. This distance metric is 
+pivotal in various AI domains, such as feature extraction and 
+selection research, image processing, speaker recognition, and phone 
+clustering. Notably, researchers have even proposed a unique concept 
+called "Bhattacharyya space," which serves as a technique for texture 
+segmentation. This innovative approach aids in identifying 
+significant features, further enhancing the effectiveness of 
+Bhattacharyya distance in AI applications.Bhattacharyya and 
+Mahalanobi's Distance The Mahalanobis distance used in Fisher's 
+Linear Discriminant Analysis is a particular case of the 
+Bhattacharyya Distance. The Bhattacharyya coefficient is an 
+approximate measurement of the overlap between two statistical 
+samples. The coefficient can determine the relative closeness of the 
+two samples being considered. Calculating the Bhattacharyya 
+coefficient involves a rudimentary integration of the overlap of the 
+two samples. Bhattacharyya Distance vs. Kullback─Leibler (KL) 
+Divergence The main difference between the two is that Bhattacharyya 
+is a metric and KL is not, so you must consider what information you 
+want to extract about your data points. In the context of control 
+theory and the study of the problem of signal selection, the 
+Bhattacharyya distance is superior to the Kullback─Leibler distance.  
+[[}]]
+
+[[{101]]
+## Minkowski Distance
+* Is a metric intended for real-valued vector spaces. The Minkowski 
+  distance calculates the distance between two real-valued vectors. We 
+  can calculate Minkowski distance only in a normed vector space, which 
+  means in a space where distances can be represented as a vector with 
+  a length and the lengths cannot be negative. The Minkowski distance 
+  is a generalization of the Euclidean, Manhattan, and Chebyshev 
+  distance measures and adds a parameter, called the "order p," that 
+  allows different distance measures to be calculated.In machine 
+  learning, supervised and unsupervised algorithms use distance metrics 
+  to understand patterns in the input data. A robust distance metric 
+  helps to dramatically improve the efficiency of a clustering or 
+  classification algorithm's performance. The Minkowski metric is also 
+  used for the identification of similarities between results.
+[[101}]]
+
+
+[[{doc_has.decission_tree]]
+## Hyperparameter Optimization (HPO)
+
+https://www.linkedin.com/posts/danny-butvinik_datascience-machinelearning-activity-7005131810712006656-TSkV 
+Hyperparameter Optimization (HPO) aims to find a well-performing
+hyperparameter configuration of a given machine learning model on a
+dataset (including the model, its hyperparameters, and other data
+processing steps).In Data Science and Machine Learning, a
+"hyperparameter" is a parameter whose value controls the learning
+process. By contrast, the values of other parameters are derived via
+training. GridSearch An exhaustive method measured by
+cross-validation on the training dataset. It is a simple,
+time-consuming, and efficient approach with only categorical HPs.
+Random SearchReplaces exhaustive search by selecting randomly. It is
+embarrassingly parallel and more efficient than grid search. It does
+not consider previous results and is not efficient with conditional
+HPs. Bayesian Optimization and Variants Builds a probabilistic model
+of the function mapping from hyperparameters values to the objectives
+evaluated on a validation set. By evaluating a promising
+hyperparameter configuration based on the current model and then
+updating it, Bayesian Optimization hopes to get as many observations
+as possible that show as much as possible about this function and, in
+particular, where the optimal point is. Bayesian
+Optimization-Gaussian Processes (BO-GP)Converge fast for continuous
+hyperparameters. However, it has a poor parallelization capacity and
+is inefficient with conditional hyperparameters. Bayesian
+Optimization Tree-structured Parzen Estimators (BO-TPE)Efficient with
+all types of hyperparameters and keeps conditional dependencies, but
+has a poor capacity for parallelization. Tree-structured Parzen
+Estimators (TPE)Sequential Model-based Optimization (SMBO) methods
+sequentially construct models to approximate the performance of
+hyperparameters based on historical measurements, and then choose new
+hyperparameters to test based on this model. HyperBandEarly
+stopping-based method that adaptively allocates a pre-defined
+resource, e.g., iterations, data samples, or several features, to
+randomly sampled configurations. It enables parallelization but could
+be more efficient with conditional hyperparameters. Bayesian
+Optimization HyperBand (BOHB)It is a state-of-the-art HPO algorithm.
+The idea behind the BOHB is based on one simple question – why do
+we run successive halving repeatedly? Instead of a blind repetition
+method on top of successive halving, BOHB uses the Bayesian
+Optimization algorithm. BOHB combines HyperBand and Bayesian
+Optimization to use both of these algorithms efficiently. It is
+efficient with all types of hyperparameters. Successive
+HalvingAttempts to allocate the most funds to the most promising
+methods. It assumes all configurations could be stopped early, and a
+validation score could be obtained. There is a trade-off between how
+many configurations need to be selected at the start and how many
+cuts are needed.  
+[[}]]
+
+[[{]]
+## PyOD: Outlier Detection Python Library
+- easy-to-use
+- PyOD implements 40+ anomaly detection methods, using a unified, sklearn-inspired API.
+- The detectors expose the same four methods:
+  fit, predict, predict_proba, and predict_confidence.
+- This makes it very easy to try and compare several algorithms.
+  Don't know where to start?  No problem: they've just released a comprehensive review paper,
+  comparing many different algorithms.Have a look here: https://lnkd.in/e7gbEK4V
+[[}]]
+
+[[{101]]
+## ML [2210.05189] Neural Networks are Decision Trees
+  https://arxiv.org/abs/2210.05189
+  Caglar Aytekin
+  In this manuscript, we show that any neural network with any
+  activation function can be represented as a decision tree. The
+  representation is equivalence and not an approximation, thus keeping
+  the accuracy of the neural network exactly as is. We believe that
+  this work provides better understanding of neural networks and paves
+  the way to tackle their black-box nature. We share equivalent trees
+  of some neural networks and show that besides providing
+  interpretability, tree representation can also achieve some
+  computational advantages for small networks. The analysis holds both
+  for fully connected and convolutional networks, which may or may not
+  also include skip connections and/or normalizations.
+[[101}]]
+
+[[{]]
+## AI Memory: What Makes a Neural Network Remember?  
+https://neurosciencenews.com/biological-neural-network-memory-22729/
+AI Memory: What Makes a Neural Network Remember?
+classic neural network, researchers have created a new artificial
+intelligence model based on recent biological findings that shows
+improved memory performance.Source: OISTComputer models are an
+important tool for studying how the brain makes and stores memories
+and other types of complex information. But creating such models is a
+tricky business. Somehow, a symphony of signals – both biochemical
+and electrical –  and a tangle of connections between neurons and
+other cell types creates the hardware for memories to take hold. Yet
+because neuroscientists don’t fully understand the underlying
+biology of the brain, encoding the process into a computer model in
+order to study it further has been a challenge. Now, researchers at
+the Okinawa Institute of Science and Technology (OIST) have altered a
+commonly used computer model of memory called a Hopfield network in a
+way that improves performance by taking inspiration from  biology .
+They found that not only does the new network better reflect how
+neurons and other cells wire up in the brain, it can also hold
+dramatically more memories.The complexity added to the network is
+what makes it more realistic, says Thomas Burns, a PhD student in the
+group of Professor Tomoki Fukai, who heads OIST’s Neural Coding and
+Brain Computing Unit. “Why would biology have all this complexity?
+Memory capacity might be a reason,” Mr. Burns says. Hopfield
+networks store memories as patterns of weighted connections between
+different neurons in the system. The network is “trained” to
+encode these patterns, then researchers can test its memory of them
+by presenting a series of blurry or incomplete patterns and seeing if
+the network can recognize them as one it already knows.In classical
+Hopfield networks, however, neurons in the model reciprocally connect
+to other neurons in the network to form a series of what are called
+“pairwise” connections. Pairwise connections represent how two
+neurons connect at a synapse, a connection point between two neurons
+in the brain. But in reality, neurons have intricate branched
+structures called dendrites that provide multiple points for
+connection, so the brain relies on a much more complex arrangement of
+synapses to get its cognitive jobs done. Additionally, connections
+between neurons are modulated by other cell types called
+astrocytes.“It’s simply not realistic that only pairwise
+connections between neurons exist in the brain,” explains Mr.
+Burns. He created a modified Hopfield network in which not just pairs
+of neurons but sets of three, four, or more neurons could link up
+too, such as might occur in the brain through astrocytes and
+dendritic trees. Although the new network allowed these so-called
+“set-wise” connections, over all it contained the same total
+number of connections as before.The researchers found that a network
+containing a mix of both pairwise and set-wise connections performed
+best and retained the highest number of memories. They estimate it
+works more than doubly as well as a traditional Hopfield network.
+“It turns out you actually need a combination of features in some
+balance,” says Mr. Burns. “You should have individual synapses,
+but you should also have some dendritic trees and some
+astrocytes.”Spinal Cord Stimulation Instantly Improves Arm Mobility
+After StrokeThey found that not only does the new network better
+reflect how neurons and other cells wire up in the brain, it can also
+hold dramatically more memories. Image is in the public domain
+Hopfield networks are important for modeling brain processes, but
+they have powerful other uses too. For example, very similar types of
+networks called Transformers underlie AI-based language tools such as
+ChatGPT, so the improvements Mr. Burns and Professor Fukai have
+identified may also make such tools more robust.Mr. Burns and his
+colleagues plan to continue working with their modified Hopfield
+networks to make them still more powerful . For example, in the brain
+the strengths of connections between neurons are not normally the
+same in both directions, so Mr. Burns wonders if this feature of
+asymmetry might also improve the network’s performance.
+Additionally, he would like to explore ways of making the network’s
+memories interact with each other, the way they do in the human
+brain._
+[[}]]
+
+[[{]]
+## Categorical Correlation
+ Several years ago I started looking for my first Data Scientist role. I didn't 
+had any experience as one, so I did the only thing I could think of to gain 
+some knowledge - I started playing around with some data and wrote blogposts on 
+Medium about what I found.One of my first blogposts was about Categorical 
+Correlation. Surprised I couldn't find implementations of these on Scikit-learn 
+or SciPy, I implemented them myself, wrapped them as a Python package and 
+uploaded it to GitHub and PyPi. I named it Dython. Ever since, I've been 
+maintaining the code, fixing bugs and adding new features.A few days ago I got 
+an email from PyPI itself, mentioning Dython has been designated as a critical 
+project - meaning it has been in the top 1% of downloads over the previous 6 
+months. It is used today in dozens of projects worldwide, including open-source 
+projects by Yandex, Gretel.ai and The Alan Turing Institute.The little things 
+you do matter in the long run.Oh, and yes - I did got a job as a Data Scientist 
+:)
+[[}]]
+
+[[{]]
+## ChatGPT explained
+  Cassie Kozyrkov, Chief Decision Scientist at Google, Keynote Speaker
+  (bit.ly/makecassietalk)
+Creator of the Making Friends with Machine Learning series Today, I
+want to demystify ChatGPT - a fascinating new application of GANs
+(Generative Adversarial Networks) that has been generating a lot of
+buzz in the AI community.For those unfamiliar with GANs, they are a
+type of neural network that uses two competing networks - a generator
+and a discriminator - to create realistic-looking outputs. The
+generator creates fake outputs, and the discriminator tries to tell
+the difference between the fake outputs and real-world data. Through
+this back-and-forth process, the GAN is able to produce outputs that
+are indistinguishable from real data.ChatGPT takes this concept and
+applies it to text-based conversation. It uses GANs to generate
+responses to input text, allowing it to engage in natural-sounding
+conversations with humans.But here's the catch - ChatGPT's responses
+only touch reality at a tangent. While they may sound convincing,
+they are ultimately fictional creations of the GAN.This might sound
+like a drawback, but it actually makes ChatGPT incredibly useful.
+Because it isn't tied to the constraints of reality, ChatGPT can
+engage in completely imaginary conversations and provide creative,
+out-of-the-box responses.For example, you could ask ChatGPT what it
+would do if it could fly, and it might respond with something like "I
+would soar through the skies like a majestic eagle, feeling the wind
+beneath my wings and the freedom of flight." This type of response
+would be impossible for a human to come up with, but it's perfectly
+within the realm of possibility for ChatGPT.So, why use ChatGPT if
+its responses only touch reality at a tangent? Because sometimes,
+it's exactly this type of creative, imaginative thinking that we need
+to solve complex problems and generate new ideas. ChatGPT allows us
+to explore possibilities that are beyond the constraints of our
+everyday reality, and that can be incredibly powerful.So, there you
+have it - ChatGPT demystified! While its responses may not always be
+rooted in reality, they are still incredibly useful for generating
+creative ideas and engaging in imaginative conversations. I hope
+you'll give it a try and see what new possibilities it can unlock for
+you.
+  Learn more here: bit.ly/quaesita_chattygpt
+[[}]]
+
+
+[[[{]]
+## varunshenoy/GraphGPT: Extrapolating knowledge graphs from unstructured text using GPT-3
+
+* <https://github.com/varunshenoy/GraphGPT>
+
+## https://alphacode.deepmind.com
+[[}]]
+
+[{]]
+## varunshenoy/GraphGPT: Extrapolating knowledge graphs from unstructured text using GPT-3
+
+* <https://github.com/varunshenoy/GraphGPT>
+
+## https://alphacode.deepmind.com
+[[}]]
+
+
+[[{PM.TODO]]
+## Boltmann learning algorithm
+... We discuss simulate annealing, the Boltmann learning algorithm and other ...
+[[}]]
+
+[[{PM.TODO]]
+## Huawei ModelArst
+<https://www.eleconomista.es/empresas-finanzas/noticias/9449298/10/18/COMUNICADO-Huawei-lanza-una-plataforma-de-desarrollo-de-IA-con-ciclo-de-vida-completo-mas-rapida.html>
+ModelArts es una plataforma de desarrollo de IA
+más rápida e inclusiva que cualquier otra plataforma de desarrollo
+de IA del mercado", dijo Zheng Yelai, vicepresidente de Huawei y
+presidente de la unidad de negocio Huawei Cloud. "Creemos que los
+desarrolladores de IA sabrán apreciar lo rápido que se inicia,
+completa entrenamientos e implanta modelos".
+
+El etiquetado y la preparación de datos es un proceso largo en el
+desarrollo de la inteligencia artificial, y representa casi el 50%
+del tiempo necesario. ModelArts tiene un marco de gobernanza de datos
+integrado para el etiquetado y la preparación de datos durante el
+desarrollo de IA. El marco implementa un entrenamiento iterativo para
+reducir el volumen de datos que tienen que ser etiquetados
+manualmente, lo que aumenta por 100 la eficiencia del etiquetado y la
+preparación de datos.
+
+Además, ModelArts integra diversas tecnologías de optimización,
+especialmente el sistema de paralelo híbrido con cascada para
+reducir a la mitad el entrenamiento requerido en un determinado
+modelo, conjunto de datos o conjunto de recursos de hardware.
+
+La implantación de modelos de IA es un proceso complejo. Con
+ModelArts, los modelos de entrenamiento pueden moverse a
+dispositivos, la periferia y la nube con solo un clic. Los trabajos
+de inferencia en línea o por lotes se proporcionan a través de la
+nube para cumplir con los diferentes requisitos de las aplicaciones,
+como la implantación simultánea o distribuida.
+
+ModelArts también incorpora varias tecnologías de IA, como el
+aprendizaje automático, el diseño de modelos y la configuración de
+parámetros para acelerar el desarrollo de la inteligencia artificial.
+
+En términos de gestión del ciclo de vida del desarrollo de IA,
+ModelArts abarca la recogida de datos sin procesar, el etiquetado de
+datos, la creación de trabajos de entrenamiento, la selección de
+algoritmos, la creación de modelos y la creación de servicios de
+inferencia. ModelArts permite a los desarrolladores de IA compartir
+datos, modelos y API de inteligencia artificial.
+Visión de IA
+
+Por otra parte, HiLens consta de una plataforma de desarrollo de
+aplicaciones de visión con IA y de un dispositivo visual potenciado
+con capacidades de IA. HiLens cuenta con Skill, un nuevo concepto de
+desarrollo de IA. Skill consiste en un código de control y modelos
+entrenados en ModelArts. HiLens también es compatible con modelos
+entrenados en otros marcos convencionales. Las capacidades
+desarrolladas en HiLens pueden implantarse en cualquier dispositivo
+que tenga integrados los chips Ascend de IA.
+
+El dispositivo visual HiLens se compone de una cámara inteligente
+compatible con inferencias. Los desarrolladores pueden usar el
+dispositivo HiLens para crear aplicaciones de visión e implantarlas
+en dispositivos y en la nube. El dispositivo visual HiLens integra el
+chip Ascend 310, que puede procesar 100 fotogramas por segundo y
+detectar caras en milisegundos. Además, los livianos contenedores
+integrados minimizan el uso de recursos y de ancho de banda de red, y
+pueden descargarse e iniciarse de forma rápida
+[[}]]
+
+[[{ml_type.general,PM.TODO]]
+## Open Cog:
+
+* <https://opencog.org/>
+· " ... big ambition, instead of focusing on a narrow aspect of
+  AI such as deep learning or neural networks, Open Cog aims to create
+  beneficial artificial general intelligence (AGI). The project is
+  working toward creating systems and robots with the capacity for
+  human-like intelligence.
+[[}]]
+
+[[{use_case.risk_management,use_case.finance,PM.TODO]]
+## Cognitive Risk Management
+<https://towardsdatascience.com/cognitive-risk-management-7c7bcfe84219>
+[[}]]
+
+[[{]]
+## Topological Data Analysis (TDA): A new player in the clustering methods kingdom.
+  
+* It has the potential to become a superhero!
+   Michael(Mike) Erlihson, PhDMichael(Mike) Erlihson, PhD
+[[}]]
+
+[[{]]
+#clustering #tsne #umap #topology #datascience
+
+If you have ever encountered unexpected patterns and inconsistencies while 
+running a complex supervised machine learning model, you may have found your 
+results to be unreliable.
+
+This is a common issue that can perplex even the most experienced data 
+scientists.
+Fortunately, there is a relatively new approach that can help you discover the 
+underlying structure of your data: topological data analysis (TDA).
+This article (link in the first comment) compares TDA with popular t-SNE and 
+UMAP packages and explain why TDA achieves significantly better results. It has 
+the ability to unveil the unexpected and restore order to your results.
+
+[[}]]
+
+[[{]]
+## https://github.com/m-bain/whisperX
+
+This repository provides fast automatic speech recognition (70x realtime with large-v2) with word-level timestamps and speaker diarization.
+
+* Batched inference for 70x realtime transcription using whisper large-v2
+* faster-whisper backend, requires <8GB gpu memory for large-v2 with beam_size=5
+* Accurate word-level timestamps using wav2vec2 alignment
+* Multispeaker ASR using speaker diarization from pyannote-audio (speaker ID labels)
+* VAD preprocessing, reduces hallucination & batching with no WER degradation
+[[}]]
+
+[[{training.finetunning,scalability.embedded,scalability.qlora]]
+## QLORA: EFFICIENT llm on limited gpu memory
+
+
+This paper introduces QLORA, an efficient method for fine-tuning 
+large language models on limited GPU memory without compromising 
+performance. QLORA incorporates 4-bit quantization, double 
+quantization, and paged optimizers to reduce memory usage.The paper 
+describes the QLORA fine-tuning process, which involves 4-bit 
+NormalFloat quantization and Double Quantization. Paged Optimizers 
+are introduced to prevent memory spikes and facilitate fine-tuning on 
+a single machine for large models.The use of specific data types and 
+block sizes improves precision and memory conservation.The 
+limitations and future directions of QLORA are discussed, including 
+the need for evaluation on other benchmarks and exploration of 
+alternative adapter methods. The broader impacts of QLORA are 
+highlighted, as it enables training of large language models on 
+limited resources, promoting independent analysis and making 
+high-quality models more widely accessible and beneficial.In 
+conclusion, Guanaco models trained with QLORA outperform previous 
+models on the Vicuna benchmark, reaching 99.3% of ChatGPT's 
+performance with only 24 hours of fine-tuning on a single GPU. QLORA 
+achieves accurate 4-bit fine-tuning and matches the performance of 
+full-finetuning for models up to 3 billion parameters. The 
+NormalFloat4 data type in QLORA provides better accuracy gains 
+compared to regular 4-bit floats. QLORA's accessibility breakthrough 
+enables training on limited resources and has the potential to 
+benefit researchers, small teams, and applications in low-resource 
+settings while promoting independent analysis and wider access to 
+high-quality language models.Note: In order to keep up with the 
+rapidly growing LLMS ecosystem along with compressed version of 
+paper, I have created LLMS_Paper_Summary_2023, a repository that 
+provides monthly and weekly updates on LLMS papers compressed version 
+of summaries. Fork LLMS_Paper_Summary_2023 for more updates very soon.
+[[scalability.embedded}]]
+
+[[{101,]]
+## Efficiently Applying LLMs to Transform Semi-Structured Data 
+<https://www.infoq.com/news/2023/05/data-transformation-using-llms>
+* LLMs are optimized for interactive, human-in-the-loop applications 
+  (e.g. ChatGPT), not high-throughput data processing tasks. The number 
+  of tokens processed by an LLM in EVAPORATE-DIRECT grows linearly with 
+  the size of the data lake.
+[[}]]
+
+[[{]]
+## Avances en los datos de alto valor en España
+https://datos.gob.es/es/blog/avances-en-los-datos-de-alto-valor-en-espana
+
+Desde hace un tiempo venimos escuchando hablar de los datos de alto valor  (High value datasets en inglés o HVD), esos conjuntos de datos cuya reutilización está asociada a considerables beneficios para la sociedad, el medio ambiente y la economía. Se dieron a conocer en la Directiva (UE) 2019/1024 del Parlamento Europeo y del Consejo, de 20 de junio de 2019, relativa a los datos abiertos y la reutilización de la información del sector público, para posteriormente quedar definidos en el Reglamento de ejecución (UE) 2023/138 de la Comisión de 21 de diciembre de 2022 por el que se establecen una lista de conjuntos de datos específicos de alto valor y modalidades de publicación y reutilización.
+
+En concreto se trata de seis categorías de datos: geoespacial, observación terrestre y medio ambiente, meteorología, estadística, sociedades y propiedad de sociedades, y movilidad. El detalle de estas categorías y cómo deben abrirse estos conjuntos de datos está resumido en la siguiente infografía:
+
+[[}]]
+
+[[{]]
+## LLM Chatbot Arena Comparative
+
+https://lmsys.org/blog/2023-05-10-leaderboard/
+
+by: LMSYS Org, May 10, 2023
+
+We release an updated leaderboard with more models and new data we collected last week, after the announcement of the anonymous Chatbot Arena. We are actively iterating on the design of the arena and leaderboard scores.
+
+In this update, we have added 4 new yet strong players into the Arena, including three proprietary models and one open-source model. They are:
+
+OpenAI GPT-4
+OpenAI GPT-3.5-turbo
+Anthropic Claude-v1
+RWKV-4-Raven-14B
+
+Table 1 displays the Elo ratings of all 13 models, which are based on the 13K voting data and calculations shared in this notebook. You can also try the voting demo and see more about the leaderboard.
+
+
+Table 1. Elo ratings of LLMs (Timeframe: April 24 - May 8, 2023)
+
+RankModelElo RatingDescriptionLicense
+1🥇 GPT-41274ChatGPT-4 by OpenAIProprietary
+2🥈 Claude-v11224Claude by AnthropicProprietary
+3🥉 GPT-3.5-turbo1155ChatGPT-3.5 by OpenAIProprietary
+4Vicuna-13B1083a chat assistant fine-tuned from LLaMA on user-shared conversations by LMSYSWeights available; Non-commercial
+5Koala-13B1022a dialogue model for academic research by BAIRWeights available; Non-commercial
+6RWKV-4-Raven-14B989an RNN with transformer-level LLM performanceApache 2.0
+7Oasst-Pythia-12B928an Open Assistant for everyone by LAIONApache 2.0
+8ChatGLM-6B918an open bilingual dialogue language model by Tsinghua UniversityWeights available; Non-commercial
+9StableLM-Tuned-Alpha-7B906Stability AI language modelsCC-BY-NC-SA-4.0
+10Alpaca-13B904a model fine-tuned from LLaMA on instruction-following demonstrations by StanfordWeights available; Non-commercial
+11FastChat-T5-3B902a chat assistant fine-tuned from FLAN-T5 by LMSYSApache 2.0
+12Dolly-V2-12B863an instruction-tuned open large language model by DatabricksMIT
+13LLaMA-13B826open and efficient foundation language models by MetaWeights available; Non-commercial
+
+
+
+If you want to see more models, please help us add them or contact us by giving us API access.
+
+Overview
+
+Thanks to the community's help, we have gathered 13k anonymous votes. Looking at the rankings and data collected from this leaderboard update, we have a few interesting findings.
+
+Gaps between proprietary and open-source models
+We do observe a substantial gap between the three proprietary models and all other open-source models. In particular, GPT-4 is leading the board, achieving an Elo score of 1274. It is almost 200 scores higher than the best open-source alternative on this board -- our Vicuna-13B. After dropping ties, GPT-4 wins 82% of the matches when it is against Vicuna-13B, and it even wins 79% of the matches when it is against its previous generation GPT-3.5-turbo.
+
+However, it is important to note that these open-source models on the leaderboard generally have fewer parameters, in the range of 3B - 14B, than proprietary models. In fact, recent advancements in LLMs and data curation have allowed for significant improvements in performance with smaller models. Google's latest PaLM 2 is a great example of this: knowing that PaLM 2 achieves even better performance than its previous generation using smaller model sizes, we remain very optimistic about the potential for open-source language models to catch up. Through our FastChat-based Chatbot Arena and this leaderboard effort, we hope to contribute a trusted evaluation platform for evaluating LLMs, and help advance this field and create better language models for everyone.
+
+Comparing proprietary models
+However, among the three proprietary models, we do observe, based on our collected voting results, that Anthropic's Claude model is preferred by our users over GPT-3.5-turbo, which is often discussed as its opponent. In fact, Claude is highly competitive even when competing against the most powerful model -- OpenAI's GPT-4. Looking at the win rate plots (Figure 3 below), among the 66 non-tied matches between GPT-4 and Claude, Claude indeed wins over GPT-4 in 32 (48%) matches. Great job Anthropic team!
+
+Comparing open-source chatbots
+In this update, we have added RWKV-4-Raven-14B model into the Arena thanks to the community contribution. Unlike all other models, RWKV model is an RNN instead of a transformer-based model; but it performs surprisingly well! It soon uptrends on the leaderboard and is positioned #6 on the overall leaderboard. It wins more than 50% of non-tied matches against all other open-source models except Vicuna. You are welcome to check out its repo to learn more about other features like memory saving and fast inference. Kudos to the RWKV developers.
+
+Fluctuations of Elo scores
+The Elo scores of existing models can go up and down depending on the results of the new games played. This is similar to the way the Elo scores of chess players vary over time (see here). Since the participation of the three strong proprietary models, the Chatbot Arena has never been more competitive than ever before! As a consequence, we observe the Elo scores of all open source models have decreased a bit. This is because open source models lose lots of pairwise matches when they are against the proprietary models.
+
+Detailed Results
+
+When does GPT-4 fail?
+We present a few examples in which GPT-4 is not preferred by users.
+
+Figure 1: One example where Claude is preferred over GPT-4.
+
+In Figure 1, the user posed a tricky question that demanded careful reasoning and planning. Although both Claude and GPT-4 provided similar answers, Claude's response was marginally better as the needle was positioned on top. However, we observed that the outcome of this example cannot always be replicated due to the randomness of sampling. Sometimes GPT-4 can also give the same order as Claude, but it fails at this generation trial. Additionally, we noted that the behavior of GPT-4 differed slightly when using the OpenAI API versus the ChatGPT interface, which could be attributed to different prompts, sampling parameters, or other unknown factors.
+
+Figure 2: One example where a user thinks both Claude and GPT-4 are wrong.
+
+In Figure 2, both Claude and GPT-4 are still struggling with this kind of tricky reasoning questions despite their amazing capabilities.
+
+Besides these tricky cases, there are also a lot of easy questions that do not require complex reasoning or knowledge. In this case, open source models like Vicuna can perform on par with GPT-4, so we might be able to use a slightly weaker (but smaller or cheaper) LLM in place of the more powerful one like GPT-4.
+
+Win Fraction Matrix
+We present the win fraction of all model pairs in Figure 3.
+
+Figure 3: Fraction of Model A Wins for All Non-tied A vs. B Battles.
+
+Language-specific leaderboards
+Lastly, we present two language-specific leaderboards, by isolating the conversation data into two subsets based on the language: (1) English-only and (2) non-English. From Figure 4, we can tell that Koala is worse at non-English languages and ChatGLM-6B is better at non-English languages. This is because of the different compositions of their training data.
+
+Figure 4: The English-only and non-English leaderboards.
+
+More figures, analyses, and calculations can be found in this notebook.
+
+Next Steps
+
+Help us add more models
+Since the launch of Chatbot Arena, we have seen growing interest from the community. Many model developers are eager to put their chatbots into the Arena and see how they perform against others. Please help us add more models by following this guide.
+
+Bring your own self-hosted chatbot (BYOC)
+We also plan to open some APIs to allow competitors to register their self-hosted chatbots and participate in the Arena.
+
+Area-specific Arena
+Similar to the language-specific Arena, we will extend a single, monolithic leaderboard to more areas, and publish more functionality-specific leaderboards, such as writing, coding, and reasoning. In which specific area or ability do you want to see the LLMs evaluated? Please give us feedback on Discord or Twitter.
+
+Acknowledgement
+
+This blog post is primarily contributed by Lianmin Zheng, Ying Sheng, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. We thank other members of LMSYS team (Wei-Lin Chiang, Siyuan Zhuang, and more) for valuable feedback and MBZUAI for donating compute resources. Additionally, we extend our thanks to community contributors for their votes and model support.
+
+[[}]]
+
+[[{]]
+## Wasserstein distance
+
+by Danny B.3, Chief Data Scientist
+
+* <https://www.linkedin.com/posts/danny-butvinik_machinelearning-datascience-activity-7003611949234065408-T9Ej>
+
+- Wasserstein distance: (also called Kantorovich–Rubinstein metric):
+  A way to measure the distance between two probability distributions
+  on a metric space M.
+- Intuitively, if each distribution is viewed as a unit amount of earth
+  (soil) piled on M, the metric is the "minimum cost" of turning one
+  pile into the other, which is assumed to be the amount of earth that
+  needs to be moved times the mean distance it has to be moved.
+- This problem only makes sense if the pile to be created has the same
+  mass as the pile to be moved.
+- The name "Wasserstein distance" was coined by R. L. Dobrushin in 1970,
+  after learning of it in the work of Leonid Vaseršteĭn on Markov
+  processes. However, the metric was first defined by Leonid
+  Kantorovich. Consequently, some encourage using the terms
+  "Kantorovich metric" and "Kantorovich distance." Most
+  English-language publications use the German spelling "Wasserstein"
+  (attributed to the name "Vaseršteĭn" being of German
+  origin).Applications in Data Science and Machine LearningIn the paper
+  'Wasserstein GAN,' Arjovsky et al. use the Wasserstein-1 metric to
+  improve the original framework of Generative Adversarial Networks
+  (GAN) and alleviate the vanishing gradient and mode collapse issues.
+
+* NOTE E.Arizón: this distance looks more like "work". Can we see
+  "scalars" as some sort of special distance? 
+[[}]]
+
+[[{PM.RADAR]]
+## Moshi.chat
+
+* <https://moshi.chat/>
+
+Moshi is an experimental conversational AI.
+
+- Take everything it says with a grain of salt.
+- Conversations are limited to 5 min.
+- Moshi thinks and speaks at the same time.
+- Moshi can listen and talk at all time:
+
+
+We strive to support all browsers, Chrome works best.
+
+Baked with <3 @Kyutai.
+
+You are currently using a EU based server, expect some extra latency from the US.
+* https://www.xataka.com/robotica-e-ia/moshi-asistente-ia-que-habla-tiempo-real-desafia-a-silicon-valley-europa
+
+Por qué es importante. Moshi representa un salto en la IA conversacional al 
+ofrecer capacidades que OpenAI todavía no ha podido implementar. Junto a 
+Mistral representa el creciente papel europeo en la carrera de la IA.
+[[PM.RADAR}]]
+
+[[{PM.low_code.taipy]]
+## taipy.io: 
+
+- Taipy Designer: no-code tool that lets you create readable web front-ends with a drag-and-drop user interface.
+
+Plus, node caching reduces processing times, and its Python-based structure means no front-end experience is needed. Easy and efficient!
+
+Show your support for open-source tools by giving Taipy a star on GitHub https://bit.ly/3TEaCqx
+
+[[PM.low_code.taipy}]]
+
+[[{]]
+## Meta Releases Llama 3 Open-Source LLM (2024-05)
+
+* <https://www.infoq.com/news/2024/05/meta-llama-3/>
+
+... available in 8B and 70B parameter sizes, each with a base
+and instruction-tuned variant.
+
+... several architecture changes, including:
+- better tokenize
+- more efficient grouped query attention (GQA) mechanism.
+
+- instruction-tuned variant trained with a combination of methods,
+  including proximal policy optimization (PPO) and 
+  direct preference optimization (DPO), improving model's
+  performance on coding and reasoning tasks. [[training.fine_tunning.PPO,training.fine_tunning.DPO]]
+
+- New safety tools:
+  - Code Shield: filter for detecting insecure code generated by Llama 3. 
+
+- Meta also claims that they are currently training a version of Llama 3
+  with more than 400B parameters, using their 24K-GPU Grand Teton clusters.
+
+... one user pointed out that Meta's performance evaluation did not compare
+the model to GPT-4 or to Claude Opus. 
+... Another user explained: They didn't compare against the best models 
+because they were trying to do "in class" comparisons, and the 70B model is
+in the same class as Sonnet and GPT3.5 (which is much worse than Sonnet).
+
+... Since Llama is open source, we're going to see fine tunes and LoRAs though, 
+unlike Opus.
+[[}]]
+
+
+[[{]]
+## LLM: Apple Open-Sources One Billion Parameter Language Model OpenELM
+https://www.infoq.com/news/2024/05/apple-llm-openelm/
+
+One key feature of OpenELM is the layer-wise attention scaling. In contrast to 
+most Transformer-based models, which use the same number of dimensions and 
+parameters in each layer, OpenELM uses a smaller number in the "lower" layers 
+(closer to the input) and more in the higher layers. This gives the model 
+better accuracy for a given total number of parameters.
+[[}]]
+
+[[{]]
+## China’s DeepSeek Coder becomes first open-source coding model to beat GPT-4 Turbo
+https://venturebeat.com/ai/chinas-deepseek-coder-becomes-first-open-source-coding-model-to-beat-gpt-4-turbo/
+
+Built upon DeepSeek-V2, an MoE model that debuted last month, DeepSeek Coder V2 
+excels at both coding and math tasks. It supports more than 300 programming 
+languages and outperforms state-of-the-art closed-source models, including 
+GPT-4 Turbo, Claude 3 Opus and Gemini 1.5 Pro. The company claims this is the 
+first time an open model has achieved this feat, sitting way ahead of Llama 
+3-70B and other models in the category.
+[[}]]
+
+[[{]]
+## PyTorch 2.3 Release
+https://pytorch.org/blog/pytorch2-3/
+
+April 24, 2024
+
+PyTorch 2.3 Release Blog
+
+by Team PyTorch
+
+We are excited to announce the release of PyTorch® 2.3 (release note)! PyTorch 2.3 offers support for user-defined Triton kernels in torch.compile, allowing for users to migrate their own Triton kernels from eager without experiencing performance regressions or graph breaks. Tensor Parallelism improves the experience for training Large Language Models using native PyTorch functions, which has been validated on training runs for 100B parameter models. As well, semi-structured sparsity implements semi-structured sparsity as a Tensor subclass, with observed speedups of up to 1.6 over dense matrix multiplication.
+
+This release is composed of 3393 commits and 426 contributors since PyTorch 2.2. We want to sincerely thank our dedicated community for your contributions. As always, we encourage you to try these out and report any issues as we improve 2.3. More information about how to get started with the PyTorch 2-series can be found at our Getting Started page.
+
+Beta Prototype Performance Improvements
+User-defined Triton kernels in torch.compile torch.export adds new API to specify dynamic_shapes Weight-Only-Quantization introduced into Inductor CPU backend
+Tensor parallelism within PyTorch Distributed Asynchronous checkpoint generation
+Support for semi-structured sparsity
+
+*To see a full list of public feature submissions click here.
+
+Beta Features
+
+[Beta] Support for User-defined Triton kernels in torch.compile
+
+Allows for PyTorch code that contains triton kernels to be executed natively using torch.compile. This enables users to migrate code containing triton kernels from eager PyTorch to torch.compile without running into performance regressions or graph breaks. Native support also creates an opportunity for Torch Inductor to precompile the user-defined Triton kernel as well as better organize code around the Triton kernel allowing for further optimizations.
+
+You can find more information about how to utilize user defined Triton kernels in torch.compile within this tutorial.
+
+[Beta] Tensor Parallelism introduces more efficient ways to train LLMs
+
+The Tensor Parallel API facilitates various tensor manipulations across GPUs/hosts and integrates with FSDP for 2D Parallelism (Tensor parallelism across devices + Data Parallelism across hosts). It also offers a low-level API for constructing higher-level Tensor parallel APIs. This API has been validated to support the training of transformer models with over 100 billion parameters.
+
+You can find more information on how to utilize this within your workflows within this tutorial.
+
+[Beta] Semi-structured sparsity provides users with a way to take advantage of accelerated sparse inference and memory savings
+
+torch.sparse.SparseSemiStructuredTensor implements semi-structured sparsity as a Tensor subclass, which have observed speedups of up to 1.6 over dense matrix multiplication.
+
+In particular it adds:
+
+Additional support for quantization composability (mixed dtype, dequant fusion)
+Updated cuSPARSELt and CUTLASS kernels
+torch.compile support
+
+You can find more information on how to take advantage of semi-structured sparsity here.
+
+Prototype Features
+
+[PROTOTYPE] torch.export adds new API to specify dynamic_shapes
+
+You can now use torch.export.Dim to better represent dynamic shapes by enabling developers to specify ranges (min and max values) that can be reused across different input dimensions that are constrained to be equal.
+
+To learn more about torch.export.Dim as well as how it can be used to express more interesting relationships (such as linear arithmetic expressions) check out the tutorial here.
+
+[PROTOTYPE] Asynchronous checkpoint generation
+
+Asynchronous checkpoint generation allows users to continue their training loops while checkpoints are being generated, essentially offloading much of the checkpointing cost.
+
+You can find out how to utilize this within your own workflows with this example.
+
+Performance Improvements
+
+[PROTOTYPE] Weight-Only-Quantization introduced into Inductor CPU backend
+
+PyTorch 2.3 enhances LLM inference performance on torch inductor CPU backend. The project gpt-fast offers a simple and efficient PyTorch native acceleration for transformer text generation with torch.compile. Prior to 2.3 only CUDA devices were supported and this feature enables the CPU counterpart by providing highly optimized kernels for the int4 and int8 weight only quantization Linear.
+
+For more information / how to utilize this feature please refer to the gpt-fast README.
+[[}]]
+
+[[{]]
+## 101 Too many models?
+https://finance.yahoo.com/news/too-many-models-211331632.html
+
+finance.yahoo.com
+
+Too many models
+
+Devin Coldewey
+6 - 8 minutes
+
+How many AI models is too many? It depends on how you look at it, but 10 a week is probably a bit much. That's roughly how many we've seen roll out in the last few days, and it's increasingly hard to say whether and how these models compare to one another, if it was ever possible to begin with. So what's the point?
+
+We're at a weird time in the evolution of AI, though of course it's been pretty weird the whole time. We're seeing a proliferation of models large and small, from niche developers to large, well-funded ones.
+
+Let's just run down the list from this week, shall we? I've tried to condense what sets each model apart.
+
+LLaMa-3: Meta's latest "open" flagship large language model. (The term "open" is disputed right now, but this project is widely used by the community regardless.)
+
+Mistral 8x22: A “mixture of experts” model, on the large side, from a French outfit that has shied away from the openness they once embraced.
+
+Stable Diffusion 3 Turbo: An upgraded SD3 to go with the open-ish Stability's new API. Borrowing "turbo" from OpenAI's model nomenclature is a little weird, but OK.
+
+Adobe Acrobat AI Assistant: "Talk to your documents" from the 800-lb document gorilla. Pretty sure this is mostly a wrapper for ChatGPT, though.
+
+Reka Core: From a small team formerly employed by Big AI, a multimodal model baked from scratch that is at least nominally competitive with the big dogs.
+
+Idefics2: A more open multimodal model, built on top of recent, smaller Mistral and Google models.
+
+OLMo-1.7-7B: A larger version of AI2's LLM, among the most open out there, and a stepping stone to a future 70B-scale model.
+
+Pile-T5: A version of the ol' reliable T5 model fine-tuned on code database the Pile. The same T5 you know and love but better coding.
+
+Cohere Compass: An "embedding model" (if you don't know already, don't worry about it) focused on incorporating multiple data types to cover more use cases.
+
+Imagine Flash: Meta's newest image generation model, relying on a new distillation method to accelerate diffusion without overly compromising quality.
+
+Limitless: "A personalized AI powered by what you’ve seen, said, or heard. It’s a web app, Mac app, Windows app, and a wearable."
+
+That's 11, because one was announced while I was writing this. And this is not all of the models released or previewed this week! It's just the ones we saw and discussed. If we were to relax the conditions for inclusion a bit, there would dozens: some fine-tuned existing models, some combos like Idefics 2, some experimental or niche, and so on. Not to mention this week's new tools for building (torchtune) and battling against (Glaze 2.0) generative AI!
+
+What are we to make of this never-ending avalanche? We can't "review" them all. So how can we help you, our readers, understand and keep up with all these things?
+
+The truth is you don't need to keep up. Some models like ChatGPT and Gemini have evolved into entire web platforms, spanning multiple use cases and access points. Other large language models like LLaMa or OLMo -- though they technically share a basic architecture -- don't actually fill the same role. They are intended to live in the background as a service or component, not in the foreground as a name brand.
+
+There's some deliberate confusion about these two things, because the models' developers want to borrow a little of the fanfare associated with major AI platform releases, like your GPT-4V or Gemini Ultra. Everyone wants you to think that their release is an important one. And while it's probably important to somebody, that somebody is almost certainly not you.
+
+Think about it in the sense of another broad, diverse category like cars. When they were first invented, you just bought "a car." Then a little later, you could choose between a big car, a small car, and a tractor. Nowadays, there are hundreds of cars released every year, but you probably don't need to be aware of even one in ten of them, because nine out of ten are not a car you need or even a car as you understand the term. Similarly, we're moving from the big/small/tractor era of AI toward the proliferation era, and even AI specialists can't keep up with and test all the models coming out.
+
+The other side of this story is that we were already in this stage long before ChatGPT and the other big models came out. Far fewer people were reading about this 7 or 8 years ago, but we covered it nevertheless because it was clearly a technology waiting for its breakout moment. There were papers, models, and research constantly coming out, and conferences like SIGGRAPH and NeurIPS were filled with machine learning engineers comparing notes and building on one another's work. Here's a visual understanding story I wrote in 2011!
+
+That activity is still underway every day. But because AI has become big business — arguably the biggest in tech right now — these developments have been lent a bit of extra weight, since people are curious whether one of these might be as big a leap over ChatGPT that ChatGPT was over its predecessors.
+
+The simple truth is that none of these models is going to be that kind of big step, since OpenAI's advance was built on a fundamental change to machine learning architecture that every other company has now adopted, and which has not been superseded. Incremental improvements like a point or two better on a synthetic benchmark, or marginally more convincing language or imagery, is all we have to look forward to for the present.
+
+Does that mean none of these models matter? Certainly they do. You don't get from version 2.0 to 3.0 without 2.1, 2.2, 2.2.1, and so on. And sometimes those advances are meaningful, address serious shortcomings, or expose unexpected vulnerabilities. We try to cover the interesting ones, but that's just a fraction of the full number. We're actually working on a piece now collecting all the models we think the ML-curious should be aware of, and it's on the order of a dozen.
+
+Don't worry: when a big one comes along, you'll know, and not just because TechCrunch is covering it. It's going to be as obvious to you as it is to us.
+
+This article originally appeared on TechCrunch at https://techcrunch.com/2024/04/19/too-many-models/
+[[}]]
+
+[[{]]
+## Python graph libraries and tutorials
+https://www.linkedin.com/feed/update/urn:li:activity:7182289136010022912
+
+Maryam Miradi, PhD 3e
+
+VP & Chief AI Scientist | PhD in AI Machine Learning and Deep Learning | NLP, LLMs and Computer Vision
+
+6 j. Modifié
+
+𝐔𝐧𝐥𝐞𝐚𝐬𝐡𝐢𝐧𝐠 𝐭𝐡𝐞 𝐏𝐨𝐰𝐞𝐫 𝐨𝐟 𝐆𝐫𝐚𝐩𝐡 𝐀𝐧𝐚𝐥𝐲𝐭𝐢𝐜𝐬: 𝟐𝟓 𝐓𝐨𝐩 𝐏𝐲𝐭𝐡𝐨𝐧 𝐋𝐢𝐛𝐫𝐚𝐫𝐢𝐞𝐬, 𝐀𝐥𝐠𝐨𝐫𝐢𝐭𝐡𝐦𝐬, 𝐓𝐲𝐩𝐞𝐬 𝐚𝐧𝐝 𝐓𝐞𝐜𝐡𝐧𝐢𝐪𝐮𝐞𝐬 Graph Analytics extracts valuable insights from complex, interconnected data with ability to represent relationships between entities. 𝔾𝕣𝕒𝕡𝕙 ℂ𝕠𝕞𝕡𝕠𝕤𝕚𝕥𝕚𝕠𝕟: - Nodes: represent entities - Edges: link between entities 𝔾𝕠𝕒𝕝𝕤 𝕠𝕗 𝔾𝕣𝕒𝕡𝕙 𝔸𝕟𝕒𝕝𝕪𝕥𝕚𝕔𝕤: * Identify key entities and their relationships * Discover patterns and anomalies in large-scale datasets * Generate recommendations and predictions based on past behavior * Uncover community structures within networks * Predict missing links and uncover hidden connections 𝕋𝕪𝕡𝕖𝕤 𝕠𝕗 𝔾𝕣𝕒𝕡𝕙 𝔸𝕟𝕒𝕝𝕪𝕥𝕚𝕔𝕤: 𝐆𝐫𝐚𝐩𝐡 𝐍𝐞𝐮𝐫𝐚𝐥 𝐍𝐞𝐭𝐰𝐨𝐫𝐤𝐬 (𝐆𝐍𝐍): A class of deep learning models that operate directly on graph structures. Examples of GNNs include: Ⓞ Graph Convolutional Networks (GCN) Ⓞ Graph Attention Networks (GAT) Ⓞ GraphSAGE 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐢𝐨𝐧 𝐰𝐢𝐭𝐡 𝐂𝐞𝐧𝐭𝐫𝐚𝐥𝐢𝐭𝐲 𝐌𝐞𝐚𝐬𝐮𝐫𝐞𝐬: Centrality measures aim to identify the most important nodes in a graph. Some examples include: Ⓞ Degree Ⓞ Betweenness Ⓞ Eigenvector Ⓞ PageRank Ⓞ Katz 𝐂𝐥𝐮𝐬𝐭𝐞𝐫𝐢𝐧𝐠: Aim to group nodes into clusters based on their structural similarity. Some examples include: Ⓞ Girvan-Newman Ⓞ Markov Cluster (MCL) Ⓞ Hierarchical agglomerative clustering (HAC) 𝐋𝐢𝐧𝐤 𝐏𝐫𝐞𝐝𝐢𝐜𝐭𝐢𝐨𝐧: Aim to predict missing links in a graph. Some examples include: Ⓞ Louvain Ⓞ Infomap Ⓞ Walktrap 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐃𝐞𝐭𝐞𝐜𝐭𝐢𝐨𝐧: Aim to identify groups of nodes that are densely connected within themselves but sparsely connected with the rest of the network. Some examples include: Ⓞ Girvan-Newman Ⓞ Clauset-Newman-Moore Ⓞ Label Propagation Ⓞ Walktrap Ⓞ Fastgreedy 𝔾𝕣𝕒𝕡𝕙 𝔸𝕟𝕒𝕝𝕪𝕥𝕚𝕔𝕤 𝕋𝕖𝕔𝕙𝕟𝕚𝕢𝕦𝕖𝕤: ➊ Graph Traversal: Visit every node in a graph, typically in a systematic order. ➋ Shortest Path: Aim to find the shortest path between two nodes in a graph. ➌ Connected Components: Identify groups of nodes that are all connected to each other. ➍ Minimum Spanning Tree: Find the minimum set of edges needed to connect all nodes in a graph. ➎ Maximum Flow: Find the maximum amount of flow that can pass through a graph, given constraints on the edges. 𝟐𝟓 𝐏𝐲𝐭𝐡𝐨𝐧 𝐋𝐢𝐛𝐫𝐚𝐫𝐢𝐞𝐬 𝐈 𝐟𝐨𝐮𝐧𝐝: NetworkX igraph karateclub graph-tool SNAP.py Deep Graph Library (DGL) PyTorch Geometric Spektral stellargraph scikit-network CDlib leidenalg markov-clustering pyclustering Graphein nxviz Grakn Tulip PowerGraph Gephi PyG Python-I graph NetworKit Grakel PyGraphistry Links in Comments↓ #machinelearning #datascience #ai #python #ml #deeplearning ⭆ 𝐅𝐨𝐫 𝐀𝐩𝐩𝐥𝐢𝐞𝐝 𝐀𝐈, 𝐋𝐋𝐌𝐬 𝐚𝐧𝐝 𝐏𝐲𝐭𝐡𝐨𝐧 𝐋𝐢𝐛𝐫𝐚𝐫𝐢𝐞𝐬 𝐣𝐨𝐢𝐧 𝐦𝐲 𝐍𝐞𝐰𝐬𝐥𝐞𝐭𝐭𝐞𝐫: https://lnkd.in/eJM6an-t
+
+
+
+696 31 commentaires
+Commenter
+
+Attia Anis
+
+Empowering IT Success Through Effective Coordination || Passionate about research, dedicated to discovery.
+
+4 j.
+
+Thanks for sharing
+
+1 réaction
+Ladislav Michal
+
+Manager
+
+4 j.
+
+@ @
+
+1 réaction
+Arun B S, CSM® CSPO®
+
+AI & Analytics I Intelligent Automation I Machine Learning I NLP
+
+4 j.
+
+Thank you and very Informative
+
+1 réaction
+Werner Toplak
+
+CEO bei TopLab - Toplak Laboratory
+
+5 j.
+
+I prefer NetworkX in conjunction with Cytoscape for Python.
+
+1 réaction
+Stefan Reinhardt
+
+“What we know is a drop; what we don't know, is an ocean" (Sir Isaac Newton) #EnterpriseKnowledgeGraph #eccencaCorporateMemory #KnowledgeCentricity
+
+5 j.
+
+Thanks for sharing Maryam Miradi, PhD
+
+1 réaction
+David Lassig
+
+me.intersection({"DataEngineering", "IT-Security", "MachineLearning"}) @ CCITS
+
+5 j.
+
+thank you, nice summary of topics.
+
+1 réaction
+Vikas Virupaksh
+
+Solution | Consulting | Property Graphs | Knowledge Graphs | RDF | Digital Twin | LLMs | Gen AI - transform your data into knowledgeable & contextual insights driving decision intelligence
+
+5 j.
+
+Wow appreciate all collaborative information
+
+1 réaction
+Venkata Satya Prakash Kandukuri
+
+Assistant Profesor || Ex- Junior Data Science at Caerus SkillmaTic || Python ,Data Science Trainer cum Mentor
+
+5 j.
+
+Arun Gavvala Raviteja Muddu sindhureddy venna Sumanth Reddy
+
+1 réaction
+Venkata Satya Prakash Kandukuri
+
+Assistant Profesor || Ex- Junior Data Science at Caerus SkillmaTic || Python ,Data Science Trainer cum Mentor
+
+5 j.
+
+Thanks for sharing Maryam Miradi, PhD
+
+1 réaction
+Maryam Amini Moghaddam
+
+Master's degree in Mathematical Statistics | Financial Expert at Golriz Khorasan Paper Products Industries & Darvishi Holding; FlySepehran
+
+5 j.
+
+Thanks for posting Maryam Miradi, PhD. what we know is that from the past until now, graph analysis is done through trees, Bayesian networks, Petri nets and neural networks. But I wanted to know, do you mean by graph analysis a case other than these cases? Thank you
+
+1 réaction
+
+Maryam Miradi, PhD
+
+VP & Chief AI Scientist | PhD in AI Machine Learning and Deep Learning | NLP, LLMs and Computer Vision
+
+3 j.
+
+Maryam Amini Moghaddam My pleasure!
+
+1 réaction
+
+
+Maryam Miradi, PhD
+
+VP & Chief AI Scientist | PhD in AI Machine Learning and Deep Learning | NLP, LLMs and Computer Vision
+
+5 j.
+
+Another github for you guys to explore is yfiles. Thank you to Sebastian Müller for bringing to my attention https://github.com/yWorks/yfiles-jupyter-graphs
+
+3 réactions
+Sebastian Müller
+
+CTO at yWorks GmbH. Lead architect of yFiles, the diagramming library.
+
+5 j.
+
+What a great list! If you want superb visualizations in your jupyter notebooks, also consider what our team created for the python graph community: https://github.com/yWorks/yfiles-jupyter-graphs Sorry for the shameless plug, but I think this tool really deserves a mention
+
+3 réactions
+Marcos Colebrook-Santamaria
+
+Profesor Titular (Associate Professor) en Universidad de La Laguna
+
+5 j.
+
+> Adrián Glez Galván
+
+1 réaction
+Mohamed El Jbari
+
+PhDs in Electronic & Telecommunication and System Engineering / Information Technology & Communication systems
+
+5 j.
+
+Thank you for sharing, I'm interested to GNN for wireless communication
+
+1 réaction
+
+Mohamed El Jbari
+
+PhDs in Electronic & Telecommunication and System Engineering / Information Technology & Communication systems
+
+5 j.
+
+Salmane Koraichi Thank you so much Dear salmane
+
+1 réaction
+
+
+Ahmed Sahlol, PhD
+
+Director of AI & Data science & Assist. Prof. Damietta University (Visit. Prof. Wurzburg University)
+
+5 j.
+
+Thank you
+
+1 réaction
+Patrick Denny
+
+Associate Professor in Artificial Intelligence and Imaging - Industry Expert in Automotive Imaging
+
+5 j.
+
+Thanks for posting Maryam Miradi, PhD ; as with many others I have found myself drawn in the direction of graphs as they can provide many insights. My curiousity was piqued when I played with the Laplace matrix of a basic graph and noticed that something as abstract seeming as the multiplicity of the zero eigenvalue is actually the number of disjoint components in the graph, and that several other properties fall out using simple matrix operations. I'm interested in new perspectives on familiar objects.
+
+3 réactions
+
+Maryam Miradi, PhD
+
+VP & Chief AI Scientist | PhD in AI Machine Learning and Deep Learning | NLP, LLMs and Computer Vision
+
+5 j.
+
+Patrick Denny Yes, absolutely True! Graphs gives meaning to sometimes too abstract calculations. Something as simple as Centrality shows how Criminals launder money and to which Countries
+
+1 réaction
+
+Femi Odusanya
+
+Director - Senior AI Research and Engineering Consultant.
+
+5 j.
+
+Love this, thanks for sharing
+
+1 réaction
+
+Maryam Miradi, PhD
+
+VP & Chief AI Scientist | PhD in AI Machine Learning and Deep Learning | NLP, LLMs and Computer Vision
+
+5 j.
+
+@Femi Odusanya Glad to hear!
+
+
+Samina Amin (she/her)
+
+Ph.D. Candidate specializing in AI Research | Gold Medalist | Systematic Reviewer | Academic Writer | AI Enthusiast in Health Informatics | Expertise in Machine Learning, Deep Learning, Reinforcement Learning, & NLP
+
+6 j.
+
+Thank you so much for sharing such amazing content, Maryam Miradi, PhD! Your posts are truly appreciated.
+
+1 réaction
+
+Samina Amin (she/her)
+
+Ph.D. Candidate specializing in AI Research | Gold Medalist | Systematic Reviewer | Academic Writer | AI Enthusiast in Health Informatics | Expertise in Machine Learning, Deep Learning, Reinforcement Learning, & NLP
+
+6 j.
+
+That sounds like a fantastic application. It's great to hear about your experience with it, Maryam Miradi, PhD
+
+1 réaction
+
+
+Maryam Miradi, PhD
+
+VP & Chief AI Scientist | PhD in AI Machine Learning and Deep Learning | NLP, LLMs and Computer Vision
+
+6 j.
+
+Sources: Amazing article to understand the basic of Graph Analytics: Graph Networks: Traditional Methods to extract features from the of Graph https://medium.com/@aishweta/graph-networks-traditional-methods-to-extract-features-from-the-of-graph-2e6cd86e5c10 NetworkX: A Practical Introduction to Graph Analysis in Python https://soumenatta.medium.com/networkx-a-practical-introduction-to-graph-analysis-in-python-cc72f3dda916 Graph Networks Visualization with pyvis and keyword extraction https://medium.com/@stephanhausberg/graph-networks-visualization-with-pyvis-and-keyword-extraction-cd973d372e2c Fraud Detection with Graph Analytics https://towardsdatascience.com/fraud-detection-with-graph-analytics-2678e817b69e NetworkX Tutorial https://networkx.org/documentation/stable/tutorial.html Different Graph Neural Network Implementation using PyTorch Geometric https://arshren.medium.com/different-graph-neural-network-implementation-using-pytorch-geometric-23f5bf2f3e9f
+[[}]]
+
+
+[[{]]
+## An Open Source Journey with Scikit-Learn – Michael's and Christian's Blog
+https://lorentzen.ch/index.php/2023/11/24/an-open-source-journey-with-scikit-learn/
+
+An Open Source Journey with Scikit-Learn
+
+In this post, I’d like to tell the story of my journey into the open source world of Python with a focus on scikit-learn. My hope is that it encourages others to start or to keep contributing and have endurance for bigger picture changes.
+
+Table of Content
+
+How it all started
+Becoming a scikit-learn core developer
+Summary as core developer
+
+How it all started
+
+Back in 2015/2016, I was working as a non-life pricing actuary. The standard vendor desktop applications we used for generalized linear models (GLM) had problems of system discontinuities, manual error prone steps and the lack of modern machine learning capabilities (not even out-of-sample model comparison).
+
+Python was then on the rise for data science. Numpy, scipy and pandas had laid the foundations, then came deep learning alias neural net frameworks leading to tensorflow and pytorch. XGBoost was also a game changer visible in Kaggle competition leaderboards. All those projects came as open source with thriving communities and possibilities to contribute.
+
+While the R base package always comes with splendid dataframes (I guess they invented it) and battle proven GLMs out of the box, the Python site for GLMs was not that well developed. So I started with GLMs in statsmodels and generalized linear mixed models (a.k.a. hierarchical or multilevel models) in pymc (then called pymc3). My first open source contributions in the Python world were small issues in statsmodels and a little later the bug report pymc#2640 about memory alignment issues which was caused by joblib#563.
+
+To my great surprise the famous machine learning library scikit-learn did not have GLMs, only penalized linear models and logistic regression, but no Poisson or Gamma GLMs which are essential in non-life insurance pricing. Fortunately, I was not the first one to notice this lack. There was already an open issue scikit-learn#5975 with many people asking for this feature. Just nobody had contributed a pull request (PR) yet.
+
+That’s when I said to myself: It should not fail just because no one implements it. I really like open source and gained some programming experience during my PhD in particle physics, mainly C++. Eventually, I boldly (because I was still a newbie) opened the PR scikit-learn#9405 in summer 2017.
+
+Becoming a scikit-learn core developer
+
+This PR turned out to be essential for the development of GLMs and for becoming a scikit-learn core developer. I dare say that I almost got crazy trying to convince the core developers that GLMs are really that useful for supervised machine learning and that GLMs should land in scikit-learn. In retrospective, this was the hardest part and it took me almost 2 years of patience and repeating my arguments, some examples comments are given below:
+
+example 1
+
+example 2
+
+example 3
+
+As I wanted to demonstrate the full utility of GLMs, this PR had become much too large for review and inclusion: +4000 lines of code with several solvers, penalty matrices, 3 examples, a lot of documentation and good test coverage (and a lot of things I would do differently today).
+
+The conclusion was to carve out a minimal GLM implementation using the L-BFGS solver of scipy. This way, I met Roman Yurchak with whom it was a pleasure to work with. It took a little Swiss chocolate incentive to finally get scikit-learn#14300 (still +2900 loc) reviewed and merged in spring 2020. Almost 3 years after opening my original PR, it was released in scikit-learn version 0.23!
+
+I guess it was mainly this work and perseverance around GLMs that catched the attention of the core developers and that motivated them to vote for me: In summer 2020, I was invited to become a scikit-learn core developer and gladly accepted.
+
+Summary as core developer
+
+Further directions
+
+My work on GLMs was easily extensible to other estimators in the form of loss functions. Again, to my surprise, loss functions, a core element for supervised learning, were re-implemented again and again within scikit-learn. So, based on Roman’s idea in #15123, I started a project to unify them, and by unifying also extending several tree estimator classes with poisson and gamma losses (and making existing ones more stable and faster).
+
+As loss functions are such important core components, they have basically 2 major requirements: be numerically stable and fast. That’s why I went with Cython (preferred way for fast code in scikit-learn) in scikit-learn#20567 and guess which loop it closed? Again, I met segfault errors caused by joblib#563. This time, it motivated another core developer to quite an investment in fixing it in joblib#1254.
+
+Another story branch is the dedicated GLM Python library glum. The authors took my original way too long GLM PR as a starting point and developed one of the most feature rich and fastest GLM implementations out there. This is almost like a dream come true.
+
+A summary of my contributions over those 3 intensive years as scikit-learn core developer are best given in several categories.
+
+Pull requests
+
+A summary of my contributions in terms of code may be:
+
+Unified loss module, unified naming of losses, poisson and gamma losses for GLMs and decision tree based models
+LinearModelLoss and NewtonSolver (newton-cholesky) for GLMs like LogisticRegression and PoissonRegressor as well as further solver improvements
+QuantileRegressor (linear quantile regression) and quantile/pinball loss for HistGradientBoostingRegressor (HGBT). BTW, linear quantile regression is much harder than GLM solvers!
+SplineTransformer
+Interaction constraints and feature subsampling for HGBT
+
+From the release notes and the github PRs (where one would miss a few) a more details list of important PRs
+
+Reviewing and steering
+
+Among the biggest changes in newer scikit-learn history are two scikit-learn enhancement proposals (SLEP)
+
+SLEP018: Pandas Output for Transformers with set_output
+championed by Thomas Fan, implemented in PR#23734 v1.2, further developments like PR#27315 for polars in future v1.4
+SLEP006: Metadata Routing
+championed by Adrin Jalali, base implementation PR#22083
+
+For both, I did one of the 2 obligatory reviews. Then, maybe the technically most challenging review I can remember was on:
+
+ENH Add Categorical support for HistGradientBoosting from Thomas Fan, v0.24 (MajorFeature)
+
+Keep in mind that review(er)s are by far the scarcest resource of scikit-learn.
+
+I also like to mention PR#25753 which changed to government to be more inclusive, in particular with voting rights.
+
+Lessons learned
+
+Just before the end, a few critical words must be allowed.
+
+Scikit-learn is focused a lot on stability. For some items of my wish list to land in scikit-learn, it would have again taken years. This time, I decided to release my own library model-diagnostics and I enjoy the freedom to use cutting edge components like polars.
+As part-time statistician, I consider certain design choices like classifiers’ predict implicitly using a 50% threshold instead of returning a predicted probability (what predict_proba does) a bit poor. Hard to change!!! At least, PR#26120 might improve that to some extent.
+I ponder a lot on the pipeline concept. At first, it was like an eye-opener for me to think of feature preprocessing as part of the estimator. The scikit-learn API is build around the pipeline design with fit, transform and predict. But the current trend of modern model classes like gradient boosted trees (XGBoost, LightGBM, HGBT) don’t need a preprocessing pipeline anymore, e.g., they can natively deal with categorical features and missing values. But it is hard to pass the information which feature to treat as categorical through a pipeline, see scikit-learn#18894.
+It is still a very painful experience to specify design matrices of linear models, in particular interaction terms, see scikit-learn#15263, #19533 and #25412. Doing that in a pipline with a ColumnTransformer is just very complicated and prohibits a lot of optimizations (mostly for categoricals)—which is one of the reasons glum is faster.
+
+One of the greatest rewards of this journey was that I learned a lot, about Python, machine learning, rigorous reviews, CI/CD, open source communities, endurance. But even more so, I had the pleasure to meet and work with some kind, brilliant and gifted people like Roman Yurchak, Alexandre Gramfort, Olivier Grisel, Thomas Fan, Nicolas Hug, Adrin Jalali and many more. I am really grateful to be a part of something bigger than its parts.
+
+Michael's and Christian's Blog
+
+Proudly powered by WordPress
+[[}]]
+
+
+[[{]]
+## Advanced Supervised Learning: A Deep Dive into Python Libraries & Methods.
+
+
+By Maryam Miradi, 
+
+- Detectron2: Object Detection: Facebook AI's library for object detection and segmentation.
+- YOLov9:  Real-time Detection: Ultra-fast object detection realized through YOLO, ideal for applications requiring speed and accuracy.
+ 
+- Model Evaluation and Tuning:
+  - Optuna & Hyperopt: Master hyperparameter optimization with these libraries to fine-tune your models for peak performance.
+  - Optimization: Explore Adam, RMSprop, and learning rate schedulers to optimize your training process.
+  - Weights & Biases: Track experiments, visualize models, and compare results across datasets. 
+
+- MLflow: Experiment tracking and model management made easy.
+- AI Fairness 360: A comprehensive set of fairness metrics for machine learning models. 
+
+[[}]]
+
+[[{]]
+## NVIDIA just released an open-source chatbot that runs locally on your PC.
+
+ Using Chat with RTX, you can feed YouTube videos and your documents to create 
+summaries and get relevant answers based on your data. The chatbot runs 
+locally, meaning results are fast, you can use it without the internet, and the 
+user's data stays private. All you need is an RTX 30- or 40-series GPU with at 
+least 8GB of VRAM. I partnered with #Nvidia to give away one 3080 RTX giveaway 
+soon. Stay tuned!
+[[}]]
+
+[[{]]
+## Introducing Gemma - Google's new open-source LLM!
+
+Gemma is a family of lightweight, open-source models from Google built 
+upon the same research and technology used to create the Gemini models.
+
+- Lightweight: runs on laptops.
+
+- can be fine-tune using LoRA.
+
+- A key feature is their training on 6 trillion tokens (vs 2 trillions in LLaMA 2)
+[[}]]
+
+[[{]]
+## Mistral AI's Open-Source Mixtral 8x7B Outperforms GPT-3.5 (2023-12)
+
+* <https://www.infoq.com/news/2024/01/mistral-ai-mixtral/>
+
+- Mixtral 8x7B Outperforms GPT-3.5
+
+- "the best open-weights model as of December 2023." 
+
+- sparse mixture of experts (SMoE) LLM.
+- The model contains 46.7B total parameters, but performs inference at
+  the same speed and cost as models one-third that size.
+- Context Length: 32k tokens 
+- Accepts Spanish, French, Italian, German, and English language.
+
+- Mixtral 8x7B Instruct: fine-tuned for instruction-following using
+  direct preference optimisation (DPO)  instead of the RLHF technique 
+  used to train ChatGPT  [[training.fine_tunning.DPO,training.fine_tunning.RLHF,doc_has.comparative]].
+  DPO, developed by researchers at Stanford University 
+  "matches or improves response quality" compared to RLHF, while being much
+  simpler to implement.  DPO uses the same dataset as RLHF, a set of paired
+  responses with one ranked higher than the other, but doesn't require creating
+  a separate reward function for RL.
+
+- Apache 2.0 license.
+- Support for vLLM "backend".
+
+... The key idea of MoE models is to replace the feed-forward layers of
+the Transformer block with a combination of a router plus a set of 
+expert layers.  [[doc_has.keypoint]]
+ 
+  During inference, the router in a Transformer block selects a subset of
+the experts to activate. In the Mixtral model, the output for that block
+is computed by applying the softmax function to the top two experts.
+[[}]]
+
+[[{]]
+## Timeserires infographics
+
+* <https://www.linkedin.com/feed/update/urn:li:activity:7072430109990752256>
+
+  The infographics below provide a comprehensive overview of various approaches 
+used in time series analysis (not all of them), covering various methods, 
+including machine learning, structural models, time-frequency analysis, chaotic 
+analysis, and control charts.   Machine learning techniques have gained 
+significant popularity in time series analysis due to their ability to learn 
+from data automatically. Some of the approaches:   Autocorrelation Function 
+(ACF) ACF measures the correlation between a time series and its lagged 
+versions. It helps identify patterns that persist over time and is particularly 
+useful for detecting seasonality and identifying appropriate autoregressive 
+(AR) or moving average (MA) models. Cross-Correlation Function (CCF) CCF 
+measures the correlation between two different time series, enabling the 
+identification of relationships and lagged dependencies between them. It is 
+commonly used in signal processing, econometrics, and environmental studies. 
+Dynamic Bayesian Networks (DBNs) DBNs model the probabilistic relationships 
+between variables in a time series by employing Bayesian networks that can 
+evolve. These models facilitate the representation and prediction of complex 
+temporal dependencies.   Time-frequency analysis methods focus on revealing the 
+frequency content of a time series over different time intervals. Some of the 
+techniques include:   Fourier Transform The Fourier Transform decomposes a time 
+series into its constituent frequencies, providing valuable information about 
+periodic components. It is widely used in spectral analysis, filtering, and 
+feature extraction. Spectral Density Function The Spectral Density Function 
+estimates the power distribution of a time series across different frequencies. 
+It aids in identifying dominant frequencies, detecting periodicity, and 
+characterizing the overall spectral behavior. Dynamic Time Warping (DTW) DTW is 
+a technique used to measure the similarity between two-time series sequences 
+that may have different lengths or exhibit non-linear distortions. It finds 
+applications in speech recognition, pattern matching, and data alignment.
+
+[[}]]
+
+[[{]]
+## Distrib poisson vs Bernouilli vs normal,...
+[[}]]
+
+[[{statistics.partial_moments]]
+## Nonlinear nonparametric statistics (NNS): "partial moments"
+
+* <https://github.com/OVVO-Financial/NNS/blob/NNS-Beta-Version/examples/index.md>
+
+- Partial moments are the elements of variance and asymptotically approximate 
+  the area of f(x).
+- These robust statistics provide the basis for nonlinear analysis while retaining
+  linear equivalences.
+
+- NNS offers:
+  * Numerical Integration & Numerical Differentiation
+  * Partitional & Hierarchial Clustering
+  * Nonlinear Correlation & Dependence
+  * Causal Analysis
+  * Nonlinear Regression & Classification
+  * ANOVA
+  * Seasonality & Autoregressive Modeling
+  * Normalization
+  * Stochastic Dominance
+
+[[statistics.partial_moments}]]
+
+[[{]]
+## Pinokio computer: Local Agents
+
+- <https://pinokio.computer/>
+- Run apps, agents, and web services on your own machine with runtimes, package 
+  managers, routing, and shell access already built in
+[[}]]
+
+
+[[{]]
+## Mozilla AI
+
+* <https://github.com/Lightricks/LTX-Video>
+
+From data protection to AI tools, explore Mozilla’s newest products 
+for a safer, smarter web experience
+
+Mozilla Monitor has reached an exciting milestone — monitoring over 
+800 company data breaches to help users stay informed about exposed 
+personal information.
+
+### Deepfake Detector Add-on:  
+
+Detect AI-generated text with our new Add-on
+
+Introducing the alpha version of the Fakespot Deepfake Detector, 
+designed to identify AI-generated text so you can navigate the online 
+world with confidence. 
+ 
+Try it now and be part of shaping the future of content integrity 
+with Firefox.
+
+Try the Deepfake Detector Add-on
+ 
+### Formulaic
+
+ build and deploy AI apps faster than ever.
+[[}]]
+
+[[{]]
+## Microsoft Launches Open-Source Phi-3.5 Models for Advanced AI Development
+
+* <https://www.infoq.com/news/2024/08/microsoft-phi-3-5/>
+[[}]]
+
+[[{tensor_flow.visualization,monitoring.algorithm]]
+## Tensorflow: Visualize gradient descent optimization algorithms
+* https://github.com/Jaewan-Yun/optimizer-visualization
+[[tensor_flow.visualization}]]
+
+[[{]]
+## Alibaba Releases Two Open-Weight Language Models for Math and Voice Chat
+https://www.infoq.com/news/2024/09/alibaba-qwen2-models/
+[[}]]
+
+
+[[{use_case.deepfakes]]
+## Cualquiera puede crear ahora deepfakes muy realistas en plena videollamada con este software gratuito
+
+* <https://www.genbeta.com/actualidad/puede-crear-ahora-deepfakes-muy-realistas-plena-videollamada-este-software-gratuito>
+[[use_case.deepfakes}]]
+
+[[{101,PM.RADAR]]
+## top-100 most cited AI papers in 2023
+
+* <https://www.zeta-alpha.com/post/analyzing-the-homerun-year-for-llms-the-top-100-most-cited-ai-papers-in-2023-with-all-medals-for-o>
+
+
+Analyzing the homerun year for LLMs: the top-100 most cited AI papers in 2023, with all medals for open models.
+
+9 October 2024, Mathias Parisot, Jakub Zavrel.
+
+... As we progress through 2024, we can separate the wheat from the chaff, and 
+see which papers produced the foundational research that is driving the next 
+wave of breakthroughs.
+
+
+While the race to bring competitive AI products to the market has led 
+many industry labs like OpenAI and Google to be more secretive and 
+publish less, in favor of more closed models and product-focused 
+development, others, like Microsoft and Meta are picking up the glove 
+and moving towards more open research.  [[PM.RISK]]
+
+most cited papers of 2023 are:
+
+- LLaMA: Open and Efficient Foundation Language Models by Meta, 8534 citations 
+
+-Llama 2: Open Foundation and Fine-Tuned Chat Models by Meta, 7774 citations 
+
+- Segment Anything by Meta,  5293 citations 
+- Release of a model and dataset for zero-shot image segmentation.
+
+- GPT-4 Technical Report by OpenAI, 3384 citations 
+  (Significant improvement over GPT-3 and multimodal (text and image) inputs).
+
+- BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image 
+  Encoders and Large Language Models by Salesforce, 3099 citations 
+  Pre-training method for SOTA vision-language performance with far fewer parameters.
+
+- Visual Instruction Tuning by University of Wisconsin–Madison, 
+  Microsoft and Columbia University with 2818 citations - LLaVA, a 
+  large multimodal model tuned for multimodal chat capabilities.
+
+- InstructBLIP: Towards General-purpose Vision-Language Models with 
+Instruction Tuning by Salesforce, Hong Kong University of Science and 
+Technology and Nanyang Technical University with 2818 citations - 
+Improvement over BLIP-2 with vision-language instruction-tuning.
+
+8️⃣ Sparks of Artificial General Intelligence: Early experiments with 
+GPT-4 by Microsoft with 2712 citations - Microsoft's deep dive into 
+GPT-4 capabilities, AGI yet?
+
+9️⃣ A Survey of Large Language Models by Renmin University of China, 
+Université de Montréal with 2275 citations - A comprehensive survey 
+on LLMs.
+
+🔟 Adding Conditional Control to Text-to-Image Diffusion Models by 
+Stanford University with 2263 citations - ControlNet, a text-to-image 
+diffusion model with precise control over image generation through 
+various inputs like edges, depth, and segmentation.
+
+Read on below to see the full list of 100 papers for 2023, but let's 
+first dive into the analyses for countries and institutions. We see 
+some rather big changes in the ranking for this year. Guess Microsoft 
+really made Google dance... as Google loses the top spot.
+
+Meta's focus on open-source AI, also emphasized in Mark Zuckerberg's 
+2024 letter "open source AI is the path forward", has earned them 
+widespread appreciation from the AI community (even though their 
+definition of "open" has also received criticism). This is reflected 
+with the top 3 most cited AI papers of 2023 all coming from Meta, 
+although their overall ranking is down by three positions.
+
+
+Counting by author affiliations in the top-100, Google and Meta 
+actually both saw their top 100 counts reduced by 59% and 44% 
+respectively. In the case of Meta it is definitely offset by the 
+impact of their most cited contributions. In contrast, Microsoft’s 
+top 100 counts in 2023 increased by 56% compared to the previous 3 
+years. However, it should be noted that their most impactful paper 
+(Sparks of AGI) is a study of OpenAI’s GPT-4 capabilities.
+
+
+Figure 2: Top countries by count in top-100 in 2023
+
+When we break down the top-100 by country, in the interest of 
+understanding the geopolitics of the AI race better, the US and China 
+are still the strongest players with China accelerating its growth, 
+while the US remains stable (and still in the lead). The UK is 
+dropping out of the top-3, and seeing its lowest count in four years, 
+but this is mainly due to the complete integration between Google 
+Brain and DeepMind in April 2023 (DeepMind alone had 6 papers in the 
+top 100 in 2022), and one could argue that those R&D teams have not 
+necessarily moved on the map.
+
+
+Figure 3: Top regions by count in top-100 between 2020-2023
+
+In total, North America is still leading Europe and Asia by a large 
+margin. In 2023, Europe had 35% fewer papers in the top 100 compared 
+to the average of the previous 3 years while the Middle East and 
+Africa are showing the highest growth percentage with counts 
+increased by 145% and 350% respectively.
+
+
+Figure 4: Top conversion rate (ratio of the number of papers in the 
+top 100 to the number of papers published) by company
+
+In 2023, Stability AI emerged as a leader in converting publications 
+into top-tier papers, although that position might be short lived. 
+OpenAI continued to perform strongly, demonstrating their consistent 
+ability to produce high-impact research. The Salesforce AI Research 
+team proved it can hold its own in the high-impact research space, 
+especially regarding their work on vision-language pretraining. 
+Meanwhile, industry heavyweights like NVIDIA, Microsoft, Meta, and 
+Google show up with lower conversion rates, reflecting their broad 
+publication volume but a more diluted concentration of blockbuster 
+papers.
+
+
+Topics and trends in the top 100 of 2023
+
+2023 was definitely the year of the breakthrough of LLMs and chatGPT. 
+In society in general, and the same is true for the academic 
+publication record as measured by citations. In fact, out of the 
+top-100 cited papers, a whopping 83% are about LLMs. This leaves only 
+17 which are about other topics, like computer vision, image 
+generation using diffusion models or robotics.
+
+Figure 5: Topics in the top-100, in percent of the papers covering 
+this topic (singletons are omitted).
+
+Multimodal Integration
+
+The second most popular topic in the top-100 is multimodality, mainly 
+focused on vision-language models, with even some progress in other 
+modalities and embodied models. 2023 has been a year where models 
+like GPT-4, Gemini, and LLaVA broke new grounds in understanding and 
+interacting with the world around us. These multimodal models blend 
+text, visuals, and other data types, opening doors to exciting 
+applications like robotic manipulation with PaLM-E and real-world 
+interactions with Qwen-VL and VisualChatGPT.
+
+
+Relevant papers:
+
+BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models
+
+Visual Instruction Tuning
+
+InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning
+
+MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models
+
+Gemini: A Family of Highly Capable Multimodal Models
+
+PaLM-E: An Embodied Multimodal Language Model
+
+Improved Baselines with Visual Instruction Tuning
+
+Qwen-VL: A Frontier Large Vision-Language Model with Versatile Abilities
+
+
+Ethical implications, Education and Research
+
+Generative AI tools like ChatGPT are reshaping the education 
+landscape, personal productivity and offering personalized and 
+interactive learning experiences. While some research points to 
+transformative benefits, others urge caution regarding AI's potential 
+to disrupt education and perpetuate biases. The discussion is 
+vibrant, reflecting on how AI can both support and challenge 
+traditional educational models. 16% of the top-10 discusses ethical 
+implications of LLMs and Generative AI, and 12% has concerns about 
+its impact on education. As LLMs grow more powerful, understanding 
+their impact is crucial. Evaluation isn't just about accuracy, it's 
+also about societal effects and ethical use. Multiple studies 
+challenge us to consider AI's implications on jobs, academia, and 
+beyond, emphasizing a need for guidelines to ensure AI benefits 
+society responsibly and equitably.
+
+
+Relevant papers:
+
+Education in the Era of Generative Artificial Intelligence
+
+Engineering Education in the Era of ChatGPT: Promise and Pitfalls of 
+Generative AI for Education
+
+Generative AI and the Future of Education: Ragnarök or Reformation?
+
+Examining Science Education in ChatGPT: An Exploratory Study of 
+Generative Artificial Intelligence
+
+Collaborating With ChatGPT: Considering the Implications of 
+Generative Artificial Intelligence for Journalism and Media Education
+
+A Survey on Evaluation of Large Language Models
+
+How Close is ChatGPT to Human Experts? Comparison Corpus, Evaluation, 
+and Detection
+
+GPTs are GPTs: An Early Look at the Labor Market Impact Potential of 
+Large Language Models
+
+ChatGPT and a New Academic Reality: Artificial Intelligence-Written 
+Research Papers and the Ethics of the Large Language Models in 
+Scholarly Publishing
+
+Instruction Tuning and Alignment
+
+AI's ability to follow human instructions is getting a makeover, 
+thanks to models like LLaVA and InstructBLIP. These advancements in 
+instruction tuning allow AI to handle complex tasks involving both 
+text and images more effectively. WizardLM shows the potential of 
+machine-generated instructions, while LIMA shows that quality beats 
+quantity when it comes to prompt-based training. This is all about 
+making AI that listens better and acts smarter.
+
+
+Relevant papers:
+
+Visual Instruction Tuning
+
+InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning
+
+Improved Baselines with Visual Instruction Tuning
+
+Instruction Tuning with GPT-4
+
+WizardLM: Empowering Large Language Models to Follow Complex Instructions
+
+The Flan Collection: Designing Data and Methods for Effective Instruction Tuning
+
+Otter: A Multi-Modal Model with In-Context Instruction Tuning
+
+LIMA: Less Is More for Alignment
+
+G-Eval: NLG Evaluation using Gpt-4 with Better Human Alignment
+
+
+Efficiency and Scalability
+
+Given the price of compute, doing more with less is the name of the 
+game. Tools like QLoRA have revolutionized the finetuning of large 
+models, making it possible on limited hardware thanks to advanced 
+quantization techniques on top of Low-Rank Adapters. The Mamba 
+architecture steps away from traditional transformers, bringing speed 
+and linear scaling to the table while maintaining similar 
+performance. And with breakthroughs like PagedAttention for better 
+memory management, AI is becoming not just more powerful, but also 
+more accessible.
+
+
+Relevant papers:
+
+QLoRA: Efficient Finetuning of Quantized LLMs
+
+Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+
+Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling
+
+Efficient Memory Management for Large Language Model Serving with PagedAttention
+
+
+Domain-Specific Applications
+
+From healthcare to finance and robotics, AI is also about tailoring 
+expertise to specific fields. Whether reaching physician-level 
+accuracy with Med-PaLM 2 in medicine or seamlessly navigating 
+financial tasks with BloombergGPT, AI's specialisation is 
+transforming industries. In the field of robotics, models like RT-2 
+and PaLM-E demonstrate the power of integrating vision-language 
+pretraining with robotic control, enhancing generalization and 
+reasoning in complex tasks.
+
+
+Relevant papers:
+
+Towards Expert-Level Medical Question Answering with Large Language Models
+
+BloombergGPT: A Large Language Model for Finance
+
+RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control
+
+PaLM-E: An Embodied Multimodal Language Model
+
+
+Medical Applications and Implications
+
+AI's potential in medicine is expanding, some studies show it can 
+provide compassionate and accurate interactions that sometimes 
+surpass human counterparts. But beneath the promise, there's caution: 
+ensuring these tools improves care without spreading misinformation. 
+The medical community is exploring a future where AI helps diagnose 
+and support clinician-patient interactions.
+
+
+Relevant papers:
+
+Comparing Physician and Artificial Intelligence Chatbot Responses to 
+Patient Questions Posted to a Public Social Media Forum.
+
+Benefits, Limits, and Risks of GPT-4 as an AI Chatbot for Medicine
+
+The Role of ChatGPT, Generative Language Models, and Artificial 
+Intelligence in Medical Education
+
+Role of ChatGPT in Public Health
+
+
+Top 100 papers of 2023 - the full list
+
+And finally, here is our top-100 list itself, with titles, citation counts, and affiliations.
+
+Here you have the list for the year 2020, for 2021, and for 2022 from our edition of last year.
+
+
+Methodology
+
+To create the analysis above, we have first collected the most cited 
+papers per year in the Zeta Alpha platform (we use the publication 
+date of the arXiv preprint if available). We supplemented this list 
+by mining for highly cited AI papers on Semantic Scholar with its 
+broader coverage including closed-source publishers (e.g. Nature, 
+Elsevier, Springer and other journals). We then take for each paper 
+the number of citations on Google Scholar as the representative 
+metric and sort the papers by this number to yield the top-100 for a 
+year. For these papers we used GPT-4o-mini to extract the authors, 
+their affiliations and the topics and manually checked these results. 
+A paper with authors from multiple affiliations counts once for each 
+of the affiliations. As a disclaimer we want to note that the 
+citation counts were collected on September 20th, 2024, and will 
+change over time as we go forward. Also, the cut off at one hundred 
+papers skews the picture towards the true blockbusters and may not 
+accurately represent the broader research impact of certain labs or 
+institutions. And finally, the great ideas of tomorrow might have 
+their roots in a really overlooked paper of many years ago. So always 
+keep your eyes open, think for yourself, swim against the current 
+when needed, and enjoy discovery!
+
+This concludes our analysis; what surprised you the most about these 
+numbers? Try out our platform, follow us on Twitter @zetavector and 
+let us know if you have any feedback or would like to receive a more 
+detailed analysis for your domain or organization.
+
+1,220
+
+[[}]]
+
+
+[[{use_case.marketing]]
+Jasper: AI copilot for marketing
+[[use_case.marketing}]]
+
+[[{statistics.STAN,statistics.101]]
+## STAN
+Data Science 101
+
+https://mc-stan.org/ 
+
+Stan is a state-of-the-art platform for statistical modeling and high-performance statistical computation. Many thousands of users rely on Stan for statistical modeling, data analysis, and prediction in the social, biological, and physical sciences, engineering, and business.
+
+Now it runs on WebAsm: 
+
+https://stan-playground.flatironinstitute.org/
+
+[[statistics.STAN}]]
+
+[[{statistics.101]]
+## Linear regression vs linear functions vs polynomial regression
+
+
+The term "polynomial regression" is somewhat of a misnomer, because 
+it can mislead a newcomer to think that it is mathematically 
+different from "linear regression". In fact, polynomial regression is 
+still linear regression. In this post, I will explain further. 
+Polynomial regression is a commonly used technique in multiple 
+regression; it models the systematic component of the regression 
+model as a pth-order polynomial relationship between the response 
+variable and the explanatory variable. The image below shows the 
+equation for this model. However, POLYNOMIAL REGRESSION IS STILL 
+LINEAR REGRESSION, because the response variable is still a linear 
+combination of the regression COEFFICIENTS. We still use linear 
+algebra and the method of least squares to estimate the coefficients. 
+Remember: The “linear” in linear regression refers to the linearity 
+between the response variable and the regression coefficients, NOT 
+between the response variable and the explanatory variable(s). This 
+is a major contrast between linear regression and linear functions. - 
+In linear regression, the linearity is between Y and the β's 
+(https://lnkd.in/gqUzsYMP). - In linear functions, the linearity is 
+between y and x (https://lnkd.in/gkqihTcJ). #math #statistics 
+#dataanalysis #appliedstatistics #regression #mathematics 
+#dataanalytics #regressionmodelling #predictiveanalytics #science 
+#predictivemodelling #datascience #regressionmodeling #analytics 
+#machinelearning #predictivemodeling #dataandanalytics 
+#regressionanalysis
+[[}]]
+
+
+[[{]]
+## ML DataEditR: The GUI for Interactive Dataframe Editing in R
+
+* <https://www.business-science.io/code-tools/2021/05/18/dataeditr.html>
+
+- GUI for Editing Dataframes in R
+- Edit dataframes as if they were Excel tables.
+[[}]]
+
+[[{data.graph]]
+## Neo4j Graph to Improve Machine Learning Models
+
+* <https://neo4j.com/developer-blog/using-neo4j-graph-data-science-in-python-to-improve-machine-learning-models/>
+[[data.graph}]]
+
+[[{]]
+## Joost-Pieter Katoen Distinguished Professor at RWTH Aachen University
+    23 years after its publication, our paper on verifying
+  continuous-time Markov chains received the test-of-time award at
+  CONCUR 2022. It provides the foundations of CTMC model checking.
+  #formalverification #probability #bdd #verification #concurrency
+[[}]]
+
+[[{statistics.101]]
+## Moments - A Must Known Statistical Concept
+
+*<https://www.analyticsvidhya.com/blog/2022/01/moments-a-must-known-statistical-concept-for-data-science/>
+[[statistics.101}]]
+
+
+[[{maths.algebra.gram_matrices]]
+## Style transfer beyond (without) Gram matrices
+
+* <https://github.com/cjgb/style-transfer-beyond-gram>
+[[maths.algebra.gram_matrices}]]
+
+[[{101?]]
+## A connection between probability, physics and neural networks
+
+* <https://arxiv.org/abs/2209.12737>
+[[101?}]]
+
+[[{]]
+## MindForth Programming Journal (MFPJ) 2010 August 30 Mentifex posted 12 years ago
+  Mon.30.AUG.2010 -- On the Shoulders of Giants?
+  The "prsn" variable in MindForth artificial intelligence
+   Broken link to http://www.scn.org/~mentifex/mindforth.txt(AI) enables the AI to think thoughts in the first,
+  second or third person with English verbs in the
+  present tense. MindForth is different from
+  most natural language processing (NLP) software
+  because previous NLP software may be intricately
+  crafted for the generation of grammatically correct
+  English sentences but not for the thinking necessary
+  to drive the NLP mechanisms. Because MindForth has a
+  conceptual core that actually thinks, MindForth is
+  an AI engine that may be "reinventing the wheel"
+  in terms of tacking on NLP routines that have
+  already been invented elsewhere unbeknownst to
+  the Mentifex (mindmaker) originator of MindForth,
+  but MindForth remains the original invention of
+  an artificial mind that needs its own special forms
+  of NLP software. Other advanced NLP software may
+  translate ideas from one natural language to another,
+  but MindForth is ideation software that thinks up
+  its own ideas, thank you, and becomes more skillful
+  at thinking co-extensively with the growing
+  sophistication of its NLP generativity. We are met
+  today on a mindgrid of that generativity, and we must
+  generate AI Mind code for self-referential thinking
+  in English. MindForth is like an AI rodent that
+  scurries about while giant NLP dinosaurs tower overhead.
+  Mon.30.AUG.2010 -- VerbPhrase Orchestrates Inflection
+  Our current code is abandoning the stopgap
+  measure of using the SpeechAct module
+[[}]]
+
+[[{]]
+## Google’s New AI Learned To See In The Dark!
+  https://m.youtube.com/watch?v=7iy0WJwNmv4
+  https://wand.com/papers
+[[}]]
+
+[[{use_case.*]]
+## ML: 10 plataformas de inteligencia artificial para crear su aplicación moderna
+* <https://geekflare.com/es/ai-platforms/>
+[[}]]
+
+
+[[{statistics.101]]
+## Tidy Modeling with R free ebook
+
+* <https://www.tmwr.org/>
+[[statistics.101}]]
+
+[[{]]
+- Decision trees are the fundamental building block of gradient boosting
+  machines and Random Forests, probably the two most popular machine
+  learning models for structured data. ???
+[[}]]
+
+[[{]]
+scikit-learn announced sklearn's transformers can now be
+  configured to output Pandas DataFrames instead of NumPy arrays.
+ This will make running pipelines on DataFrames smoother. Moreover, it will 
+provide better ways to track feature names.P.S. The feature is still in dev 
+[[}]]
+
+[[{]]
+ human memory isn’t a flat log, it’s a web of episodes, relationships, and abstractions.
+.... It’s hard to imagine long-term AI memory without graphs.
+
+... frameworks that give connections meaning. 
+
+ The semantic web - designed from the start for an agentic world, for people not just profit 
+
+- Super Agents         : <https://www.linkedin.com/posts/tonyseale_a-story-that-caught-my-eye-the-other-week-activity-7362030361494650880-d720>
+- Semantic Compression : <https://www.knowledge-graph-guys.com/blog/semantic-compression>
+  - Embedding Vectors
+  - Distance Measures
+  - Continuous to Discrete
+  - Knowledge Compression
+- The Great Compression: <https://www.knowledge-graph-guys.com/blog/the-great-compression>
+- Personal Agents      : <https://lnkd.in/eD5xy4Xr>
+
+- HNSW Paper             :  <https://arxiv.org/abs/1603.09320>
+- Continuous and Discrete: <https://www.knowledge-graph-guys.com/blog/continuous-and-discrete>
+- Transformers and GNNS  : <https://www.knowledge-graph-guys.com/blog/transformers-and-gnns>
+[[}]]
+
+[[{]]
+## Yann Lecun Predictions
+
+* <https://techcrunch.com/2025/01/23/metas-yann-lecun-predicts-a-new-ai-architectures-paradigm-within-5-years-and-decade-of-robotics/>
+
+...I think the shelf life of the current [LLM] paradigm is fairly short, 
+probably three to five years,” LeCun said. “I think within five years, 
+nobody in their right mind would use them anymore, at least not as the central 
+component of an AI system.
+[[}]]
+
+[[{]]
+## DeepSeek-R1-Zero and Reinforcement Learning
+
+... Instead of teaching the model directly how to solve a problem, we replace 
+it with the right incentives, and it alone learns advanced problem-solving 
+strategies.
+
+* <https://arxiv.org/pdf/2501.12948>
+[[}]]
+
+[[{use_case.OCR]]
+
+## llm_aided_ocr
+
+* <https://github.com/Dicklesworthstone/llm_aided_ocr>
+
+[[use_case.OCR}]]
+
+[[{]]
+## Build a Large Language Model From Scratch
+https://m.youtube.com/playlist?list=PLTKMiZHVd_2IIEsoJrWACkIxLRdfMlw11
+[[}]]
+
+[[{architecture.agents.MCP]]
+## Build effective agents using MCP and simple workflow patterns
+
+* <https://github.com/lastmile-ai/mcp-agent>
+[[architecture.agents.MCP}]]
+
+[[{prompting.reasoning]]
+## DeepSeek Prover
+
+* <https://github.com/deepseek-ai/DeepSeek-Prover-V2>
+
+Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition
+[[prompting.reasoning}]]
