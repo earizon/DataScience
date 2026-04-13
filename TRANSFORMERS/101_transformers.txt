@@ -1,5 +1,11 @@
 [[{architecture.nn,architecture.transformer,101]]
 
+<!--
+
+Atención en los Transformers explicado visualmente | Capítulo 6, Aprendizaje profundo
+
+* <https://www.youtube.com/watch?v=eMlx5fFNoYc>
+-->
 # Universal Transformer (Deep NN architecture)
 
 * Attention mechanism with memory.

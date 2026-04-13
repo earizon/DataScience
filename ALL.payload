@@ -1,13 +1,16 @@
 101.payload
 COGNITIVE.payload
 Agents/ALL.payload
+DATA/ALL.payload
 RAG/ALL.payload
 MLOps/ALL.payload
+anthropic.md                         # ???
 # mistral.md                           # ???
 OpenVINO.txt
 PROMPTING/ALL.payload
 TIME_SERIES/ALL.payload
 KANs.txt                               #
+# TODO.txt                             # ??? 
 # AutoML.txt                           # ??? 
 # bibliography_from_ML_book.txt        # ??? 
 # openAI.txt                           # ???
@@ -45,7 +48,8 @@ KANs.txt                               #
 # time_series.txt                      # ??? 
 who-is-who.txt                         # OK, WiP
 who-is-who_companies.txt               # OK, WiP
-# TODO.txt                             # ??? 
 # TODO_transformers.txt                # ???
 # NLTK/ALL.payload                     
 USE_CASES/ALL.payload
+# AWS_Bedrock.txt                      # TODO
+# AWS_SageMaker.txt                    # TODO

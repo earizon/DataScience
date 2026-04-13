@@ -1,5 +1,24 @@
 [[{architecture.AI_agents]]
+
 # AI Agents
+
+  Agentic systems promise to extend the possibility of computer programs 
+  beyond the mere execution of pre-determined workflows conceived to 
+  solve narrow tasks. <br/>
+   In fact, most real-life problems do not fit in pre-determined workflows.
+  Example: think of the infinite possibilities of GNU Text utils 
+     <https://www.gnu.org/software/coreutils/manual/coreutils.html>
+    vs the limited set of well-known or enterprise deployed scripts making
+  use of them for particular use cases or scenarios.
+
+  Cite by Roucher, Noyan, and Wolf (Hugging Face Smolagents engineers):
+
+> If a deterministic workflow fits all queries, by all means just code 
+> everything! This will give you a 100% reliable system with no risk of error 
+> introduced by letting unpredictable LLMs meddle in your workflow. For the sake 
+> of simplicity and robustness, it's advised to regularize towards not using any 
+> agentic behavior.
+  [[qa.101.dont's]]
 
 * An AI Agent can be described as an intelligent system designed to interact 
   with an environment.  Examples include those in a self-driving car, a chatbot, 
@@ -20,6 +39,12 @@
   - **Learning Agents**: These agents can improve their performance over time 
     by learning from data and experiences.
   - ...
+
+* An agent-based system can also be split or categorized as:
+  - multi-step single agent.
+  - multi-agent, with each agent "prompt set of knowledge" developed in
+    isolation by different groups.
+
 
 * Agentic AI refers (as of 2026) to AI Agents using LLM architectures.
 
@@ -277,8 +302,16 @@ The RACI model defines four key roles in project management or multi-agent archi
 
 
 This matrix helps clarify roles and responsibilities, ensuring everyone understands their part in the project. 
-1
+
+
+[[{security.101,security.promp_injection,PM.TODO]]
+## Defeating Prompt Injection by Design
+
+* <https://arxiv.org/abs/2503.18813>
+
+- Solution based on 2 agents, in which one of them has a mission to 
+supervise the other one.
+[[security.promp_injection,security.101}]]
+
 
 [[architecture.AI_agents}]]
-
-

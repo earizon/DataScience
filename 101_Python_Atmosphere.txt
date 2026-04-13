@@ -27,6 +27,7 @@
    |   - Encode text and high cardinality categorical data 
    |   - Scale and clip numerical features with the SquashingScaler. [[scalability.dimension_reduction]]
    |
+   |
    | - csvkit  [[data.csv]] clean, cut, format, grep, lookup, sort, sql, vstat on CSV
    |   - <https://github.com/wireservice/csvkit>
    |

@@ -36,5 +36,7 @@ GSM8K                :
 AGIEval Engli.       :
 BIG-Bench Hard 3-shot: CoT: Evaluation des capacités de raisonnement complexe et de génération de texte
 DROP 3-shot, F1      : Evaluation de la compréhension des textes et du raisonnement
+
+OmniDocBench         : OCR Benchmarck <https://github.com/opendatalab/OmniDocBench>
 ```
 [[101.LLM_benchmarks}]]

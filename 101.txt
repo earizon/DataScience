@@ -323,4 +323,115 @@ Practical Llama 3, 3.1 and 3.2 inference implemented in a single Java file.
   representation of words from very large data sets..."
 [[}]]
 
+[[{101]]
+## Llama 1B outperforms Llama 8B (8x size) in maths by giving more time to think
+
+* <https://www.linkedin.com/feed/update/urn:li:activity:7274506931447164930>
+
+ we're thrilled to unveil the open-source version of the groundbreaking
+technique behind its success: **scaling test-time compute**
+
+ By giving models more "time to think," Llama 1B outperforms Llama 8B in
+math—beating a model 8x its size. [[qa.coherence]]
+
+[[101}]]
+
+[[{101]]
+## AI passed Turing tests better than humans
+
+* <https://www.independent.co.uk/tech/ai-turing-test-chatgpt-openai-agi-b2728930.html>
+
+- 2025-04-07 A leading AI chatbot has passed a Turing Test more convincingly 
+  than a human, according to a new study.
+
+- Participants in a blind test judged OpenAI’s GPT-4.5 model, which powers 
+  the latest version of ChatGPT, to be a human "significantly more often than 
+  actual humans".
 [[}]]
+
+
+[[{101]]
+## K2-Think: A Parameter-Efficient Reasoning System
+
+* <https://arxiv.org/abs/2509.07604>
+
+- K2-Think is a reasoning system that achieves state-of-the-art performance with 
+a 32B parameter model, matching or surpassing much larger models like GPT-OSS 
+120B and DeepSeek v3.1.
+- Built on the Qwen2.5 base model,i it shows that smaller models can compete at 
+the highest levels by combining advanced post-training and test-time computation
+techniques. [[scalability.101,scalability.post_training]]
+
+ The approach is based on six key technical pillars:
+
+- Long Chain-of-thought Supervised Finetuning. 
+- Reinforcement Learning with Verifiable Rewards (RLVR).
+- Agentic planning prior to reasoning.
+- Test-time Scaling.
+- Speculative Decoding.
+- Inference-optimized Hardware.
+
+- K2-Think excels in mathematical reasoning, achieving state-of-the-art scores
+  on public benchmarks for open-source models, while also performing strongly 
+  in other areas such as Code and Science.
+
+- K2-Think offering best-in-class inference speeds of over 
+  2000tokens/second per request via the Cerebras Wafer-Scale Engine [[hardware.cerebras]]
+[[101}]]
+
+[[{101,PM.TODO]]
+## LLMs from scratch with PyTorch
+
+* <https://github.com/rasbt/LLMs-from-scratch>
+
+- you'll learn and understand how large language models (LLMs) work from the 
+  inside out by coding them from the ground up, step by step.
+
+[[101}]]
+
+
+[[{101,doc_has.humor]]
+## Data centers contain 90% of crap data
+
+
+Summary from By Gerry McGovern <https://gerrymcgovern.com/data-centers-contain-90-crap-data/>
+
+
+... We’re destroying our environment to create and store trillions of blurred 
+images, half-baked videos, rip-off AI ‘songs’, rip-off AI animations, 
+videos and images, emails with mega attachments, never-to-be-watched-again 
+presentations, never-to-be-read-again reports, files and drawings from 
+cancelled projects, drafts of drafts of drafts, out of date, inaccurate and 
+plain wrong information, and gigabytes and gigabytes of poorly written, 
+meandering content.
+
+... 1.9 trillion photos every year ... more than were taken in the entire 20th century. 
+
+
+I have spent almost 30 years working with hundreds of the largest organizations in the world  ...
+Here’s what I’ve learned. 90% plus of commercial or government data is crap, total absolute crap.
+Period.
+
+
+a Microsoft manager estimated that there were then about 14 million pages on Microsoft.com ...
+**four million of them had never been visited**.
+
+
+... Data crap everywhere.
+
+IBM, they found they had data scattered over 100 disparate data warehouses. 
+Multiple teams had multiple copies of the same data. After cleanup, they had 
+deleted 90% of the data. There are 10 million stories like this [[data.gathering,data.deduplication]]
+
+The Cloud made the crap data problem infinitely worse.
+
+The Cloud is what happens when the cost of storing data is less than the cost of figuring out what to do with the crap.
+
+
+One study found that data stored by UK engineering and construction industry 
+firms had risen from an average of three terabytes in 2018 to 26 terabytes in 
+2023. 
+
+... And this is what AI is being trained on.
+
+[[101}]]

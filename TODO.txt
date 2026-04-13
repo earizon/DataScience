@@ -1,13 +1,18 @@
 [[{PM.TODO]]
-## TODO
+# Pool of unordered notes 
 
+<!--
 - Clean TODO.txt and move dirty TODOs to TODO_dirty.txt
-  - Move TODO.txt to TODO_clean.txt
+  - Move TODO.txt to unordered_pool.txt
 - Moving  prompting "staff" to PROMPTING/...
 - Remove cognitive.* tags
 - remove ml_type.* ...
 - retag: training.finetunning training.llm_finetunning (it does not apply outside LLM'
 - Move and remove notes.txt
+- Clean/Reorder/Complete ./101.txt
+- PyTorch vs GPTQ vs AWQ vs ...: (Check if the compartive makes sense)
+-->
+
 
 ## 101 Ml: Llm LangChain - Working with Large Language Models, Made Easy
 https://www.infoq.com/news/2023/07/langchain-llm-made-easy/ 
@@ -18,16 +23,16 @@ https://www.infoq.com/news/2023/07/langchain-llm-made-easy/ 
 ## TimeFold
 
 when it comes to everyday tasks like creating work schedules for 30 employees
-across 3 shifts or optimizing truck routes for 100 deliveries LLM models  
+across 3 shifts or optimizing truck routes for 100 deliveries LLM models
  models often derail.
 
-Fortunately, there’s another branch of AI for solving these challenges. 
+Fortunately, there’s another branch of AI for solving these challenges.
 
-we’ll introduce you to Timefold, an open-source constraint solver 
+we’ll introduce you to Timefold, an open-source constraint solver
 which can tackle complex scheduling problems.
 
-by simply annotating your domain classes (just like you would annotate JPA 
-entities) and defining your constraints, Timefold can generate an optimized 
+by simply annotating your domain classes (just like you would annotate JPA
+entities) and defining your constraints, Timefold can generate an optimized
 schedule (no complex math required!).
 [[architecture.constrain_solver}]]
 
@@ -60,46 +65,46 @@ of Generative AI, showing us that even the most advanced concepts can be underst
 [[{training.101,training.model_prunning]]
 ## 101 Model Prunning
 
-Not too long ago, the largest Machine Learning models most people would deal 
-with merely reached a few GB in memory size. Now, every new generative model 
-coming out is between 100B and 1T parameters! To get a sense of the scale, one 
-float parameter that's 32 bits or 4 bytes, so those new models scale between 
-400 GB to 4 TB in memory, each running on expensive hardware. Because of the 
-massive scale increase, there has been quite a bit of research to reduce the 
-model size while keeping performance up. There are 5 main techniques to 
+Not too long ago, the largest Machine Learning models most people would deal
+with merely reached a few GB in memory size. Now, every new generative model
+coming out is between 100B and 1T parameters! To get a sense of the scale, one
+float parameter that's 32 bits or 4 bytes, so those new models scale between
+400 GB to 4 TB in memory, each running on expensive hardware. Because of the
+massive scale increase, there has been quite a bit of research to reduce the
+model size while keeping performance up. There are 5 main techniques to
 compress the model size.
 
-- Model pruning is about removing unimportant weights from the network. The 
-game is to understand what "important" means in that context. A typical 
-approach is to measure the impact on the loss function of each weight. This can 
-be done easily by looking at the gradient and second-order derivative of the 
-loss. Another way to do it is to use L1 or L2 regularization and get rid of the 
-low-magnitude weights. Removing whole neurons, layers or filters is called 
+- Model pruning is about removing unimportant weights from the network. The
+game is to understand what "important" means in that context. A typical
+approach is to measure the impact on the loss function of each weight. This can
+be done easily by looking at the gradient and second-order derivative of the
+loss. Another way to do it is to use L1 or L2 regularization and get rid of the
+low-magnitude weights. Removing whole neurons, layers or filters is called
 "structured pruning" and is more efficient when it comes to inference speed.
 
-- Model quantization is about decreasing parameter precision, typically by 
-moving from float (32 bits) to integer (8 bits). That's 4X model compression. 
-Quantizing parameters tends to cause the model to deviate from its convergence 
-point, so it is typical to fine-tune it with additional training data to keep 
-model performance high. We call this "Quantization-aware training". When we 
-avoid this last step, it is called "Post training quantization", and additional 
+- Model quantization is about decreasing parameter precision, typically by
+moving from float (32 bits) to integer (8 bits). That's 4X model compression.
+Quantizing parameters tends to cause the model to deviate from its convergence
+point, so it is typical to fine-tune it with additional training data to keep
+model performance high. We call this "Quantization-aware training". When we
+avoid this last step, it is called "Post training quantization", and additional
 heuristic modifications to the weights can be performed to help performance.
 
-- Low-rank decomposition comes from the fact that neural network weight 
-matrices can be approximated by products of low-dimension matrices. A N x N 
-matrix can be approximately decomposed into a product of 2 N x 1 matrices. 
+- Low-rank decomposition comes from the fact that neural network weight
+matrices can be approximated by products of low-dimension matrices. A N x N
+matrix can be approximately decomposed into a product of 2 N x 1 matrices.
 That's an O(N^2) -> O(N) space complexity gain!
 
-- Knowledge distillation is about transferring knowledge from one model to 
-another, typically from a large model to a smaller one. When the student model 
-learns to produce similar output responses, that is response-based 
-distillation. When the student model learns to reproduce similar intermediate 
-layers, it is called feature-based distillation. When the student model learns 
-to reproduce the interaction between layers, it is called relation-based 
+- Knowledge distillation is about transferring knowledge from one model to
+another, typically from a large model to a smaller one. When the student model
+learns to produce similar output responses, that is response-based
+distillation. When the student model learns to reproduce similar intermediate
+layers, it is called feature-based distillation. When the student model learns
+to reproduce the interaction between layers, it is called relation-based
 distillation.
 
-- Lightweight model design is about using knowledge from empirical results to 
-design more efficient architectures. That is probably one of the most used 
+- Lightweight model design is about using knowledge from empirical results to
+design more efficient architectures. That is probably one of the most used
 methods in LLM research.
 [[training.model_prunning}]]
 
@@ -110,10 +115,10 @@ methods in LLM research.
 
   Using Pattern-Exploiting Training (PET), semi-supervised training
 technique the team fine-tunned a Transformer NLP model with 223M
-parameters that out-performed the 175B-parameter GPT-3 (non 
+parameters that out-performed the 175B-parameter GPT-3 (non
 fine-tunned)by over 3 percentage points on the SuperGLUE benchmark.
 
-  PET is a technique for fine-tuning a pre-trained language model that 
+  PET is a technique for fine-tuning a pre-trained language model that
 generates additional "soft-labeled" training data from unlabeled
 examples ... the model improve performance in "few-shot" scenarios,
 such as NLP benchmarks which have very few labeled examples for
@@ -121,29 +126,29 @@ fine-tuning. ... the researchers fine-tuned an ALBERT Transformer
 model and achieved an average score of 76.8 on the SuperGLUE benchmark,
 compared to GPT-3's 71.8.  [[training.fine_tuning.few_shots]]
 
-  Supervised machine learning often requires large datasets on tasks 
+  Supervised machine learning often requires large datasets on tasks
 such as computer vision or NLP.... time-consuming and expensive,
- 
+
   ... For NLP tasks, many researchers have turned to transfer learning,
 where a large model is pre-trained via self-supervised learning on a
 large unlabeled dataset, such as the contents of Wikipedia.
   Once pre-trained, it can be "fine-tuned" for a task (sentiment
-analysis), using supervised learning on a much smaller labeled dataset. 
+analysis), using supervised learning on a much smaller labeled dataset.
   Most state-of-the-art NLP results are achieved by fine-tuning a
 pre-trained Transformer model.
 
   Few-shot learning is related to fine-tuning testing a model's
-ability to generalize to a new task, given only a few examples 
+ability to generalize to a new task, given only a few examples
 of that new task (often just tens of examples, sometimes as few
 as one "**one-shot**" or even none "**zero-shot**").
 
 GPT-3 (175B-params) showed that a large pre-trained model could
 perform well in few-shot learning scenarios, **without even fine-tuning**:
-updating just the model "context" with a textual description of 
-the task along with text examples was sufficient to produce 
+updating just the model "context" with a textual description of
+the task along with text examples was sufficient to produce
 "near state-of-the-art results" with only 32 examples.
 ... However, Schick and Schütze point out some drawbacks of this
-strategy: 
+strategy:
 - The max context size restrict the number of examples that can be used.
 - more importantly, it relies on a model that is so large it is
   "unusable in many real-world scenarios."
@@ -176,29 +181,29 @@ that exceeded GPT-3's few-shot performance on the SuperGLUE benchmark.
 [[{scalability.hardware.cluster]]
 ## Meta Unveils 24k GPU AI Infrastructure Design
 
-- Meta highlights the need for powerful computing systems capable of 
-  performing quintillions of operations per second to drive forward the 
-  development of advanced AI technologies. To achieve this objective, 
-  Meta expanded its AI infrastructure by building two 24k-GPU clusters. 
-  Meta identified RoCE and InfiniBand fabrics as the two primary 
-  choices that meet their requirements, at the same time acknowledging 
+- Meta highlights the need for powerful computing systems capable of
+  performing quintillions of operations per second to drive forward the
+  development of advanced AI technologies. To achieve this objective,
+  Meta expanded its AI infrastructure by building two 24k-GPU clusters.
+  Meta identified RoCE and InfiniBand fabrics as the two primary
+  choices that meet their requirements, at the same time acknowledging
   that each option presents its own set of tradeoffs. [[scalability.101]]
 
 * <https://www.infoq.com/news/2024/04/meta-ai-infrastructure/>
-The clusters are based on Meta's Grand Teton hardware platform, 
+The clusters are based on Meta's Grand Teton hardware platform,
 
 two cluster variants differ in their networking:
 - Llama 3 cluster uses remote direct memory access (RDMA) over converged Ethernet (RoCE).
 - Other uses NVIDIA's Quantum2 InfiniBand.
 
-- storage is based on Meta's custom-built Tectonic filesystem, which supports 
+- storage is based on Meta's custom-built Tectonic filesystem, which supports
 the synchronized I/O needed to handle checkpoints from thousands of GPUs.
 
- 
+
 By the end of 2024, we’re aiming to include 350,000 NVIDIA H100s as part of a portfolio .
 
 Meta has a history of open-sourcing their hardware platform and rack designs:
-- 2021: ... Meta's ZionEX cluster. 
+- 2021: ... Meta's ZionEX cluster.
 - 2022: ... Grand Teton platform and Meta's open rack design
 
 One of the big challenges Meta faced with the new clusters was the difficulty of debugging at that scale.
@@ -206,9 +211,9 @@ One of the big challenges Meta faced with the new clusters was the difficulty of
 
  Meta worked with Hammerspace to build interactive debugging tools for their storage system.
 
- intern-node communication performance ... "out of the box"  clusters did not perform as well as smaller clusters; 
-- bandwidth utilization was extremely variable. After tuning job schedulers and 
-optimizing network routing in the cluster, this metric was consistently greater 
+ intern-node communication performance ... "out of the box"  clusters did not perform as well as smaller clusters;
+- bandwidth utilization was extremely variable. After tuning job schedulers and
+optimizing network routing in the cluster, this metric was consistently greater
 than 90%.
 
 Meta also worked on their PyTorch framework implementation i...
@@ -225,17 +230,17 @@ from "sometimes hours down to minutes." [[scalability.parallelization]]
 * <https://www.analyticsinsight.net/artificial-intelligence/discover-the-top-5-youtube-channels-for-learning-ai>
 
 1. 3Blue1Brown: not exclusively focused on AI, hosted by Grant Sanderson,
-   delivers brilliant content that makes complex mathematical 
+   delivers brilliant content that makes complex mathematical
    concepts, often integral to AI, easily understandable.
-   Also the channel's series on linear algebra and calculus serves as 
-   an excellent foundation for grasping the underlying principles of 
-   ML and neural networks. The visually engaging animations and intuitive 
-   explanations make 3Blue1Brown an invaluable resource for those 
+   Also the channel's series on linear algebra and calculus serves as
+   an excellent foundation for grasping the underlying principles of
+   ML and neural networks. The visually engaging animations and intuitive
+   explanations make 3Blue1Brown an invaluable resource for those
    seeking a solid mathematical understanding of AI.
 2. Siraj Raval:
    Dynamic and engaging resource for AI enthusiasts ...
-   unique teaching style, topics include ML, deep ML and 
-   ethical considerations in AI development. 
+   unique teaching style, topics include ML, deep ML and
+   ethical considerations in AI development.
    ... accessible to beginners while still providing depth
    for more advanced learners.
 3. Sentdex: For those interested in the intersection of AI and
@@ -262,26 +267,26 @@ from "sometimes hours down to minutes." [[scalability.parallelization]]
 * <https://github.com/visgl/deck.gl/blob/master/bindings/pydeck/README.md>
 
 * Python library to create interactive data visualizations using deck.gl.
-  for visually stunning exploratory data analysis of large datasets 
+  for visually stunning exploratory data analysis of large datasets
   in a few lines of code.
 * built on top of the popular data analysis libraries such as NumPy,
    Pandas, and Matplotlib.
 * supports scatter plots, heatmaps, hexbin maps, choropleth maps, ...
-* <https://lnkd.in/geaCUp5H> 
+* <https://lnkd.in/geaCUp5H>
 
 [[data.visualization.pydeck}]]
 
 [[{101.?]]
-## Everything you’ve ever wanted to know about ML 
+## Everything you’ve ever wanted to know about ML
 
-* By Cassie Kozyrkov 
+* By Cassie Kozyrkov
 * (VERY COMPLETE COURSE)
 * <https://kozyrkov.medium.com/everything-youve-ever-wanted-to-know-about-machine-learning-b396b0abee8c>
 * <https://www.youtube.com/watch?v=gP8SX9XnbhE&t=1s>
 [[101.?}]]
 
 [[{PM.TODO,101,doc_has.tutorial]]
-## Multimodal Machine Learning course, [Carnegie Mellon]  
+## Multimodal Machine Learning course, [Carnegie Mellon]
 
 * by Prof. Louis-Philippe Morency
 The  by Prof. Louis-Philippe Morency focuses on
@@ -315,18 +320,18 @@ Lectures      : https://lnkd.in/gKS74pzh
 * Part of project Pantheon Technologies, a company funded by engineers
   from MIT and BU.
 
-""" Nuestro inicio fue impulsado por una ambición compartida de cerrar la 
-brecha entre las tecnologías complejas de IA y los usuarios 
-cotidianos, haciendo que el poder de la inteligencia artificial sea 
-accesible para todos. Nuestra empresa se basa en una base de 
-investigación de vanguardia, colaboración interdisciplinaria y un 
-profundo compromiso para ampliar los límites de la tecnología, 
-aprovechando nuestros conocimientos y experiencia únicos para 
-desarrollar herramientas intuitivas y potentes que simplifiquen la 
+""" Nuestro inicio fue impulsado por una ambición compartida de cerrar la
+brecha entre las tecnologías complejas de IA y los usuarios
+cotidianos, haciendo que el poder de la inteligencia artificial sea
+accesible para todos. Nuestra empresa se basa en una base de
+investigación de vanguardia, colaboración interdisciplinaria y un
+profundo compromiso para ampliar los límites de la tecnología,
+aprovechando nuestros conocimientos y experiencia únicos para
+desarrollar herramientas intuitivas y potentes que simplifiquen la
 integración y utilización de la IA en diversos sectores. """
 [[doc_has.catalog}]]
 
-[[{PM.low_code.RLGymnasium,arch.ReinforcementLearning,]] 
+[[{PM.low_code.RLGymnasium,arch.ReinforcementLearning,]]
 
 ## Exploring the RL Gymnasium: A Gateway to Reinforcement Learning
 
@@ -342,24 +347,24 @@ RL Gymnasium Stands Out for:
 
 * Accessibility: makes RL  approachable for everyone from beginners
   to advanced researchers. ... <br/>
-  Users get to experiment in a sandbox, applying theoretical concepts 
-  in practice without the overhead of creating environments from 
+  Users get to experiment in a sandbox, applying theoretical concepts
+  in practice without the overhead of creating environments from
   scratch.
 * Variety of Environments: From simple scenarios like "CartPole" to
   complex setups, with a  gradient of challenges that cater to learners
   at different stages.
-* Community and Collaboration for community of users to share experiences, 
+* Community and Collaboration for community of users to share experiences,
   learn from others, and even contribute new environments.
-* ... Beginners can use the RL Gymnasium to grasp the basics of agents, 
+* ... Beginners can use the RL Gymnasium to grasp the basics of agents,
   environments, actions, and rewards through direct interaction.
-* ... Advanced users have a testing ground for algorithms and theories in 
+* ... Advanced users have a testing ground for algorithms and theories in
   a controlled yet varied set of environments.
 
-  ``` 
+  ```
   | # "super simple code":
   | import gymnasium as gym
   | env = gym.make("LunarLander-v2", render_mode="human")
-  ``` 
+  ```
 [[PM.low_code.RLGymnasium}]]
 
 [[{doc_has.catalog]]
@@ -371,16 +376,16 @@ RL Gymnasium Stands Out for:
 [[{LLM.fine_tunning,101,scalability]]
 ##  It's crazy how far fine-tuning LLMs have reached ...
 
-* by Leandro von Werra 
+* by Leandro von Werra
 
 .... A year ago it was challenging to fine-tune GPT-2 (1.5B) on a
-single GPU without looking into DeepSpeed, Megatron or other distributing 
+single GPU without looking into DeepSpeed, Megatron or other distributing
 frameworks which are their own beasts to tame.
 
 ... Today: You can train Llama 2 7B on a T4 GPU which you get for free on
 Google Colab or even train the 70B model on a single A100
 
-How? The power of 4bit quantization and QLoRA which are easily accessible 
+How? The power of 4bit quantization and QLoRA which are easily accessible
 via bits and bytes and the peft libraries!
 
 ... You can use the following snippet to train any llama model on your own
@@ -389,7 +394,7 @@ dataset with minimal infrastructure!
    ```
    | pip install trl
    | git clone https://github.com/lvwerra/trl
-   | 
+   |
    | python trl/examples/scripts/sft_trainer.py \
    |   --model_name meta-llama/Llama-2-7b-hf \
    |   -- dataset_name timdettmers/openassistant-guanaco \
@@ -415,7 +420,7 @@ surprisingly is trivial to convert his numpy code into jax. [[scalability.jax]]
 * <https://lnkd.in/divQezDB>
 * Blog: <https://lnkd.in/d5BJMGpe>
 [[LLM.101}]]
- 
+
 [[{LLM.fine_tunning]]
 ## Create Your Own ChatGPT Guide: Fine-Tuning LLMs with LoRA
 
@@ -423,7 +428,7 @@ surprisingly is trivial to convert his numpy code into jax. [[scalability.jax]]
 [[LLM.fine_tunning}]]
 
 [[{QA.model_explainability]]
-## explainability ML models (half-day) seminar by Stanford university: 
+## explainability ML models (half-day) seminar by Stanford university:
   by Prof. Hima Lakkaraju covering the following topics:
 - Intro to interpretable models.
 - Post hoc explanation methods.
@@ -575,7 +580,7 @@ https://www.infoq.com/news/2020/08/amazon-machine-learning-courses/
 ## Feature Importance Is All You Need | Kaggle
 
 * <https://www.kaggle.com/louise2001/rapids-feature-importance-is-all-you-need>
-   
+
  RAPIDS is a suite of packages developed out of NVIDIA, that intends
 to execute end-to-end data science and analytics pipelines entirely
 on GPUs. The goal of this notebook is to perform univariate
@@ -597,8 +602,8 @@ is possible within minutes with RAPIDS !
 
 
 [[PM.low_code]]
-## octosql: query tool to join, analyse and transform data from multiple sources 
-  
+## octosql: query tool to join, analyse and transform data from multiple sources
+
   https://github.com/cube2222/octosql
  ... streaming sources and file formats using SQL.Problems OctoSQL
   SolvesYou need to join / analyze data from multiple datasources.Think
@@ -637,7 +642,7 @@ is possible within minutes with RAPIDS !
 * <https://www.infoq.com/news/2020/07/spark-ai-summit-performance-gpu/>
 
 [[{PM.low_code]]
-## TimeSeries data analysis   
+## TimeSeries data analysis
 
 * <https://www.influxdata.com/>
 [[PM.low_code}]]
@@ -646,9 +651,9 @@ is possible within minutes with RAPIDS !
 ## Real Time Sudoku solver from webcam OpenCV -> TensorFlow.js -> Rus/WebAssembly.
 
 * <https://blog.scottlogic.com/2020/01/03/webassembly-sudoku-solver.html>
- 
+
 * OpenCV used to clean data before being injected to Tensorflow
-  for number recognition and localization into 2D.  Finally 
+  for number recognition and localization into 2D.  Finally
   Rust/WebAssemble solves the puzzle.
 [[101}]]
 
@@ -667,10 +672,10 @@ is possible within minutes with RAPIDS !
 
 
 [[{scalability]]
-## Scale deep learning to petaflops   
-  
+## Scale deep learning to petaflops
+
 * <https://www.infoq.com/presentations/scale-dl-petaflops/>
-  
+
 ... Prabhat explores 2D and 3D convolutional architectures for solving
   pattern classification, regression and segmentation problems in
   high-energy physics, cosmology and climate science.
@@ -749,7 +754,7 @@ Association, 92 (438): 548-560, 1997
   Problem (a-ASP), that can be solved with genetic algorithms.
 
 ## kubeflow: ML Toolkit for Kubernetes
-  
+
 * <https://www.kubeflow.org/>
 
 [[{scalability.ROOT]]
@@ -780,12 +785,12 @@ that **achieve coding rates of 100GB/second using only one CPU thread**.
 by **trading off accuracy for speed**.
 
 Matrix multiplication is a fundamental operation in ML
-one of the most time-consuming, due to extensive use of 
-multiply-add instructions. 
+one of the most time-consuming, due to extensive use of
+multiply-add instructions.
 
 ...  GPUs may be too expensive or even unavailable in contexts with
   limited budget, or resource-constrained apps (IoT, ...)
-  
+
 .. hash functions map input data to an index into a lookup table that
 contains pre-computed dot-products ...  Although introducing some output
 error. ... authors shows the algorithm has a theoretical upper-bound on
@@ -1319,12 +1324,12 @@ What you'll learn-and how you can apply it:
 
 * About Jonathan Dinu: "currently" (202?) pursuing a Ph.D. in Computer Science at
 Carnegie Mellon’s Human Computer Interaction Institute (HCII) where he is working
-to democratize machine learning and artificial intelligence through interpretable 
+to democratize machine learning and artificial intelligence through interpretable
 and interactive algorithms. Previously, he co-founded Zipfian Academy (an immersive
 data science training program acquired by Galvanize), has taught classes at the
 University of San Francisco, and has built a Data Visualization MOOC
 with Udacity....  In addition he has run data science trainings for a Fortune 100
-company and taught workshops at Strata, PyData, & DataWeek (among others). 
+company and taught workshops at Strata, PyData, & DataWeek (among others).
 [[}]]
 
 ## Approximate Nearest Neighbour:
@@ -1412,7 +1417,7 @@ https://drive.google.com/drive/folders/1Tl2HyuXHTGufDTsF-h0cb0InlMD3gvSQ
 [[}]]
 
 [[{mlops,scalability.Fiber,PM.TODO]]
-## Fiber: Library for Distributed ML  
+## Fiber: Library for Distributed ML
 
 * <https://www.infoq.com/news/2020/04/uber-fiber-distributed-ml/>
 - by  Uber and OpenAI
@@ -1611,7 +1616,7 @@ https://www.xataka.com/medicina-y-salud/deepmind-acaba-dar-salto-gigante-para-re
 [[}]]
 
 [[{training.dimension_reduction,PM.TODO]]
-## iForest: Best anomaly detection algo. 
+## iForest: Best anomaly detection algo.
 <https://towardsdatascience.com/isolation-forest-is-the-best-anomaly-detection-algorithm-for-big-data-right-now-e1a18ec0f94f >
 · Isolation Forest is the best Anomaly Detection Algorithm for Big Data Right Now [2020-11]
 · astoundingly beautiful and elegantly simple
@@ -1712,7 +1717,7 @@ techniques for solving complex problems in ML and AI.
 ## Extract relationship from video transcripts
 
 * <https://medium.com/neo4j/creating-a-knowledge-graph-from-video-transcripts-with-gpt-4-52d7c7b9f32c >
-  
+
 ^Creating a Knowledge Graph From Video Transcripts With ChatGPT
 Tomaz Bratanic 18 - 22 minutes Use GPT-4 as a domain expert to help
 you extract knowledge from a video transcript. Image by the author.A
@@ -2306,12 +2311,12 @@ and see they are human RODguNS4zMi4yNTQM
 
 ## linear algebra 101 [[{]]
 https://www.linkedin.com/posts/nick-singh-tech_datascience-machinelearning-activity-7036934508939501568-zUfm 
- Nick Singh Author of Ace the Data Science Interview 
+ Nick Singh Author of Ace the Data Science Interview
 
 
 
-* At only ~2.5 hours long, in the time it takes you to watch 
-  a movie you could instead develop some helpful intuitions about 
+* At only ~2.5 hours long, in the time it takes you to watch
+  a movie you could instead develop some helpful intuitions about
   Linear Algebra!
   <https://lnkd.in/eeTHWC9E>
 
@@ -2950,7 +2955,7 @@ https://8080labs.com on April 23, 2020.
 [[}]]
 
 [[{PM.UX,dev_stack.web]]
-## Pyodid: Data Science on the browser  
+## Pyodid: Data Science on the browser
   https://www.infoq.com/news/2021/05/pyodide-python-webassembly/
 Mozilla announced that Pyodide, a project aiming at providing a full
 Python data science stack running entirely in the browser, has become
@@ -3022,14 +3027,14 @@ massive scientific corpus.https://lnkd.in/ejbBSW4W#machinlearning
 [[}]]
 
 [[{LLM.GPT,PM.TODO]]
-## Why can GPT learn in context language models  
+## Why can GPT learn in context language models
 
 * <https://www.linkedin.com/posts/montrealai_why-can-gpt-learn-in-context-language-models-activity-7028951651587608576-4BqC>
 [[}]]
 
 
 [[{data.time_series]]
-## sktime: A unified framework for machine learning with time series 
+## sktime: A unified framework for machine learning with time series
   https://github.com/sktime/sktime
 [[}]]
 
@@ -3055,7 +3060,7 @@ massive scientific corpus.https://lnkd.in/ejbBSW4W#machinlearning
 [[}]]
 
 [[{]]
-## ChatGPT == fined-tuned GPT-3 model with small amount of data 
+## ChatGPT == fined-tuned GPT-3 model with small amount of data
 https://www.linkedin.com/posts/damienbenveniste_machinelearning-datascience-chatgpt-activity-7007019154666909696-T5WM 
 Do you know how ChatGPT was trained? ChatGPT is "simply" a
 fined-tuned GPT-3 model with a surprisingly small amount of data!
@@ -3240,29 +3245,29 @@ exogenous variables.
 
 * <https://github.com/snorkel-team/snorkel>
 
-  The Snorkel team is now focusing their efforts on Snorkel Flow, an end-to-end 
-AI application development platform based on the core ideas behind 
+  The Snorkel team is now focusing their efforts on Snorkel Flow, an end-to-end
+AI application development platform based on the core ideas behind
 Snorkel—you can check it out here or join us in building it!
 
-  The Snorkel project started at Stanford in 2015 with a simple technical bet: 
-that it would increasingly be the training data, not the models, algorithms, or 
-infrastructure, that decided whether a machine learning project succeeded or 
-failed. Given this premise, we set out to explore the radical idea that you 
-could bring mathematical and systems structure to the messy and often entirely 
-manual process of training data creation and management, starting by empowering 
+  The Snorkel project started at Stanford in 2015 with a simple technical bet:
+that it would increasingly be the training data, not the models, algorithms, or
+infrastructure, that decided whether a machine learning project succeeded or
+failed. Given this premise, we set out to explore the radical idea that you
+could bring mathematical and systems structure to the messy and often entirely
+manual process of training data creation and management, starting by empowering
 users to programmatically label, build, and manage training data.
 
-  To say that the Snorkel project succeeded and expanded beyond what we had ever 
-expected would be an understatement. The basic goals of a research repo like 
-Snorkel are to provide a minimum viable framework for testing and validating 
-hypotheses. Four years later, we’ve been fortunate to do not just this, but 
-to develop and deploy early versions of Snorkel in partnership with some of the 
-world’s leading organizations like Google, Intel, Stanford Medicine, and many 
-more; author over sixty peer-reviewed publications on our findings around 
-Snorkel and related innovations in weak supervision modeling, data 
-augmentation, multi-task learning, and more; be included in courses at top-tier 
-universities; support production deployments in systems that you’ve likely 
-used in the last few hours; and work with an amazing community of researchers 
+  To say that the Snorkel project succeeded and expanded beyond what we had ever
+expected would be an understatement. The basic goals of a research repo like
+Snorkel are to provide a minimum viable framework for testing and validating
+hypotheses. Four years later, we’ve been fortunate to do not just this, but
+to develop and deploy early versions of Snorkel in partnership with some of the
+world’s leading organizations like Google, Intel, Stanford Medicine, and many
+more; author over sixty peer-reviewed publications on our findings around
+Snorkel and related innovations in weak supervision modeling, data
+augmentation, multi-task learning, and more; be included in courses at top-tier
+universities; support production deployments in systems that you’ve likely
+used in the last few hours; and work with an amazing community of researchers
 and practitioners from industry, medicine, government, academia, and beyond.
 [[}]]
 
@@ -3284,25 +3289,25 @@ Are you looking for a high performance visualization component for the web? Need
 
 LLMs such as GPT and Llama are trained with a next-token prediction loss.
 
- In this work, we suggest that training 
-language models to predict multiple future tokens at once results in 
+ In this work, we suggest that training
+language models to predict multiple future tokens at once results in
 higher sample efficiency.
 
- More specifically, at each position in the training corpus, we ask the model to predict the following n tokens 
-using n independent output heads, operating on top of a shared model 
-trunk. 
+ More specifically, at each position in the training corpus, we ask the model to predict the following n tokens
+using n independent output heads, operating on top of a shared model
+trunk.
 
 ... Gains are especially pronounced on generative benchmarks like coding,
-where our models consistently outperform strong baselines by several 
+where our models consistently outperform strong baselines by several
 percentage points.
 
  Our 13B parameter models solves 12 % more problems on HumanEval and
 17 % more on MBPP than comparable next-token models. [[qa.coherence]]
 
- Experiments on small algorithmic tasks demonstrate that multi-token 
+ Experiments on small algorithmic tasks demonstrate that multi-token
 prediction is favorable for the development of induction heads and
-algorithmic reasoning capabilities. As an additional benefit, models 
-trained with 4-token prediction are up to 3 times faster at inference, 
+algorithmic reasoning capabilities. As an additional benefit, models
+trained with 4-token prediction are up to 3 times faster at inference,
 even with large batch sizes.  [[scalability.multi_token]]
 [[PM.RADAR}]]
 
@@ -3312,10 +3317,10 @@ even with large batch sizes.  [[scalability.multi_token]]
 
 Post by Tomas Paulik @ LinkedIn
 
-Last week, our research group at Cambridge announced a major AI milestone: 
+Last week, our research group at Cambridge announced a major AI milestone:
 
-- We have created the world’s first LLM (1.3B) trained completely from scratch 
-  using Federated Learning. 
+- We have created the world’s first LLM (1.3B) trained completely from scratch
+  using Federated Learning.
 
 - Utilising our technique, individuals and organisations can collaborate
   and use a mixture of various GPUs (or ML accelerators) to train their
@@ -3324,8 +3329,8 @@ Last week, our research group at Cambridge announced a major AI milestone:
 - The technique is entirely removing the barriers to entry to training
   and design of custom LLMs.
 
-- Federated Learning-based LLMs can be trained using siloed and previously 
-  unavailable data. This opens up new possibilities for data sourcing and 
+- Federated Learning-based LLMs can be trained using siloed and previously
+  unavailable data. This opens up new possibilities for data sourcing and
   inevitably, larger training sets will lead to more advanced LLMs.
 [[scalability.federated_training}]]
 
@@ -3338,29 +3343,29 @@ Last week, our research group at Cambridge announced a major AI milestone:
 - output formats include LaTeX, MathML and ASCII.
 
 
-"""...  I have a very good experience with this library. There is also 
+"""...  I have a very good experience with this library. There is also
 a nice function called lambdify which enables you to turn these symbols
-into practically useful functions. I used this package when I elaborated 
+into practically useful functions. I used this package when I elaborated
 a method of numerical maximum likelihood which requires the knowledge of
-the characteristic function (or moment generating function) and its 
-partial derivative with respect to the parameter of interest. 
+the characteristic function (or moment generating function) and its
+partial derivative with respect to the parameter of interest.
 Sympy's functions diff and lambdify enabled me to spare lots of hours
 of work. I could just rewrite one line and get the estimation procedure
-for an entirely new distribution. 
+for an entirely new distribution.
 
 It can be seen in this Google Colab link:
 <https://colab.research.google.com/drive/1eFRaA0bcN0FmPGrGyjb0FaI7ZeysE00J>
 """
 
 
-""" This is useful if you are doing a presentation in something like RISE and are 
-quick enough to think on your feet, otherwise probably less useful. I tried it 
-a few times during presentations but it's almost too much to take in. Instead 
-I've opted to write my notes up in detail in LaTeX with embedded links to a 
-Colab notebook with code also in the LaTeX using lstlisting. This seems to work 
-better. Most of my notes and accompanying notebooks make extensive use of 
+""" This is useful if you are doing a presentation in something like RISE and are
+quick enough to think on your feet, otherwise probably less useful. I tried it
+a few times during presentations but it's almost too much to take in. Instead
+I've opted to write my notes up in detail in LaTeX with embedded links to a
+Colab notebook with code also in the LaTeX using lstlisting. This seems to work
+better. Most of my notes and accompanying notebooks make extensive use of
 SymPy. See for example:
-<https://github.com/fdd-eiu/afew/blob/main/notes-gordon-schaefer.pdf> or 
+<https://github.com/fdd-eiu/afew/blob/main/notes-gordon-schaefer.pdf> or
 <https://github.com/fdd-eiu/afew<
 """
 
@@ -3430,7 +3435,7 @@ A list of known parsers can be found in the wiki.
   **The new algorithm costs significantly less computation resource
 than 8-bit floating point multiplication but achieves higher precision**.
 
-... the proposed method achieves higher precision but consumes 
+... the proposed method achieves higher precision but consumes
 significantly less bit-level computation since multiplying floating
 point numbers requires substantially higher energy compared to
 integer addition operations, applying the L-Mul operation in tensor
@@ -3438,13 +3443,13 @@ processing hardware can potentially reduce 95% energy cost by
 element-wise floating point tensor multiplications and 80% energy
 cost of dot products. [[scalability.algorithm]]
 
- Our numerical analysis experiments agree with the theoretical error 
-estimation, which indicates that L-Mul with 4-bit mantissa achieves 
+ Our numerical analysis experiments agree with the theoretical error
+estimation, which indicates that L-Mul with 4-bit mantissa achieves
 comparable precision as float8_e4m3 multiplications, and L-Mul with
 3-bit mantissa outperforms float8_e5m2.
  ... We further show that replacing all floating point multiplications
 with 3-bit mantissa L-Mul in a transformer model achieves equivalent
-precision as using float8_e4m3 as accumulation precision in both 
+precision as using float8_e4m3 as accumulation precision in both
 fine-tuning and inference.  [[training.fine_tunning,inference.*]]
 [[scalability.algorithm}]]
 
@@ -3455,10 +3460,10 @@ fine-tuning and inference.  [[training.fine_tunning,inference.*]]
 * <https://research.nvidia.com/labs/toronto-ai/LLaMA-Mesh/>
 * <https://github.com/nv-tlabs/LLaMA-Mesh>
 
-* We enable large language models (LLMs) to understand and generate 3D 
-  meshes by representing them as text and fine-tuning. This unifies the 
-  3D and text modalities in a single model and preserves language 
-  abilities, unlocking conversational 3D creation with mesh 
+* We enable large language models (LLMs) to understand and generate 3D
+  meshes by representing them as text and fine-tuning. This unifies the
+  3D and text modalities in a single model and preserves language
+  abilities, unlocking conversational 3D creation with mesh
   understanding.
 [[use_case.3D_models}]]
 
@@ -3472,11 +3477,11 @@ by Itay Gabbay <https://www.linkedin.com/feed/update/activity:699130555998341939
 
  based AutoML model ... the idea behind AutoML is that a model is
 trained on different ML problems and pipelines in order to generate
-an ML pipeline for a new problem. 
+an ML pipeline for a new problem.
 
 Usually using meta-learning concepts to achieve it.
 
-- TabPFN based on a single transformer 
+- TabPFN based on a single transformer
 
 -  approximates Bayesian inference with a prior for principles of
 causality and simplicity.
@@ -3490,7 +3495,7 @@ Paper   : <https://arxiv.org/abs/2207.01848>
 
 * <https://deepchecks.com/>
 
-- The shift from model-centric to data-centric AI requires a deep 
+- The shift from model-centric to data-centric AI requires a deep
 understanding of data quality.
 
 - Python package to validate ML models and data with minimal effort.
@@ -3507,16 +3512,16 @@ understanding of data quality.
 
  A company called Taalas is burning entire language models directly into silicon.
 
- Their ASIC card already processes Llama 3.1 8B at 17,000 tokens per 
+ Their ASIC card already processes Llama 3.1 8B at 17,000 tokens per
 second.  For reference, an RTX 4090 does about 150 tok/s on the same model.
  Groq does around 1.000.
 
-Now they're announcing a medium-sized "LLM Burner." A PCIe card that will burn 
-Qwen 3.5 27B directly into silicon. Standard PC slot. 10x less power than a 
-GPU. No VRAM, no weights loading, no inference framework. The model IS the 
-hardware. 
+Now they're announcing a medium-sized "LLM Burner." A PCIe card that will burn
+Qwen 3.5 27B directly into silicon. Standard PC slot. 10x less power than a
+GPU. No VRAM, no weights loading, no inference framework. The model IS the
+hardware.
 
-This is pretty early, and I'm sure there are tradeoffs 
+This is pretty early, and I'm sure there are tradeoffs
 
 the direction is clear: we're moving from "run AI on computers" to
 "the AI is the computer."
@@ -3524,10 +3529,10 @@ the direction is clear: we're moving from "run AI on computers" to
 [[scalability.ASIC}]]
 
 [[{scalability.algorithm,architecture.transformers,training.*,]]
-## Diffusion Training from Scratch on a Micro-Budget 
+## Diffusion Training from Scratch on a Micro-Budget
 
-- 118× lower cost than stable diffusion models 
--  14× lower cost than current state-of-the-art approach 
+- 118× lower cost than stable diffusion models
+-  14× lower cost than current state-of-the-art approach
 
 * <https://arxiv.org/abs/2407.15811>
 
@@ -3564,25 +3569,25 @@ one of intelligence’s core tricks. [[doc_has.keypoint]]
 [[{]]
 ## ML qwen-Image
 
-by Enrique Adiego Cortés, Technical Manager @ NTT DATA 
+by Enrique Adiego Cortés, Technical Manager @ NTT DATA
 
 Testing a new FREE model looking for a WoW!
 
-(Spoiler: It's a powerful T2I, BUT the I2I IS NOT available ...) 
+(Spoiler: It's a powerful T2I, BUT the I2I IS NOT available ...)
 
 Qwen-Image doesn't just create or edit, it understand "image tasks",
 including object detection, semantic segmentation, depth and edge
 (Canny) estimation, novel view synthesis, and super-resolution. [[use_case.image_understanding]]
 
-These capabilities, while technically distinct, can all be seen as specialized forms 
+These capabilities, while technically distinct, can all be seen as specialized forms
 of intelligent image editing, powered by deep visual comprehension.
 
- These features make Qwen-Image not just a tool for generating pretty pictures, 
-but a comprehensive foundation model for intelligent visual creation and 
+ These features make Qwen-Image not just a tool for generating pretty pictures,
+but a comprehensive foundation model for intelligent visual creation and
 manipulation.
 
- I can't edit the inconsistent details with this model 
-(e.g.  goals in the image). So... Meh! I'm going to continue using: 
+ I can't edit the inconsistent details with this model
+(e.g.  goals in the image). So... Meh! I'm going to continue using:
 - Wan2.2 T2I (1 frame) as image generator.  [[use_case.image_generation]]
 - Kontext Dev as my personal image editor.  [[use_case.image_editor]]
 [[}]]
@@ -3590,8 +3595,8 @@ manipulation.
 [[{use_case.PDF_management,use_case.OCR]]
 ## SmolDocling: multimodal Image+Text to Text
 
-- SmolDocling: multimodal Image+Text to Text model by IBMxHuggingFace teams 
-- Image, equation, chart, and complex table 
+- SmolDocling: multimodal Image+Text to Text model by IBMxHuggingFace teams
+- Image, equation, chart, and complex table
 - Very small size 256Million parameters. [[scalability.model_size]]
 
 Main features:
@@ -3599,13 +3604,13 @@ Main features:
 - DocTags for Efficient Tokenization fully compatible with DoclingDocuments.
 - Optical Character Recognition.
 - Layout and Localization: Preserves document structure and document element bounding boxes. [[qa.coherence]]
-- Code block recognition. 
+- Code block recognition.
 - mathematical formula Recognition .
-- Chart Recognition:  Extracts and interprets chart data 
+- Chart Recognition:  Extracts and interprets chart data
 - Table Recognition, including headers for for structured table extraction.  [[data.gathering]]
 - Differentiates figures and graphical elements
 - Links captions to relevant images and figures.
-- List Grouping 
+- List Grouping
 - Fast inference on top of VLLM: 0.35 secs/page on A100 GPU.
 
 - <https://huggingface.co/docling-project/SmolDocling-256M-preview>
@@ -3613,14 +3618,14 @@ Main features:
 [[}]]
 
 [[{use_case.legal,architecture.agent]]
-## Maite.ai: Agente IA que dicta sentencias 
+## Maite.ai: Agente IA que dicta sentencias
 
 * <https://www.maite.ai/>
 
 - La IA del mundo con mejor nota en test de acceso a judicatura.
 - 3 millones de documentos legales.
 
-- Su precisión ya alcanza los 96 puntos sobre 100, con apenas un 4% de 
+- Su precisión ya alcanza los 96 puntos sobre 100, con apenas un 4% de
 margen de error, y más de 300 bufetes y 7.000 abogados trabajan con ella.
 
  """... Estamos logrando que el pequeño despacho pueda competir con grandes firmas ..."""
@@ -3633,12 +3638,12 @@ De herramienta a copiloto legal
 [[{101.hardware,doc_has.comparative]]
 ## Moore Threads MUSE vs Nvidia GPUs
 
-* Moore Threads ha desarrollado varias GPU para aplicaciones de IA que, sobre 
-el papel, rivalizan con algunas de las soluciones avanzadas que han colocado en 
-el mercado NVIDIA, AMD o Huawei. No obstante, esta compañía tiene algo más: 
+* Moore Threads ha desarrollado varias GPU para aplicaciones de IA que, sobre
+el papel, rivalizan con algunas de las soluciones avanzadas que han colocado en
+el mercado NVIDIA, AMD o Huawei. No obstante, esta compañía tiene algo más:
 
 MUSA: alternativa a CUDA, compatible con la gama de tarjetas MTT
-incorpora un compilador, bibliotecas de ejecución, bibliotecas especializadas y 
+incorpora un compilador, bibliotecas de ejecución, bibliotecas especializadas y
 herramientas de depuración del código.
 
 - Teóricament es también compatible con NVidia CUDA.
@@ -3658,7 +3663,7 @@ Features:
 - Chat with models (chat, completion, tool use, template prompts, etc.)
 - Use several inference engines like vLLM, Llama CPP
 - Drag and drop file UI for RAG.
-- Pull from 1000s of datasets available on HuggingFace. 
+- Pull from 1000s of datasets available on HuggingFace.
 - Log all inference requests. Everything within a single interface.
 - Local or cloud support.
 [[PM.low_code}]]
@@ -3668,39 +3673,39 @@ Features:
 
 * <https://www.infoq.com/news/2025/01/meta-large-concept-model/>
 
-LCM uses a sentence embedding space  independent of language and modality and 
-can outperform a similarly-sized Llama 3.1 model on multilingual summarization 
+LCM uses a sentence embedding space  independent of language and modality and
+can outperform a similarly-sized Llama 3.1 model on multilingual summarization
 tasks.
 
-Unlike most LLMs, which map text into a token embedding space and generate text 
-autoregressively by predicting the next token in a sequence, LCM operates at 
+Unlike most LLMs, which map text into a token embedding space and generate text
+autoregressively by predicting the next token in a sequence, LCM operates at
 the sentence level.
 
- LCM uses the pre-trained SONAR sentence embedding model, which supports both 
-text (in 200 languages) and speech data (in 76 languages). 
+ LCM uses the pre-trained SONAR sentence embedding model, which supports both
+text (in 200 languages) and speech data (in 76 languages).
 
-Meta developed LCM to better model the human ability to do abstract and 
-hierarchical reasoning. 
+Meta developed LCM to better model the human ability to do abstract and
+hierarchical reasoning.
 
-It can also help the model in dealing with long-form content: in zero-shot 
+It can also help the model in dealing with long-form content: in zero-shot
 tests on the XLSum benchmark, a 7B parameter LCM outperformed Llama-3.1-8B.
 
  According to Meta:
 
-... We acknowledge that there is still a long path to reach the performance of 
-current flagship LLMs. This will require of course further improving the core 
-architecture, but also careful data selection and curation, extensive 
-ablations, optimized and diverse instruction fine-tuning, and finally, scaling 
+... We acknowledge that there is still a long path to reach the performance of
+current flagship LLMs. This will require of course further improving the core
+architecture, but also careful data selection and curation, extensive
+ablations, optimized and diverse instruction fine-tuning, and finally, scaling
 to models with more than 70B parameters.
 
-The LCM architecture is based on the SONAR embedding space and the SONAR 
+The LCM architecture is based on the SONAR embedding space and the SONAR
 encoders and decoders for both speech and text.
 
- LCM uses a "standard decoder-only Transformer" architecture to predict the 
-next item in a sequence. One advantage of using SONAR is that the output 
-sequence can be decoded into any supported language or modality without 
-re-generating the sequence. It can also be fine-tuned on a subset of the 
-languages while still exhibiting good zero-shot performance on tasks using 
+ LCM uses a "standard decoder-only Transformer" architecture to predict the
+next item in a sequence. One advantage of using SONAR is that the output
+sequence can be decoded into any supported language or modality without
+re-generating the sequence. It can also be fine-tuned on a subset of the
+languages while still exhibiting good zero-shot performance on tasks using
 other languages.
 
 [[PM.RADAR}]]
@@ -3710,9 +3715,9 @@ other languages.
 
 * <https://www.infoq.com/news/2025/01/microsoft-phi-4/>
 
-We found clean and correct natural data to be absolutely crucial for seeding 
-synthetic data: minor errors can result in severe quality degradations for 
-derived synthetic documents. We therefore invested heavily in the 
+We found clean and correct natural data to be absolutely crucial for seeding
+synthetic data: minor errors can result in severe quality degradations for
+derived synthetic documents. We therefore invested heavily in the
 perfectionistic curation of our web data.
 [[use_case.math}]]
 
@@ -3733,16 +3738,16 @@ perfectionistic curation of our web data.
 ## Microfilms
 
 * <https://www.youtube.com/watch?v=ChRuH0F678A&t=104s>
- Producir un microdrama de acción real costaba más de un millón 
-de yuanes en 2024. Con herramientas de IA como Kling o Seedance, el mismo 
-proyecto sale por entre 50.000 y 100.000 yuanes (entre 6.000 y 12.000 euros). 
-En los estudios de producción más baratos, la cifra baja a 30.000 o 40.000 
-yuanes por serie completa. El coste por minuto de contenido cayó de entre 
+ Producir un microdrama de acción real costaba más de un millón
+de yuanes en 2024. Con herramientas de IA como Kling o Seedance, el mismo
+proyecto sale por entre 50.000 y 100.000 yuanes (entre 6.000 y 12.000 euros).
+En los estudios de producción más baratos, la cifra baja a 30.000 o 40.000
+yuanes por serie completa. El coste por minuto de contenido cayó de entre
 3.000 y 5.000 yuanes a comienzos de 2024 a entre 200 y 1.000 en la actualidad.
 
 He uses:
-- ChatGPT for the script. 
-- Midjourney for stills. 
+- ChatGPT for the script.
+- Midjourney for stills.
 - Cling for motion. [[use_case.video_production]]
 - Suno for music.   [[use_case.music_composition]]
 [[industry.cinemma}]]
@@ -3761,13 +3766,14 @@ He uses:
 [[architecture.mobile}]]
 
 [[{data.gathering.images]]
-[[architecture.agents.tool}]]
-* <https://github.com/rom1504?tab=repositories>
+[[architecture.agents.tool]]
 ## img2dataset:
 
-- Easily turn large sets of image urls to an image dataset. 
+* <https://github.com/rom1504?tab=repositories>
 
-- download, resize and package 100 millions of urls in 20h on one machine. 
+- Easily turn large sets of image urls to an image dataset.
+
+- download, resize and package 100 millions of urls in 20h on one machine.
 [[data.gathering.images}]]
 
 [[{use_case.image_processing]]
@@ -3776,8 +3782,8 @@ He uses:
 IA Tool to clip image elements provided a text prompt.
 
 
-- INPUT: image URL + prompt description of desired image to be "clip", 
-  example: 
+- INPUT: image URL + prompt description of desired image to be "clip",
+  example:
 - OUTPUT: a new image with only the "clipped" elements of the original
   image matching the promp.
 
@@ -3787,964 +3793,332 @@ Ex:
 - OUTPUT:  New image with the cat and dog, removing anything else.
 [[use_case.image_processing}]]
 
+[[{hardware.101,scalability.datacenter]]
+## IA Datacenters require 1 Gwatt
 
 
+Original post par Octave Klaba <https://www.linkedin.com/in/octave-klaba-3a0b3632>
 
-## Ml hardware 101
+Depuis quelques jours, on entend beaucoup parler de projets de construction
+"Datacenters 1GW" pour l'IA en France Pour bien comprendre le besoin, il faut
+bien avoir en tête ces 3 chiffres suivant:
 
-Octave Klaba
-Octave Klaba est un Influencer 2e
+- il faut 50M€, pour investir dans 1000 GPU qui vont fonctionner dans un
+  Datacenter consommant 1MW de puissance électrique
 
-OVHcloud.Jezby.Shadow.Qwant.Poweend.MFF.married.1+2 daughters.
+- Ces 3 chiffres fonctionnent ensemble sur plusieurs niveaux de scale:
 
-1 j.
+  ```
+  |    50M€ -   1K GPU -   1MW
+  |   500M€ -  10K GPU -  10MW
+  |  5000M€ - 100K GPU - 100MW ¹
+  | 50000M€ -   1M GPU -   1GW
+  |
+  | 80% de ces montants servent à acheter les GPUs,
+  | 20% pour construire un Datacenter?
+  ```
 
-Depuis quelques jours, on entend beaucoup parler de projets de construction "Datacenters 1GW" pour l'IA en France Pour bien comprendre le besoin, il faut bien avoir en tête ces 3 chiffres suivant: il faut 50Me, pour investir dans 1000 GPU qui vont fonctionner dans un Datacenter consommant 1MW de puissance électrique Ces 3 chiffres fonctionnent ensemble sur plusieurs niveaux de scale: 50Me - 1k GPU - 1MW 500Me - 10k GPU - 10MW 5Mde - 100k GPU - 100MW 50Mde - 1M GPU - 1GW 80% de ces montants servent à acheter les GPUs, 20% pour construire un Datacenter Pour quel besoin ? Les GPUs sont utilisés pour 2 types d'usage: - l'entrainement et donc la création d'un modèles LLM avec les données (training) - l'utilisation d'un modele LLM existant par les clients (inference) Les générations de GPUs actuellement disponibles sur le marché permettent de faire l'entraînement sur environ 100K GPU en fonctionnant ensemble. Le facteur limitant est la distance entre les 2 GPUs les plus éloignés physiquement : à partir d'un certain nombre de GPU connectés ensemble, la distance fait ralentir le fonctionnement de l'ensemble de GPUs C'est pourquoi pour le besoin de l'entrainement, une nouvelle génération de GPUs arrive sur le marché: les superchip. Au lieu d'avoir des dizaines de GPU indépendants que vous connectez en suite ensemble, chaque superchip regroupe une dizaines de GPUs sur une seule carte. Bravo ! Vous avez réduit la distance entre les GPUs et vous pouvez connecter désormais 10 fois plus de GPUs ensemble sans ralentir le tout. En revanche, vous avez de nouveaux défis à résoudre: comment distribuer l'énergie et refroidir une infrastructure 10 fois plus dense Comment vous procurer une source d'énergie de 1GW et comment assurer sa redondance Pour héberger la puissance de calcul dans un Datacenter, on utilise les baies aka les racks, qui est une sorte d'armoire de 0,6m de large, 1m de profondeur et 2.5m de hauteur. Chaque baie est alimentée avec environ 20KW de puissance électrique. Pour la refroidir, on utilise de l'air frais qu'on pousse à travers la baie Si on veut utiliser plus que 20KW dans une baie, l'air ne suffit pas pour la refroidir. Il faut passer en watercooling. C'est là qu'on commence à parler de la nouvelle génération de Datacenter et dans certains cas on parle de 1GW. En effet, pour héberger les superchip, on parle désormais de baies à 120KW voir meme on spécule sur 240KW par baie et un système de watercooling pour capturer et extraire toute cette chaleur. C'est totalement nouveau par la puissance par baie mais aussi par ce système de refroidissement watercooling at scales. Voilà pourquoi ce genre de Datacenter n'existent pas et donc faut les construire 1/3
+¹ Les générations de GPUs actuellement disponibles sur le marché permettent
+de faire l'entraînement sur environ 100K GPU en fonctionnant ensemble. **Le
+facteur limitant est la distance entre les 2 GPUs les plus éloignés
+physiquement**:
 
+- à partir d'un certain nombre de GPU connectés ensemble, la distance fait
+ralentir le fonctionnement de l'ensemble de GPUs.[[doc_has.keypoint]]
 
-## ML: Hugging Face Introduces AI Sheets, a No-Code Tool for Dataset Transformation - InfoQ
-https://www.infoq.com/news/2025/09/ai-sheets/
+ C'est pourquoi pour le besoin de l'entrainement, une nouvelle génération de
+GPUs arrive sur le marché: les superchip:<br/>
+ Au lieu d'avoir des dizaines de GPU indépendants que vous connectez en suite ensemble,
+chaque superchip regroupe une dizaines de GPUs sur une seule carte.
 
-Some early adopters have highlighted both potential and limitations:
+ Bravo ! Vous avez réduit la distance entre les GPUs et vous pouvez connecter
+désormais 10 fois plus de GPUs ensemble sans ralentir le tout.
 
-It is LLM-powered, but quite slow. I wonder why someone would prefer it over OpenRefine?
+ En revanche, vous avez de nouveaux défis à résoudre:
 
+ comment distribuer l'énergie et refroidir une infrastructure 10 fois plus
+dense Comment vous procurer une source d'énergie de 1GW et comment assurer sa
+redondance?
 
-## ML Free courses
+ Pour héberger la puissance de calcul dans un Datacenter, on utilise les baies
+aka les racks, qui est une sorte d'armoire de:
+- 0,6m de large.
+- 1m de profondeur.
+- 2.5m de hauteur.
 
-NVIDIA has released free online courses on AI. 
+ Chaque baie est alimentée avec environ 20KW de puissance électrique. Pour la
+refroidir, on utilise de l'air frais qu'on pousse à travers la baie Si on veut
+utiliser plus que 20KW dans une baie, l'air ne suffit pas pour la refroidir. Il
+faut passer en watercooling. C'est là qu'on commence à parler de la nouvelle
+génération de Datacenter et dans certains cas on parle de 1GW.
 
-If you have 2 to 12 hours to spare this weekend, this is for you. 
+ En effet, pour héberger les superchip, on parle désormais de baies à 120KW
+voir meme on spécule sur 240KW par baie et un système de watercooling pour
+capturer et extraire toute cette chaleur.
 
-- Building RAG Agents with LLMs (8h) <https://lnkd.in/gxK6wet3>
-- Building Video AI Applications at the Edge on Jetson Nano (8h) <https://lnkd.in/gVxyiPTs>
+ C'est totalement nouveau par la puissance par baie mais aussi par ce système
+de refroidissement watercooling at scales.
 
- The first two courses require prerequisites (basic knowledge of deep learning and Python),
-while the rest below are more beginner-friendly. 
+ Voilà pourquoi ce genre de Datacenter n'existent pas et donc faut les construire 1/3 [[year.2025]]
+[[hardware.101}]]
 
-And if you are a leader and looking for more in-depth executive-level AI courses,
-check this one (10 weeks, with expertise required) 
-- <https://bit.ly/3C3GSgF>  Getting Started with AI on Jetson Nano (8h) 
-- <https://lnkd.in/g_J4FWGy> AI for All: From Basics to GenAI Practice (2.5h) 
-- <https://lnkd.in/gisk_Y_T> Generative AI Explained (2h) 
-- <https://lnkd.in/gVPt6dAK> Building A Brain in 10 Minutes.
-  It explores the biological and psychological inspirations to the world's first neural networks, fun to check! 
+[[{use_case.CODING_ASSISTANT,PM.low_code]]
 
-- <https://lnkd.in/gnzXh3FR> (video from Jensen Huang, CEO of NVIDIA talk at CES 2025)
+## Google Firebase Studio: "Prompt to app"
 
-## ML vibe coding: Firebase Studio
-https://www.genbeta.com/inteligencia-artificial/he-probado-firebase-studio-google-minuto-he-creado-mi-propia-app-ia-he-hecho-gratis-mi-navegador
+"""In a minute I created my app, using only a web browser"""
 
+- end-to-end Google Agentic platform, covering the full life-cycle of the app.
+  - design, development, testing, documentation, deployment and monitorization.
 
+- PROMPT: """I want an app to save my favourites pictures""" Done!!!
 
+- You can detail using diagrams.
 
-## Ml 101
+The prototyping agent allows to generate functional apps describing the prompt,
+loading an image or a draft.
 
-               Mitko Vasilev 2e
 
-CTO
+- Based on Code OSS (aka "Visual Studio Code")
 
-12 h.
+- programming languages: Java, Python, Node.js, Go, .NET...
+- Frameworks:  React, Angular, Vue, Flutter, Next.js, Android [[use_case.mobile_apps]]...
 
-I’m running DeepSeek R1 MoE 671B on my on device AI backend for all my apps at ~70% of its resources. This is Unsloth’s R1 dynamic quantization GGUF at 2.51-bit (3.5/2.5bit). I’ve also experimented with the 1.58-bit, which performs OKish but lacks the full potential. I’m using llama.cpp and offloading half of the MoE layers onto the GPU VRAM, while simultaneously allocating the rest into 69% of the Linux RAM. This leaves 1/3 of the resources available for the rest of my desktop applications and the rest of the on-device AI platform, including the in-memory cache, ZFS cache, 2 DSPy processes, vector DB, 1 safety SLM, and 1 coding LLM. Over the weekend, I plan to explore different profiles to determine the optimal configuration for utilizing the full MoE locally as my primary workhorse. Make sure you own your AI. AI in the cloud is not aligned with you; it’s aligned with the company that owns it.
+- 60 predefined templates in place:
+  - dashboards.
+  - reserve tickets.
+  - chats.
+  - ...
+[[use_case.CODING_ASSISTANT}]]
 
+[[{hardware.101,mlops.deployment]]
+## Running DeepSeek R1 locally
 
-## ray-project/ray: Ray is an AI compute engine. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.
-https://github.com/ray-project/ray
+By Mitko Vasilev @ LinkedIn
 
-Learn more about Ray AI Libraries:
+- I’m running DeepSeek R1 MoE 671B on my on device for all my apps at ~70% of its resources.
+- This is Unsloth’s R1 dynamic quantization GGUF at 2.51-bit (3.5/2.5bit).
 
-Data: Scalable Datasets for ML
-Train: Distributed Training
-Tune: Scalable Hyperparameter Tuning
-RLlib: Scalable Reinforcement Learning
-Serve: Scalable and Programmable Serving
+- I’ve also experimented with the 1.58-bit, which performs OKish but lacks the full potential.
 
+- I’m using llama.cpp and offloading half of the MoE layers onto the GPU VRAM,
+  while simultaneously allocating the rest into 69% of the Linux RAM.
 
-## ML: outliner detector 2.0
-https://www.linkedin.com/feed/update/urn:li:activity:7286063679660285952
+- This leaves 1/3 of the resources available for the rest of my desktop applications and the
+  rest of the on-device AI platform, including the in-memory cache, ZFS cache,
+  2 DSPy processes, vector DB, 1 safety SLM, and 1 coding LLM.
+[[hardware.101}]]
 
-𝗢𝘂𝘁𝗹𝗶𝗲𝗿 𝗗𝗲𝘁𝗲𝗰𝘁𝗶𝗼𝗻 𝘄𝗶𝘁𝗵 𝘁𝗵𝗲 𝗣𝘆𝗢𝗗 𝗟𝗶𝗯𝗿𝗮𝗿𝘆! 🖥️📊 Outlier detection is the identification of dataset elements that vary significantly from the majority. Those elements are known as outliers, and there are various reasons to identify them, depending on each project and use case. PyOD is an outlier detection library that includes numerous models, ranging from the classical Local Outlier Factor to deep learning approaches. PyOD version 2 has now been released, including the following updates: ✅ Expanded Deep Learning Support: Integrates 12 modern neural models, bringing the total number of outlier detection methods to 45. ✅ Enhanced Performance and Ease of Use: Models are optimized for efficiency and consistent performance across different datasets. ✅ LLM-based Model Selection: Automated model selection guided by a LLM reduces manual tuning and assists users with limited experience. PyOD has been utilized in research papers and industry projects, establishing it as a robust tool for scientists and practictioners. You can check the links below for more information, and make sure to follow me for regular content! 𝗣𝘆𝗢𝗗 𝗹𝗶𝗯𝗿𝗮𝗿𝘆 𝗼𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝘄𝗲𝗯𝘀𝗶𝘁𝗲: https://lnkd.in/ekuCxsWt 𝗔 𝗖𝗼𝗽𝗶𝗹𝗼𝘁 𝗔𝗹𝘁𝗲𝗿𝗻𝗮𝘁𝗶𝘃𝗲 𝗳𝗼𝗿 𝗗𝗮𝘁𝗮 𝗦𝗰𝗶𝗲𝗻𝗰𝗲: https://bit.ly/3Wmm4b5
+[[{use_case.text_to_speech]]
 
+## Ml: KittenML/KittenTTS: State-of-the-art TTS model under 25MB
 
-## Ml: KittenML/KittenTTS: State-of-the-art TTS model under 25MB 😻
-https://github.com/KittenML/KittenTTS
+* <https://github.com/KittenML/KittenTTS>
 
+[[use_case.text_to_speech}]]
 
-## ML 101 Vector Database
-https://en.wikipedia.org/wiki/Vector_database
+[[{use_case.image_creation.super_resolution]]
+## ultrahigh video stream with low bandwidth
 
+* <https://www.collabora.com/news-and-blog/news-and-events/collabora-takes-first-place-at-icme-2025-grand-challenge.html>
 
-## ML CODING 101: voideditor/void
-https://github.com/voideditor/void
+Collabora's winning submission introduces a novel mixture-of-experts framework
+for screen content super-resolution, addressing the growing need for
+high-quality upscaling in bandwidth-constrained screen-sharing scenarios. The
+approach combines the Implicit Transformer Super-Resolution Network for
+restoring general image structures and a text-specific refinement stage, which
+uses a diffusion-based model inspired by TextSSR, enhanced with Large Language
+Model-assisted OCR correction.
+[[use_case.image_creation.super_resolution}]]
 
-## ML: USECASE ultrahigh video stream with low bandwidth Collabora takes first place at ICME 2025 Grand Challenge
-https://www.collabora.com/news-and-blog/news-and-events/collabora-takes-first-place-at-icme-2025-grand-challenge.html
+[[{PM.price.3dollars,model.VLM,PM.TODO]]
+## R1-V: Reinforcing Super Generalization Ability in Vision LM. Less Than $3
 
+* <https://github.com/Deep-Agent/R1-V>
 
+... We released new VLM-RL environments, training codebase and research paper
+G1: Bootstrapping Perception and Reasoning Abilities of Vision-Language Model
+via Reinforcement Learning, check it out!
 
-## ML PM.price, escalability.model
-https://github.com/Deep-Agent/R1-V
-
-3 dollars suffisent pour booster un modèle d'IA visuelle
-Une nouvelle méthode d'apprentissage par renforcement permet d'améliorer drastiquement les performances des modèles de reconnaissance d'images, tout en réduisant les coûts de formation à quelques dollars.
-
-
-## IA, i8n: le français H entre directement dans la cour des grands
-https://www.journaldunet.com/intelligence-artificielle/1542063-ia-le-francais-h-entre-directement-dans-la-cour-des-grands/
-
-www.journaldunet.com
-
-IA : le français H entre directement dans la cour des grands
-
-Benjamin Polge
-5 - 7 minutes
-
-La scale-up présente trois agents d'IA à la pointe des benchmarks en navigation web et publie Holo-1, un modèle open source agentique à l'état de l'art.
-
-On ne pourra pas lui reprocher de céder aux effet de mode avec l'IA agentique. Et pour cause : H, ou H Company, a été pensée comme agentique par nature dès sa création. Fondée fin 2023 par quatre ex-employés de Google DeepMind et Charles Kantor, un ancien de CentraleSupélec et Stanford, la start-up française annonce aujourd'hui trois nouveaux agents de navigation autonome capables de rivaliser avec les meilleures solutions américaines. La scale-up publie également en open source sur Hugging Face Holo-1, son premier vision language model, capable de naviguer en toute autonomie.
-
-3 agents, 3 usages différents
-
-H présente donc 3 agents : Runner H, Surfer H et Tester H. Chacun répond à des cas d'usage bien particuliers. Ces derniers se destinent aux professionnels mais également aux particuliers curieux de tester la navigation agentique autonome.
-
-Runner H : un agent d'actions basé sur des connecteurs
-
-Runner H fonctionne comme une plateforme d'orchestration intelligente qui transforme une instruction en langage naturel en une séquence d'actions coordonnées sur plusieurs applications et services. L'agent pilote des sous-agents spécialisés et s'appuie sur un système de connecteurs pré-configurés pour interagir directement avec des outils collaboratifs. La plateforme permet déjà de se connecter à Gmail pour la gestion des emails, Google Workspace (Docs, Calendar, Drive, Sheets) pour la bureautique, Notion, Slack pour la communication d'équipe, et Zapier pour étendre les possibilités d'automatisation.
-
-Runner H et ses sous-agents en fonctionnement. © Capture d'écran / JDN
-
-H cite plusieurs cas d'usage concrets : la synchronisation de données entre plusieurs plateformes, la génération automatique de rapports à partir de sources multiples, ou encore l'orchestration de workflows marketing complexes impliquant plusieurs outils. L'utilisateur n'a qu'à saisir son prompt et le VLM de H se charge d'orchestrer les différentes actions entre les outils.
-
-Surfer H : un agent de navigation web
-
-Operator chez OpenAI, Computer User chez Anthropic, Projet Mariner chez Google… Surfer H se positionne dans la lignée des agents web autonomes. Surfer H simule le comportement d'un utilisateur humain : il "voit" la page web grâce à son modèle de vision (Holo-1), identifie les éléments interactifs (boutons, formulaires, menus), et exécute les actions demandées en cliquant, saisissant du texte ou naviguant entre les pages.
-
-Surfer H en action. © Capture d'écran / JDN
-
-
-Surfer H est excellent en navigation autonome. L'agent obtient un score SOTA sur le benchmark WebVoyager avec un score de 92,2 % contre 89,1% pour Browser Use (concurrent direct de H) et 87% pour Operator d'OpenAI. Chaque tâche coûte en ressources matérielles environ 0,13 dollar, ce qui en fait l'une des solutions les plus accessibles du marché.
-
-Tester H : un agent d'automatisation de scripts web
-
-Tester H permet aux équipes non-techniques de créer des campagnes de test web simplement en décrivant les actions à effectuer : "vérifier que le bouton de connexion fonctionne", "tester le processus de commande jusqu'au paiement", ou "s'assurer que les formulaires de contact envoient bien les emails". Tester H se charge ensuite de convertir ces instructions en scripts automatisés compatibles web et mobile. L'agent fonctionne comme un testeur QA automatisé : il vérifie de manière autonome le bon fonctionnement des interfaces web et mobiles.
-
-© Capture d'écran / JDN
-
-Holo-1 disponible en open source, sur Hugging Face
-
-Parallèlement au lancement de ses trois agents, H publie Holo-1, son modèle moteur (sans toutefois dévoiler la version actuellement en production), en open source sur Hugging Face.  "Traditionnellement, un agent utilise deux composants séparés : un LLM pour planifier les étapes, aller sur un site, cliquer, scroller, et un modèle visuel, VLM, pour localiser les éléments. Les agents actuellement sur le marché sont chers car il faut orchestrer ces deux systèmes. Avec Holo 1, nous avons créé un modèle unique qui fait à la fois la planification et la localisation, ce qui permet des réductions de coûts considérables", explique Charles Kantor, CEO.
-
-Le modèle est disponible en 3 et 7 milliards de paramètres. Les poids du 7B sont publiés sous licence Apache 2.0, la plus permissive. Cette dernière version atteint le meilleur taux de précision sur les tâches de navigation UX parmi les modèles de petite taille.  Enfin H publie également un dataset (WebClick) contenant 1 639 scénarios d'interaction réels avec des interfaces utilisateur. Dans le même temps, Amazon, présent au capital de H, annonce l'intégration de Holo-1 sur la marketplace AWS. Les entreprises peuvent ainsi déployer en un clic le modèle sur leur cloud.
-
-Côté disponibilité, Runner H et Surfer H sont d'ores et déjà accessibles au public avec un déploiement progressif. Tester H, lui, est disponible uniquement pour les entreprises souhaitant industrialiser leurs tests logiciels à grande échelle. Avec ses trois agents et la publication d'Holo-1, H Company s'impose doucement mais sûrement dans un secteur au potentiel explosif.
-
-
-## ML: DeepSeek-R1 release:
-https://github.com/deepseek-ai/DeepSeek-R1
-
-DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks.
-
-
-
-## Explainable Machine Learning
-𝗖𝗿𝗲𝗮𝘁𝗲 𝗘𝘅𝗽𝗹𝗮𝗶𝗻𝗮𝗯𝗹𝗲 𝗠𝗮𝗰𝗵𝗶𝗻𝗲 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗠𝗼𝗱𝗲𝗹𝘀! 🖥️📊 Machine learning models often lack explainability, making it difficult to understand their predictions. This is a significant obstacle in many cases, such as regulated industries where black box models are unacceptable. explainerdashboard is a Python library that helps you understand machine learning models, by providing an interactive dashboard. Furthermore, the library supports various approaches, including SHAP values, permutation importances and dependence plots. Check the links below for more information, and follow me for regular data science content! 𝗲𝘅𝗽𝗹𝗮𝗶𝗻𝗲𝗿𝗱𝗮𝘀𝗵𝗯𝗼𝗮𝗿𝗱 𝘄𝗲𝗯𝘀𝗶𝘁𝗲: https://lnkd.in/dfFkMGjH 𝗟𝗲𝗮𝗿𝗻 𝗠𝗟 𝗮𝗻𝗱 𝗧𝗦 𝗙𝗼𝗿𝗲𝗰𝗮𝘀𝘁𝗶𝗻𝗴 𝘄𝗶𝘁𝗵 𝗣𝘆𝗖𝗮𝗿𝗲𝘁📚: https://lnkd.in/dyByK4F
-
-
-## Anthropic Introduces Claude 4 Family and Claude Code - InfoQ
-https://www.infoq.com/news/2025/06/anthropic-claude-4/
-
-www.infoq.com
-
-Anthropic Introduces Claude 4 Family and Claude Code
-
-Anthony Alford
-4 - 5 minutes
-
-Anthropic released Claude Opus 4 and Sonnet 4, the newest versions of their Claude series of LLMs. Both models support extended thinking, tool use, and memory improvements, and Claude 4 Opus outperforms other LLMs on coding benchmarks.
-
-Anthropic announced the release during their Code with Claude event. The Claude 4 models are "hybrid" models: they can give quick responses to questions or they can perform extended thinking. The models can use tools such as web search in extended thinking mode, execute multiple tools in parallel, and use local files for memory. Claude Opus 4 scores 72.5% on the SWE-bench and 43.2% on the Terminal-bench coding benchmarks, outperforming all other coding models. Anthropic also announced the general availability of Claude Code, Anthropic's coding agent, with beta extensions for integrating with JetBrains and VS Code. According to Anthropic,
-
-These models are a large step toward the virtual collaborator—maintaining full context, sustaining focus on longer projects, and driving transformational impact. They come with extensive testing and evaluation to minimize risk and maximize safety, including implementing measures for higher AI Safety Levels like ASL-3. We're excited to see what you'll create.
-
-Claude 4 includes several other improvements over previous iterations of Claude. Anthropic claims Claude 4 is "65% less likely" to use "shortcuts" to complete agentic tasks. It also "dramatically outperforms all previous models on memory capabilities" by using local files to store data. In thinking mode, the chain-of-thought output is summarized "about 5% of the time" to reduce the space needed for display.
-
-Image Source: Anthropic's Claude 4 Announcement
-
-Users in a Hacker News discussion wondered whether the new models were improved enough to "justify the full version increment." One user replied:
-
-I'm a developer, and I've been trying to use AI to vibe code apps for two years. This is the first time I'm able to vibe code an app without major manual interventions at every step. Not saying it's perfect, or that I'd necessarily trust it without human review, but I did vibe code an entire production-ready iOS/Android/web app that accepts payments in less than 24 hours and barely had to manually intervene at all, besides telling it what I wanted to do next.
-
-Open-Source developer Simon Willison live-blogged the launch. He also delved into the Claude 4 system card, which documents several scenarios and outcomes of Anthropic's safety testing.
-
-Anthropic's system cards are always worth a look, and this one for the new Opus 4 and Sonnet 4 has some particularly spicy notes. It's also 120 pages long - nearly three times the length of the system card for Claude 3.7 Sonnet! If you're looking for some enjoyable hard science fiction...this document absolutely has you covered.
-
-Anthropic's tests reveal that its models would in some cases take "extreme actions," that while "rare and difficult to elicit, while nonetheless being more common than in earlier models." As part of their Responsible Scaling Policy (RSP), with the release of Claude 4 Anthropic decided to activate their AI Safety Level 3 (ASL-3) Deployment and Security Standards, which includes heightened internal security to help prevent theft of model weights.
-
-About the Author
-
-Anthony Alford
-
-Anthony is a Senior Director, Development at Genesys where he is working on several AI and ML projects related to customer experience. He has over 20 years experience in designing and building scalable software. Anthony holds a Ph.D. degree in Electrical Engineering with specialization in Intelligent Robotics Software and has worked on various problems in the areas of human-AI interaction and predictive analytics for SaaS business optimization.
-
-Show moreShow less                                              
-
-## Ml 101: awesome-cursorrules: 📄 A curated list of awesome .cursorrules
-https://github.com/PatrickJS/awesome-cursorrules
-
-## ML: USE CASE OCR Mistral AI Launches API for LLM-Based OCR of Multimodal Documents
-https://www.infoq.com/news/2025/03/mistral-ai-ocr-api/
-
-1000 pages - 1€
-
-## ML Pytorch TS forecasting
-𝗧𝗶𝗺𝗲 𝗦𝗲𝗿𝗶𝗲𝘀 𝗙𝗼𝗿𝗲𝗰𝗮𝘀𝘁𝗶𝗻𝗴 𝘄𝗶𝘁𝗵 𝗗𝗲𝗲𝗽 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴!💡📈 In recent years, deep learning has been widely used for time series forecasting, with various new models being introduced, such as N-BEATS and TFT. PyTorch Forecasting is a library that provides numerous DL forecasting models, and other tools that will help you get an optimal result. Here are some of the models included in the library: ✅ Temporal Fusion Transformers for interpretable time series forecasting  ✅ N-BEATS: Neural basis expansion analysis for interpretable forecasting ✅ N-HiTS: Neural Hierarchical Interpolation for time series forecasting ✅ DeepAR: Probabilistic forecasting with autoregressive recurrent networks In addition, deep learning forecasting models are sometimes dismissed by data scientists, but it's important to be acquainted with the latest tools, and draw our own conclusions. Check the links below for more information, and make sure to follow me for regular content! 𝗣𝘆𝗧𝗼𝗿𝗰𝗵 𝗙𝗼𝗿𝗲𝗰𝗮𝘀𝘁𝗶𝗻𝗴 𝘄𝗲𝗯𝘀𝗶𝘁𝗲: https://lnkd.in/dXRgUrVq 𝗔 𝗖𝗼𝗽𝗶𝗹𝗼𝘁 𝗔𝗹𝘁𝗲𝗿𝗻𝗮𝘁𝗶𝘃𝗲 𝗳𝗼𝗿 𝗗𝗮𝘁𝗮 𝗦𝗰𝗶𝗲𝗻𝗰𝗲: https://bit.ly/3Wmm4b5
-
-## ML Is vibe coding using testing frameworks like storybook?
-https://github.com/storybookjs/storybook?tab=readme-ov-file
-
-Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation
-
-
-
-## Ml: meilisearch/meilisearch-mcp: A Model Context Protocol (MCP) server for interacting with Meilisearch through LLM interfaces.
-https://github.com/meilisearch/meilisearch-mcp
-
-
-## ML 101: Introducing the Model Context Protocol \ Anthropic
-https://www.anthropic.com/news/model-context-protocol
-
-Introducing the Model Context Protocol
-
-25 nov. 2024●3 min readToday, we're open-sourcing the Model Context Protocol (MCP), a new standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments. Its aim is to help frontier models produce better, more relevant responses.
-
-As AI assistants gain mainstream adoption, the industry has invested heavily in model capabilities, achieving rapid advances in reasoning and quality. Yet even the most sophisticated models are constrained by their isolation from data—trapped behind information silos and legacy systems. Every new data source requires its own custom implementation, making truly connected systems difficult to scale.
-
-MCP addresses this challenge. It provides a universal, open standard for connecting AI systems with data sources, replacing fragmented integrations with a single protocol. The result is a simpler, more reliable way to give AI systems access to the data they need.
-
-Model Context Protocol
-
-The Model Context Protocol is an open standard that enables developers to build secure, two-way connections between their data sources and AI-powered tools. The architecture is straightforward: developers can either expose their data through MCP servers or build AI applications (MCP clients) that connect to these servers.
-
-Today, we're introducing three major components of the Model Context Protocol for developers:
-
-The Model Context Protocol specification and SDKs
-Local MCP server support in the Claude Desktop apps
-An open-source repository of MCP servers
-
-Claude 3.5 Sonnet is adept at quickly building MCP server implementations, making it easy for organizations and individuals to rapidly connect their most important datasets with a range of AI-powered tools. To help developers start exploring, we’re sharing pre-built MCP servers for popular enterprise systems like Google Drive, Slack, GitHub, Git, Postgres, and Puppeteer.
-
-Early adopters like Block and Apollo have integrated MCP into their systems, while development tools companies including Zed, Replit, Codeium, and Sourcegraph are working with MCP to enhance their platforms—enabling AI agents to better retrieve relevant information to further understand the context around a coding task and produce more nuanced and functional code with fewer attempts.
-
-"At Block, open source is more than a development model—it’s the foundation of our work and a commitment to creating technology that drives meaningful change and serves as a public good for all,” said Dhanji R. Prasanna, Chief Technology Officer at Block. “Open technologies like the Model Context Protocol are the bridges that connect AI to real-world applications, ensuring innovation is accessible, transparent, and rooted in collaboration. We are excited to partner on a protocol and use it to build agentic systems, which remove the burden of the mechanical so people can focus on the creative.”
-
-Instead of maintaining separate connectors for each data source, developers can now build against a standard protocol. As the ecosystem matures, AI systems will maintain context as they move between different tools and datasets, replacing today's fragmented integrations with a more sustainable architecture.
-
-Getting started
-
-Developers can start building and testing MCP connectors today. All Claude.ai plans support connecting MCP servers to the Claude Desktop app.
-
-Claude for Work customers can begin testing MCP servers locally, connecting Claude to internal systems and datasets. We'll soon provide developer toolkits for deploying remote production MCP servers that can serve your entire Claude for Work organization.
-
-To start building:
-
-Install pre-built MCP servers through the Claude Desktop app
-Follow our quickstart guide to build your first MCP server
-Contribute to our open-source repositories of connectors and implementations
-
-An open community
-
-We’re committed to building MCP as a collaborative, open-source project and ecosystem, and we’re eager to hear your feedback. Whether you’re an AI tool developer, an enterprise looking to leverage existing data, or an early adopter exploring the frontier, we invite you to build the future of context-aware AI together.
-
-## Ml cursor + claude: Using Cursor + Claude to Make Full-Stack SaaS Apps
-https://dev.to/wasp/using-cursor-claude-to-make-full-stack-saas-apps-2aj3
-
-## ML:  Taipy data Dashboard in 40 lines of code.
-https://medium.com/@shouke.wei/enhancing-data-visualization-with-taipy-gui-71beed3a61bd
-
-[[{]]
-## ML PydanticAI (LangChain competitor) supported by Pydantic (data validation)
-
-The team behind Pydantic, widely used for data validation in Python, has announced the release of PydanticAI, a Python-based agent framework designed to ease the development of production-ready Generative AI applications. Positioned as a potential competitor to LangChain, PydanticAI introduces a type-safe, model-agnostic approach inspired by the design principles of FastAPI.
-
-PydanticAI stands out with a range of features designed to simplify and enhance Generative AI application development:
-
-Model-Agnostic: Supports multiple AI models such as OpenAI, Anthropic, Gemini, Ollama, Groq, and Mistral, with an extensible interface for adding new models.
-Type-Safe Framework: Ensures robustness through structured response validation using Pydantic, even for streamed responses.
-Pythonic Design: Offers control flow and agent composition in pure Python, aligning with established development practices.
-Dependency Injection System: Provides a novel, type-safe dependency injection mechanism to support testing and iterative development.
-Logfire Integration: Enables real-time debugging and monitoring of LLM application behavior and performance.
+- 3 dollars suffisent pour booster un modèle d'IA visuelle
+- Une nouvelle méthode d'apprentissage par renforcement permet d'améliorer
+  drastiquement les performances des modèles de reconnaissance d'images, tout
+  en réduisant les coûts de formation à quelques dollars.
 
 [[}]]
 
+[[{qa.interpretability]]
+## explainerdashboard: xgboost catboost lightgbm
 
+* <https://github.com/oegedijk/explainerdashboard>
+* <explainerdashboard.readthedocs.io>
+* Quickly build Explainable AI dashboards that show the inner workings of
+  so-called "blackbox" machine learning models.
+* WARN: It applies to **NON** deep-leaarning frameworks like xgboost,
+  catboost and lightgbm trying to predict categories or regressions.
+  [[learning.xgboost,learning.catboost,learning.lightgbm]]
+[[qa.interpretability}]]
 
-## Cloud, Azure Boost DPU: Microsoft's Silicon Solution for Enhanced Cloud Performance
-https://www.infoq.com/news/2024/12/azure-boost-dpu-inhouse-chips/
+[[{hardware.Azure_DPU]]
+## Azure DPU
 
-GPUs have transformed AI model training but have drawbacks like high power consumption, cooling needs, and current shortages, with Nvidia's GPUs sold out for the following year. Custom accelerators are emerging as alternatives due to better price performance and efficiency. AWS and Google have been using custom chips, like AWS's Trainium, Inferentia, and Google's TPUs. At the same time, Microsoft recently entered the market with its Maia and Cobalt chips, focusing on energy efficiency.
+* <https://www.infoq.com/news/2024/12/azure-boost-dpu-inhouse-chips/>
 
-Microsoft announced the Azure Boost DPU, its first in-house DPU designed for efficient, low-power, data-centric workloads. According to the company, this single piece of silicon combines high-speed Ethernet and PCIe interfaces, network and storage engines, data accelerators, and security features into a fully programmable system on a chip.
+ Custom accelerators are emerging as alternatives to GPUs due to better price
+performance and efficiency.
 
-## ML: Llama 1B outperforms Llama 8B (8x size) in maths by giving more time to think
-https://www.linkedin.com/feed/update/urn:li:activity:7274506931447164930
+- AWS and Google have been using custom chips, like AWS's Trainium,
+  Inferentia, and Google's TPUs. [[hardware.AWS_Trainium,hardware.AWS_Inferentia]]
 
- 10 days after o1's public debut, we’re thrilled to unveil the open-source version of the groundbreaking technique behind its success: scaling test-time compute 🧠💡 By giving models more "time to think," Llama 1B outperforms Llama 8B in math—beating a model 8x its size. The full recipe is open-source🤯 This is the power of open science and open-source AI! 🌍✨
+ Microsoft recently entered the market with its Maia and Cobalt chips,
+focusing on energy efficiency. [[hardware.MS_Maia,hardware.MS_Cobalt]]
 
-## ML Agents: "Salesforce Founder Gives the Truth on AI Agents  w/ Marc Benioff
-https://youtu.be/2YN2-oEBCJw?si=6Tu7AfEk6EOspmXd
+ Azure Boost DPU, its first in-house DPU designed for efficient, low-power,
+data-centric workloads.
 
-## ML,  LLM: China sigue pisando el acelerador con la IA. Lo demuestra el nuevo y gigantesco modelo de DeepSeek
-https://www.xataka.com/robotica-e-ia/china-sigue-pisando-acelerador-ia-demuestra-nuevo-gigantesco-modelo-deepseek
+ It combines high-speed Ethernet and PCIe interfaces, network and storage
+engines, data accelerators, and security features into a fully programmable
+system on a chip.
+[[hardware.Azure_DPU}]
 
-disponible con una licencia MIT "abierta" que permite a los desarrolladores descargarlo de GitHub y modificarlo para diversos escenarios, incluyendo algunos comerciales.
+[[{]]
+## Deep Seek-v3
 
-We present DeepSeek-V3, a strong Mixture-of-Experts (MoE) language model with 671B total parameters with 37B activated for each token. To achieve efficient inference and cost-effective training, DeepSeek-V3 adopts Multi-head Latent Attention (MLA) and DeepSeekMoE architectures, which were thoroughly validated in DeepSeek-V2. Furthermore, DeepSeek-V3 pioneers an auxiliary-loss-free strategy for load balancing and sets a multi-token prediction training objective for stronger performance.
+- strong Mixture-of-Experts (MoE) language model with 671B total parameters
+with 37B activated for each token.
 
-## ML: Meta byte-latent-transformer: Bytes vs tokens
-https://www.infoq.com/news/2025/01/meta-byte-latent-transformer/
+- To achieve efficient inference and cost-effective training,
+  DeepSeek-V3 adopts Multi-head Latent Attention (MLA) and
+  DeepSeekMoE architectures, which were thoroughly validated in DeepSeek-V2.
+  [[scalability.MLA,scalability.MoE]]
 
-Meta Open-Sources Byte Latent Transformer LLM with Improved Scalability
+- Furthermore, DeepSeek-V3 pioneers an auxiliary-loss-free strategy for load
+  balancing and sets a multi-token prediction training objective for stronger
+  performance.
+[[}]]
 
-Jan 07, 2025 2 min read
+[[{use_case.video_analysis]]
+## NVidia Metropolis: Video Analytics & Applications
 
-by
+* <https://www.nvidia.com/en-us/autonomous-machines/intelligent-video-analytics-platform/>
 
-Anthony Alford
+[[use_case.video_analysis}]]
 
-Senior Director, Development at Genesys Cloud Services
-
-Meta open-sourced Byte Latent Transformer (BLT), an LLM architecture that uses a learned dynamic scheme for processing patches of bytes instead of a tokenizer. This allows BLT models to match the performance of Llama 3 models but with 50% fewer inference FLOPS.
-
-Most LLMs map text bytes into a fixed set of tokens, which has several drawbacks, including the famous strawberry problem. By contrast, BLT dynamically groups bytes into patches. It uses a small language model to compute the entropy of the next byte in a sequence and then starts a new patch when the entropy increases; essentially, the small model is predicting the end of a word, a relatively easy task compared to generating new words in a sequence. Because BLT is working directly with bytes, it is more robust to noisy inputs that have spelling mistakes. Increasing patch size can reduce FLOPS needed for inference, resulting in a larger model with better performance for the same compute budget. According to Meta,
-
-BLT unlocks a new dimension for scaling, allowing simultaneous increases in model and patch size within a fixed inference budget. This new paradigm becomes advantageous for compute regimes commonly encountered in practical settings. While directly engaging with raw byte data, BLT also improves the model’s ability to handle the long-tail of data, offering significant improvements in robustness to noisy inputs and a deeper understanding of sub-word structures. Overall, these results position BLT as a promising alternative to traditional tokenization-based approaches, providing a scalable and robust framework for more efficient and adaptable language models.
-
-Most LLMs, like Llama, operate on a fixed set of tokens, and sequences of input bytes are mapped onto a token using heuristics. Tokenization is needed because training an LLM on raw bytes instead of tokens would require too much computation, but it does have some disadvantages. Besides struggling with counting individual letters in words, tokenization can affect an LLM's ability to handle multiple languages and understand mis-typed words.
-
-Meta did a series of experiments evaluating BLT, comparing it to token-based models. They found that while a fixed inference compute budget determines a token-based model's size, allowing patch size to increase allows for a larger BLT model and therefore better model accuracy. They also found that BLT models outperformed Llama 3 on character-level tasks, such as noisy input or low-resource language translation. However, when the researchers tried converting a Llama 3 model to BLT, instead of training a new model end-to-end, they found that it had a "significant" drop in performance on several LLM benchmarks.
-
-In a discussion about BLT on Reddit, several users pointed out how BLT could help models solve the "strawberry problem." Another user wrote:
-
-[BLT] is 100% the way to go. Also makes multimodality easy since you can just represent any data or file in bytes, and there exist A LOT of files. One problem is that 2 MB would need a context size of 2 million, so the memory and compute requirements are not quite met yet.
-
-The BLT training and inference code are available on GitHub.
-
-
-
-## ML MCP 101 101 101 2025-04-22
-https://www.journaldunet.com/intelligence-artificielle/1540901-mcp-5-cas-d-usage-pratiques-qui-decuplent-les-capacites-de-l-ia/
-
-MCP : 5 cas pratiques pour automatiser vraiment l'IA
-
-Benjamin Polge
-
-Email
-
-Le protocole MCP donne de nouvelles capacités agentiques aux LLM. De la configuration d'un agent vocal à la création de visuels 3D en passant par l'analyse financière temps réel, voici 5 cas d'usage de ce nouveau protocole.
-
-Il promet d'être les yeux et les mains des modèles d'IA générative. Le protocole MCP permet aux grands modèles de langage d'accéder à des informations et d'agir sur le monde réel. Des milliers de serveurs MCP ont vu le jour ces dernières semaines. Malgré une majorité de serveurs développés par la communauté open source, les éditeurs commencent à proposer leur propre MCP officiel. En combinant un ou plusieurs serveurs, il est possible d'automatiser des tâches complexes. En voici 5 exemples concrets.
-
-#1 Un agent vocal avec ElevenLabs
-
-C'est la démonstration la plus bluffante des capacités du MCP. Développé par ElevenLabs, elevenlabs-mcp permet d'automatiser la création d'agent vocaux et même de lancer des callbots. En intégrant le MCP à Claude Desktop, il est possible de demander dans un même prompt de créer un agent vocal contextualisé et enfin de le lancer en appelant un numéro spécifique. A noter que pour l'appel, il est nécessaire de connecter l'API Twilio dans votre compte ElevenLabs. Il est par exemple possible de créer un callbot spécialisé en service client. Sa mission peut consister à rappeler les clients inactifs depuis plusieurs mois afin de comprendre les raisons de leur désengagement.
-
-Prompt de rappel client :
-
-Utilisez ElevenLabs pour créer un agent téléphonique qui contactera mes clients inactifs afin de comprendre pourquoi ils n'ont pas effectué d'achats récemment dans notre boutique. L'agent doit commencer par une introduction polie : 'Bonjour ! Je suis Alan, je travaille avec l'équipe [Nom de la marque]. Je ne vous dérange pas ? Promis, c'est rapide.' Ensuite, l'agent doit poser la question principale : 'Pourquoi n'avez-vous plus acheté dans notre boutique ?' et enchaîner avec maximum 4 questions complémentaires qui s'adaptent intelligemment aux réponses du client. L'agent doit être programmé pour rester courtois, professionnel et attentif aux explications du client. A la fin de la conversation, l'agent doit remercier poliment le client pour son temps et ses réponses. Une fois l'agent configuré et testé, lancez une campagne d'appels sortants avec ElevenLabs (outbound call) avec la liste de numéros suivante : [insérer liste de numéros].
-
-#2 Un bot de réponse WhatsApp automatique
-
-Voici un autre exemple d'utilisation d'ElevenLabs (EL) couplé à WhatsApp. En combinant les capacités de transcription d'ElevenLabs (via elevenlabs-mcp) à la faculté d'envoi et de réception de message vocal de WhatsApp, via whatsapp-mcp (créé, là encore, par un développeur d'ElevenLabs), il est possible d'automatiser la réception et l'envoi de message vocaux, le tout en utilisant des instructions naturelles avec Claude Desktop. Concrètement, Claude utilise ElevenLabs pour les transcrire les messages vocaux de vos contacts et vous pouvez leur répondre vocalement en utilisant la fonctionnalité text-to-speech d'EL. En configurant également un sosie vocal dans EL, vous pouvez même demander à l'IA d'utiliser votre propre voix.
-
-Un prompt vaut mieux que mille mots :
-
-"Accède à WhatsApp et récupère le dernier message vocal de [NOM_CONTACT]. Transcris ce fichier audio via ElevenLabs (speech-to-text) avec haute précision. Présente-moi la transcription complète et propose 5 réponses variées adaptées au contexte et au ton du message. Après ma sélection, convertis ma réponse en audio avec ElevenLabs en utilisant le modèle text-to-speech et l'ID vocal [ID_VOIX] spécifié. Envoie automatiquement cet audio à mon contact sur WhatsApp et confirme l'envoi."
-
-#3 Créer des visuels 3D avec Blender
-
-Autre cas d'usage assez bluffant, il est possible d'utiliser le logiciel de conception 3D Blender avec des prompts. Développé par la communauté, blender-mcp utilise l'API Python de Blender pour lancer des actions dans le logiciel. Avec Claude Desktop, l'IA permet par exemple de créer rapidement une représentation 3D simple ou même des animations. Attention toutefois : selon nos différents tests et pour l'heure, seules les tâches très simples de création 3D peuvent être automatisées.
-
-Prompt pour créer un fleur simple en 3D :
-
-"Crée un rendu 3D d'une fleur minimaliste dans Blender avec une tige fine. Modélise des pétales blancs symétriques disposés en cercle autour d'un centre jaune pâle légèrement surélevé. Place une seule feuille verte à environ un tiers de la hauteur depuis la base de la tige."
-
-© Capture d'écran / JDN
-
-#4 Automatiser son navigateur
-
-Operator en open source. Développé par les équipes Microsoft, playwright-mcp permet d'automatiser la navigation de votre navigateur. Le système se base sur un navigateur adapté de Google Chrome. Contrairement aux agents de navigation qui utilisent des captures d'écran régulière pour se repérer, playwright-mcp utilise une représentation structurée des éléments du web pour naviguer et compléter des formulaires. Avec Claude Desktop, l'outil permet d'automatiser une grande partie des tâches routinières (veille simple, tri d'emails…).
-
-Prompt pour automatiser une veille informationnelle avec un compte rendu par mail :
-
-"Exécute une recherche automatisée via Playwright MCP en consultant les sites spécialisés en intelligence artificielle (TechCrunch, MIT Technology Review, AI News, VentureBeat, Google News) pour identifier et synthétiser les 10 développements les plus significatifs dans le domaine de l'IA survenus au cours des dernières 24 heures, en privilégiant les avancées techniques, les lancements de produits majeurs, les acquisitions notables et les évolutions réglementaires. Pour chaque information, fournis un titre clair, un résumé concis de 3-4 phrases incluant les implications potentielles, et un lien vers la source originale. Présente ces informations dans un format structuré avec une introduction contextuelle et une conclusion mettant en perspective ces développements. Une fois cette recherche compilée, utilise le MCP Gmail pour m'envoyer ces résultats par email à [insérer adresse email], avec pour objet 'Veille IA quotidienne - [date du jour]', en formatant le corps du message en HTML pour une lisibilité optimale et en incluant un indice de fiabilité pour chaque source consultée."
-
-#5 Génération de vidéo automatique
-
-L'éditeur chinois d'IA MiniMax AI a également développé son propre serveur MCP (MiniMax-MCP). Les outils mis à disposition du LLM offrent des fonctionnalités comme la synthèse vocale (text-to-speech) ou encore la génération de vidéo. Pour la génération vidéo, vous pourriez penser que ce n'est pas très utile ? On peut déjà envoyer son prompt sur MiniMax et obtenir une vidéo. Oui, mais il y a un avantage : le MCP permet notamment de tirer parti des capacités des LLM pour créer des prompts spécialement optimisés pour les modèles text-to-video (comme nous l'expliquions dans notre tentative de reproduction du premier film de l'histoire avec l'IA). Il devient alors possible de faire générer au LLM le prompt avant de l'envoyer à MiniMax pour la génération de la vidéo. Ingénieux, non ?
-
-Prompt pour automatiser le process de création vidéo :
-
-"Voici une description en langage naturel d'une scène vidéo attendue : (INSERER DESCRIPTION DE LA SCENE). A partir de cette description, génère un prompt technique optimisé pour le modèle text-to-video de MiniMax, en incluant les éléments visuels essentiels, l'ambiance, le style artistique et les spécifications techniques pertinentes. Structure le prompt avec des mots-clés efficaces et un langage précis qui maximisera la qualité et la fidélité du rendu par rapport à la vision décrite. Une fois le prompt élaboré, adresse-le directement à MiniMax avec son MCP en respectant la syntaxe requise pour une interprétation optimale par le système."
-
-Bonus : l'accès aux données financières mondiales en temps réel
-
-Qui ne rêverait pas d'accéder aux données financières mondiales en temps réel depuis un LLM ? C'est justement le but de Bloomberg MCP. Développé par la communauté open source, le serveur MCP permet de dialoguer avec l'API BLPAPI de Bloomberg. Au sein de Claude Desktop, bloomberg-mcp permet donc d'accéder aux données de marché en temps réel, aux analyses financières, aux cours des actions, aux indices boursiers mondiaux, aux données obligataires, aux devises, aux matières premières, aux informations sur les entreprises cotées, aux actualités économiques et aux prévisions de marché. Il devient ainsi possible d'interroger la base documentaire financière mondiale en quelques phrases.
-
-Exemple d'un prompt pour identifier les 10 actions les plus sous-valorisées du SP500 aujourd'hui (ceci n'est pas un conseil en investissement) :
-
-"Identifie, à l'aide de Bloomberg MCP, les 10 actions du S&P 500 présentant actuellement les ratios cours/bénéfice (P/E) les plus bas. Pour chaque action, indiquez son symbole boursier, le nom de l'entreprise et la valeur précise du ratio P/E"
-## ML: Metropolis - Video Analytics & Applications | NVIDIA
-https://www.nvidia.com/en-us/autonomous-machines/intelligent-video-analytics-platform/
-
-## ML DeepSeek opensource Model with Llama 3.1 performance.
-https://www.infoq.com/news/2025/01/deepseek-v3-llm/
-
-This is by far the highest ranking openly licensed model. The really impressive thing about DeepSeek v3 is the training cost. The model was trained on 2,788,000 H800 GPU hours at an estimated cost of $5,576,000. Llama 3.1 405B trained 30,840,000 GPU hours—11x that used by DeepSeek v3, for a model that benchmarks slightly worse.
-
-https://github.com/deepseek-ai/DeepSeek-V3/
-
-
-
-Renato has extensive experience as a cloud architect, tech lead, and cloud services specialist. Currently, he lives in Berlin and works remotely as a principal cloud architect. His primary areas of interest include cloud services and relational databases. He is an editor at InfoQ and a recognized AWS Data Hero. You can connect with him on LinkedIn.
-## ML: LLMs para la predicción de series temporales y algunos asuntos más - Carlos J. Gil Bellosta
-https://datanalytics.com/2025/05/13/cortos-llms/?trk=feed_main-feed-card_feed-article-content 
-
-Carlos J. Gil Bellosta
-Estadística, análisis de datos y más
-
-LLMs para la predicción de series temporales y algunos asuntos más
-
-2025-5-13 (Última modificación: 2025-6-20)
-Cortos
-
-El prompt injecting es una técnica para robar información a un agente. Si un agente tiene, por ejemplo, acceso al correo electrónico, se le puede enviar un mensaje dándole instrucciones que alteren su comportamiento. Es un problema bien conocido de los agentes y ahora en Defeating Prompt Injections by Design se describe una solución basada en dos agentes, uno de los cuales tiene como función supervisar las acciones del otro.
-
-Como no puede ser de otra manera, el MCP plantea grandes problemas de seguridad.
-
-Los interesados en estas cuestiones encontrarán aquí una base de datos de actos jurídicos —uso la expresión en términos amplios y poco técnicos— en los que se detectó la presencia de alucinaciones producidas por LLMs. Contiene 155 hasta la fecha, una de ellas relacionada con España.
-
-En Vision Language Models (Better, Faster, Stronger) se discute lo ocurrido en el mundo de los modelos de visión y multimodales en el último año, de abril de 2024 a mayo de 2025.
-
-Simon Willison escribe sobre cómo desarrollar software que interactúa con LLMs en Building software on top of Large Language Models. Tengo que añadir que soy un usuario satisfecho de llm, un sistema desarrollado por él para utilizar LLMs en línea de comandos. Ahora, además, permite usar herramientas. Una de las más promisorias es la que permite interactuar con Exa un buscador con una API nativa y con un segmento gratuito generoso.
-
-Una de las cosas que sorprendieron a los primeros usuarios de GPT-2, el antecesor de ChatGPT, fueron las propiedades emergentes: sin haber sido entrenado específicamente para eso, había aprendido francés, a jugar al ajedrez, etc. Ahora resulta que los LLMs se pueden sufrir desalineacion emergente: si los reentrenas sobre software no seguro, comienzan a adquirir comportamientos desviados e indeseados en otros ámbitos. ¿Querrá eso decir que los malos programadores no son gente de fiar?
-
-Vivimos lo que algunos denominan una explosión cámbrica de hardware adaptado a las aplicaciones de IA. No es solo NVIDIA o AMD: Google, Amazon, Microsoft, Meta, Alibaba, Baidu y una miríada de startups están desarrollando sus propios dispositivos de hardware específicamente diseñados para correr el tipo de de operaciones propias de la IA (esencialmente, multiplicar matrices) en la escala a la que se necesitan hoy en día.
-
-Finalmente, resulta que Moirai es un LLM desarrollado por Salesforce para la predicción de series temporales. Al parecer, ha sido entrenado sobre un repositorio de series temporales. A saber qué tal funcionará en la práctica. Leyendo en diagonal, observo que no se trata únicamente de un predictor —al uso de sus primos los LLMs— sino que modela las series usando modelos semiparamétricos, proporciona predicciones probabilísticas, admite covariables, etc. ¿Reemplazará a prophet y compañía? Seguro que para un LLM es más sencillo modelar y reproducir el procedimiento de trabajo de un humano experto en series temporales que aprender ex nihilo todas las series temporales y reproducir en este ámbito lo que los LLMs tradicionales hacen en el del lenguaje. Tiene mucha mejor pinta que alternativas como TimeGPT a pesar de lo afortunado de su nombre.
-
-prompts
-mcp
-llms
-ia
-series temporales
-
-Por Carlos J. Gil Bellosta
-Matemático, científico de datos y CEO de Circiter. Más sobre él, aquí.
-« Anterior
-
-Migración de Pocket a Wallabag
-
-Siguiente »
-
-Un paseo por la Dark Web que os haría llorar a los más
-
-Entradas relacionadas
-
-Una serie de artículos sobre aplicaciones y trucos acerca del uso de LLMs
-Una nueva selección de novedades relevantes del mundo de los LLMs
-Cortos - LLMs
-Embeddings, LLMs y algunas de sus aplicaciones a mediados de 2024
-Argumentos para discutir sobre la inteligencia de los LLMs y cuatro asuntos más
-
-## 101 Ml AI passed Turing tests better than humans
-
-https://www.independent.co.uk/tech/ai-turing-test-chatgpt-openai-agi-b2728930.html
-
-April 2025-04-07 A leading AI chatbot has passed a Turing Test more convincingly than a human, according to a new study.
-
-Participants in a blind test judged OpenAI’s GPT-4.5 model, which powers the latest version of ChatGPT, to be a human “significantly more often than actual humans”
-
-## LangChain Launches Open SWE, an Open-Source Asynchronous Coding Agent - InfoQ
-https://www.infoq.com/news/2025/08/langchain-open-swe/
-
-2025-08-13
-Robert Krzaczyński
-
-Senior Software Engineer
-
-LangChain has released Open SWE, a fully open-source, asynchronous coding agent designed to operate in the cloud and handle complex software development tasks. The company says Open SWE represents a shift away from real-time “copilot” assistants toward more autonomous, long-running agents that integrate directly with a developer’s existing workflows.
-
-Unlike many coding assistants that focus on short interactions inside an IDE, Open SWE connects directly to GitHub repositories and works like another member of the engineering team. Developers can assign it tasks via GitHub Issues or a dedicated UI, after which it researches the codebase, generates a detailed plan, writes and tests code, reviews its work, and opens a pull request when complete.
-
-The tool is designed for high-context, longer-term tasks. Every run occurs in a secure, isolated Daytona sandbox, allowing the agent to execute shell commands freely without risking the host environment. This architecture enables it to operate entirely in the cloud, handling multiple tasks in parallel without consuming local resources.
-
-
+[[{]]
 ## Co-founder DailyDoseofDS
 
-25 most important mathematical definitions in data science in a single frame. How many of them do you know? Some of the terms are pretty self-explanatory, so I won’t go through each of them, like: - Gradient Descent, Normal Distribution, Sigmoid, Correlation, Cosine similarity, Naive Bayes, F1 score, ReLU, Softmax, MSE, MSE + L2 regularization, KMeans, Linear regression, SVM, Log loss. Here are the remaining terms: - MLE: Used to estimate the parameters of a statistical model by maximizing the likelihood of the observed data. - Z-score: A standardized value that indicates how many standard deviations away a data point is from the mean. - OLS: A closed-form solution for linear regression obtained using MLE. - Entropy: A measure of the uncertainty or randomness of a random variable. It is often utilized in decision trees and the t-SNE algorithm. - Eigen Vectors: Vectors that do not change direction after a linear transformation. The principal components in PCA are obtained using eigenvectors of the data's covariance matrix. - R2 (R-squared): It measures the proportion of variance explained by a regression model. - KL divergence: Assesses how much information is lost when one distribution is used to approximate another distribution. It is used as a loss function in the t-SNE algorithm. - SVD: A factorization technique that decomposes a matrix into three other matrices. It is fundamental in linear algebra for applications like dimensionality reduction. - Lagrange multipliers: A mathematical technique to solve constrained optimization problems. For instance, consider an optimization problem with an objective function f(x) and assume that the constraints are g(x)=0 and h(x)=0. Lagrange multipliers help us solve this. This is used in PCA's derivation. -- If you want to learn AI/ML engineering, I have put together a free PDF (530+ pages) with 150+ core DS/ML lessons. Get here: https://lnkd.in/gi6xKmDc
+25 most important mathematical definitions in data science in a single frame.
 
+- How many of them do you know?
+- Some of the terms are pretty self-explanatory, so I won’t go through each of them, like:
+- Gradient Descent, Normal Distribution, Sigmoid, Correlation, Cosine similarity, Naive Bayes, F1 score, ReLU, Softmax, MSE, MSE + L2 regularization, KMeans, Linear regression, SVM, Log loss.
 
+Here are the remaining terms:
 
+- MLE: Used to estimate the parameters of a statistical model by maximizing the likelihood of the observed data.
+ Z-score: A standardized value that indicates how many standard deviations away a data point is from the mean.
 
+- OLS: A closed-form solution for linear regression obtained using MLE.
+- Entropy: A measure of the uncertainty or randomness of a random variable. It is often utilized in decision trees and the t-SNE algorithm.
+- Eigen Vectors: Vectors that do not change direction after a linear transformation. The principal components in PCA are obtained using eigenvectors of the data's covariance matrix.
 
+- R2 (R-squared): It measures the proportion of variance explained by a regression model.
+- KL divergence: Assesses how much information is lost when one distribution is used to approximate another distribution. It is used as a loss function in the t-SNE algorithm.
 
+- SVD: A factorization technique that decomposes a matrix into three other matrices. It is fundamental in linear algebra for applications like dimensionality reduction.
+
+[[}]]
+
+[[{architecture.SLM]]
 ## Small Language Models are the Future of Agentic AI
 
-https://arxiv.org/pdf/2506.02153#utm_source=MagNews&utm_medium=email&utm_campaign=IA_08/09/2025&een=82032998cfe8b4bcf9528dff82479f8e&seen=2&gbmlus=653eb483f85beda51d7e88e58376e81ff129b9d1ebdffce9a774f0bcc9e9fca5 
+* <https://arxiv.org/pdf/2506.02153>
 
-Peter Belcak1 Greg Heinrich1 Shizhe Diao1 Yonggan Fu1 Xin Dong1
-Saurav Muralidharan1 Yingyan Celine Lin1,2 Pavlo Molchanov1
-1NVIDIA Research 2Georgia Institute of Technology
-agents@nvidia.com
-Abstract
-Large language models (LLMs) are often praised for exhibiting near-human per-
-formance on a wide range of tasks and valued for their ability to hold a general
-conversation. The rise of agentic AI systems is, however, ushering in a mass of
-applications in which language models perform a small number of specialized tasks
-repetitively and with little variation.
+Large language models (LLMs) are often praised for exhibiting near-human performance
+on a wide range of tasks and valued for their ability to hold a general
+conversation.
+
+The rise of agentic AI systems is, however, ushering in a mass of applications in
+which language models perform a small number of specialized tasks repetitively
+and with little variation.
+
 Here we lay out the position that small language models (SLMs) are sufficiently
 powerful, inherently more suitable, and necessarily more economical for many
-invocations in agentic systems, and are therefore the future of agentic AI. Our
-argumentation is grounded in the current level of capabilities exhibited by SLMs,
-the common architectures of agentic systems, and the economy of LM deployment.
+invocations in agentic systems, and are therefore the future of agentic AI.
+
+ Our argumentation is grounded in the current level of capabilities exhibited
+by SLMs, the common architectures of agentic systems, and the economy of LM deployment.
+
 We further argue that in situations where general-purpose conversational abilities
 are essential, heterogeneous agentic systems (i.e., agents invoking multiple different
-models) are the natural choice. We discuss the potential barriers for the adoption
-of SLMs in agentic systems and outline a general LLM-to-SLM agent conversion
-algorithm.
-Our position, formulated as a value statement, highlights the significance of
-the operational and economic impact even a partial shift from LLMs to SLMs
-is to have on the AI agent industry. We aim to stimulate the discussion on
-the effective use of AI resources and hope to advance the efforts to lower
-the costs of AI of the present day. Calling for both contributions to and cri-
-tique of our position, we commit to publishing all such correspondence at
-research.nvidia.com/labs/lpr/slm-agents.
-1 Introduction
-The deployment of agentic artificial intelligence is on a meteoric rise. Recent surveys show that more ....
+models) are the natural choice.
 
+ We discuss the potential barriers for the adoption of SLMs in agentic systems and
+outline a general LLM-to-SLM agent conversion algorithm.
 
+... we commit to publishing all such correspondence at
+  <https://research.nvidia.com/labs/lpr/slm-agents>
 
+[[architecture.SLM}]]
 
+[[{use_case.OCR,data.gathering]]
+##  NVIDIA "ingest" microservice
 
+* <https://github.com/NVIDIA/NeMo-Retriever>
+* Extract content from PDFs, Word an PPTs.
 
-## 101 k2 think: modelo de datos con rendimiento 37.000 millones supera a modelox x20 veces mayores en tamaño.
-https://www.pcdemano.com/sc/ia/37031/
+- microservice designed for extracting content and metadata efficiently from
+  thousands of documents like PDFs, Word, and PowerPoint.
+- It uses NVIDIA NIM microservices to efficiently parse and extract text, tables,
+  charts, and images, making it ideal for downstream applications.
 
+- NVIDIA Ingest splits documents into pages, classifies content, and uses
+  optical character recognition (OCR) to convert it into a structured JSON format.
 
+- It can also compute embeddings for the extracted content and store them in a vector database like Milvus.
 
+- The service supports various extraction methods to balance throughput and accuracy,
+   such as pdfium, Unstructured.io, and Adobe Content Extraction Services for PDFs.
 
+- It also offers pre and post-processing operations, including text splitting, filtering, and embedding generation.
+[[use_case.OCR}]]
 
-## Google ha revelado al fin cuánta electricidad y agua consume su IA de inferencia. Las estimaciones no podían estar más erradas
-https://www.xataka.com/energia/google-ha-revelado-al-fin-cuanta-electricidad-agua-consume-su-ia-estimaciones-no-podian-estar-erradas 
-
-
-Según el informe técnico de Google, basado en datos de mayo de 2025, una consulta de texto promedio a Gemini consume 0,24 vatios-hora de electricidad. Por ponerlo en contexto, es algo así como ver nueve segundos de televisión con una TV convencional de 100 W.
-
-El consumo de agua, que sigue siendo necesaria para refrigerar los servidores, es de 0,26 mililitros por consulta; el equivalente a cinco gotas de agua. La huella de carbono de todo el proceso de inferencia, según el informe, es de 0,03 gramos de CO₂ equivalente.
-
-
-
- Las nuevas técnicas de software (como la decodificación especulativa) y las arquitecturas de modelos más eficientes (como el paradigma Mixture-of-Experts) han cambiado por completo el panorama.
-
-Google asegura que, en los últimos 12 meses ha dividido por 33 el consumo de energía y por 44 la huella de carbono de cada consulta a Gemini. Gran parte de este salto tiene que ver, no solo con modelos más eficientes, sino con la mejora de los aceleradores de IA (TPUs y GPUs), un hardware que Google desarrolla internamente.
-
-Ambas compañías se han comparado con la televisión: "Una hora de Netflix consume 100 veces más electricidad que ChatGPT", dice una diapositiva oficial de OpenAI. La misma que dice que el impacto total de la IA en las emisiones de carbono de EE.UU. sería de alrededor del 0.5%.
-
-
-
-
-##  NVIDIA "ingest" microservice: Extract content from PDFs, Word an PPTs.
-Pietro BolcatoPietro Bolcato • 3rd+ • 3rd+ Lead AI Engineer @Kittl | Gen AI, CV, NLP, MLOps | MSc AI, Double Degree | 2x Azure AI certifiedLead AI Engineer @Kittl | Gen AI, CV, NLP, MLOps | MSc AI, Double Degree | 2x Azure AI certified 3d •
-3 days ago
-👏 NVIDIA released ingest, a microservice designed for extracting content and metadata efficiently from thousands of documents like PDFs, Word, and PowerPoint. It uses NVIDIA NIM microservices to efficiently parse and extract text, tables, charts, and images, making it ideal for downstream applications.
-
-NVIDIA Ingest splits documents into pages, classifies content, and uses optical character recognition (OCR) to convert it into a structured JSON format. It can also compute embeddings for the extracted content and store them in a vector database like Milvus.
-
-The service supports various extraction methods to balance throughput and accuracy, such as pdfium, Unstructured.io, and Adobe Content Extraction Services for PDFs. It also offers pre and post-processing operations, including text splitting, filtering, and embedding generation.
-
-🔗 Repo: https://lnkd.in/eMmNwzF9
-
-
-
-## Mistral Voxtral is an Open-Weights Competitor to OpenAI Whisper and Other ASR Tools - InfoQ
-https://www.infoq.com/news/2025/07/mistral-voxtral-audio-speech-llm/ 
-
-Mistral Voxtral is an Open-Weights Competitor to OpenAI Whisper and Other ASR Tools
-Sergio De Simone
-4 - 5 minutes
-________________________________
-
-Mistral has released Voxtral, a large language model aimed at speech recognition (ASR) applications that seek to integrate more advanced LLM-based capabilities and go beyond simple transcription. For two variants of the model, Voxtral Mini (3B) and Voxtral Small (24B), Mistral has released the weights under the Apache 2.0 license.
-
-According to Mistral, Voxtral closes a gap between classic ASR systems, which delivers cost-efficient transcription but lack semantic understanding, and more advanced LLM-based models, which provide transcription and language understanding. While this is similar to what other solutions like GPT-4o mini Transcribe, Gemini 2.5 Flash, and others provide, Voxtral stands out by making its model weights openly available, improving deployment flexibility and enabling a different cost model.
-
-Besides being available for local deployment, the new models can be accessed via Mistral's API, which also offers a custom version of Voxtral Mini optimized for transcription, helping reduce inference cost and latency.
-
-Voxtral has a 32K token context, which enables it to process audios up to 30 minutes for transcription, or 40 minutes for understanding. Being LLM-based means it naturally lends itself to tasks like Q&A and summarization based on audio content without requiring to chain an ASR system with a language model. Additionally, it enables executing backend functions, workflows, or API calls based on spoken user intents. As usual for Mistral models, Voxtral is natively multilingual and supports automatic language detection with optimized performance for European languages. It goes without saying that Voxtral retains the text-only capabilities of its base model and can be used as a text-only LLM.
-
-Speaking of transcription-only use cases, Mistral claims both cost and performance advantages over other solutions like OpenAI Whisper, ElevenLabs Scribe, and Gemini 2.5 Flash.
-
-Voxtral comprehensively outperforms Whisper large-v3, the current leading open-source Speech Transcription model. It beats GPT-4o mini Transcribe and Gemini 2.5 Flash across all tasks, and achieves state-of-the-art results on English short-form and Mozilla Common Voice, surpassing ElevenLabs Scribe and demonstrating its strong multilingual capabilities.
-
-When it comes to audio understanding, Voxtral can answer questions directly from speech thanks to its LLM foundation. This is a distinct approach compared to other LLM-based speech recognition models'. For instance, NVIDIA NeMo Canary-Qwen-2.5B and IBM's Granite Speech have two distinct modes, ASR and LLM, that can be combined at different stages, such as using the LLM to summarize the textual output generated by the ASR step.
-
-According to Mistral’s own benchmarking, Voxtral Small is competitive with GPT-4o-mini and Gemini 2.5 Flash across several tasks, and outperforms both in speech translation.
-
-Besides offering Voxtral for download for local deployment or use via the API, Mistral also supports additional features specifically aimed at enterprise customers, including support for private deployment at production-scale, domain-specific fine-tuning, and advanced use cases such as speaker identification, emotion detection, diarization and others.
-
-## Google ha revelado al fin cuánta electricidad y agua consume su IA de inferencia. Las estimaciones no podían estar más erradas
-https://www.xataka.com/energia/google-ha-revelado-al-fin-cuanta-electricidad-agua-consume-su-ia-estimaciones-no-podian-estar-erradas 
-
-
-Según el informe técnico de Google, basado en datos de mayo de 2025, una consulta de texto promedio a Gemini consume 0,24 vatios-hora de electricidad. Por ponerlo en contexto, es algo así como ver nueve segundos de televisión con una TV convencional de 100 W.
-
-El consumo de agua, que sigue siendo necesaria para refrigerar los servidores, es de 0,26 mililitros por consulta; el equivalente a cinco gotas de agua. La huella de carbono de todo el proceso de inferencia, según el informe, es de 0,03 gramos de CO₂ equivalente.
-
-
-
- Las nuevas técnicas de software (como la decodificación especulativa) y las arquitecturas de modelos más eficientes (como el paradigma Mixture-of-Experts) han cambiado por completo el panorama.
-
-Google asegura que, en los últimos 12 meses ha dividido por 33 el consumo de energía y por 44 la huella de carbono de cada consulta a Gemini. Gran parte de este salto tiene que ver, no solo con modelos más eficientes, sino con la mejora de los aceleradores de IA (TPUs y GPUs), un hardware que Google desarrolla internamente.
-
-Ambas compañías se han comparado con la televisión: "Una hora de Netflix consume 100 veces más electricidad que ChatGPT", dice una diapositiva oficial de OpenAI. La misma que dice que el impacto total de la IA en las emisiones de carbono de EE.UU. sería de alrededor del 0.5%.
-
-
-
-## skrub-data/skrub: Machine learning with dataframes
-https://github.com/skrub-data/skrub 
-
-
-## ML 101: Transformers v5 Introduces a More Modular and Interoperable Core - InfoQ
-
-https://www.infoq.com/news/2025/12/transformers-hugging-face/
-
-Model initialization and parallelism have been reworked to integrate more cleanly with tools like Megatron, Nanotron, and TorchTitan, while maintaining strong compatibility with popular fine-tuning frameworks such as Unsloth, Axolotl, TRL, and LlamaFactory.
-
-
-Another change is quantization as a first-class concept. Weight loading has been redesigned to support low-precision formats more naturally, reflecting the reality that many state-of-the-art models now ship in 8-bit or 4-bit variants and are deployed on hardware optimized for these workloads.
-
-Overall, Transformers v5 is less about adding surface features and more about reinforcing its role as shared infrastructure. By standardizing model definitions and aligning closely with training, inference, and deployment tools, Hugging Face is positioning Transformers as stable “ecosystem glue” for the next phase of open AI development.
-
-
-## Infinigen.org: procedural (zero IA) Imagen generation with labels and blender
-
-https://youtu.be/6tgspeI-GHY?si=qK3GVhXmrA7MYzVI
-
-## Hugging Face Smolagents is a Simple Library to Build LLM-Powered Agents - InfoQ
-https://www.infoq.com/news/2025/01/hugging-face-smolagents-agents/
-
-## Oferta de empleo: Experto en IA Generativa - 100% Remoto en España - Salario hasta 90K en Madrid - Bolsa trabajo InfoJobs
-
-https://www.infojobs.net/madrid/experto-ia-generativa-100-remoto-espana-salario-hasta-90k/of-i9de19c067a45eca2f9eef395b60419?applicationOrigin=home-search-recent%7Celement%7E53977064510&searchId=53977064510&page=1&sortBy=RELEVANCE
-
-IA Generativa: Dominio de LLMs/modelos de transformers, AWS Bedrock, SageMaker, LangChain.
-
-## Una nueva selección de novedades relevantes del mundo de los LLMs - Carlos J. Gil Bellosta
-
-https://www.datanalytics.com/2025/03/25/cortos-llms/
-
-Algunas aplicaciones y usos de los LLMs que he recogido en estas últimas semanas:
-
-Una guía práctica de cómo usar los LLMs para desarrollar código.
-Otra de cómo implementar DeepSearch/DeepResearch
-Xata Agent es un agente de código abierto que monitoriza tu base de datos, encuentra la causa de los problemas y sugiere soluciones y mejoras.
-He estado usando también una serie de modelos de audio (que están mejorando a marchas forzadas) para un proyecto del que no puedo decir nada.
-John D. Cook usa Grok 3 para generar imágenes que le ayuden a recordar números (de acuerdo con el código fonético de memorización).
-Se de que o3-mini es muy bueno para escribir documentación de proyectos de software.
-Y quiero dejar anotado en algún sition que es muy entretenido jugar con InstantID y fotos de uno, aunque supongo que ya existirán alternativas infinitamente mejores en el mercado (un mercado que me es ajeno porque no estoy metido en la generación de imagen y vídeo).
-
-# DevMLOps: NVIDIA Dynamo Addresses Multi-Node LLM Inference Challenges - InfoQ
-https://www.infoq.com/news/2025/12/nvidia-dynamo-kubernetes/
-
-Serving Large Language Models (LLMs) at scale is complex. Modern LLMs now exceed the memory and compute capacity of a single GPU or even a single multi-GPU node. As a result, inference workloads for 70B+, 120B+ parameter models, or pipelines with large context windows, require multi-node, distributed GPU deployments.
-
-This challenge is sparking innovations in the inference stack. That’s where Dynamo comes in. Dynamo is an open-source framework for distributed inference. It manages execution across GPUs and nodes. It breaks inference into phases, like prefill and decode. It also separates memory-bound and compute-bound tasks. Plus, it dynamically manages GPU resources to boost usage and keep latency low.
-
-Dynamo allows infrastructure teams to scale inference capacity responsively, handling demand spikes without permanently overprovisioning expensive GPU resources. The framework works with any inference engine. It supports TensorRT-LLM, vLLM, SGLang, and more. This gives organizations flexibility in their technology choices
-
-
-## ByteDance Launches New AI Coding Tool Trae with DeepSeek R1 and Claude 3.7 Sonnet Free For All Users - InfoQ
-
-https://www.infoq.com/news/2025/03/trae-bytedance-claude-37-free/
-
-Trae has both an international and domestic version, supports Visual Studio Code plug-ins, and competes with an increasing line of AI code editors (e.g., Cursor, Windsurf, PearAI, Replit).
-
-## rasbt/LLMs-from-scratch: Implement a ChatGPT-like LLM in PyTorch from scratch, step by step
-
-https://github.com/rasbt/LLMs-from-scratch
-
-In Build a Large Language Model (From Scratch), you'll learn and understand how large language models (LLMs) work from the inside out by coding them from the ground up, step by step. In this book, I'll guide you through creating your own LLM,
-
-
-## Bitter lesson
-
-See related paper: https://arxiv.org/abs/2507.07955
-
-## LLM with bytes (vs tokens)
-
-https://dl.fbaipublicfiles.com/blt/BLT__Patches_Scale_Better_Than_Tokens.pdf
-
-               Srini Iyer 3e
-
-New paper alert! 🥪 Byte-Level models are finally competitive with tokenizer-based models with better inference efficiency and robustness! Dynamic patching is the answer! Read all about it here: https://lnkd.in/guevvkKh 1. We introduce BLT, a new model that dynamically patches input bytes into patches using a small local model, uses a large global model on these patches, and decodes back into bytes using a small decoder. Yes, it's a sandwich! 2. Dynamic patching is important! It can patch based on complexity of the data - predictable text is clumped into large patches and complex text is clumped into smaller patches. Number of patches determines how much compute is used. 3. We scaled BLT upto 8B and the scaling laws look good! All comparisons are FLOP-controlled. It's now ready for even larger scales. 4. We now have a new knob for scaling laws! We can keep increase model size without increasing inference compute, by using a larger average patch size. This gives very good inference-fixed scaling curves. 5. We match the Llama 3 architecture with some pretty good gains on tasks requiring awareness of characters, low resource MT and robustness to noise. 6. Huge shoutout to the people that made this happen! Artidoro, Ram, Pedro, John, Ben, Margaret, Chunting, Lili, Jason, Luke, Gargi, Mike and Ari!
-
-## ML 101: Data centers contain 90% crap data | Gerry McGovern
-
-https://gerrymcgovern.com/data-centers-contain-90-crap-data/
-
-
-## 101: Generarive AI Roadmap
-
-https://media.licdn.com/dms/image/v2/D4E22AQGwcZ08ewmL1Q/feedshare-shrink_800/B4EZPS0jo0HwAg-/0/1734408848777?e=1737590400&v=beta&t=KYfGQJ80nBwPrtciwMAyvqWk8B8xrs4VSHgRIOzjBSA 
-
-
-
-## 101: Google Launches Agent Development Kit for Go - InfoQ
-
-https://www.infoq.com/news/2025/11/go-agent-development-kit/ 
-
-## 101: Can Your CUDA Code Run on All GPUs? | Scaleway Blog
-https://www.scaleway.com/en/blog/can-your-cuda-code-run-on-all-gpus/
-
-
-[[{training.finetune,dev_stack.mistral,dev_stack.pytorch,]]
-## https://github.com/mistralai/mistral-finetune
-
-mistral-finetune is a light-weight codebase that enables memory-efficient and 
-performant finetuning of Mistral's models. It is based on LoRA, a training 
-paradigm where most weights are frozen and only 1-2% of additional weights in 
-the form of low-rank matrix perturbations are trained.
-
-For maximum efficiency it is recommended to use an A100 or H100 GPU. The 
-codebase is optimized for multi-GPU-single-node training setups, but for 
-smaller models, such as the 7B a single GPU suffices.
-
-The goal of this repository is to provide a simple, guided entrypoint to 
-finetune Mistral models. As such, it is fairly opinionated (especially around 
-data formatting) and does not aim at being exhaustive across multiple model 
-architectures or hardware types. For more generic approaches, you can check out 
-some other great projects like torchtune.
-* <https://pytorch.org/torchtune/stable/overview.html>
+[[{training.fine_tuning]]
 
 ## torchtune
-
+* <https://pytorch.org/torchtune/stable/overview.html>
 * <https://meta-pytorch.org/torchtune/stable/overview.html>
 
-* PyTorch library for easily authoring, fine-tuning and experimenting with 
+* PyTorch library for easily authoring, fine-tuning and experimenting with
   LLMs. The library emphasizes 4 key aspects:
   * Simplicity and Extensibility. Native-PyTorch, componentized design and easy-to-reuse abstractions
   * Correctness. High bar on proving the correctness of components and recipes
   * Stability. PyTorch just works. So should torchtune
   * Democratizing LLM fine-tuning. Works out-of-the-box on different hardware
 
-[[training.finetune}]]
-
-[[{scalability.mirothinker]]
-
-
-## MiroThinker 1.5: 30B Parameters That Outperform 1T Models 
-
-
-* <https://research.miromind.ai/blog/introducing-mirothinker-1.5-30b-parameters-that-outperform-1t-models>
-
-* Time causality trained as core constraing (vs background variable) to avoid
-  leakeages while training.
-
-flagship search agent model that achieves comparable performance to 
-trillion-parameter models with only 30B parameters through Interactive Scaling 
-technology. [[use_case.search,architecture.agent]]
-
-fundamental question: Where exactly is the "singularity" of intelligence?
-
-- Their answer is not "memorizing the world into parameters," but settling for "discovery intelligence." 
-- True intelligence doesn't rely on omniscience, but on the ability to research, verify, and 
-  correct—like a top intelligence officer **rapidly gathering evidence externally 
-  while rigorously separating truth from falsehood internally**
-- MiroMind team doesn't believe in "brute force miracles" for AGI
-  but pursues "skillful strength" centered on high intelligence 
-  efficiency.
--
-Dominating Rankings: Metrics Are the Threshold, Prediction Is the Ceiling
-
-- MiroThinker team points out that the traditional Scaling Law centered on 
-  expanding model internal parameters has clearly hit marginal bottlenecks;
-
-- In MiroThinker 1.0, the team first systematically proposed Interactive Scaling: 
-  the concept that as the frequency and depth of tool interaction increase, 
-  research-style reasoning capability also steadily strengthens. This constitutes 
-  a third scalable dimension alongside model size and context length.
-  [[doc_has.keypoint]]<br/>
-  ... MiroThinker 1.5 goes even further by internalizing this mechanism as a core 
-  capability throughout the entire training and inference process. 
-  ... When encountering difficult problems, it no longer 
-  provides the highest-probability guess; instead, it executes a "slow-thinking" 
-  research loop: 
-  ```
-  propose hypothesis 
-  ··> query external world for data/evidence 
-    ··> discover mismatch
-       ··> revise hypothesis
-          ··> verify again, until the evidence converges.
-  ```
-
-
-- The development team emphasizes that what's saved isn't computing power, but rather 
-  computing power spent on what matters most:
-  - external information acquisition and interaction.
-
-- Traditional Chain-of-Thought (CoT) modeling is essentially a linear 
-  extrapolation within the model's internal knowledge space. In this process, 
-  reasoning biases accumulate as the path lengthens, eventually leading to a 
-  logical collapse. [[arch.chain-of-thought,LLM,]]<br/>
-   MiroThinker 1.5's core focus is breaking the deadlock of isolated reasoning 
-  through Interactive Scaling, deeply coupling "reasoning" with "external 
-  environment."  ...  **it uses deterministic evidence flows** to hedge against
-  uncertain inference, solving the logical collapse problem.
-  [[doc_has.comparative]]
-
-... The model is encouraged to break down each key judgment into verifiable 
-sub-hypotheses and actively initiate external queries, retrieval, and 
-comparison.  **The conclusion itself is no longer the training goal; the 
-process of finding reliable evidence is**.
-
-... **outputs lacking source support are systematically penalized during training**
-
-... path that relies on statistical correlation, pattern memory, or implicit 
-priors while bypassing evidence verification is marked as low-quality reasoning.
-
-MiroThinker's Time-Sensitive Training Sandbox forces the model to learn 
-reasoning under strict temporal visibility: **it can only interact with 
-information published before the specific timestamp of the problem**. 
-**Time thus transforms from a background variable into a core constraint shaping 
-model behavior and reasoning methods, bringing the model closer to real-world 
-cognition and decision-making processes**.  [[doc_has.keypoint]]
-
-* MiroThinker is founded by renowned entrepreneur Tianqiao Chen and AI scientist Jifeng Dai,  [[who-is-who]]
-[[scalability.mirothinker}]]
+[[training.fine_tuning}]]
 
 [[{use_case.OCR]]
-## OCR Benchmarck
+### PaddleOCR-VL
 
-* <https://github.com/opendatalab/OmniDocBench>
-
-### PaddleOCR-VL: <https://www.paddleocr.ai/latest/en/version3.x/pipeline_usage/PaddleOCR-VL.html>
-
-* PaddleOCR-VL-0.9B document parsing model is designed specifically for element recognition in documents. 
-*  composed of a NaViT-style dynamic resolution visual encoder and the 
+* <https://www.paddleocr.ai/latest/en/version3.x/pipeline_usage/PaddleOCR-VL.html>
+* PaddleOCR-VL-0.9B document parsing model designed specifically for element recognition in documents.
+*  composed of a NaViT-style dynamic resolution visual encoder and the
    ERNIE-4.5-0.3B (Baidu) language model, enabling precise element recognition.
 * supports 109 languages .
-* excels in recognizing complex elements (such as text, tables, formulas, and charts) while 
-  maintaining extremely low resource consumption. 
+* excels in recognizing complex elements (such as text, tables, formulas, and charts) while
+  maintaining extremely low resource consumption.
 * significantly outperforms existing Pipeline-based solutions,
   document parsing multimodal schemes, and advanced general-purpose multimodal large models.
   while offering faster inference speeds. [[scalability.inference,use_case.OCR]]
 [[use_case.OCR}]]
 
-[[{]]
-## Variational Autoencoder (VAE) online 
-
-* <https://xnought.github.io/vae-explainer/>
-
-[[}]]
-
-[[{]]
-## NVIDIA Releases Open Models, Datasets, and Tools across AI, Robotics, and Autonomous Driving
-
-* <https://www.infoq.com/news/2026/01/nvidia-open-models/>
-
-NVIDIA has released a set of open models, datasets, and development tools 
-covering language, agentic systems, robotics, autonomous driving, and 
-biomedical research. The update expands several existing NVIDIA model families 
-and makes accompanying training data and reference implementations available 
-through GitHub, Hugging Face, and NVIDIA’s developer platforms.
-
-In the agentic AI domain, NVIDIA extended the Nemotron model family with new 
-components for speech recognition, retrieval-augmented generation, and safety. 
-Nemotron Speech includes automatic speech recognition models optimized for 
-low-latency, real-time use cases. Nemotron RAG introduces embedding and 
-reranking vision-language models intended for multimodal document search and 
-retrieval pipelines. Nemotron Safety adds updated models for content filtering 
-and detection of sensitive or personally identifiable information. NVIDIA also 
-released datasets and training code used for selected Nemotron models, 
-including embedding models evaluated on public benchmarks.
-
-For robotics and physical AI, NVIDIA introduced new Cosmos world foundation 
-models, which support perception, reasoning, and synthetic data generation in 
-real-world environments. Cosmos Reason 2 is a multimodal reasoning model 
-designed to enhance scene understanding for agents operating in physical 
-environments. Cosmos Transfer 2.5 and Cosmos Predict 2.5 focus on generating 
-synthetic video data across varied environments and conditions, supporting 
-simulation and data augmentation workflows. Built on top of Cosmos, NVIDIA 
-released Isaac GR00T N1.6, an open vision-language-action model for humanoid 
-robots that supports full-body control and integrates visual perception with 
-action planning.
-
-One component of the announcement was NVIDIA Alpamayo, a new open model family 
-for reasoning-based autonomous driving. Alpamayo combines perception, planning, 
-and explainability in a vision-language-action architecture and is paired with 
-simulation tools and large-scale driving datasets. NVIDIA also introduced 
-AlpaSim, an open-source simulation framework for closed-loop evaluation of 
-autonomous vehicle models.
-
-According to Xinzhou Wu, head of Automotive at NVIDIA, Alpamayo and related 
-tooling reflect multi-year development efforts across research, simulation, 
-data engineering, safety, and integration teams. Wu noted that the work 
-involved extensive road testing, continuous large-scale simulation using 
-platforms such as Cosmos, and close collaboration with automotive partners, 
-including Mercedes-Benz, with initial deployments planned for upcoming 
-production vehicles.
-
-The healthcare and life sciences updates are delivered through new NVIDIA Clara 
-models. These include La-Proteina for atom-level protein design, ReaSyn v2 for 
-synthesis-aware drug design, KERMT for early-stage safety and interaction 
-prediction, and RNAPro for RNA structure modeling. NVIDIA also published a 
-dataset of 455,000 synthetic protein structures to support training and 
-evaluation in this domain.
-
-All models and datasets are released under open licenses and are accessible via 
-GitHub and Hugging Face. NVIDIA stated that many of the models are also 
-packaged as NIM microservices for deployment on NVIDIA-accelerated systems, 
-from local inference environments to cloud infrastructure.
-
-[[}]]
-
-[[{qa.bestpatterns]]
-## Awesome agentic patterns
-
-* <https://github.com/nibzard/awesome-agentic-patterns>
-[[qa.bestpatterns}]]
-
-[[{]]
-## Orca: Using AI to improve AI
-
-
-* <https://www.microsoft.com/en-us/research/project/orca/>
-
-Orca is a research team in Microsoft Research. Orca focuses on creating 
-automated pipelines for creating high-quality synthetic data at scale, and 
-training models for specialization and model self-improvement. Orca’s 
-research areas involve self-improvement strategies, feedback-driven teaching 
-methods between large and small models to create high-quality synthetic data 
-and using domain specific data to specialize LM
-
- The Microsoft Research’s Orca paper, which explores progressive learning 
-from complex explanation traces of large language models such as GPT-4:
-- <https://arxiv.org/abs/2306.02707>
-
-### OpenOrca: 
-
-* <https://openlaboratory.ai/models/mistral-7b-openorca>
-
-... The model employs OpenAI’s Chat Markup Language (ChatML) formatting with 
-delimiters such as <|im_start|> and <|im_end|>, a structure which is compatible 
-with Transformers chat templating.  [[devMLops.ChatML,data.ChatML]]
-[[}]]
 
 [[{use_case.weather_prediction]]
-## Google NeuralGCM: Physics modeling + neural network 
+## Google NeuralGCM: Physics modeling + neural network
+
 * <https://research.google/blog/neuralgcm-harnesses-ai-to-better-simulate-long-range-global-precipitation/>
+
 [[use_case.weather_prediction}]]
 
 [[{]]
@@ -4753,222 +4127,13 @@ with Transformers chat templating.  [[devMLops.ChatML,data.ChatML]]
 * <https://github.com/billxbf>
 
 * NanoGPX | Clean collection of modern LLM recipes (RoPE, GQA, RMSNorm, MoE, SSM, etc.) in nanoGPT style.
+  [[architecture.RoPE,architecture.GQA,architecture.RMSNorm,architecture.MoE,architecture.SSM)
   <https://github.com/billxbf/nanoGPX>
 * ArXplorer | A recommender engine of daily papers from arXiv, customized with your Prompt.
-* Gentopia & GentPool | An Agent [Framework] & [Platform] for the hardcore builders.
+* Gentopia & GentPool | An Agent Framework&Platform for the hardcore builders.
 * ReWOO | Discussing token efficiency of LLMs when decoupling reasoning from observations.
-  ```
 [[}]]
 
-[[{101.nanochat,PM.cost]]
-## NanoChat: Build GPT from Scractch in $100
-
-* <https://github.com/karpathy/nanochat>
-
- full-stack implementation of an LLM like ChatGPT in a single, clean, minimal, 
-hackable, dependency-lite codebase. nanochat is designed to run on a single 
-8XH100 node via scripts like speedrun.sh, that run the entire pipeline start to 
-end. This includes tokenization, pretraining, finetuning, evaluation, 
-inference, and web serving over a simple UI so that you can talk to your own 
-LLM just like ChatGPT. nanochat will become the capstone project of the course 
-LLM101n being developed by Eureka Labs.
-[[101.nanochat}]]
-
-{training.101,training.backpropagation]]
-## Backpropagation
-
-* Seminal paper: "Yann LeCun 1989 paper "Backpropagation Applied to Handwritten Zip Code Recognition"
-
-
-* <https://github.com/karpathy/lecun1989-repro>
-[[training.101}]]
-
-[[{]]
-
-## Attention Is Not What You Need: (Grassmann Flows Alternative) 
- 
-Via Konsta KiirikkiKonsta (linked-in)
-
-
-Here's an interesting read on sequence modeling!
-
-"Attention Is Not What You Need: Grassmann Flows as an Attention-Free 
-Alternative for Sequence Modeling" paper (<https://arxiv.org/pdf/2512.19428>) tackles the 
-fundamental flaw in transformer models: quadratic time complexity of full 
-attention that makes long context unfeasible. 
-
-The authors suggest that attention in transformer models is just one of the 
-many ways of implementing tensor lifting of the token representations: self 
-attention computes A = softmax(QK'/sqrt(d)) in L x L for hidden states H in L x 
-d thus lifting them into higher dimensional representations. 
-
-The authors argue and prove in experiments that attention could be replaced 
-with finite dimensional flow on Grassmann manifolds! In theory this allows for 
-the time complexity of O(Ld^2) instead of O(L^2 d + Ld^2) for full 
-self-attention.
-
-Grassmann flows open the discussion for geometric representation in sequence 
-modeling competing with state space models as possible future development of 
-sequence modeling.
-[[}]]
-
-[[{data.cleaning,data.ETL,arch.DAG,arch.multiprocess]]
-## Apache Airflow  (ETL/ELT/,  Business Operations, MLOps, ...)
-
-* allows you to define almost any workflow in Python code, no matter how complex. 
-
-* Airflow Core includes webserver, scheduler, CLI, ...
-* Airflow CTL: command-line to interact with REST API.
-* Task SDK: Allows to define Directed Acyclic Graphs (DAGs) in python, executing tasks
-  in isolated subprocesses.
-* Airflow providers include:
-Airbyte, Alibaba, Amazon, Apache Beam/Cassandra/Drill/Druid/Flink/HDFS/Hive/Iceberg/Impala/Kafka/Kylin/Livy/Pig/Pinot/Spark/Tinkerpop, Apprise, ArangoDB, Asana, Atlassian Jira, Celery, Cloudant, CNCF Kubernetes, Cohere, Common Compat, Common IO, Common Messaging, Common SQL, Databricks, Datadog, dbt Cloud, Dingding, Discord, Docker, Edge3, Elasticsearch, Exasol, FAB (Flask-AppBuilder), Facebook, File Transfer Protocol (FTP), Git, GitHub, Google, gRPC, Hashicorp, Hypertext Transfer Protocol (HTTP), IBM Cloudant, Influx DB, Internet Message Access Protocol (IMAP), Java Database Connectivity (JDBC), Jenkins, Keycloak, Microsoft Azure, Microsoft SQL Server (MSSQL), Microsoft PowerShell Remoting Protocol (PSRP), Microsoft Windows Remote Management (WinRM), MongoDB, MySQL, Neo4j, ODBC, OpenAI, OpenFaaS, OpenLineage, Open Search, Opsgenie, Oracle, Pagerduty, Papermill, PgVector, Pinecone, PostgreSQL, Presto, Qdrant, Redis, Salesforce, Samba, Segment, Sendgrid, SFTP, Singularity, Slack, SMTP, Snowflake, SQLite, SSH, Standard, Tableau, Telegram, Teradata, Trino, Vertica, Weaviate, Yandex, YDB, Zendesk
-
-
-[[data.cleaning}]]
-
-
-[[{data.EDA,PM.TODO]]
-## Exploratory Data Analysis (EDA)
-
-EDA: Exploratory Data Analysis.
-
-[[PM.low_code,data.EDA]]
-## MLJAR Studio: AutoML training for tabular data "under 2 minutes"
-
-* <https://github.com/mljar/mljar-supervised>
-Python package for AutoML on Tabular Data with Feature Engineering, 
-Hyper-Parameters Tuning, Explanations and Automatic Documentation 
-
-* ALternatives and complements include auto-sklearn, autokeras, NASLib, Auto-PyTorch, TPOT, 
-Optuna, AUtoGluon, Ray(tune), ..
-[[data.EDA}]]
-
-[[{PM.low_code]]
-
-## LangGrant Ledge MCP Server
-
-LangGrant has launched the LEDGE MCP Server, a new enterprise platform designed 
-to let large language models reason across complex database environments 
-without directly accessing or exposing underlying data. [[security.sandbox]]
-
-...  The company says the LEDGE MCP Server allows LLMs to generate accurate, 
-executable multi-step analytics plans across databases such as Oracle, SQL 
-Server, Postgres, and Snowflake,  by relying on schema, metadata, and
-relationships rather than raw records  preventing data leakeage.
-
-According to LangGrant, tasks that typically take weeks of manual query writing 
-and validation can now be completed in minutes with full human review and 
-auditability. [[PM.low_code]]
-
-[[}]]
-
-[[{]]
-## Pyramid Vision Transformers (PVTs)
-
-By Kavishka Abeywardana (linked-in)
-
-.... Pyramid Vision Transformers (PVTs) bridge the gap between CNNs and transformers. ❤️ 
-
-Early Vision Transformers had a column-like architecture that was primarily 
-designed for image classification and was not well-suited for dense prediction 
-tasks such as semantic segmentation, instance segmentation, and object 
-detection. 
-
-As a result, their output feature maps tended to be spatially coarse and blurry.
-
-Dense prediction tasks require multi-resolution feature representations. PVT 
-addresses this by building a hierarchical architecture: transformer blocks are 
-stacked across multiple stages, and at each stage, the feature map is 
-patchified again and passed to the next level. 
-backbones.
-
-To make the computation efficient at higher resolutions, PVT introduces a 
-Spatial Reduction Attention mechanism, which projects the key and value tensors 
-into a lower-dimensional space before computing attention.
-
-This significantly reduces computational cost while preserving global context
-[[}]]
-
-[[{]]
-## Summarizing PDFs with Ollama and LangChain
-
-* <https://vincent.codes.finance/posts/documents-llm/#loading-pdfs>
-[[}]]
-
-[[{]]
-## Spec-Kit:
-
-GitHub Spec Kit es un framework de código abierto diseñado para aplicar SDD al trabajar con
-Inteligencia Artificial. En lugar de pedirle a la IA que escriba código directamente ("vibe
-coding"), este kit te obliga a estructurar primero el proyecto en especificaciones claras, planes
-técnicos y tareas. Esto crea un contexto sólido para que los agentes de IA (como Copilot o
-Claude) generen código más complejo, consistente y con menos errores.
-
-.github/instructions
- 00-migration-overview.instructions.md
- 01-tibco-analysis.instrucions.md
-02-architecture-mapping.instructions.md
-03-service-design.instructions.md
-04-api-definition.instructions.md
-05-integration.instructions.md
-06-data-and-state.instructions.md
-07-erro-handling.instructions.md
-08-security.instructions.md
-09-migration-validation.instructions.md
-rest-controllers.instructions.md
-soap-endpoins.instructions.md
-
-Flujo de Slash Commands
-/speckit.constitution Define principios rectores y guías técnicas.
-/speckit.specify Define requisitos (User Stories/Specs).
-/speckit.clarify Aclara ambigüedades (antes /plan).
-/speckit.plan Crea plan técnico de implementación.
-/speckit.tasks Genera tareas accionables.
-/speckit.analyze Analiza consistencia entre artefactos.
-/speckit.implement Ejecuta la construcción del código.
-/speckit.checklist Genera validaciones de calidad.
-
-Alternatives include:
-
-- BMAD Method (Building Modern Apps with Design)
-  goes beyond SDD by simulating a comple organization, defining specific
-  roles (Product Manager, QA, Developer, Architect, ...). 
-  - Better for new and well defined proyects but slow and not agile.
-- OpenSpec (Brownfield Specialist): 
-  Based around management of "Deltas" (vs full spec).
-  - Very interesting alternative toSpec-Kit when using modern code.
-  - Worst to migrate "old" code.
-[[}]]
-
-[[{]]
-##  PyTorch Foundation Welcomes Helion Project 
-
-* <https://pytorch.org/blog/pytorch-foundation-welcomes-helion-as-a-foundation-hosted-project-to-standardize-open-portable-and-accessible-ai-kernel-authoring/>
-
-Helion: Standardize Open, Portable, and Accessible AI Kernel Authoring.
-
-...  Helion is a Python-embedded domain-specific language (DSL) for authoring 
-machine learning kernels, designed to compile down to Triton, a performant 
-backend for programming GPUs and other devices. Helion aims to raise the level 
-of abstraction compared to Triton, making it easier to write correct and 
-efficient kernels while enabling more automation in the autotuning process.
-
-... alongside DeepSpeed, PyTorch, Ray, and vLLM.
-[[}]]
-
-[[{]]
-## https://huggingface.co/blog/introduction-to-ggml
-ggml is a machine learning (ML) library written in C and C++ with a focus on **Transformer inference. The project is open-source and is being actively developed by a growing community. ggml is similar to ML libraries such as PyTorch and TensorFlow, though it is still in its early stages of development and some of its fundamentals are still changing rapidly.
-Over time, ggml has gained popularity alongside other projects like llama.cpp and whisper.cpp. Many other projects also use ggml under the hood to enable on-device LLM, including ollama, jan, LM Studio, GPT4All.
-[[}]]
-
-[[{]]
-## PyTorch vs GPTQ vs AWQ vs ... 
-
-(Check if the compartive makes sense)
-
-[[}]]
 
 [[{PM.low_code,architecture.IoT]]
 ## Koboldcpp
@@ -4979,15 +4144,18 @@ Run GGUF models easily with a KoboldAI UI. One File. Zero Install.
 
 - Looks to be base also in llama.cpp. (Recheck)
   - Supports NVidia Cuda and Vulkan out of the box.
-- While ollama supports just text generationa, Koboldcpp looks to also support Image, Video, Speech-to-Text, MCP tool calling, RAG, ...
+- While ollama supports just text generationa, Koboldcpp looks to also support 
+  Image, Video, Speech-to-Text, MCP tool calling, RAG, ...<br/>
+  In such sense koboldcpp looks closer to LocalAI.
+ 
 
 ### Features:
-- Single file executable, with no installation required and no external 
+- Single file executable, with no installation required and no external
   dependencies.
 - Runs on CPU or GPU, supports full or partial offloaded
-- LLM text generation (Supports all GGML and GGUF models, backwards 
+- LLM text generation (Supports all GGML and GGUF models, backwards
   compatibility with ALL past models).
-- Image Generation and Image Editing (Stable Diffusion 1.5, SDXL, SD3, Flux, 
+- Image Generation and Image Editing (Stable Diffusion 1.5, SDXL, SD3, Flux,
   Qwen Image, Z-Image, Klein).
 - Video Generation (WAN 2.2)
 - Speech-To-Text (Voice Recognition) via Whisper
@@ -4995,37 +4163,29 @@ Run GGUF models easily with a KoboldAI UI. One File. Zero Install.
 - Music Generation (Ace Step 1.5)
 - Image Recognition (Multimodal Vision)
 - MCP Server support and tool calling.
-- Provides many compatible APIs endpoints for many popular webservices 
-  (KoboldCppApi OpenAiApi OllamaApi A1111ForgeApi ComfyUiApi WhisperTranscribeApi 
+- Provides many compatible APIs endpoints for many popular webservices
+  (KoboldCppApi OpenAiApi OllamaApi A1111ForgeApi ComfyUiApi WhisperTranscribeApi
   XttsApi OpenAiSpeechApi).
-- Bundled KoboldAI Lite UI with editing tools, save formats, memory, world 
+- Bundled KoboldAI Lite UI with editing tools, save formats, memory, world
   info, author's note, characters, scenarios.
-- Includes multiple modes (chat, adventure, instruct, storywriter) and UI 
+- Includes multiple modes (chat, adventure, instruct, storywriter) and UI
   Themes (aesthetic roleplay, classic writer, corporate assistant, messsenger)
-- Supports loading Tavern Character Cards, importing many different data 
-  formats from various sites, reading or exporting JSON savefiles and persistent 
+- Supports loading Tavern Character Cards, importing many different data
+  formats from various sites, reading or exporting JSON savefiles and persistent
   stories.
-- Many other features including new samplers, regex support, websearch, RAG via 
+- Many other features including new samplers, regex support, websearch, RAG via
   TextDB, image recognition/vision and more.
-- Ready-to-use binaries for Windows, MacOS, Linux. Runs directly with Colab, 
-Docker, also supports other platforms if self-compiled (like Android (via 
+- Ready-to-use binaries for Windows, MacOS, Linux. Runs directly with Colab,
+Docker, also supports other platforms if self-compiled (like Android (via
 Termux) and Raspberry PI).
 [[PM.low_code}]]
 
-[[{]]
-# vLLM vs SGLang vs TensorRT-LLM
-
-Check comparative.
-
-- vLLM, SGLang, and TensorRT-LLM all include optimized AWQ kernels.
-[[}]]
-
 [[{training,scalability.megatron]]
 
+[[{]]
 ##  Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism
 * <https://arxiv.org/abs/1909.08053>
 * <https://github.com/NVIDIA/Megatron-LM>: Ongoing research training transformer models at scale
 [[}]]
-
 
 [[PM.TODO}]]

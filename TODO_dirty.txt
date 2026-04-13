@@ -2012,13 +2012,18 @@ Mistral representa el creciente papel europeo en la carrera de la IA.
 [[PM.RADAR}]]
 
 [[{PM.low_code.taipy]]
-## taipy.io: 
+## taipy.io
 
 - Taipy Designer: no-code tool that lets you create readable web front-ends with a drag-and-drop user interface.
 
 Plus, node caching reduces processing times, and its Python-based structure means no front-end experience is needed. Easy and efficient!
 
 Show your support for open-source tools by giving Taipy a star on GitHub https://bit.ly/3TEaCqx
+
+### Taipy data Dashboard in 40 lines of code.
+
+* <https://medium.com/@shouke.wei/enhancing-data-visualization-with-taipy-gui-71beed3a61bd>
+[[}]]
 
 [[PM.low_code.taipy}]]
 
@@ -3334,3 +3339,328 @@ https://m.youtube.com/playlist?list=PLTKMiZHVd_2IIEsoJrWACkIxLRdfMlw11
 
 Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition
 [[prompting.reasoning}]]
+
+[[{doc_has.tutorial]]
+## NVIDIA Free courses
+
+- Building RAG Agents with LLMs (8h) <https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-FX-15+V1>
+- Building Video AI Applications at the Edge on Jetson Nano (8h) <https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+S-IV-02+V2>
+
+ The first two courses require prerequisites (basic knowledge of deep learning and Python),
+while the rest below are more beginner-friendly. 
+
+And if you are a leader and looking for more in-depth executive-level AI courses,
+check this one (10 weeks, with expertise required) 
+
+- <https://lnkd.in/gnzXh3FR> (video from Jensen Huang, CEO of NVIDIA talk at CES 2025)
+[[doc_has.tutorial}]]
+
+[[[{]]
+## IA, i8n: le français H entre directement dans la cour des grands
+https://www.journaldunet.com/intelligence-artificielle/1542063-ia-le-francais-h-entre-directement-dans-la-cour-des-grands/
+
+www.journaldunet.com
+
+IA : le français H entre directement dans la cour des grands
+
+Benjamin Polge
+5 - 7 minutes
+
+La scale-up présente trois agents d'IA à la pointe des benchmarks en navigation web et publie Holo-1, un modèle open source agentique à l'état de l'art.
+
+On ne pourra pas lui reprocher de céder aux effet de mode avec l'IA agentique. Et pour cause : H, ou H Company, a été pensée comme agentique par nature dès sa création. Fondée fin 2023 par quatre ex-employés de Google DeepMind et Charles Kantor, un ancien de CentraleSupélec et Stanford, la start-up française annonce aujourd'hui trois nouveaux agents de navigation autonome capables de rivaliser avec les meilleures solutions américaines. La scale-up publie également en open source sur Hugging Face Holo-1, son premier vision language model, capable de naviguer en toute autonomie.
+
+3 agents, 3 usages différents
+
+H présente donc 3 agents : Runner H, Surfer H et Tester H. Chacun répond à des cas d'usage bien particuliers. Ces derniers se destinent aux professionnels mais également aux particuliers curieux de tester la navigation agentique autonome.
+
+Runner H : un agent d'actions basé sur des connecteurs
+
+Runner H fonctionne comme une plateforme d'orchestration intelligente qui transforme une instruction en langage naturel en une séquence d'actions coordonnées sur plusieurs applications et services. L'agent pilote des sous-agents spécialisés et s'appuie sur un système de connecteurs pré-configurés pour interagir directement avec des outils collaboratifs. La plateforme permet déjà de se connecter à Gmail pour la gestion des emails, Google Workspace (Docs, Calendar, Drive, Sheets) pour la bureautique, Notion, Slack pour la communication d'équipe, et Zapier pour étendre les possibilités d'automatisation.
+
+Runner H et ses sous-agents en fonctionnement. © Capture d'écran / JDN
+
+H cite plusieurs cas d'usage concrets : la synchronisation de données entre plusieurs plateformes, la génération automatique de rapports à partir de sources multiples, ou encore l'orchestration de workflows marketing complexes impliquant plusieurs outils. L'utilisateur n'a qu'à saisir son prompt et le VLM de H se charge d'orchestrer les différentes actions entre les outils.
+
+Surfer H : un agent de navigation web
+
+Operator chez OpenAI, Computer User chez Anthropic, Projet Mariner chez Google… Surfer H se positionne dans la lignée des agents web autonomes. Surfer H simule le comportement d'un utilisateur humain : il "voit" la page web grâce à son modèle de vision (Holo-1), identifie les éléments interactifs (boutons, formulaires, menus), et exécute les actions demandées en cliquant, saisissant du texte ou naviguant entre les pages.
+
+Surfer H en action. © Capture d'écran / JDN
+
+
+Surfer H est excellent en navigation autonome. L'agent obtient un score SOTA sur le benchmark WebVoyager avec un score de 92,2 % contre 89,1% pour Browser Use (concurrent direct de H) et 87% pour Operator d'OpenAI. Chaque tâche coûte en ressources matérielles environ 0,13 dollar, ce qui en fait l'une des solutions les plus accessibles du marché.
+
+Tester H : un agent d'automatisation de scripts web
+
+Tester H permet aux équipes non-techniques de créer des campagnes de test web simplement en décrivant les actions à effectuer : "vérifier que le bouton de connexion fonctionne", "tester le processus de commande jusqu'au paiement", ou "s'assurer que les formulaires de contact envoient bien les emails". Tester H se charge ensuite de convertir ces instructions en scripts automatisés compatibles web et mobile. L'agent fonctionne comme un testeur QA automatisé : il vérifie de manière autonome le bon fonctionnement des interfaces web et mobiles.
+
+© Capture d'écran / JDN
+
+Holo-1 disponible en open source, sur Hugging Face
+
+Parallèlement au lancement de ses trois agents, H publie Holo-1, son modèle moteur (sans toutefois dévoiler la version actuellement en production), en open source sur Hugging Face.  "Traditionnellement, un agent utilise deux composants séparés : un LLM pour planifier les étapes, aller sur un site, cliquer, scroller, et un modèle visuel, VLM, pour localiser les éléments. Les agents actuellement sur le marché sont chers car il faut orchestrer ces deux systèmes. Avec Holo 1, nous avons créé un modèle unique qui fait à la fois la planification et la localisation, ce qui permet des réductions de coûts considérables", explique Charles Kantor, CEO.
+
+Le modèle est disponible en 3 et 7 milliards de paramètres. Les poids du 7B sont publiés sous licence Apache 2.0, la plus permissive. Cette dernière version atteint le meilleur taux de précision sur les tâches de navigation UX parmi les modèles de petite taille.  Enfin H publie également un dataset (WebClick) contenant 1 639 scénarios d'interaction réels avec des interfaces utilisateur. Dans le même temps, Amazon, présent au capital de H, annonce l'intégration de Holo-1 sur la marketplace AWS. Les entreprises peuvent ainsi déployer en un clic le modèle sur leur cloud.
+
+Côté disponibilité, Runner H et Surfer H sont d'ores et déjà accessibles au public avec un déploiement progressif. Tester H, lui, est disponible uniquement pour les entreprises souhaitant industrialiser leurs tests logiciels à grande échelle. Avec ses trois agents et la publication d'Holo-1, H Company s'impose doucement mais sûrement dans un secteur au potentiel explosif.
+
+
+## ML: DeepSeek-R1 release:
+https://github.com/deepseek-ai/DeepSeek-R1
+
+DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks.
+[[}]][{]]
+## IA, i8n: le français H entre directement dans la cour des grands
+https://www.journaldunet.com/intelligence-artificielle/1542063-ia-le-francais-h-entre-directement-dans-la-cour-des-grands/
+
+www.journaldunet.com
+
+IA : le français H entre directement dans la cour des grands
+
+Benjamin Polge
+5 - 7 minutes
+
+La scale-up présente trois agents d'IA à la pointe des benchmarks en navigation web et publie Holo-1, un modèle open source agentique à l'état de l'art.
+
+On ne pourra pas lui reprocher de céder aux effet de mode avec l'IA agentique. Et pour cause : H, ou H Company, a été pensée comme agentique par nature dès sa création. Fondée fin 2023 par quatre ex-employés de Google DeepMind et Charles Kantor, un ancien de CentraleSupélec et Stanford, la start-up française annonce aujourd'hui trois nouveaux agents de navigation autonome capables de rivaliser avec les meilleures solutions américaines. La scale-up publie également en open source sur Hugging Face Holo-1, son premier vision language model, capable de naviguer en toute autonomie.
+
+3 agents, 3 usages différents
+
+H présente donc 3 agents : Runner H, Surfer H et Tester H. Chacun répond à des cas d'usage bien particuliers. Ces derniers se destinent aux professionnels mais également aux particuliers curieux de tester la navigation agentique autonome.
+
+Runner H : un agent d'actions basé sur des connecteurs
+
+Runner H fonctionne comme une plateforme d'orchestration intelligente qui transforme une instruction en langage naturel en une séquence d'actions coordonnées sur plusieurs applications et services. L'agent pilote des sous-agents spécialisés et s'appuie sur un système de connecteurs pré-configurés pour interagir directement avec des outils collaboratifs. La plateforme permet déjà de se connecter à Gmail pour la gestion des emails, Google Workspace (Docs, Calendar, Drive, Sheets) pour la bureautique, Notion, Slack pour la communication d'équipe, et Zapier pour étendre les possibilités d'automatisation.
+
+Runner H et ses sous-agents en fonctionnement. © Capture d'écran / JDN
+
+H cite plusieurs cas d'usage concrets : la synchronisation de données entre plusieurs plateformes, la génération automatique de rapports à partir de sources multiples, ou encore l'orchestration de workflows marketing complexes impliquant plusieurs outils. L'utilisateur n'a qu'à saisir son prompt et le VLM de H se charge d'orchestrer les différentes actions entre les outils.
+
+Surfer H : un agent de navigation web
+
+Operator chez OpenAI, Computer User chez Anthropic, Projet Mariner chez Google… Surfer H se positionne dans la lignée des agents web autonomes. Surfer H simule le comportement d'un utilisateur humain : il "voit" la page web grâce à son modèle de vision (Holo-1), identifie les éléments interactifs (boutons, formulaires, menus), et exécute les actions demandées en cliquant, saisissant du texte ou naviguant entre les pages.
+
+Surfer H en action. © Capture d'écran / JDN
+
+
+Surfer H est excellent en navigation autonome. L'agent obtient un score SOTA sur le benchmark WebVoyager avec un score de 92,2 % contre 89,1% pour Browser Use (concurrent direct de H) et 87% pour Operator d'OpenAI. Chaque tâche coûte en ressources matérielles environ 0,13 dollar, ce qui en fait l'une des solutions les plus accessibles du marché.
+
+Tester H : un agent d'automatisation de scripts web
+
+Tester H permet aux équipes non-techniques de créer des campagnes de test web simplement en décrivant les actions à effectuer : "vérifier que le bouton de connexion fonctionne", "tester le processus de commande jusqu'au paiement", ou "s'assurer que les formulaires de contact envoient bien les emails". Tester H se charge ensuite de convertir ces instructions en scripts automatisés compatibles web et mobile. L'agent fonctionne comme un testeur QA automatisé : il vérifie de manière autonome le bon fonctionnement des interfaces web et mobiles.
+
+© Capture d'écran / JDN
+
+Holo-1 disponible en open source, sur Hugging Face
+
+Parallèlement au lancement de ses trois agents, H publie Holo-1, son modèle moteur (sans toutefois dévoiler la version actuellement en production), en open source sur Hugging Face.  "Traditionnellement, un agent utilise deux composants séparés : un LLM pour planifier les étapes, aller sur un site, cliquer, scroller, et un modèle visuel, VLM, pour localiser les éléments. Les agents actuellement sur le marché sont chers car il faut orchestrer ces deux systèmes. Avec Holo 1, nous avons créé un modèle unique qui fait à la fois la planification et la localisation, ce qui permet des réductions de coûts considérables", explique Charles Kantor, CEO.
+
+Le modèle est disponible en 3 et 7 milliards de paramètres. Les poids du 7B sont publiés sous licence Apache 2.0, la plus permissive. Cette dernière version atteint le meilleur taux de précision sur les tâches de navigation UX parmi les modèles de petite taille.  Enfin H publie également un dataset (WebClick) contenant 1 639 scénarios d'interaction réels avec des interfaces utilisateur. Dans le même temps, Amazon, présent au capital de H, annonce l'intégration de Holo-1 sur la marketplace AWS. Les entreprises peuvent ainsi déployer en un clic le modèle sur leur cloud.
+
+Côté disponibilité, Runner H et Surfer H sont d'ores et déjà accessibles au public avec un déploiement progressif. Tester H, lui, est disponible uniquement pour les entreprises souhaitant industrialiser leurs tests logiciels à grande échelle. Avec ses trois agents et la publication d'Holo-1, H Company s'impose doucement mais sûrement dans un secteur au potentiel explosif.
+
+
+## ML: DeepSeek-R1 release:
+https://github.com/deepseek-ai/DeepSeek-R1
+
+DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks.
+[[}]]
+
+[[{]]
+## ML Is vibe coding using/being trained with testing frameworks like storybook?
+
+* <https://github.com/storybookjs/storybook?tab=readme-ov-file>
+
+Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation
+[[}]]
+
+[[{]]
+## ML: Meta byte-latent-transformer: Bytes vs tokens
+https://www.infoq.com/news/2025/01/meta-byte-latent-transformer/
+
+Meta Open-Sources Byte Latent Transformer LLM with Improved Scalability
+
+Jan 07, 2025 2 min read
+
+by
+
+Anthony Alford
+
+Senior Director, Development at Genesys Cloud Services
+
+Meta open-sourced Byte Latent Transformer (BLT), an LLM architecture that uses a learned dynamic scheme for processing patches of bytes instead of a tokenizer. This allows BLT models to match the performance of Llama 3 models but with 50% fewer inference FLOPS.
+
+Most LLMs map text bytes into a fixed set of tokens, which has several drawbacks, including the famous strawberry problem. By contrast, BLT dynamically groups bytes into patches. It uses a small language model to compute the entropy of the next byte in a sequence and then starts a new patch when the entropy increases; essentially, the small model is predicting the end of a word, a relatively easy task compared to generating new words in a sequence. Because BLT is working directly with bytes, it is more robust to noisy inputs that have spelling mistakes. Increasing patch size can reduce FLOPS needed for inference, resulting in a larger model with better performance for the same compute budget. According to Meta,
+
+BLT unlocks a new dimension for scaling, allowing simultaneous increases in model and patch size within a fixed inference budget. This new paradigm becomes advantageous for compute regimes commonly encountered in practical settings. While directly engaging with raw byte data, BLT also improves the model’s ability to handle the long-tail of data, offering significant improvements in robustness to noisy inputs and a deeper understanding of sub-word structures. Overall, these results position BLT as a promising alternative to traditional tokenization-based approaches, providing a scalable and robust framework for more efficient and adaptable language models.
+
+Most LLMs, like Llama, operate on a fixed set of tokens, and sequences of input bytes are mapped onto a token using heuristics. Tokenization is needed because training an LLM on raw bytes instead of tokens would require too much computation, but it does have some disadvantages. Besides struggling with counting individual letters in words, tokenization can affect an LLM's ability to handle multiple languages and understand mis-typed words.
+
+Meta did a series of experiments evaluating BLT, comparing it to token-based models. They found that while a fixed inference compute budget determines a token-based model's size, allowing patch size to increase allows for a larger BLT model and therefore better model accuracy. They also found that BLT models outperformed Llama 3 on character-level tasks, such as noisy input or low-resource language translation. However, when the researchers tried converting a Llama 3 model to BLT, instead of training a new model end-to-end, they found that it had a "significant" drop in performance on several LLM benchmarks.
+
+In a discussion about BLT on Reddit, several users pointed out how BLT could help models solve the "strawberry problem." Another user wrote:
+
+[BLT] is 100% the way to go. Also makes multimodality easy since you can just represent any data or file in bytes, and there exist A LOT of files. One problem is that 2 MB would need a context size of 2 million, so the memory and compute requirements are not quite met yet.
+
+The BLT training and inference code are available on GitHub.
+[[}]]
+
+[[{use_cases.101]]
+## 5 cas pratiques pour automatiser vraiment l'IA
+
+* <https://www.journaldunet.com/intelligence-artificielle/1540901-mcp-5-cas-d-usage-pratiques-qui-decuplent-les-capacites-de-l-ia/>
+
+By Benjamin Polge
+
+### Un agent vocal avec ElevenLabs
+
+elevenlabs-mcp permet d'automatiser la création d'agent vocaux et même de 
+lancer des callbots. 
+
+- En intégrant le MCP à Claude Desktop, il est possible de 
+demander dans un même prompt de créer un agent vocal contextualisé et enfin 
+de le lancer en appelant un numéro spécifique. A noter que pour l'appel, il 
+est nécessaire de connecter l'API Twilio dans votre compte ElevenLabs. Il est 
+par exemple possible de créer un callbot spécialisé en service client. Sa 
+mission peut consister à rappeler les clients inactifs depuis plusieurs mois 
+afin de comprendre les raisons de leur désengagement.
+
+### Prompt de rappel client :
+Utilisez ElevenLabs pour créer un agent téléphonique qui contactera mes 
+clients inactifs afin de comprendre pourquoi ils n'ont pas effectué d'achats 
+récemment dans notre boutique. L'agent doit commencer par une introduction 
+polie : 'Bonjour ! Je suis Alan, je travaille avec l'équipe [Nom de la 
+marque]. Je ne vous dérange pas ? Promis, c'est rapide.' Ensuite, l'agent doit 
+poser la question principale : 'Pourquoi n'avez-vous plus acheté dans notre 
+boutique ?' et enchaîner avec maximum 4 questions complémentaires qui 
+s'adaptent intelligemment aux réponses du client. L'agent doit être 
+programmé pour rester courtois, professionnel et attentif aux explications du 
+client. A la fin de la conversation, l'agent doit remercier poliment le client 
+pour son temps et ses réponses. Une fois l'agent configuré et testé, lancez 
+une campagne d'appels sortants avec ElevenLabs (outbound call) avec la liste de 
+numéros suivante : [insérer liste de numéros].
+
+### Un bot de réponse WhatsApp automatique
+
+Voici un autre exemple d'utilisation d'ElevenLabs (EL) couplé à WhatsApp. En 
+combinant les capacités de transcription d'ElevenLabs (via elevenlabs-mcp) à 
+la faculté d'envoi et de réception de message vocal de WhatsApp, via 
+whatsapp-mcp (créé, là encore, par un développeur d'ElevenLabs), il est 
+possible d'automatiser la réception et l'envoi de message vocaux, le tout en 
+utilisant des instructions naturelles avec Claude Desktop. Concrètement, 
+Claude utilise ElevenLabs pour les transcrire les messages vocaux de vos 
+contacts et vous pouvez leur répondre vocalement en utilisant la 
+fonctionnalité text-to-speech d'EL. En configurant également un sosie vocal 
+dans EL, vous pouvez même demander à l'IA d'utiliser votre propre voix.
+
+Un prompt vaut mieux que mille mots :
+
+"Accède à WhatsApp et récupère le dernier message vocal de [NOM_CONTACT]. Transcris ce fichier audio via ElevenLabs (speech-to-text) avec haute précision. Présente-moi la transcription complète et propose 5 réponses variées adaptées au contexte et au ton du message. Après ma sélection, convertis ma réponse en audio avec ElevenLabs en utilisant le modèle text-to-speech et l'ID vocal [ID_VOIX] spécifié. Envoie automatiquement cet audio à mon contact sur WhatsApp et confirme l'envoi."
+
+### Créer des visuels 3D avec Blender
+
+Autre cas d'usage assez bluffant, il est possible d'utiliser le logiciel de conception 3D Blender avec des prompts. Développé par la communauté, blender-mcp utilise l'API Python de Blender pour lancer des actions dans le logiciel. Avec Claude Desktop, l'IA permet par exemple de créer rapidement une représentation 3D simple ou même des animations. Attention toutefois : selon nos différents tests et pour l'heure, seules les tâches très simples de création 3D peuvent être automatisées.
+
+Prompt pour créer un fleur simple en 3D :
+
+"Crée un rendu 3D d'une fleur minimaliste dans Blender avec une tige fine. Modélise des pétales blancs symétriques disposés en cercle autour d'un centre jaune pâle légèrement surélevé. Place une seule feuille verte à environ un tiers de la hauteur depuis la base de la tige."
+
+### Automatiser son navigateur
+
+Operator en open source. Développé par les équipes Microsoft, playwright-mcp permet d'automatiser la navigation de votre navigateur. Le système se base sur un navigateur adapté de Google Chrome. Contrairement aux agents de navigation qui utilisent des captures d'écran régulière pour se repérer, playwright-mcp utilise une représentation structurée des éléments du web pour naviguer et compléter des formulaires. Avec Claude Desktop, l'outil permet d'automatiser une grande partie des tâches routinières (veille simple, tri d'emails…).
+
+Prompt pour automatiser une veille informationnelle avec un compte rendu par mail :
+
+"Exécute une recherche automatisée via Playwright MCP en consultant les sites spécialisés en intelligence artificielle (TechCrunch, MIT Technology Review, AI News, VentureBeat, Google News) pour identifier et synthétiser les 10 développements les plus significatifs dans le domaine de l'IA survenus au cours des dernières 24 heures, en privilégiant les avancées techniques, les lancements de produits majeurs, les acquisitions notables et les évolutions réglementaires. Pour chaque information, fournis un titre clair, un résumé concis de 3-4 phrases incluant les implications potentielles, et un lien vers la source originale. Présente ces informations dans un format structuré avec une introduction contextuelle et une conclusion mettant en perspective ces développements. Une fois cette recherche compilée, utilise le MCP Gmail pour m'envoyer ces résultats par email à [insérer adresse email], avec pour objet 'Veille IA quotidienne - [date du jour]', en formatant le corps du message en HTML pour une lisibilité optimale et en incluant un indice de fiabilité pour chaque source consultée."
+
+#5 Génération de vidéo automatique
+
+L'éditeur chinois d'IA MiniMax AI a également développé son propre serveur MCP (MiniMax-MCP). Les outils mis à disposition du LLM offrent des fonctionnalités comme la synthèse vocale (text-to-speech) ou encore la génération de vidéo. Pour la génération vidéo, vous pourriez penser que ce n'est pas très utile ? On peut déjà envoyer son prompt sur MiniMax et obtenir une vidéo. Oui, mais il y a un avantage : le MCP permet notamment de tirer parti des capacités des LLM pour créer des prompts spécialement optimisés pour les modèles text-to-video (comme nous l'expliquions dans notre tentative de reproduction du premier film de l'histoire avec l'IA). Il devient alors possible de faire générer au LLM le prompt avant de l'envoyer à MiniMax pour la génération de la vidéo. Ingénieux, non ?
+
+Prompt pour automatiser le process de création vidéo :
+
+"Voici une description en langage naturel d'une scène vidéo attendue : (INSERER DESCRIPTION DE LA SCENE). A partir de cette description, génère un prompt technique optimisé pour le modèle text-to-video de MiniMax, en incluant les éléments visuels essentiels, l'ambiance, le style artistique et les spécifications techniques pertinentes. Structure le prompt avec des mots-clés efficaces et un langage précis qui maximisera la qualité et la fidélité du rendu par rapport à la vision décrite. Une fois le prompt élaboré, adresse-le directement à MiniMax avec son MCP en respectant la syntaxe requise pour une interprétation optimale par le système."
+
+### l'accès aux données financières mondiales en temps réel
+
+Qui ne rêverait pas d'accéder aux données financières mondiales en temps réel depuis un LLM ? C'est justement le but de Bloomberg MCP. Développé par la communauté open source, le serveur MCP permet de dialoguer avec l'API BLPAPI de Bloomberg. Au sein de Claude Desktop, bloomberg-mcp permet donc d'accéder aux données de marché en temps réel, aux analyses financières, aux cours des actions, aux indices boursiers mondiaux, aux données obligataires, aux devises, aux matières premières, aux informations sur les entreprises cotées, aux actualités économiques et aux prévisions de marché. Il devient ainsi possible d'interroger la base documentaire financière mondiale en quelques phrases.
+
+Exemple d'un prompt pour identifier les 10 actions les plus sous-valorisées du SP500 aujourd'hui (ceci n'est pas un conseil en investissement) :
+
+"Identifie, à l'aide de Bloomberg MCP, les 10 actions du S&P 500 présentant actuellement les ratios cours/bénéfice (P/E) les plus bas. Pour chaque action, indiquez son symbole boursier, le nom de l'entreprise et la valeur précise du ratio P/E"
+
+[[}]]
+
+[[{dev_stack.blender]]
+## Infinigen.org: procedural (zero IA) Imagen generation with labels and blender
+
+https://youtu.be/6tgspeI-GHY?si=qK3GVhXmrA7MYzVI
+[[dev_stack.blender}]]
+
+[[{]]
+## LLM with bytes (vs tokens)
+
+* <https://dl.fbaipublicfiles.com/blt/BLT__Patches_Scale_Better_Than_Tokens.pdf>
+
+- Byte-Level models are finally competitive with tokenizer-based models with
+better inference efficiency and robustness! 
+
+Dynamic patching is the answer!  
+
+- Read all about it here: https://lnkd.in/guevvkKh 
+
+We introduce BLT, a new model that dynamically patches input bytes into patches
+using a small local model, uses a large global model on these patches,
+and decodes back into bytes using a small decoder.
+
+ Dynamic patching is important!  It can patch based on complexity of the data
+- predictable text is clumped into large patches and complex text is clumped
+into smaller patches.
+- Number of patches determines how much compute is used.
+
+    We scaled BLT upto 8B and the scaling laws look good!
+
+... We match the Llama 3 architecture with some pretty good gains on tasks requiring 
+awareness of characters, low resource MT and robustness to noise. 
+
+[[}]]
+
+[[{101?]]
+## Variational Autoencoder (VAE) online
+
+* <https://xnought.github.io/vae-explainer/>
+
+* <https://en.wikipedia.org/wiki/Variational_autoencoder>
+[[}]]
+
+[[{PM.RADAR]]
+## Bitter lesson
+
+See related paper: https://arxiv.org/abs/2507.07955
+
+pre-processing steps such as tokenization remain a barrier to true end-to-end foundation models.
+
+We introduce a collection of new techniques that enable a dynamic chunking mechanism which
+automatically learns content- and context- dependent segmentation strategies learned jointly
+with the rest of the model.
+
+ Incorporating this into an explicit hierarchical network (H-Net) allows replacing the 
+(implicitly hierarchical) tokenization-LM-detokenization pipeline with a single model
+learned fully end-to-end.
+
+ When compute- and data- matched, an H-Net with one stage of hierarchy operating at the byte
+level outperforms a strong Transformer language model operating over BPE tokens.
+
+ Iterating the hierarchy to multiple stages further increases its performance by modeling
+multiple levels of abstraction, demonstrating significantly better scaling with data
+and matching the token-based Transformer of twice its size.
+ H-Nets pretrained on English show significantly increased character-level robustness,
+and qualitatively learn meaningful data-dependent chunking strategies without any
+heuristics or explicit supervision.
+
+ Finally, the H-Net's improvement over tokenized pipelines is further increased in
+languages and modalities with weaker tokenization heuristics, such as Chinese and code,
+or DNA sequences (nearly 4x improvement in data efficiency over baselines [[QA.COHERENCE]]),
+showing the potential of true end-to-end models that learn and scale better from unprocessed data.
+[[PM.RADAR}]]

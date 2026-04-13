@@ -9,11 +9,12 @@
  |                 ·   ·   ┌─· Inference
  | "BACKEND"       v   v   v   Notes
  | --------------------------- ---------------------------------------
- | llama.cpp      NO  NO  YES  CPU/local inference but also 
+ | llama.cpp      NO  NO  YES  CPU/local inference but also
  |                             support CUstom CUDA kernels, Vulkan
  |                             and CPU+GPU hybrid inference
  |                             Plain C/C++ implementation without
- |                             ollama runs on top of it¹.
+ |                             ollama runs on top of it. ¹
+ |                             llama.cpp itself runs on top of  ggml. ²
  |                             any dependencies (LLM with minimal setup)
  |                             Target: Single User, Local setups
  |                             One line setup:
@@ -37,8 +38,11 @@
  |                             Single-node GPU focus
  | --------------------------- ---------------------------------------
  |
- | ¹ as of 2025, llama.cpp doesn't look to need the opper anymore.
- |    (REF: <https://itsfoss.com/llama-cpp/> )
+ | ¹ as of 2025, llama.cpp does not need the ollama to run.
+ |   (REF: <https://itsfoss.com/llama-cpp/> )
+ |   ollama is just a "bloated" wrapper on top of llama.cpp (Recheck this claim)
+ | ² ggml is a general purpose inference library, valid for other 
+ |   deep-learning architectures not related to GPT/LLM, for example whispper (speech-to-text,...)
  |
  | Practical Takeaway
  | - Training / Fine-tunning:
@@ -48,6 +52,26 @@
  |   -> ExLlama2  (fast local GPU)
  |   -> llama.cpp (edge / CPU)
  ```
+
+Related: Transformers v5 Introduces a More Modular and Interoperable Core
+
+Summary from <https://www.infoq.com/news/2025/12/transformers-hugging-face/>
+
+- Model initialization and parallelism have been reworked to integrate more 
+  cleanly with tools like Megatron, Nanotron, and TorchTitan, while maintaining 
+  strong compatibility with popular fine-tuning frameworks such as Unsloth, 
+  Axolotl, TRL, and LlamaFactory.
+- Another change is quantization as a first-class concept. Weight loading has 
+  been redesigned to support low-precision formats more naturally, reflecting the 
+  reality that many state-of-the-art models now ship in 8-bit or 4-bit variants 
+  and are deployed on hardware optimized for these workloads.
+- Overall, Transformers v5 is less about adding surface features and more about 
+  reinforcing its role as shared infrastructure. By standardizing model 
+  definitions and aligning closely with training, inference, and deployment 
+  tools, **Hugging Face is positioning Transformers as stable "ecosystem glue"
+  for the next phase of open AI development**.
+[[}]]
+
 [[}]]
 
 [[{]]

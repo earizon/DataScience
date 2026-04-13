@@ -1,8 +1,10 @@
+[[{PM.who_is_who.companies]]
 # Who-is-Who Companies
 
 
 (This document is just an "Intention to Be")
 
+- Hugging Face:
 - Google:
   - Multimodal LLMs (Gemini)
   - Google Collab (Free TPUs and online IDEs).
@@ -42,7 +44,6 @@
 ## Elevenlabs Free text to speech and speech to text
 
 * <https://elevenlabs.io/>
-[[}]]
 
 
 - ... many, many others ...
@@ -57,3 +58,10 @@
 - Moore Threads: 
 -        Taalas: Burning LLM into ASICs (10.000 tokens/sec)
 [[}]]
+
+
+## MiroThinker:
+
+- founded by renowned entrepreneur Tianqiao Chen and AI scientist Jifeng Dai.
+
+[[PM.who_is_who.companies}]]

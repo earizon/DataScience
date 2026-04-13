@@ -137,6 +137,9 @@ THE CONCEPTUAL BOUNDARY BETWEEN FEATURE-EXTRACTION AND CLASSIFICATION IS ARBITRA
   concerned with the fundamental and holistic calibration of the model’s 
   behavior to human ethics and safety standards.
 
+
+- Exploratory Data Analysis (EDA)
+
 [[{]]
 ## Parameter efficient fine-tuning (PEFT)
 - Parameter-Efficient Fine-Tuning (PEFT) are a set of methods used to fine-tune Large 
@@ -183,6 +186,5 @@ THE CONCEPTUAL BOUNDARY BETWEEN FEATURE-EXTRACTION AND CLASSIFICATION IS ARBITRA
 - Generative Adversarial Network (GAN): [[training.GAN]]
 [[}]]
 [[PM.draft.intention_to_be}]]
-
 
 

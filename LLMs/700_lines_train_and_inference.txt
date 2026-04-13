@@ -19,4 +19,8 @@
 - The code can also infer models trained with Llama 2, restricted to fp32.
 
 - This project is an evolution of nanoGPT switching GPT-2 for Llama-2.
+
+- See also <https://github.com/billxbf/nanoGPX>:<br/>
+  Clean collection of modern LLM recipes (RoPE, GQA, RMSNorm, MoE, SSM, etc.) in nanoGPT style.
+
 [[}]]

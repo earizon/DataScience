@@ -132,6 +132,18 @@
 * Github profile: Interested in machine learning (computer vision, natural language processing, deep learning),...
   (2.2k followers)
 
+## BInfeng Xu
+
+* <https://github.com/billxbf>
+
+* NanoGPX | Clean collection of modern LLM recipes (RoPE, GQA, RMSNorm, MoE, SSM, etc.) in nanoGPT style.
+  [[architecture.RoPE,architecture.GQA,architecture.RMSNorm,architecture.MoE,architecture.SSM)
+  <https://github.com/billxbf/nanoGPX>
+* ArXplorer | A recommender engine of daily papers from arXiv, customized with your Prompt.
+* Gentopia & GentPool | An Agent Framework&Platform for the hardcore builders.
+* ReWOO | Discussing token efficiency of LLMs when decoupling reasoning from observations.
+
+
 
 ## Many others ...
 

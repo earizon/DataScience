@@ -361,3 +361,52 @@
   deployment on cloud, and more.
 * <https://github.com/pycaret/pycaret>
 [[doc_has.comparative}]]
+
+[[{]]
+## pytorch-forecasting: Deep Learning for TS forecasting
+
+- In recent years, deep learning has been widely used for time series 
+forecasting, with various new models being introduced, such as N-BEATS and TFT. 
+PyTorch Forecasting is a library that provides numerous DL forecasting models, 
+and other tools that will help you get an optimal result.
+
+ Here are some of the models included in the library:
+- Temporal Fusion Transformers for interpretable time series forecasting
+- N-BEATS: Neural basis expansion analysis for interpretable forecasting
+- N-HiTS: Neural Hierarchical Interpolation for time series forecasting
+- DeepAR: Probabilistic forecasting with autoregressive recurrent networks
+
+ In addition, deep learning forecasting models are sometimes dismissed
+by data scientists, but it's important to be acquainted with the latest
+tools, and draw our own conclusions. 
+
+- <https://pytorch-forecasting.readthedocs.io/en/stable/>
+[[}]]
+
+[[{]]
+## Salesforces Morai
+
+* <https://www.salesforce.com/blog/moirai/>
+
+- time series foundation model, offering universal forecasting capabilities.
+
+- It stands out as a versatile time series forecasting model capable of 
+  addressing diverse forecasting tasks across multiple domains, 
+  frequencies, and variables in a zero-shot manner.
+
+-  To achieve this, Moirai tackles four major challenges:
+1. construction of a LOTSA, a large-scale and diverse time series dataset,
+   comprising 27 billion observations spanning nine distinct domains
+2. development of multiple patch size projection layers, allowing a single
+   model to capture temporal patterns across various frequencies.
+3. implementation of an any-variate attention mechanism, empowering a
+   single model to handle forecasts across any variable
+4. integration of a mixture distribution to model flexible predictive 
+   distributions.
+
+   Through comprehensive evaluation in both in-distribution and 
+out-of-distribution settings, Moirai demonstrates its prowess as a zero-shot 
+forecaster, consistently delivering competitive or superior performance 
+compared to full-shot models.
+
+[[}]]

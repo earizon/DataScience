@@ -1,5 +1,17 @@
 # Prompt "Engineering"
 
+## Prompting 101
+
+ Contrary to a Search engine where we place a text or question waiting for an answer,
+in an LLM prompt we must provide **context** to avoid potential allucinations.
+
+ The context is what really helps the underlying GPT architecture to find for the
+desired related information and skip non-related information.
+
+  When appropiate, do not ask for a single response, ask for as much as your prompting
+budget allows you.
+
+
 [[{prompting.101.step_by_step]]
 ## "Explain your reasoning step by step before answering" 8 words "Miracle"
 
