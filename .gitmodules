@@ -1,9 +1,9 @@
-[submodule "PlayingWithOpenVINO"]
-	path = PlayingWithOpenVINO
-	url = https://github.com/earizon/PlayingWithOpenVINO.git
-[submodule "Laboratorio-de-Datos"]
-	path = Laboratorio-de-Datos.git
-	url = https://github.com/Admindatosgobes/Laboratorio-de-Datos
-[submodule "maths-cs-ai-compendium"]
-	path = maths-cs-ai-compendium.git
-	url = https://github.com/HenryNdubuaku/maths-cs-ai-compendium.git
+# [submodule "PlayingWithOpenVINO"]
+# 	path = PlayingWithOpenVINO
+# 	url = https://github.com/earizon/PlayingWithOpenVINO.git
+# [submodule "Laboratorio-de-Datos"]
+# 	path = Laboratorio-de-Datos.git
+# 	url = https://github.com/Admindatosgobes/Laboratorio-de-Datos
+# [submodule "maths-cs-ai-compendium"]
+# 	path = maths-cs-ai-compendium.git
+# 	url = https://github.com/HenryNdubuaku/maths-cs-ai-compendium.git
